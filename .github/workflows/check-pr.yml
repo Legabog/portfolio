@@ -13,5 +13,5 @@ jobs:
           node-version: 20.x.x
           cache: npm
       - run: npm ci
-      - run: npm run lint
+      - run: npx npx lint-staged
       - run: npm run test
