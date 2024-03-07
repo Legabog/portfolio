@@ -15,6 +15,7 @@ const config: Config = {
 	testPathIgnorePatterns: ['/node_modules/', '/.next/', '/public/', '/tests/'],
 	moduleNameMapper: {
 		'^@/(.*)$': '<rootDir>/src/$1',
+		'^shared/ui(.*)$': '<rootDir>/src/shared/ui$1',
 	},
 };
 
