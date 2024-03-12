@@ -45,12 +45,13 @@ export const Tooltip = styled.div`
 		rgba(0, 0, 0, 0.06) 0px 4px 16px 0px;
 `;
 export const A = styled.a`
+	position: relative;
 	display: block;
 	height: 48px;
 	width: 48px;
+	box-sizing: border-box;
 	border-radius: 12px;
 	overflow: visible;
-	position: relative;
 	text-decoration: none;
 	display: flex;
 	align-items: center;
@@ -63,16 +64,15 @@ export const A = styled.a`
 	cursor: pointer;
 `;
 export const Wrapper = styled.div<ItemWrapperProps>`
+	position: relative;
 	flex: none;
 	height: auto;
-	position: relative;
 	width: auto;
 	&:hover ${A} {
 		background-color: ${({ $hoverColor }) => $hoverColor};
 	}
 	&:hover ${Tooltip} {
 		animation: ${fadeIn} 0.1s linear forwards;
-		left: ${({ $tooltipWidth }) => $tooltipWidth}px;
 	}
 	&:not(:hover) ${Tooltip} {
 		animation: ${fadeOut} 0.1s linear forwards;

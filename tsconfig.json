@@ -1,42 +1,35 @@
 {
-  "compilerOptions": {
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "incremental": true,
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
-    "baseUrl": "./src/",
-    "paths": {
-      "public/*": [
-        "./public/*"
-      ]
-    }
-  },
-  "include": [
-    "src",
+	"compilerOptions": {
+		"lib": ["dom", "dom.iterable", "esnext"],
+		"allowJs": true,
+		"skipLibCheck": true,
+		"strict": true,
+		"noEmit": true,
+		"esModuleInterop": true,
+		"module": "esnext",
+		"moduleResolution": "bundler",
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"jsx": "preserve",
+		"incremental": true,
+		"plugins": [
+			{
+				"name": "next"
+			}
+		],
+		"baseUrl": "./src/",
+		"paths": {
+			"public/*": ["./public/*"],
+			"locales/*": ["./locales/*"],
+		}
+	},
+	"include": [
+		"src",
 		"tests",
-    "./jest.setup.ts",
+		"./jest.setup.ts",
 		"./jest.config.ts",
 		"./playwright.config.ts",
-    ".next/types/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules",
-  ]
+		".next/types/**/*.ts"
+	],
+	"exclude": ["node_modules"]
 }

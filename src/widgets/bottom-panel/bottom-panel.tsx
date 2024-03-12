@@ -9,8 +9,8 @@ import { Nav, Wrapper } from './bottom-panel.styled';
 export const BottomPanel: FC = () => (
 	<Wrapper>
 		<Nav>
-			{BOTTOM_PANEL_ITEMS.map(({ id, ...props }) => (
-				<Item key={ id } { ...props } />
+			{BOTTOM_PANEL_ITEMS.map((props) => (
+				<Item key={ props.id } { ...props } />
 			))}
 		</Nav>
 	</Wrapper>

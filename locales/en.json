@@ -1,0 +1,11 @@
+{
+	"RootLocaleLayout": {
+    "title": "my portfolio",
+    "description": "this is my portfolio"
+  },
+	"BottomPanel": {
+		"tooltip-1": "Home",
+		"tooltip-2": "About me",
+		"tooltip-3": "Projects"
+	}
+}

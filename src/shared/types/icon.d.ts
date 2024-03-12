@@ -3,6 +3,5 @@ declare module Icon {
 		Icon: any;
 		color: string;
 		id: string;
-		tooltip: string;
 	}
 }

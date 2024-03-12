@@ -1,14 +1,16 @@
-import { FC, useRef } from 'react';
+import { FC } from 'react';
+import { useTranslations } from 'next-intl';
 
 import { Wrapper, A, Tooltip } from './item.styled';
 
-export const Item: FC<Omit<Icon.Props, 'id'>> = ({ Icon, tooltip, color }) => {
-	const tooltipRef = useRef<HTMLDivElement>(null);
+export const Item: FC<Icon.Props> = ({ Icon, color, id }) => {
+	const t = useTranslations('BottomPanel');
+	const tooltip = t(`tooltip-${id}`);
 
 	return (
-		<Wrapper $hoverColor={ color } $tooltipWidth={ tooltipRef.current?.offsetWidth } data-testid='item'>
-			<Tooltip ref={ tooltipRef }>{tooltip}</Tooltip>
+		<Wrapper $hoverColor={ color } data-testid='item'>
 			<A title={ tooltip }>
+				<Tooltip>{tooltip}</Tooltip>
 				<Icon />
 			</A>
 		</Wrapper>
