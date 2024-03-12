@@ -1,0 +1,11 @@
+{
+	"RootLocaleLayout": {
+    "title": "моё портфолио",
+    "description": "это моё портфолио"
+  },
+	"BottomPanel": {
+		"tooltip-1": "Домой",
+		"tooltip-2": "Обо мне",
+		"tooltip-3": "Проекты"
+	}
+}

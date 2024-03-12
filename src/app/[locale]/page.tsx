@@ -1,4 +1,4 @@
 import { FC } from 'react';
 
-const Home: FC = () => <div>HOME PAGE</div>;
+const Home: FC = () => <div>HOME</div>;
 export default Home;
