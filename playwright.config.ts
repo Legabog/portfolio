@@ -9,7 +9,7 @@ export default defineConfig({
 	testDir: './src',
 	testMatch: ['**/*.e2e.spec.ts', '**/*.e2e.spec.tsx'],
 	webServer: {
-		command: 'npm run start',
+		command: 'npm run build && npm run preview -- --port 3000',
 		url: process.env.TEST_ENV_BASE_URL,
 		reuseExistingServer: !process.env.CI,
 		stdout: 'ignore',
@@ -50,32 +50,5 @@ export default defineConfig({
 			name: 'webkit',
 			use: { ...devices['Desktop Safari'] },
 		},
-
-		/* Test against mobile viewports. */
-		// {
-		//   name: 'Mobile Chrome',
-		//   use: { ...devices['Pixel 5'] },
-		// },
-		// {
-		//   name: 'Mobile Safari',
-		//   use: { ...devices['iPhone 12'] },
-		// },
-
-		/* Test against branded browsers. */
-		// {
-		//   name: 'Microsoft Edge',
-		//   use: { ...devices['Desktop Edge'], channel: 'msedge' },
-		// },
-		// {
-		//   name: 'Google Chrome',
-		//   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
-		// },
 	],
-
-	/* Run your local dev server before starting the tests */
-	// webServer: {
-	//   command: 'npm run start',
-	//   url: 'http://127.0.0.1:3000',
-	//   reuseExistingServer: !process.env.CI,
-	// },
 });
