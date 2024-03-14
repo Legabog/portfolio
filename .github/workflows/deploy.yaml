@@ -52,7 +52,7 @@ jobs:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
 
   e2e:
-    needs: deploy
+    needs: lint
     timeout-minutes: 60
     runs-on: ubuntu-latest
     container:

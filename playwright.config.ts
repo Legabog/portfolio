@@ -11,7 +11,7 @@ export default defineConfig({
 	webServer: {
 		command: 'npm run start',
 		url: process.env.TEST_ENV_BASE_URL,
-		reuseExistingServer: !process.env.CI,
+		reuseExistingServer: true,
 		stdout: 'ignore',
 		stderr: 'pipe',
 	},
