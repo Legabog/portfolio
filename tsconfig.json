@@ -17,16 +17,22 @@
 				"name": "next"
 			}
 		],
-		"baseUrl": "./src/",
+		"baseUrl": ".",
 		"paths": {
-			"public/*": ["./public/*"],
-			"locales/*": ["./locales/*"]
+			"@app/*": ["./src/app/*"],
+			"@shared/*": ["./src/shared/*"],
+			"@widgets": ["./src/widgets"],
+			"@locales": ["src/locales.ts"],
+			"@messages/*": ["./messages/*"],
+			"@public/*": ["./public/*"],
+			"@mocks": ["./mocks"]
 		}
 	},
 	"include": [
 		"src",
-		"tests",
+		"mocks",
 		"./jest.setup.ts",
+		"./next.config.mjs",
 		"./jest.config.ts",
 		"./playwright.config.ts",
 		"./sentry.client.config.ts",

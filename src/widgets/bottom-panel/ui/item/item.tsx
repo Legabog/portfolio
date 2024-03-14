@@ -9,7 +9,7 @@ export const Item: FC<Icon.Props> = ({ Icon, color, id }) => {
 
 	return (
 		<Wrapper $hoverColor={ color } data-testid='item'>
-			<A title={ tooltip }>
+			<A data-testid='tooltip' title={ tooltip }>
 				<Tooltip>{tooltip}</Tooltip>
 				<Icon />
 			</A>

@@ -12,10 +12,10 @@ const config: Config = {
 	testEnvironment: 'jsdom',
 	// Add more setup options before each test is run
 	setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
-	testPathIgnorePatterns: ['/node_modules/', '/.next/', '/public/', '/tests/'],
+	testPathIgnorePatterns: ['/node_modules/', '/.next/', '/public/', '.*e2e\\.spec\\.tsx?$'],
 	moduleNameMapper: {
 		'^@/(.*)$': '<rootDir>/src/$1',
-		'^shared/ui(.*)$': '<rootDir>/src/shared/ui$1',
+		'^@shared/ui(.*)$': '<rootDir>/src/shared/ui$1',
 	},
 };
 

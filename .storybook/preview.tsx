@@ -2,8 +2,8 @@ import React from 'react';
 import type { Preview } from '@storybook/react';
 import { NextIntlClientProvider } from 'next-intl';
 
-import en from '../locales/en.json';
-import ru from '../locales/ru.json';
+import en from '../messages/en.json';
+import ru from '../messages/ru.json';
 
 const getLanguage = (locale: string) => {
 	switch (locale) {
@@ -26,7 +26,7 @@ const preview: Preview = {
 	},
 	globalTypes: {
 		locale: {
-			description: 'Global language for components',
+			description: 'Language for components',
 			defaultValue: 'en',
 			toolbar: {
 				title: 'Language',

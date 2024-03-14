@@ -1,4 +1,4 @@
-import { HomeIcon, AboutIcon, ProjectsIcon } from 'shared/ui';
+import { HomeIcon, AboutIcon, ProjectsIcon } from '@shared/ui';
 
 export const BOTTOM_PANEL_ITEMS: Icon.Props[] = [
 	{
