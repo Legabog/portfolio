@@ -3,7 +3,7 @@ name: deploy pipeline
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-  TEST_ENV_BASE_URL: 'https://cv-lega.vercel.app'
+  HOME: /root
 
 on:
   push:
@@ -55,6 +55,8 @@ jobs:
     needs: deploy
     timeout-minutes: 60
     runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright:v1.42.1-jammy
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4

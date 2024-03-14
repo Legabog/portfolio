@@ -9,7 +9,7 @@ export default defineConfig({
 	testDir: './src',
 	testMatch: ['**/*.e2e.spec.ts', '**/*.e2e.spec.tsx'],
 	webServer: {
-		command: 'npm run build && npm run preview -- --port 3000',
+		command: 'npm run start',
 		url: process.env.TEST_ENV_BASE_URL,
 		reuseExistingServer: !process.env.CI,
 		stdout: 'ignore',
