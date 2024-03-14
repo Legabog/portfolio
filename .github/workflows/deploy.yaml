@@ -3,7 +3,6 @@ name: deploy pipeline
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-  HOME: /root
 
 on:
   push:
@@ -68,6 +67,8 @@ jobs:
         run: npx playwright install --with-deps
       - name: Run Playwright tests
         run: npx playwright test
+        env:
+          HOME: /root
       - uses: actions/upload-artifact@v3
         with:
           name: playwright-report
