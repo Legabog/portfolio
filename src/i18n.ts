@@ -7,8 +7,8 @@ import { type AbstractIntlMessages } from 'next-intl';
 import { locales, type Locale } from './locales';
 
 const messageImports = {
-	en: () => import('../locales/en.json'),
-	ru: () => import('../locales/ru.json'),
+	en: () => import('../messages/en.json'),
+	ru: () => import('../messages/ru.json'),
 } as const satisfies Record<Locale, () => Promise<{ default: AbstractIntlMessages }>>;
 
 export function isValidLocale(locale: unknown): locale is Locale {

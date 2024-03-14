@@ -6,7 +6,15 @@ require('dotenv').config();
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
-	testDir: './tests',
+	testDir: './src',
+	testMatch: ['**/*.e2e.spec.ts', '**/*.e2e.spec.tsx'],
+	webServer: {
+		command: 'npm run start',
+		url: process.env.TEST_ENV_BASE_URL,
+		reuseExistingServer: !process.env.CI,
+		stdout: 'ignore',
+		stderr: 'pipe',
+	},
 	/* Run tests in files in parallel */
 	fullyParallel: true,
 	/* Fail the build on CI if you accidentally left test.only in the source code. */
