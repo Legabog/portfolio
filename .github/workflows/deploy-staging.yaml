@@ -21,18 +21,6 @@ jobs:
       - run: npm run lint
       - run: npm run lint:types
       - run: npm run test
-  deploy:
-    needs: lint
-    runs-on: ubuntu-latest
-    concurrency:
-      group: staging
-      cancel-in-progress: true
-    steps:
-      - uses: actions/checkout@v4
-      - run: npm install --global vercel
-      - run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
-      - run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
-      - run: vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }}
   chromatic:
     needs: lint
     runs-on: ubuntu-latest
