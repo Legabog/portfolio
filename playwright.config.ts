@@ -8,13 +8,14 @@ require('dotenv').config();
 export default defineConfig({
 	testDir: './src',
 	testMatch: ['**/*.e2e.spec.ts', '**/*.e2e.spec.tsx'],
-	webServer: {
-		command: 'npm run start',
-		url: process.env.TEST_ENV_BASE_URL,
-		reuseExistingServer: true,
-		stdout: 'ignore',
-		stderr: 'pipe',
-	},
+	webServer: process.env.CI
+		? undefined
+		: {
+				command: `yarn dev`,
+				url: process.env.TEST_ENV_BASE_URL,
+				timeout: 120 * 1000,
+				reuseExistingServer: true,
+			},
 	/* Run tests in files in parallel */
 	fullyParallel: true,
 	/* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -28,7 +29,7 @@ export default defineConfig({
 	/* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
 	use: {
 		/* Base URL to use in actions like `await page.goto('/')`. */
-		baseURL: process.env.TEST_ENV_BASE_URL,
+		baseURL: process.env.TEST_ENV_BASE_URL || 'http://localhost:5123',
 
 		/* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
 		trace: 'on-first-retry',

@@ -3,7 +3,6 @@ name: deploy pipeline
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-  TEST_ENV_BASE_URL: https://cv-lega.vercel.app/
 
 on:
   push:
@@ -52,7 +51,7 @@ jobs:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
 
   e2e:
-    needs: lint
+    needs: deploy
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
@@ -66,6 +65,8 @@ jobs:
         run: npx playwright install --with-deps
       - name: Run Playwright tests
         run: npx playwright test
+        env:
+          PLAYWRIGHT_TEST_BASE_URL: ${{ github.event.deployment_status.target_url }}
       - uses: actions/upload-artifact@v3
         with:
           name: playwright-report
