@@ -4,8 +4,8 @@ import { Inter } from 'next/font/google';
 import { getMessages, getTranslations } from 'next-intl/server';
 import { NextIntlClientProvider } from 'next-intl';
 
-import type { Locale } from '@locales';
 import { BottomPanel } from '@widgets';
+import type { Locale } from '@locales';
 import { RootLocaleLayoutProps } from './types';
 
 const inter = Inter({ subsets: ['latin'] });
