@@ -11,7 +11,7 @@ export default defineConfig({
 	webServer: process.env.CI
 		? undefined
 		: {
-				command: `yarn dev`,
+				command: `npm run dev`,
 				url: process.env.TEST_ENV_BASE_URL,
 				timeout: 120 * 1000,
 				reuseExistingServer: true,
