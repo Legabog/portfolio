@@ -17,7 +17,7 @@ export default defineConfig({
 				reuseExistingServer: true,
 			},
 	use: {
-		baseURL: process.env.PLAYWRIGHT_TEST_BASE_URL || 'http://localhost:3000',
+		baseURL: process.env.TEST_ENV_BASE_URL,
 	},
 	/* Run tests in files in parallel */
 	fullyParallel: true,
