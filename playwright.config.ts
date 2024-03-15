@@ -8,14 +8,6 @@ require('dotenv').config();
 export default defineConfig({
 	testDir: './src',
 	testMatch: ['**/*.e2e.spec.ts', '**/*.e2e.spec.tsx'],
-	// webServer: process.env.CI
-	// 	? undefined
-	// 	: {
-	// 			command: `npm run dev`,
-	// 			url: process.env.TEST_ENV_BASE_URL,
-	// 			timeout: 120 * 1000,
-	// 			reuseExistingServer: true,
-	// 		},
 	use: {
 		/* Base URL to use in actions like `await page.goto('/')`. */
 		baseURL: process.env.TEST_ENV_BASE_URL,
