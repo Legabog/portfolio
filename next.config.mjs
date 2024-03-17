@@ -4,7 +4,12 @@ import createNextIntlPlugin from 'next-intl/plugin';
 const withNextIntl = createNextIntlPlugin();
 
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+	transpilePackages: ['three'],
+	compiler: {
+    styledComponents: true,
+  },
+};
 
 export default withSentryConfig(
 	withNextIntl(nextConfig),
