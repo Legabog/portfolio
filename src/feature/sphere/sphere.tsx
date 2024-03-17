@@ -2,12 +2,7 @@
 'use client';
 
 import { Suspense, useEffect, useState, useRef } from 'react';
-import {
-	MathUtils,
-	PointLight,
-	SphereGeometry as SphereGeometryThree,
-	BufferGeometry,
-} from 'three';
+import { MathUtils, PointLight } from 'three';
 import { useFrame } from '@react-three/fiber';
 import {
 	PerspectiveCamera,
@@ -21,8 +16,6 @@ import { a } from '@react-spring/three';
 import type { SphereMesh } from './types';
 
 const AnimatedMaterial = a(MeshDistortMaterial);
-const SphereGeometry = new SphereGeometryThree(4, 3, 2);
-const SphereBufferGeometry = new BufferGeometry().copy(SphereGeometry);
 
 const Sphere = ({ setBg }) => {
 	const sphere = useRef<SphereMesh>(null);
@@ -45,17 +38,18 @@ const Sphere = ({ setBg }) => {
 	useFrame((state) => {
 		(light.current as PointLight).position.x = state.pointer.x * 20;
 		(light.current as PointLight).position.y = state.pointer.y * 20;
-
-		(sphere.current as SphereMesh).position.x = MathUtils.lerp(
-			(sphere.current as SphereMesh).position.x,
-			hovered ? state.pointer.x / 2 : 0,
-			0.2,
-		);
-		(sphere.current as SphereMesh).position.y = MathUtils.lerp(
-			(sphere.current as SphereMesh).position.y,
-			Math.sin(state.clock.elapsedTime / 1.5) / 6 + (hovered ? state.pointer.y / 2 : 0),
-			0.2,
-		);
+		if (sphere.current) {
+			(sphere.current as SphereMesh).position.x = MathUtils.lerp(
+				(sphere.current as SphereMesh).position.x,
+				hovered ? state.pointer.x / 2 : 0,
+				0.2,
+			);
+			(sphere.current as SphereMesh).position.y = MathUtils.lerp(
+				(sphere.current as SphereMesh).position.y,
+				Math.sin(state.clock.elapsedTime / 1.5) / 6 + (hovered ? state.pointer.y / 2 : 0),
+				0.2,
+			);
+		}
 	});
 
 	// Springs for color and overall looks, this is state-driven animation
@@ -94,7 +88,7 @@ const Sphere = ({ setBg }) => {
 						});
 					}}
 				>
-					<primitive object={SphereBufferGeometry} />
+					<sphereGeometry args={[1, 64, 64]} />
 					<AnimatedMaterial
 						clearcoat={coat}
 						clearcoatRoughness={0}
