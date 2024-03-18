@@ -14,6 +14,7 @@ export const THEME = {
 				fill: orange,
 			},
 		},
+		bottomPanelItems: ['#503C3C', '#005B41', '#37306B'],
 	},
 	light: {
 		color: black,
@@ -24,5 +25,6 @@ export const THEME = {
 				fill: black,
 			},
 		},
+		bottomPanelItems: ['#fac99c', '#b0e3b6', '#c8adfa'],
 	},
 };
