@@ -15,7 +15,6 @@ const Home: FC = () => (
 			<TypeAnimation
 				repeat={ Infinity }
 				sequence={ [
-					// Same substring at the start will only be typed once, initially
 					'We produce food for Mice',
 					1000,
 					'We produce food for Hamsters',

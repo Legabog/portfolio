@@ -30,8 +30,8 @@ const Sphere = () => {
 	}, [hovered]);
 
 	useFrame((state) => {
-		(light.current as PointLight).position.x = state.pointer.x * 20;
-		(light.current as PointLight).position.y = state.pointer.y * 20;
+		(light.current as PointLight).position.x = state.pointer.x * 30;
+		(light.current as PointLight).position.y = state.pointer.y * 30;
 
 		if (sphere.current) {
 			(sphere.current as SphereMesh).position.x = MathUtils.lerp(
@@ -50,10 +50,10 @@ const Sphere = () => {
 	const [{ wobble, coat, color, ambient, env }] = useSpring(
 		{
 			wobble: down ? 1.2 : hovered ? 1.05 : 1,
-			coat: mode && !hovered ? 0.04 : 1,
-			ambient: mode && !hovered ? 1.5 : 0,
-			env: mode && !hovered ? 0.4 : 1,
-			color: hovered ? '#E8B059' : themeType === 'dark' ? '#202020' : '#fff',
+			coat: mode && !hovered ? 0.04 : 0.4,
+			ambient: mode && !hovered ? 1.5 : 0.5,
+			env: mode && !hovered ? 0.4 : 2,
+			color: hovered ? '#E8B059' : themeType === 'dark' ? '#202020' : '#f0f0f0',
 			config: (n) => n === 'wobble' && hovered && { mass: 2, tension: 1000, friction: 10 },
 		} as object,
 		[mode, hovered, down],
@@ -63,7 +63,7 @@ const Sphere = () => {
 		<>
 			<PerspectiveCamera fov={ 75 } position={ [0, 0, 5] } makeDefault>
 				<a.ambientLight intensity={ ambient } />
-				<a.pointLight ref={ light } color='#F8C069' intensity={ env } />
+				<a.pointLight ref={ light } color='#F8C069' intensity={ env } position-z={ -15 } />
 			</PerspectiveCamera>
 			<Suspense fallback={ null }>
 				<a.mesh
@@ -79,15 +79,16 @@ const Sphere = () => {
 					} }
 				>
 					<sphereGeometry args={ [1, 64, 64] } />
-					<AnimatedMaterial clearcoat={ coat } color={ color } envMapIntensity={ env } />
+					<AnimatedMaterial
+						clearcoat={ coat }
+						clearcoatRoughness={ 0 }
+						color={ color }
+						envMapIntensity={ env }
+						metalness={ 0.1 }
+					/>
 				</a.mesh>
 				<Environment preset='warehouse' />
-				<ContactShadows
-					blur={ 2.5 }
-					far={ 1.6 }
-					opacity={ hovered ? 0.5 : 0.4 }
-					position={ [0, -1.6, 0] }
-				/>
+				<ContactShadows blur={ 2.5 } far={ 1.6 } opacity={ mode ? 0.6 : 0.4 } position={ [0, -1.6, 0] } />
 			</Suspense>
 		</>
 	);
