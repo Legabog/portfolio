@@ -14,5 +14,9 @@ export const GlobalStyles = createGlobalStyle`
   	display: flex;
 		flex-direction: row;
 		min-height: 100vh;
+
+		@media only screen and (max-aspect-ratio: 8/7) {
+    	flex-direction: column;
+		}
 	}
 `;

@@ -5,6 +5,9 @@ export const TextWrapper = styled.div`
 	order: 1;
 	flex: 1;
 	pointer-events: none;
+	@media only screen and (max-aspect-ratio: 8/7) {
+		order: 2;
+	}
 `;
 export const CanvasWrapper = styled.div`
 	display: flex;
@@ -13,4 +16,8 @@ export const CanvasWrapper = styled.div`
 	order: 2;
 	flex: 1;
 	min-height: 100vh;
+
+	@media only screen and (max-aspect-ratio: 8/7) {
+		order: 1;
+	}
 `;
