@@ -31,18 +31,18 @@ export const Tooltip = styled.div`
 	opacity: 0;
 	padding: 4px 8px;
 	position: absolute;
-	border: 1px rgba(0, 0, 0, 0.1) solid;
-	background-color: rgb(248, 248, 248);
+	border: 1px ${({ theme }) => theme.boxShadow} solid;
+	background-color: ${({ theme }) => theme.backgroundColor};
 	white-space: pre;
 	height: min-content;
 	width: min-content;
-	color: rgb(110, 110, 110);
+	color: ${({ theme }) => theme.color};
 	pointer-events: none;
 	border-radius: 8px;
 	box-shadow:
-		rgba(0, 0, 0, 0.04) 0px 0px 4px 0px,
-		rgba(0, 0, 0, 0.06) 0px 2px 8px 0px,
-		rgba(0, 0, 0, 0.06) 0px 4px 16px 0px;
+		${({ theme }) => theme.boxShadow} 0px 0px 4px 0px,
+		${({ theme }) => theme.boxShadow} 0px 2px 8px 0px,
+		${({ theme }) => theme.boxShadow} 0px 4px 16px 0px;
 `;
 export const A = styled.a`
 	position: relative;
@@ -59,8 +59,8 @@ export const A = styled.a`
 	border: 1px rgba(0, 0, 0, 0.1) solid;
 	border-radius: 12px;
 	box-shadow:
-		0px 1px 4px 0px rgba(0, 0, 0, 0.04),
-		0px 2px 8px 0px rgba(0, 0, 0, 0.04);
+		0px 1px 4px 0px ${({ theme }) => theme.boxShadow},
+		0px 2px 8px 0px ${({ theme }) => theme.boxShadow};
 	cursor: pointer;
 `;
 export const Wrapper = styled.div<ItemWrapperProps>`
