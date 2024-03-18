@@ -25,11 +25,11 @@ export const Nav = styled.nav`
 	width: min-content;
 
 	backdrop-filter: blur(12px);
-	background-color: rgba(248, 248, 248, 0.84);
+	background-color: ${({ theme }) => theme.backgroundColor};
 	border-radius: 24px;
 	box-shadow:
-		0px 0px 4px 0px rgba(0, 0, 0, 0.04),
-		0px 4px 16px 0px rgba(0, 0, 0, 0.04),
-		0px 8px 32px 0px rgba(0, 0, 0, 0.04);
+		0px 0px 4px 0px ${({ theme }) => theme.boxShadow},
+		0px 4px 16px 0px ${({ theme }) => theme.boxShadow},
+		0px 8px 32px 0px ${({ theme }) => theme.boxShadow};
 	opacity: 1;
 `;
