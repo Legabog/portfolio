@@ -1,6 +1,6 @@
 'use client';
 
-import { Suspense, useEffect, useState, useRef } from 'react';
+import { Suspense, useState, useRef } from 'react';
 import { MathUtils, PointLight } from 'three';
 import { useFrame } from '@react-three/fiber';
 import {
@@ -13,35 +13,47 @@ import { useSpring } from '@react-spring/core';
 import { a } from '@react-spring/three';
 
 import { useThemeStore } from '@app/model';
+import { COLORS } from '@shared/constants';
 import type { SphereMesh } from './types';
 
 const AnimatedMaterial = a(MeshDistortMaterial);
 
+const { orange, black, white } = COLORS;
+
 const Sphere = () => {
-	const { setTheme, themeType } = useThemeStore();
 	const sphere = useRef<SphereMesh>(null);
 	const light = useRef<PointLight>(null);
-	const [mode, setMode] = useState<boolean>(false);
 	const [down, setDown] = useState<boolean>(false);
 	const [hovered, setHovered] = useState<boolean>(false);
+	const { setTheme, themeType } = useThemeStore();
 
-	useEffect(() => {
-		document.body.style.cursor = hovered ? 'none' : '';
-	}, [hovered]);
+	const isDarkTheme = themeType === 'dark';
 
-	useFrame((state) => {
-		(light.current as PointLight).position.x = state.pointer.x * 30;
-		(light.current as PointLight).position.y = state.pointer.y * 30;
+	const onSpherePointerHandler = (type: 'down' | 'out' | 'over' | 'up') => {
+		const conditionalCb: { [key in typeof type]: () => void } = {
+			down: () => setDown(true),
+			out: () => setHovered(false),
+			over: () => setHovered(true),
+			up: () => {
+				setDown(false);
+				setTheme();
+			},
+		};
+		return conditionalCb[type];
+	};
 
-		if (sphere.current) {
-			(sphere.current as SphereMesh).position.x = MathUtils.lerp(
-				(sphere.current as SphereMesh).position.x,
-				hovered ? state.pointer.x / 2 : 0,
-				0.2,
-			);
-			(sphere.current as SphereMesh).position.y = MathUtils.lerp(
-				(sphere.current as SphereMesh).position.y,
-				Math.sin(state.clock.elapsedTime / 1.5) / 6 + (hovered ? state.pointer.y / 2 : 0),
+	useFrame(({ pointer, clock }) => {
+		const lightPosition = (light.current as PointLight).position;
+		const spherePosition = (sphere.current as SphereMesh)?.position;
+
+		lightPosition.x = pointer.x * 30;
+		lightPosition.y = pointer.y * 30;
+
+		if (spherePosition) {
+			spherePosition.x = MathUtils.lerp(spherePosition.x, hovered ? pointer.x / 2 : 0, 0.2);
+			spherePosition.y = MathUtils.lerp(
+				spherePosition.y,
+				Math.sin(clock.elapsedTime / 1.5) / 6 + (hovered ? pointer.y / 2 : 0),
 				0.2,
 			);
 		}
@@ -50,33 +62,29 @@ const Sphere = () => {
 	const [{ wobble, coat, color, ambient, env }] = useSpring(
 		{
 			wobble: down ? 1.2 : hovered ? 1.05 : 1,
-			coat: mode && !hovered ? 0.04 : 0.4,
-			ambient: mode && !hovered ? 1.5 : 0.5,
-			env: mode && !hovered ? 0.4 : 2,
-			color: hovered ? '#E8B059' : themeType === 'dark' ? '#202020' : '#f0f0f0',
+			coat: isDarkTheme ? 0.04 : 0.4,
+			ambient: isDarkTheme ? 1.5 : 0.5,
+			env: isDarkTheme ? 0.4 : 2,
+			color: hovered ? orange : isDarkTheme ? black : white,
 			config: (n) => n === 'wobble' && hovered && { mass: 2, tension: 1000, friction: 10 },
 		} as object,
-		[mode, hovered, down],
+		[hovered, down],
 	);
 
 	return (
 		<>
-			<PerspectiveCamera fov={ 75 } position={ [0, 0, 5] } makeDefault>
+			<PerspectiveCamera fov={ 75 } position={ [0, 0, 4] } makeDefault>
 				<a.ambientLight intensity={ ambient } />
-				<a.pointLight ref={ light } color='#F8C069' intensity={ env } position-z={ -15 } />
+				<a.pointLight ref={ light } color={ orange } intensity={ env } />
 			</PerspectiveCamera>
 			<Suspense fallback={ null }>
 				<a.mesh
 					ref={ sphere }
 					scale={ wobble }
-					onPointerDown={ () => setDown(true) }
-					onPointerOut={ () => setHovered(false) }
-					onPointerOver={ () => setHovered(true) }
-					onPointerUp={ () => {
-						setDown(false);
-						setMode(!mode);
-						setTheme();
-					} }
+					onPointerDown={ onSpherePointerHandler('down') }
+					onPointerOut={ onSpherePointerHandler('out') }
+					onPointerOver={ onSpherePointerHandler('over') }
+					onPointerUp={ onSpherePointerHandler('up') }
 				>
 					<sphereGeometry args={ [1, 64, 64] } />
 					<AnimatedMaterial
@@ -84,11 +92,16 @@ const Sphere = () => {
 						clearcoatRoughness={ 0 }
 						color={ color }
 						envMapIntensity={ env }
-						metalness={ 0.1 }
+						speed={ 5 }
 					/>
 				</a.mesh>
 				<Environment preset='warehouse' />
-				<ContactShadows blur={ 2.5 } far={ 1.6 } opacity={ mode ? 0.6 : 0.4 } position={ [0, -1.6, 0] } />
+				<ContactShadows
+					blur={ 2.5 }
+					far={ 1.6 }
+					opacity={ isDarkTheme ? 0.6 : 0.4 }
+					position={ [0, -1.6, 0] }
+				/>
 			</Suspense>
 		</>
 	);

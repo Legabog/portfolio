@@ -19,5 +19,9 @@ export const CanvasWrapper = styled.div`
 
 	@media only screen and (max-aspect-ratio: 8/7) {
 		order: 1;
+
+		& canvas {
+			min-height: 100vh;
+		}
 	}
 `;
