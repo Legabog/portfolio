@@ -1,6 +1,6 @@
 declare module Icon {
 	interface Props {
-		Icon: any;
+		Icon: import('react').FC;
 		color: string;
 		id: string;
 	}

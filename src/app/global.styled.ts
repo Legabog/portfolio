@@ -6,13 +6,12 @@ export const GlobalStyles = createGlobalStyle`
   }
   body {
     min-height: 100vh;
+		background: ${({ theme }) => theme.backgroundColor};
+		transition: background-color 0.5s;
   }  
 	main {
   	display: flex;
 		flex-direction: row;
-		min-height: 100vh;
-  	background: ${({ theme }) => theme.backgroundColor};
-		transition: background-color 0.5s;
 
 		@media only screen and (max-aspect-ratio: 8/7) {
     	flex-direction: column;
