@@ -1,6 +1,33 @@
 import styled, { keyframes } from 'styled-components';
 
-import { ItemWrapperProps } from './types';
+export const Wrapper = styled.div`
+	position: fixed;
+	left: 50%;
+	transform: translate(-50%);
+`;
+export const Nav = styled.nav`
+	display: flex;
+	flex-direction: row;
+	align-content: center;
+	align-items: center;
+	flex-wrap: nowrap;
+	gap: 12px;
+	height: min-content;
+	justify-content: center;
+	overflow: visible;
+	padding: 12px;
+	position: relative;
+	width: min-content;
+
+	backdrop-filter: blur(12px);
+	background-color: ${({ theme }) => theme.backgroundColor};
+	border-radius: 12px;
+	box-shadow:
+		0px 0px 4px 0px ${({ theme }) => theme.boxShadow},
+		0px 4px 16px 0px ${({ theme }) => theme.boxShadow},
+		0px 8px 32px 0px ${({ theme }) => theme.boxShadow};
+	opacity: 1;
+`;
 
 const fadeIn = keyframes`
 	from {
@@ -47,10 +74,10 @@ export const Tooltip = styled.div`
 export const A = styled.a`
 	position: relative;
 	display: block;
-	height: 48px;
-	width: 48px;
+	height: 28px;
+	width: 28px;
 	box-sizing: border-box;
-	border-radius: 12px;
+	border-radius: 7px;
 	overflow: visible;
 	text-decoration: none;
 	display: flex;
@@ -63,12 +90,12 @@ export const A = styled.a`
 		0px 2px 8px 0px ${({ theme }) => theme.boxShadow};
 	cursor: pointer;
 `;
-export const Wrapper = styled.div<ItemWrapperProps>`
+export const WrapperItem = styled.div`
 	position: relative;
 	flex: none;
 	height: auto;
 	width: auto;
-	&:hover ${A} {
+	/* &:hover ${A} {
 		background-color: ${({ $hoverColor }) => $hoverColor};
 	}
 	&:hover ${Tooltip} {
@@ -76,5 +103,5 @@ export const Wrapper = styled.div<ItemWrapperProps>`
 	}
 	&:not(:hover) ${Tooltip} {
 		animation: ${fadeOut} 0.1s linear forwards;
-	}
+	} */
 `;

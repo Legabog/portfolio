@@ -4,7 +4,7 @@ import { FC } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import { a } from '@react-spring/web';
-import { TypeAnimation } from 'react-type-animation';
+// import { TypeAnimation } from 'react-type-animation';
 
 import Sphere from 'src/feature/sphere/sphere';
 import { TextWrapper, CanvasWrapper } from './page.styled';
@@ -12,11 +12,11 @@ import { TextWrapper, CanvasWrapper } from './page.styled';
 const Home: FC = () => (
 	<a.main>
 		<TextWrapper>
-			<TypeAnimation
+			{/* <TypeAnimation
 				sequence={ [`Hello!`, 1000] }
 				speed={ 50 }
 				style={ { fontSize: '66px', fontWeight: 'bold' } }
-			/>
+			/> */}
 		</TextWrapper>
 		<CanvasWrapper>
 			<Canvas dpr={ [1, 2] }>

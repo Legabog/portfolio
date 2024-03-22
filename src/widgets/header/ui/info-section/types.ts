@@ -1,7 +1,7 @@
-import { ReactNode } from 'react';
+import { FC } from 'react';
 
 export interface Item {
-	Icon: ReactNode;
+	Icon: FC;
 	id: string;
 	text: string;
 	url: string;

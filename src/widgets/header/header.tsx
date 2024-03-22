@@ -2,12 +2,13 @@
 
 import { FC } from 'react';
 
-import { InfoSection, MainIcon } from './ui';
+import { IconSection, InfoSection, SwitcherSection } from './ui';
 import { Wrapper } from './header.styled';
 
 export const Header: FC = () => (
 	<Wrapper>
-		<MainIcon />
+		<IconSection />
+		<SwitcherSection />
 		<InfoSection />
 	</Wrapper>
 );
