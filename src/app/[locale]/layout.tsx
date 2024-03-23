@@ -4,7 +4,7 @@ import { Inter } from 'next/font/google';
 import { getMessages, getTranslations } from 'next-intl/server';
 import { NextIntlClientProvider } from 'next-intl';
 
-import { BottomPanel } from '@widgets';
+import { BottomPanel, Header } from '@widgets';
 import type { Locale } from '@locales';
 import { RootLocaleLayoutProps } from './types';
 
@@ -30,6 +30,7 @@ const RootLocaleLayout: FC<RootLocaleLayoutProps> = async ({ children, params: {
 		<html lang={ locale }>
 			<body className={ inter.className }>
 				<NextIntlClientProvider messages={ messages }>
+					<Header />
 					{children}
 					<BottomPanel />
 				</NextIntlClientProvider>

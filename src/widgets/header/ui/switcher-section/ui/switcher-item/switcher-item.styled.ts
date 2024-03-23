@@ -1,27 +1,25 @@
 import styled, { keyframes } from 'styled-components';
 
-import { ItemWrapperProps } from './types';
-
 const fadeIn = keyframes`
 	from {
 		opacity: 0;
-		top: -38px;
+		top: 30px;
 	}
 	to {
 		opacity: 1;
-		top: -46px;
+		top: 38px;
 	}
-`;
+	`;
 const fadeOut = keyframes`
 	from {
 		opacity: 1;
-		top: -46px;
+		top: 38px;
 	}
 	to {
 		opacity: 0;
-		top: -38px;
+		top: 30px;
 	}
-`;
+	`;
 export const Tooltip = styled.div`
 	display: flex;
 	flex: none;
@@ -38,38 +36,37 @@ export const Tooltip = styled.div`
 	width: min-content;
 	color: ${({ theme }) => theme.color};
 	pointer-events: none;
-	border-radius: 8px;
+	border-radius: 6px;
 	box-shadow:
 		${({ theme }) => theme.boxShadow} 0px 0px 4px 0px,
 		${({ theme }) => theme.boxShadow} 0px 2px 8px 0px,
 		${({ theme }) => theme.boxShadow} 0px 4px 16px 0px;
 `;
-export const A = styled.a`
+export const A = styled.a<{ $isActvie: boolean }>`
 	position: relative;
 	display: block;
-	height: 48px;
-	width: 48px;
+	height: 28px;
+	width: 28px;
 	box-sizing: border-box;
-	border-radius: 12px;
+	border-radius: 7px;
 	overflow: visible;
 	text-decoration: none;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	border: 1px rgba(0, 0, 0, 0.1) solid;
-	border-radius: 12px;
-	box-shadow:
-		0px 1px 4px 0px ${({ theme }) => theme.boxShadow},
-		0px 2px 8px 0px ${({ theme }) => theme.boxShadow};
+	background-color: ${({ $isActvie }) => $isActvie && 'rgba(0, 0, 0, 0.1)'};
 	cursor: pointer;
+	transition: background-color 0.5s;
 `;
-export const Wrapper = styled.div<ItemWrapperProps>`
+export const Wrapper = styled.div`
 	position: relative;
 	flex: none;
 	height: auto;
 	width: auto;
+	font-size: 14px;
+	font-weight: 500;
 	&:hover ${A} {
-		background-color: ${({ $hoverColor }) => $hoverColor};
+		background-color: rgba(0, 0, 0, 0.2);
 	}
 	&:hover ${Tooltip} {
 		animation: ${fadeIn} 0.1s linear forwards;
@@ -77,4 +74,7 @@ export const Wrapper = styled.div<ItemWrapperProps>`
 	&:not(:hover) ${Tooltip} {
 		animation: ${fadeOut} 0.1s linear forwards;
 	}
+`;
+export const Text = styled.span`
+	color: ${({ theme }) => theme.color};
 `;

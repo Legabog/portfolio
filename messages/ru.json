@@ -7,5 +7,11 @@
 		"tooltip-1": "Домой",
 		"tooltip-2": "Обо мне",
 		"tooltip-3": "Проекты"
+	},
+	"Header": {
+		"switcher": {
+			"tooltip-1": "Русский",
+			"tooltip-2": "Английский"
+		}
 	}
 }
