@@ -6,7 +6,7 @@ import { IconSection, InfoSection, SwitcherSection } from './ui';
 import { Wrapper } from './header.styled';
 
 export const Header: FC = () => (
-	<Wrapper>
+	<Wrapper data-testid='header'>
 		<IconSection />
 		<SwitcherSection />
 		<InfoSection />

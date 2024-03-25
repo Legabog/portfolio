@@ -19,8 +19,8 @@ describe('ResumeIcon Component', () => {
 		const { getByTestId } = render(<IconWithMocks />);
 
 		const svgElement = getByTestId('resume-icon-svg');
-		expect(svgElement).toHaveAttribute('height', '24');
-		expect(svgElement).toHaveAttribute('width', '24');
+		expect(svgElement).toHaveAttribute('height', '18');
+		expect(svgElement).toHaveAttribute('width', '18');
 		expect(svgElement).toHaveAttribute('viewBox', '0 0 40 50');
 	});
 

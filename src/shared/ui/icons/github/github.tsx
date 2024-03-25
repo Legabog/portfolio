@@ -5,9 +5,9 @@ import { StyledSvg } from '@shared/ui';
 export const GithubIcon: FC = () => (
 	<StyledSvg
 		data-testid='github-icon-svg'
-		height='24'
+		height='18'
 		viewBox='0 0 98 96'
-		width='24'
+		width='18'
 		xmlns='http://www.w3.org/2000/svg'
 	>
 		<path

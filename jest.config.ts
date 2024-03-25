@@ -16,6 +16,7 @@ const config: Config = {
 	moduleNameMapper: {
 		'^@/(.*)$': '<rootDir>/src/$1',
 		'^@shared/ui(.*)$': '<rootDir>/src/shared/ui$1',
+		'@locales': '<rootDir>/src/locales.ts',
 	},
 };
 

@@ -1,4 +1,8 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
+
+import { COLORS } from '@shared/constants';
+
+const { orange } = COLORS;
 
 const fadeIn = keyframes`
 	from {
@@ -42,6 +46,9 @@ export const Tooltip = styled.div`
 		${({ theme }) => theme.boxShadow} 0px 2px 8px 0px,
 		${({ theme }) => theme.boxShadow} 0px 4px 16px 0px;
 `;
+export const Text = styled.span`
+	color: ${({ theme }) => theme.color};
+`;
 export const A = styled.a<{ $isActvie: boolean }>`
 	position: relative;
 	display: block;
@@ -54,9 +61,20 @@ export const A = styled.a<{ $isActvie: boolean }>`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background-color: ${({ $isActvie }) => $isActvie && 'rgba(0, 0, 0, 0.1)'};
 	cursor: pointer;
 	transition: background-color 0.5s;
+	${({ $isActvie }) =>
+		$isActvie &&
+		css`
+			border: 1px ${orange} solid;
+			& ${Text} {
+				color: ${orange};
+			}
+			& ${Tooltip} {
+				color: ${orange};
+				border: 1px ${orange} solid;
+			}
+		`};
 `;
 export const Wrapper = styled.div`
 	position: relative;
@@ -66,7 +84,11 @@ export const Wrapper = styled.div`
 	font-size: 14px;
 	font-weight: 500;
 	&:hover ${A} {
-		background-color: rgba(0, 0, 0, 0.2);
+		background-color: rgba(0, 0, 0, 0.1);
+	}
+	&:active ${A} {
+		transform: scale(0.95);
+		background-color: rgba(0, 0, 0, 0.15);
 	}
 	&:hover ${Tooltip} {
 		animation: ${fadeIn} 0.1s linear forwards;
@@ -74,7 +96,4 @@ export const Wrapper = styled.div`
 	&:not(:hover) ${Tooltip} {
 		animation: ${fadeOut} 0.1s linear forwards;
 	}
-`;
-export const Text = styled.span`
-	color: ${({ theme }) => theme.color};
 `;
