@@ -19,8 +19,8 @@ describe('LinkedinIcon Component', () => {
 		const { getByTestId } = render(<IconWithMocks />);
 
 		const svgElement = getByTestId('linkedin-icon-svg');
-		expect(svgElement).toHaveAttribute('height', '24');
-		expect(svgElement).toHaveAttribute('width', '24');
+		expect(svgElement).toHaveAttribute('height', '18');
+		expect(svgElement).toHaveAttribute('width', '18');
 		expect(svgElement).toHaveAttribute('viewBox', '0 0 310 310');
 	});
 

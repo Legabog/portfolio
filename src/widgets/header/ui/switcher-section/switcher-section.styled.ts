@@ -18,7 +18,6 @@ export const Nav = styled.nav`
 	padding: 6px;
 	position: relative;
 	width: min-content;
-
 	backdrop-filter: blur(12px);
 	background-color: ${({ theme }) => theme.backgroundColor};
 	border-radius: 12px;

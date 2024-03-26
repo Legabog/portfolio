@@ -30,7 +30,7 @@
 					["@app", "./src/app"],
 					["@shared", "./src/shared"],
 					["@widgets", "./src/widgets"],
-					["@locales", "src/locales.ts"],
+					["@locales", "./src/locales.ts"],
 					["@messages", "./messages"],
 					["@public", "./public"],
 					["@mocks", "./mocks"]

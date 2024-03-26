@@ -1,4 +1,4 @@
-import { Locale } from '@locales';
+import { Locale } from 'src/locales';
 
 export interface SwitcherItemProps {
 	id: string;

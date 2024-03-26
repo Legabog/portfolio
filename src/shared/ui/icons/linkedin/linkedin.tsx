@@ -5,9 +5,9 @@ import { StyledSvg } from '@shared/ui';
 export const LinkedinIcon: FC = () => (
 	<StyledSvg
 		data-testid='linkedin-icon-svg'
-		height='24'
+		height='18'
 		viewBox='0 0 310 310'
-		width='24'
+		width='18'
 		xmlns='http://www.w3.org/2000/svg'
 	>
 		<path

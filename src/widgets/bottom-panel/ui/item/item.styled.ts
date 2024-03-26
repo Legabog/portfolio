@@ -71,6 +71,9 @@ export const Wrapper = styled.div<ItemWrapperProps>`
 	&:hover ${A} {
 		background-color: ${({ $hoverColor }) => $hoverColor};
 	}
+	&:active ${A} {
+		transform: scale(0.95);
+	}
 	&:hover ${Tooltip} {
 		animation: ${fadeIn} 0.1s linear forwards;
 	}
