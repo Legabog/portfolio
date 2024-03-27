@@ -1,6 +1,6 @@
 'use client';
 
-import { Suspense, useState, useRef } from 'react';
+import { Suspense, useState, useRef, FC } from 'react';
 import { MathUtils, PointLight } from 'three';
 import { useFrame } from '@react-three/fiber';
 import {
@@ -20,7 +20,7 @@ const AnimatedMaterial = a(MeshDistortMaterial);
 
 const { orange, black, white } = COLORS;
 
-const Sphere = () => {
+export const Sphere: FC = () => {
 	const sphere = useRef<SphereMesh>(null);
 	const light = useRef<PointLight>(null);
 	const [down, setDown] = useState<boolean>(false);
@@ -106,4 +106,3 @@ const Sphere = () => {
 		</>
 	);
 };
-export default Sphere;

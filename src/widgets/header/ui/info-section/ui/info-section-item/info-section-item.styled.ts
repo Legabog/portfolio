@@ -25,4 +25,8 @@ export const Text = styled.span`
 	font-size: 14px;
 	font-weight: 500;
 	color: ${({ theme }) => theme.color};
+
+	@media only screen and (max-aspect-ratio: 8/7) {
+		display: none;
+	}
 `;

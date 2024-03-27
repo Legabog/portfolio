@@ -1,8 +1,8 @@
 {
 	"RootLocaleLayout": {
-    "title": "my portfolio",
-    "description": "this is my portfolio"
-  },
+		"title": "my portfolio",
+		"description": "this is my portfolio"
+	},
 	"BottomPanel": {
 		"tooltip-1": "Home",
 		"tooltip-2": "About me",
@@ -12,6 +12,18 @@
 		"switcher": {
 			"tooltip-1": "Russian",
 			"tooltip-2": "English"
+		},
+		"info-section": {
+			"section-1": "Github",
+			"section-2": "Linkedin",
+			"section-3": "Resume"
+		}
+	},
+	"HomePage": {
+		"typed-text": {
+			"hello": "Hello! I'm",
+			"name": "Oleg",
+			"specialization": "Front-end developer"
 		}
 	}
 }

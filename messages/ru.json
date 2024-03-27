@@ -12,6 +12,18 @@
 		"switcher": {
 			"tooltip-1": "Русский",
 			"tooltip-2": "Английский"
+		},
+		"info-section": {
+			"section-1": "Github",
+			"section-2": "Linkedin",
+			"section-3": "Резюме"
+		}
+	},
+	"HomePage": {
+		"typed-text": {
+			"hello": "Привет! Я",
+			"name": "Олег",
+			"specialization": "Front-end разработчик"
 		}
 	}
 }
