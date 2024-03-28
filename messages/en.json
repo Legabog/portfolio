@@ -1,8 +1,8 @@
 {
 	"RootLocaleLayout": {
-    "title": "my portfolio",
-    "description": "this is my portfolio"
-  },
+		"title": "my portfolio",
+		"description": "this is my portfolio"
+	},
 	"BottomPanel": {
 		"tooltip-1": "Home",
 		"tooltip-2": "About me",
@@ -12,6 +12,22 @@
 		"switcher": {
 			"tooltip-1": "Russian",
 			"tooltip-2": "English"
+		},
+		"info-section": {
+			"section-1": "Github",
+			"section-2": "Linkedin",
+			"section-3": "Resume"
+		}
+	},
+	"HomePage": {
+		"typed-text": {
+			"hello": "Hello! I'm",
+			"name": "Oleg",
+			"specialization": "Front-end developer",
+			"extra-info": "Lover of awesome web applications",
+			"crypto": "Learning blockchain and web3 technologies",
+			"egg": "Redux hater",
+			"description": "I'm a Front-end developer with a strong passion for design and a desire to create beautiful and functional websites. I have a strong background in web development and have worked in a variety of different projects. I am also a self-taught programmer and I am always looking for new challenges."
 		}
 	}
 }

@@ -1,8 +1,8 @@
 {
 	"RootLocaleLayout": {
-    "title": "моё портфолио",
-    "description": "это моё портфолио"
-  },
+		"title": "моё портфолио",
+		"description": "это моё портфолио"
+	},
 	"BottomPanel": {
 		"tooltip-1": "Домой",
 		"tooltip-2": "Обо мне",
@@ -12,6 +12,22 @@
 		"switcher": {
 			"tooltip-1": "Русский",
 			"tooltip-2": "Английский"
+		},
+		"info-section": {
+			"section-1": "Github",
+			"section-2": "Linkedin",
+			"section-3": "Резюме"
+		}
+	},
+	"HomePage": {
+		"typed-text": {
+			"hello": "Привет! Я",
+			"name": "Олег",
+			"specialization": "Front-end разработчик",
+			"extra-info": "Любитель крутых web приложений",
+			"crypto": "Изучающий blockchain, web3 технлогии",
+			"egg": "Ненавистник Redux",
+			"description": "Я Front-end разработчик с сильной страстью к дизайну и желанием создавать красивые и функциональные сайты. У меня большой опыт в веб-разработке и я работал в самых разных проектах. Я также программист-самоучка и всегда ищу новые задачи."
 		}
 	}
 }

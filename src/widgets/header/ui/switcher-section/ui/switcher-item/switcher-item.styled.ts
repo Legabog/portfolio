@@ -24,7 +24,7 @@ const fadeOut = keyframes`
 		top: 30px;
 	}
 	`;
-export const Tooltip = styled.div`
+export const Tooltip = styled.div<{ $mouseIn: number }>`
 	display: flex;
 	flex: none;
 	flex-direction: row;
@@ -45,6 +45,11 @@ export const Tooltip = styled.div`
 		${({ theme }) => theme.boxShadow} 0px 0px 4px 0px,
 		${({ theme }) => theme.boxShadow} 0px 2px 8px 0px,
 		${({ theme }) => theme.boxShadow} 0px 4px 16px 0px;
+	animation: ${({ $mouseIn }) => {
+			if ($mouseIn === 1) return fadeIn;
+			if ($mouseIn === 2) return fadeOut;
+		}}
+		0.1s linear forwards;
 `;
 export const Text = styled.span`
 	color: ${({ theme }) => theme.color};
@@ -89,11 +94,5 @@ export const Wrapper = styled.div`
 	&:active ${A} {
 		transform: scale(0.95);
 		background-color: rgba(0, 0, 0, 0.15);
-	}
-	&:hover ${Tooltip} {
-		animation: ${fadeIn} 0.1s linear forwards;
-	}
-	&:not(:hover) ${Tooltip} {
-		animation: ${fadeOut} 0.1s linear forwards;
 	}
 `;
