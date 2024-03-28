@@ -8,7 +8,7 @@ import { a } from '@react-spring/web';
 import { TypeAnimation } from 'react-type-animation';
 
 import { Sphere } from '@features';
-import { TextWrapper, CanvasWrapper, InnerTextWrapper } from './page.styled';
+import { TextWrapper, CanvasWrapper, InnerTextWrapper, Description } from './page.styled';
 
 const Home: FC = () => {
 	const t = useTranslations('HomePage.typed-text');
@@ -20,9 +20,22 @@ const Home: FC = () => {
 					<TypeAnimation sequence={ [t('hello')] } speed={ 50 } />
 					<TypeAnimation
 						repeat={ Infinity }
-						sequence={ [t('name'), 1000, t('specialization'), 1000] }
+						sequence={ [
+							t('name'),
+							1000,
+							t('specialization'),
+							1000,
+							t('extra-info'),
+							1000,
+							t('crypto'),
+							1000,
+							t('egg'),
+							1000,
+						] }
 						speed={ 50 }
+						omitDeletionAnimation
 					/>
+					<Description>{t('description')}</Description>
 				</InnerTextWrapper>
 			</TextWrapper>
 			<CanvasWrapper>
