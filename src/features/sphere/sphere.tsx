@@ -1,6 +1,6 @@
 'use client';
 
-import { Suspense, useState, useRef, FC } from 'react';
+import { Suspense, useState, useRef, FC, useEffect } from 'react';
 import { MathUtils, PointLight } from 'three';
 import { useFrame } from '@react-three/fiber';
 import {
@@ -70,6 +70,10 @@ export const Sphere: FC = () => {
 		} as object,
 		[hovered, down],
 	);
+
+	useEffect(() => {
+		document.body.style.cursor = hovered ? 'pointer' : 'auto';
+	}, [hovered]);
 
 	return (
 		<>
