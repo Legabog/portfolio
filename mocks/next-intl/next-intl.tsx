@@ -7,7 +7,7 @@ import messages from '@messages/en.json';
 import { Props } from './types';
 
 export const NextIntlMock: FC<Props> = ({ children }) => (
-	<NextIntlClientProvider locale='en' messages={ messages }>
-		<ThemeProvider theme={ THEME.light }>{children}</ThemeProvider>
-	</NextIntlClientProvider>
+  <NextIntlClientProvider locale='en' messages={ messages }>
+    <ThemeProvider theme={ THEME.light }>{children}</ThemeProvider>
+  </NextIntlClientProvider>
 );

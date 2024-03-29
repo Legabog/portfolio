@@ -1,6 +1,6 @@
 import { Locale } from 'src/locales';
 
 export interface SwitcherItemProps {
-	id: string;
-	text: Locale;
+  id: string;
+  text: Locale;
 }

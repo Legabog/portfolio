@@ -11,31 +11,31 @@ import { RootLocaleLayoutProps } from './types';
 const inter = Figtree({ subsets: ['latin'] });
 
 export async function generateMetadata({
-	params: { locale },
+  params: { locale },
 }: {
-	params: { locale: Locale };
+  params: { locale: Locale };
 }): Promise<Metadata> {
-	const t = await getTranslations({ locale, namespace: 'RootLocaleLayout' });
+  const t = await getTranslations({ locale, namespace: 'RootLocaleLayout' });
 
-	return {
-		title: t('title'),
-		description: t('description'),
-	};
+  return {
+    title: t('title'),
+    description: t('description'),
+  };
 }
 
 const RootLocaleLayout: FC<RootLocaleLayoutProps> = async ({ children, params: { locale } }) => {
-	const messages = await getMessages();
+  const messages = await getMessages();
 
-	return (
-		<html lang={ locale }>
-			<body className={ inter.className }>
-				<NextIntlClientProvider messages={ messages }>
-					<Header />
-					{children}
-					<BottomPanel />
-				</NextIntlClientProvider>
-			</body>
-		</html>
-	);
+  return (
+    <html lang={ locale }>
+      <body className={ inter.className }>
+        <NextIntlClientProvider messages={ messages }>
+          <Header />
+          {children}
+          <BottomPanel />
+        </NextIntlClientProvider>
+      </body>
+    </html>
+  );
 };
 export default RootLocaleLayout;

@@ -11,45 +11,45 @@ import { Sphere } from '@features';
 import { TextWrapper, CanvasWrapper, InnerTextWrapper, Description } from './page.styled';
 
 const Home: FC = () => {
-	const t = useTranslations('HomePage.typed-text');
+  const t = useTranslations('HomePage.typed-text');
 
-	return (
-		<a.main>
-			<TextWrapper>
-				<InnerTextWrapper>
-					<TypeAnimation sequence={ [t('hello')] } speed={ 50 } />
-					<TypeAnimation
-						repeat={ Infinity }
-						sequence={ [
-							t('name'),
-							1000,
-							t('specialization'),
-							1000,
-							t('extra-info'),
-							1000,
-							t('crypto'),
-							1000,
-							t('egg'),
-							1000,
-						] }
-						speed={ 50 }
-						omitDeletionAnimation
-					/>
-					<Description>{t('description')}</Description>
-				</InnerTextWrapper>
-			</TextWrapper>
-			<CanvasWrapper>
-				<Canvas dpr={ [1, 2] }>
-					<Sphere />
-					<OrbitControls
-						enablePan={ false }
-						enableZoom={ false }
-						maxPolarAngle={ Math.PI / 2 }
-						minPolarAngle={ Math.PI / 2 }
-					/>
-				</Canvas>
-			</CanvasWrapper>
-		</a.main>
-	);
+  return (
+    <a.main>
+      <TextWrapper>
+        <InnerTextWrapper>
+          <TypeAnimation sequence={ [t('hello')] } speed={ 50 } />
+          <TypeAnimation
+            repeat={ Infinity }
+            sequence={ [
+              t('name'),
+              1000,
+              t('specialization'),
+              1000,
+              t('extra-info'),
+              1000,
+              t('crypto'),
+              1000,
+              t('egg'),
+              1000,
+            ] }
+            speed={ 50 }
+            omitDeletionAnimation
+          />
+          <Description>{t('description')}</Description>
+        </InnerTextWrapper>
+      </TextWrapper>
+      <CanvasWrapper>
+        <Canvas dpr={ [1, 2] }>
+          <Sphere />
+          <OrbitControls
+            enablePan={ false }
+            enableZoom={ false }
+            maxPolarAngle={ Math.PI / 2 }
+            minPolarAngle={ Math.PI / 2 }
+          />
+        </Canvas>
+      </CanvasWrapper>
+    </a.main>
+  );
 };
 export default Home;

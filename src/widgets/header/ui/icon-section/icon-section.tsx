@@ -4,7 +4,7 @@ import { MainIcon } from '@shared/ui';
 import { Wrapper } from './icon-section.styled';
 
 export const IconSection: FC = () => (
-	<Wrapper>
-		<MainIcon />
-	</Wrapper>
+  <Wrapper>
+    <MainIcon />
+  </Wrapper>
 );

@@ -9,12 +9,12 @@ import { GlobalStyles } from './global.styled';
 import { useThemeStore } from './model';
 
 const RootLayout: FC<RootProps> = ({ children }) => {
-	const { themeType } = useThemeStore();
-	return (
-		<ThemeProvider theme={ THEME[themeType] }>
-			{children}
-			<GlobalStyles />
-		</ThemeProvider>
-	);
+  const { themeType } = useThemeStore();
+  return (
+    <ThemeProvider theme={ THEME[themeType] }>
+      {children}
+      <GlobalStyles />
+    </ThemeProvider>
+  );
 };
 export default RootLayout;

@@ -5,5 +5,5 @@ import { THEME } from '@shared/constants';
 import { Props } from './types';
 
 export const ThemeMock: FC<Props> = ({ children }) => (
-	<ThemeProvider theme={ THEME.light }>{children}</ThemeProvider>
+  <ThemeProvider theme={ THEME.light }>{children}</ThemeProvider>
 );

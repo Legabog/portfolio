@@ -25,74 +25,74 @@ const fadeOut = keyframes`
 	}
 	`;
 export const Tooltip = styled.div<{ $mouseIn: number }>`
-	display: flex;
-	flex: none;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	align-items: center;
-	opacity: 0;
-	padding: 4px 8px;
-	position: absolute;
-	border: 1px ${({ theme }) => theme.boxShadow} solid;
-	background-color: ${({ theme }) => theme.backgroundColor};
-	white-space: pre;
-	height: min-content;
-	width: min-content;
-	color: ${({ theme }) => theme.color};
-	pointer-events: none;
-	border-radius: 6px;
-	box-shadow:
-		${({ theme }) => theme.boxShadow} 0px 0px 4px 0px,
-		${({ theme }) => theme.boxShadow} 0px 2px 8px 0px,
-		${({ theme }) => theme.boxShadow} 0px 4px 16px 0px;
-	animation: ${({ $mouseIn }) => {
-			if ($mouseIn === 1) return fadeIn;
-			if ($mouseIn === 2) return fadeOut;
-		}}
-		0.1s linear forwards;
+  display: flex;
+  flex: none;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  opacity: 0;
+  padding: 4px 8px;
+  position: absolute;
+  border: 1px ${({ theme }) => theme.boxShadow} solid;
+  background-color: ${({ theme }) => theme.backgroundColor};
+  white-space: pre;
+  height: min-content;
+  width: min-content;
+  color: ${({ theme }) => theme.color};
+  pointer-events: none;
+  border-radius: 6px;
+  box-shadow:
+    ${({ theme }) => theme.boxShadow} 0px 0px 4px 0px,
+    ${({ theme }) => theme.boxShadow} 0px 2px 8px 0px,
+    ${({ theme }) => theme.boxShadow} 0px 4px 16px 0px;
+  animation: ${({ $mouseIn }) => {
+      if ($mouseIn === 1) return fadeIn;
+      if ($mouseIn === 2) return fadeOut;
+    }}
+    0.1s linear forwards;
 `;
 export const Text = styled.span`
-	color: ${({ theme }) => theme.color};
+  color: ${({ theme }) => theme.color};
 `;
 export const A = styled.a<{ $isActvie: boolean }>`
-	position: relative;
-	display: block;
-	height: 28px;
-	width: 28px;
-	box-sizing: border-box;
-	border-radius: 7px;
-	overflow: visible;
-	text-decoration: none;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	cursor: pointer;
-	transition: background-color 0.5s;
-	${({ $isActvie }) =>
-		$isActvie &&
-		css`
-			border: 1px ${orange} solid;
-			& ${Text} {
-				color: ${orange};
-			}
-			& ${Tooltip} {
-				color: ${orange};
-				border: 1px ${orange} solid;
-			}
-		`};
+  position: relative;
+  display: block;
+  height: 28px;
+  width: 28px;
+  box-sizing: border-box;
+  border-radius: 7px;
+  overflow: visible;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.5s;
+  ${({ $isActvie }) =>
+    $isActvie &&
+    css`
+      border: 1px ${orange} solid;
+      & ${Text} {
+        color: ${orange};
+      }
+      & ${Tooltip} {
+        color: ${orange};
+        border: 1px ${orange} solid;
+      }
+    `};
 `;
 export const Wrapper = styled.div`
-	position: relative;
-	flex: none;
-	height: auto;
-	width: auto;
-	font-size: 14px;
-	font-weight: 500;
-	&:hover ${A} {
-		background-color: rgba(0, 0, 0, 0.1);
-	}
-	&:active ${A} {
-		transform: scale(0.95);
-		background-color: rgba(0, 0, 0, 0.15);
-	}
+  position: relative;
+  flex: none;
+  height: auto;
+  width: auto;
+  font-size: 14px;
+  font-weight: 500;
+  &:hover ${A} {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  &:active ${A} {
+    transform: scale(0.95);
+    background-color: rgba(0, 0, 0, 0.15);
+  }
 `;

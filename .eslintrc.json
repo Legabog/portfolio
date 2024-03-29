@@ -1,261 +1,261 @@
 {
-	"env": {
-		"browser": true,
-		"es2021": true
-	},
-	"extends": [
-		"next", 
-		"next/core-web-vitals",
-		"plugin:react/recommended",
-		"plugin:typescript-sort-keys/recommended",
-		"airbnb-typescript",
-		"airbnb",
-		"prettier",
-		"plugin:storybook/recommended"
-	],
-	"parser": "@typescript-eslint/parser",
-	"parserOptions": {
-		"project": "./tsconfig.json",
-		"ecmaFeatures": {
-			"jsx": true
-		},
-		"ecmaVersion": 12,
-		"sourceType": "module"
-	},
-	"plugins": ["react", "@typescript-eslint", "prettier", "typescript-sort-keys"],
-	"settings": {
-		"import/resolver": {
-			"alias": {
-				"map": [
-					["@app", "./src/app"],
-					["@shared", "./src/shared"],
-					["@widgets", "./src/widgets"],
-					["@features", "./src/features"],
-					["@locales", "./src/locales.ts"],
-					["@messages", "./messages"],
-					["@public", "./public"],
-					["@mocks", "./mocks"]
-				],
-				"extensions": [".ts", ".tsx", ".js", ".jsx", ".json"]
-			},
-			"node": {
-				"paths": ["src", "@enum-pages"],
-				"extensions": [".js", ".jsx", ".ts", ".tsx"]
-			}
-		}
-	},
-	"rules": {
-		"react/no-unknown-property": ["off", { "ignore": ["JSX"] }],
-		"@typescript-eslint/no-empty-function": "off",
-		"@typescript-eslint/no-shadow": "off",
-		"@typescript-eslint/no-unused-vars": [
-			"error",
-			{
-				"ignoreRestSiblings": true
-			}
-		],
-		"no-underscore-dangle": "off",
-		"no-console": 0,
-		"consistent-return": "off",
-		"import/extensions": "off",
-		"import/no-cycle": "off",
-		"import/no-extraneous-dependencies": "off",
-		"import/prefer-default-export": "off",
-		"jsx-a11y/anchor-is-valid": "off",
-		"linebreak-style": "off",
-		"no-nested-ternary": "off",
-		"no-plusplus": "off",
-		"no-shadow": "off",
-		"no-undef": "off",
-		"prefer-promise-reject-errors": "off",
-		"object-curly-spacing": ["error", "always"],
-		"no-param-reassign": 0,
-		"object-shorthand": "error",
-		"react/jsx-props-no-spreading": "off",
-		"react/no-array-index-key": "off",
-		"react/no-unescaped-entities": "off",
-		"react/prop-types": "off",
-		"react/react-in-jsx-scope": "off",
-		"react/require-default-props": "off",
-		"react/jsx-curly-spacing": [
-			"error",
-			{
-				"when": "always",
-				"children": false
-			}
-		],
-		"object-curly-newline": "off",
-		"no-unused-expressions": [
-			"error",
-			{
-				"allowShortCircuit": true,
-				"allowTernary": true,
-				"allowTaggedTemplates": true
-			}
-		],
-		"import/no-unresolved": [
-			2,
-			{
-				"commonjs": true,
-				"amd": true
-			}
-		],
-		"react/jsx-filename-extension": [
-			1,
-			{
-				"extensions": [".js", ".jsx", "tsx"]
-			}
-		],
-		"import/order": [
-			"error",
-			{
-				"groups": ["builtin", "external", "internal", "parent", "sibling", "index", "object"],
-				"pathGroups": [
-					{
-						"pattern": "@app",
-						"group": "internal",
-						"position": "before"
-					},
-					{
-						"pattern": "@app/**",
-						"group": "internal",
-						"position": "before"
-					},
-					{
-						"pattern": "@entities",
-						"group": "internal",
-						"position": "before"
-					},
-					{
-						"pattern": "@entities/**",
-						"group": "internal",
-						"position": "before"
-					},
-					{
-						"pattern": "@features",
-						"group": "internal",
-						"position": "before"
-					},
-					{
-						"pattern": "@features/**",
-						"group": "internal",
-						"position": "before"
-					},
-					{
-						"pattern": "@pages",
-						"group": "internal",
-						"position": "before"
-					},
-					{
-						"pattern": "@pages/**",
-						"group": "internal",
-						"position": "before"
-					},
-					{
-						"pattern": "@processes",
-						"group": "internal",
-						"position": "before"
-					},
-					{
-						"pattern": "@processes/**",
-						"group": "internal",
-						"position": "before"
-					},
-					{
-						"pattern": "@shared",
-						"group": "internal",
-						"position": "before"
-					},
-					{
-						"pattern": "@shared/config",
-						"group": "sibling",
-						"position": "before"
-					},
-					{
-						"pattern": "@shared/hooks",
-						"group": "internal",
-						"position": "before"
-					},
-					{
-						"pattern": "@shared/lib",
-						"group": "internal",
-						"position": "before"
-					},
-					{
-						"pattern": "@shared/ui",
-						"group": "internal",
-						"position": "before"
-					},
-					{
-						"pattern": "@shared/**",
-						"group": "internal",
-						"position": "before"
-					},
-					{
-						"pattern": "@store",
-						"group": "internal",
-						"position": "before"
-					},
-					{
-						"pattern": "@store/**",
-						"group": "internal",
-						"position": "before"
-					},
-					{
-						"pattern": "@widgets",
-						"group": "internal",
-						"position": "before"
-					},
-					{
-						"pattern": "@widgets/**",
-						"group": "internal",
-						"position": "before"
-					}
-				]
-			}
-		],
-		"typescript-sort-keys/interface": [
-			"error",
-			"asc",
-			{
-				"caseSensitive": true,
-				"natural": true,
-				"requiredFirst": true
-			}
-		],
-		"typescript-sort-keys/string-enum": [
-			"error",
-			"asc",
-			{
-				"caseSensitive": true,
-				"natural": true
-			}
-		],
-		"react/jsx-sort-props": [
-			2,
-			{
-				"callbacksLast": true,
-				"shorthandLast": true,
-				"reservedFirst": true,
-				"locale": "auto"
-			}
-		],
-		"import/no-named-as-default": "off",
-		"quotes": [
-			"error",
-			"single",
-			{
-				"allowTemplateLiterals": true
-			}
-		],
-		"react/function-component-definition": [
-			2,
-			{
-				"namedComponents": "arrow-function",
-				"unnamedComponents": ["arrow-function", "function-expression"]
-			}
-		],
-		"jsx-quotes": ["error", "prefer-single"],
-		"no-restricted-exports": "off"
-	}
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "next",
+    "next/core-web-vitals",
+    "plugin:react/recommended",
+    "plugin:typescript-sort-keys/recommended",
+    "airbnb-typescript",
+    "airbnb",
+    "prettier",
+    "plugin:storybook/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "@typescript-eslint", "prettier", "typescript-sort-keys"],
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "map": [
+          ["@app", "./src/app"],
+          ["@shared", "./src/shared"],
+          ["@widgets", "./src/widgets"],
+          ["@features", "./src/features"],
+          ["@locales", "./src/locales.ts"],
+          ["@messages", "./messages"],
+          ["@public", "./public"],
+          ["@mocks", "./mocks"]
+        ],
+        "extensions": [".ts", ".tsx", ".js", ".jsx", ".json"]
+      },
+      "node": {
+        "paths": ["src", "@enum-pages"],
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  },
+  "rules": {
+    "react/no-unknown-property": ["off", { "ignore": ["JSX"] }],
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/no-shadow": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "ignoreRestSiblings": true
+      }
+    ],
+    "no-underscore-dangle": "off",
+    "no-console": 0,
+    "consistent-return": "off",
+    "import/extensions": "off",
+    "import/no-cycle": "off",
+    "import/no-extraneous-dependencies": "off",
+    "import/prefer-default-export": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "linebreak-style": "off",
+    "no-nested-ternary": "off",
+    "no-plusplus": "off",
+    "no-shadow": "off",
+    "no-undef": "off",
+    "prefer-promise-reject-errors": "off",
+    "object-curly-spacing": ["error", "always"],
+    "no-param-reassign": 0,
+    "object-shorthand": "error",
+    "react/jsx-props-no-spreading": "off",
+    "react/no-array-index-key": "off",
+    "react/no-unescaped-entities": "off",
+    "react/prop-types": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/require-default-props": "off",
+    "react/jsx-curly-spacing": [
+      "error",
+      {
+        "when": "always",
+        "children": false
+      }
+    ],
+    "object-curly-newline": "off",
+    "no-unused-expressions": [
+      "error",
+      {
+        "allowShortCircuit": true,
+        "allowTernary": true,
+        "allowTaggedTemplates": true
+      }
+    ],
+    "import/no-unresolved": [
+      2,
+      {
+        "commonjs": true,
+        "amd": true
+      }
+    ],
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".js", ".jsx", "tsx"]
+      }
+    ],
+    "import/order": [
+      "error",
+      {
+        "groups": ["builtin", "external", "internal", "parent", "sibling", "index", "object"],
+        "pathGroups": [
+          {
+            "pattern": "@app",
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "@app/**",
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "@entities",
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "@entities/**",
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "@features",
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "@features/**",
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "@pages",
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "@pages/**",
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "@processes",
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "@processes/**",
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "@shared",
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "@shared/config",
+            "group": "sibling",
+            "position": "before"
+          },
+          {
+            "pattern": "@shared/hooks",
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "@shared/lib",
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "@shared/ui",
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "@shared/**",
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "@store",
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "@store/**",
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "@widgets",
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "@widgets/**",
+            "group": "internal",
+            "position": "before"
+          }
+        ]
+      }
+    ],
+    "typescript-sort-keys/interface": [
+      "error",
+      "asc",
+      {
+        "caseSensitive": true,
+        "natural": true,
+        "requiredFirst": true
+      }
+    ],
+    "typescript-sort-keys/string-enum": [
+      "error",
+      "asc",
+      {
+        "caseSensitive": true,
+        "natural": true
+      }
+    ],
+    "react/jsx-sort-props": [
+      2,
+      {
+        "callbacksLast": true,
+        "shorthandLast": true,
+        "reservedFirst": true,
+        "locale": "auto"
+      }
+    ],
+    "import/no-named-as-default": "off",
+    "quotes": [
+      "error",
+      "single",
+      {
+        "allowTemplateLiterals": true
+      }
+    ],
+    "react/function-component-definition": [
+      2,
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": ["arrow-function", "function-expression"]
+      }
+    ],
+    "jsx-quotes": ["error", "prefer-single"],
+    "no-restricted-exports": "off"
+  }
 }
