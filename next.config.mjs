@@ -9,6 +9,12 @@ const nextConfig = {
   compiler: {
     styledComponents: true,
   },
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.optimization.innerGraph = false;
+    }
+    return config;
+  },
 };
 
 export default withSentryConfig(
