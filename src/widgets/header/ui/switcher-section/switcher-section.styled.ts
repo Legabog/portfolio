@@ -4,6 +4,8 @@ export const Wrapper = styled.div`
   position: fixed;
   left: 50%;
   transform: translate(-50%);
+  display: flex;
+  gap: 5px;
 `;
 export const Nav = styled.nav`
   display: flex;

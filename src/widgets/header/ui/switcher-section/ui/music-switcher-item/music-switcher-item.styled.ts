@@ -1,27 +1,29 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
-import { ItemWrapperProps } from './types';
+import { COLORS } from '@shared/constants';
+
+const { orange } = COLORS;
 
 const fadeIn = keyframes`
 	from {
 		opacity: 0;
-		top: -38px;
+		top: 30px;
 	}
 	to {
 		opacity: 1;
-		top: -46px;
+		top: 38px;
 	}
-`;
+	`;
 const fadeOut = keyframes`
 	from {
 		opacity: 1;
-		top: -46px;
+		top: 38px;
 	}
 	to {
 		opacity: 0;
-		top: -38px;
+		top: 30px;
 	}
-`;
+	`;
 export const Tooltip = styled.div<{ $mouseIn: number }>`
   display: flex;
   flex: none;
@@ -38,7 +40,7 @@ export const Tooltip = styled.div<{ $mouseIn: number }>`
   width: min-content;
   color: ${({ theme }) => theme.color};
   pointer-events: none;
-  border-radius: 8px;
+  border-radius: 6px;
   box-shadow:
     ${({ theme }) => theme.boxShadow} 0px 0px 4px 0px,
     ${({ theme }) => theme.boxShadow} 0px 2px 8px 0px,
@@ -49,33 +51,45 @@ export const Tooltip = styled.div<{ $mouseIn: number }>`
     }}
     0.1s linear forwards;
 `;
-export const A = styled.a`
+export const A = styled.a<{ $isActvie: boolean }>`
   position: relative;
   display: block;
-  height: 48px;
-  width: 48px;
+  height: 28px;
+  width: 28px;
   box-sizing: border-box;
+  border-radius: 7px;
   overflow: visible;
   text-decoration: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px rgba(0, 0, 0, 0.1) solid;
-  border-radius: 12px;
-  box-shadow:
-    0px 1px 4px 0px ${({ theme }) => theme.boxShadow},
-    0px 2px 8px 0px ${({ theme }) => theme.boxShadow};
   cursor: pointer;
+  transition: background-color 0.5s;
+  ${({ $isActvie }) =>
+    $isActvie &&
+    css`
+      border: 1px ${orange} solid;
+      & ${Tooltip} {
+        color: ${orange};
+        border: 1px ${orange} solid;
+      }
+      & path {
+        fill: ${orange};
+      }
+    `};
 `;
-export const Wrapper = styled.div<ItemWrapperProps>`
+export const Wrapper = styled.div`
   position: relative;
   flex: none;
   height: auto;
   width: auto;
+  font-size: 14px;
+  font-weight: 500;
   &:hover ${A} {
-    background-color: ${({ $hoverColor }) => $hoverColor};
+    background-color: rgba(0, 0, 0, 0.1);
   }
   &:active ${A} {
     transform: scale(0.95);
+    background-color: rgba(0, 0, 0, 0.15);
   }
 `;

@@ -2,10 +2,10 @@ import { FC, useState } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 
 import { Locale, usePathname, useRouter } from '@locales';
-import { SwitcherItemProps } from '../../types';
+import { Props } from './types';
 import { Wrapper, A, Tooltip, Text } from './switcher-item.styled';
 
-export const SwitcherItem: FC<SwitcherItemProps> = ({ id, text }) => {
+export const SwitcherItem: FC<Props> = ({ id, text }) => {
   const locale = useLocale() as Locale;
   const router = useRouter();
   const pathname = usePathname();

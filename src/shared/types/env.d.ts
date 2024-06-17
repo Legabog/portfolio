@@ -1,6 +1,11 @@
 /// <reference types="next" />
 /// <reference types="next/image-types/global" />
 
+declare module '*.mp3' {
+  const value: string;
+  export default value;
+}
+
 declare module '*.frag' {
   const value: string;
   export default value;

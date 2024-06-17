@@ -14,11 +14,6 @@ export const TextWrapper = styled.div`
 
   @media only screen and (max-aspect-ratio: 8/7) {
     order: 2;
-    align-items: flex-start;
-    min-height: 20vh;
-  }
-  @media only screen and (max-width: 400px) {
-    min-height: 30vh;
   }
 `;
 export const InnerTextWrapper = styled.div`
@@ -54,27 +49,12 @@ export const InnerTextWrapper = styled.div`
     }
   }
 `;
-export const CanvasWrapper = styled.div`
+export const SplineWrapper = styled.div`
   display: flex;
-  align-items: center;
   justify-content: center;
-  order: 2;
-  flex: 1;
-  min-height: 100vh;
-
-  @media only screen and (max-aspect-ratio: 8/7) {
-    order: 1;
-    min-height: calc(80vh - 84px);
-    canvas {
-      height: calc(80vh - 84px);
-    }
-  }
-  @media only screen and (max-width: 400px) {
-    min-height: calc(70vh - 84px);
-    canvas {
-      height: calc(70vh - 84px);
-    }
-  }
+  align-items: center;
+  width: 100%;
+  height: 100vh;
 `;
 export const Description = styled.span`
   margin-top: 8px;

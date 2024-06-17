@@ -11,7 +11,8 @@
     "airbnb-typescript",
     "airbnb",
     "prettier",
-    "plugin:storybook/recommended"
+    "plugin:storybook/recommended",
+    "plugin:import/typescript"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -39,8 +40,8 @@
         "extensions": [".ts", ".tsx", ".js", ".jsx", ".json"]
       },
       "node": {
-        "paths": ["src", "@enum-pages"],
-        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+        "paths": ["src"],
+        "extensions": [".ts", ".tsx", ".js", ".jsx", ".json"]
       }
     }
   },
