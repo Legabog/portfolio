@@ -1,55 +1,23 @@
 'use client';
 
 import { FC } from 'react';
-import { useTranslations } from 'next-intl';
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls } from '@react-three/drei';
-import { a } from '@react-spring/web';
-import { TypeAnimation } from 'react-type-animation';
+import { useLocale } from 'next-intl';
+import Spline from '@splinetool/react-spline';
 
-import { Sphere } from '@features';
-import { TextWrapper, CanvasWrapper, InnerTextWrapper, Description } from './page.styled';
+import { useThemeStore } from '@app/model';
+import { Locale } from '@locales';
+import { SplineWrapper } from './page.styled';
 
 const Home: FC = () => {
-  const t = useTranslations('HomePage.typed-text');
+  const locale = useLocale() as Locale;
+  const { themeType } = useThemeStore();
+  const isDarkTheme = themeType === 'dark';
+  const conditionSplineScene = `https://prod.spline.design/${isDarkTheme ? (locale === 'ru' ? 'oB2He7F4RYyyx8Z8' : 'IYTSlSqng2fEIZEk') : locale === 'ru' ? 'mkhsyF4Jc5yspLzg' : 'mP8JjpwdEW3Bl9ud'}/scene.splinecode`;
 
   return (
-    <a.main>
-      <TextWrapper>
-        <InnerTextWrapper>
-          <TypeAnimation sequence={ [t('hello')] } speed={ 50 } />
-          <TypeAnimation
-            repeat={ Infinity }
-            sequence={ [
-              t('name'),
-              1000,
-              t('specialization'),
-              1000,
-              t('extra-info'),
-              1000,
-              t('crypto'),
-              1000,
-              t('egg'),
-              1000,
-            ] }
-            speed={ 50 }
-            omitDeletionAnimation
-          />
-          <Description>{t('description')}</Description>
-        </InnerTextWrapper>
-      </TextWrapper>
-      <CanvasWrapper>
-        <Canvas dpr={ [1, 2] }>
-          <Sphere />
-          <OrbitControls
-            enablePan={ false }
-            enableZoom={ false }
-            maxPolarAngle={ Math.PI / 2 }
-            minPolarAngle={ Math.PI / 2 }
-          />
-        </Canvas>
-      </CanvasWrapper>
-    </a.main>
+    <SplineWrapper>
+      <Spline scene={ conditionSplineScene } />
+    </SplineWrapper>
   );
 };
 export default Home;

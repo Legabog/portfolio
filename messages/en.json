@@ -13,6 +13,10 @@
 			"tooltip-1": "Russian",
 			"tooltip-2": "English"
 		},
+		"music-switcher": {
+			"tooltip-turn-on": "Music on",
+			"tooltip-turn-off": "Music off"
+		},
 		"info-section": {
 			"section-1": "Github",
 			"section-2": "Linkedin",
