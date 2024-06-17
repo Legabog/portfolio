@@ -5,6 +5,7 @@ const withNextIntl = createNextIntlPlugin();
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  transpilePackages: ['three'],
   compiler: {
     styledComponents: true,
   },
