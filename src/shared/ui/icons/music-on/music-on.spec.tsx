@@ -10,12 +10,12 @@ const IconWithMocks: FC = () => (
   </CombineMocks>
 );
 
-describe('AboutIcon Component', () => {
-  test('Test AboutIcon renders without errors', () => {
+describe('MusicOnIcon Component', () => {
+  test('Test MusicOnIcon renders without errors', () => {
     expect(() => render(<IconWithMocks />)).not.toThrow();
   });
 
-  test('Test AboutIcon renders correct svg attributes', () => {
+  test('Test MusicOnIcon renders correct svg attributes', () => {
     const { getByTestId } = render(<IconWithMocks />);
 
     const svgElement = getByTestId('music-on-icon-svg');
@@ -24,7 +24,7 @@ describe('AboutIcon Component', () => {
     expect(svgElement).toHaveAttribute('viewBox', '0 0 38 46');
   });
 
-  test('Test AboutIcon renders correct path attributes', () => {
+  test('Test MusicOnIcon renders correct path attributes', () => {
     const { getByTestId } = render(<IconWithMocks />);
     const firstPathElement = getByTestId('music-on-icon-path');
     expect(firstPathElement.getAttribute('d')).toContain(

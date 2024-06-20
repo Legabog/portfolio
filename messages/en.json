@@ -9,13 +9,17 @@
 		"tooltip-3": "Projects"
 	},
 	"Header": {
-		"switcher": {
+		"language": {
 			"tooltip-1": "Russian",
 			"tooltip-2": "English"
 		},
-		"music-switcher": {
+		"music": {
 			"tooltip-turn-on": "Music on",
 			"tooltip-turn-off": "Music off"
+		},
+		"theme": {
+			"light": "Light theme",
+			"dark": "Dark theme"
 		},
 		"info-section": {
 			"section-1": "Github",

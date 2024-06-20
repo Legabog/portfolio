@@ -1,3 +1,5 @@
+'use client';
+
 import styled, { RuleSet, css } from 'styled-components';
 
 export const StyledSvg = styled.svg<{ $customStyle?: string | RuleSet }>`

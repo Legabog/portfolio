@@ -8,7 +8,3 @@ export interface Props {
 export interface RootProps {
   children: ReactNode;
 }
-export interface State {
-  setTheme: () => void;
-  themeType: 'light' | 'dark';
-}
