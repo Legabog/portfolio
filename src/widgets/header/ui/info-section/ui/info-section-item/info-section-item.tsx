@@ -1,7 +1,7 @@
 import { FC, useState } from 'react';
 
 import { useTranslations } from 'next-intl';
-import { Item } from '../../types';
+import { Item } from './types';
 import { Wrapper, Text, StyledLink, Tooltip } from './info-section-item.styled';
 
 export const InfoSectionItem: FC<Item> = ({ Icon, url, id }) => {

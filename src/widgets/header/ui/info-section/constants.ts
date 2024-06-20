@@ -1,5 +1,5 @@
 import { GithubIcon, LinkedinIcon, ResumeIcon } from '@shared/ui';
-import { Item } from './types';
+import { Item } from './ui';
 
 export const INFO_ITEMS: Item[] = [
   { id: '1', Icon: GithubIcon, url: 'https://github.com/legabog' },

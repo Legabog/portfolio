@@ -1,14 +1,16 @@
+'use client';
+
 import { FC, useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
 
 import { MusicOffIcon, MusicOnIcon } from '@shared/ui';
-import { Wrapper, A, Tooltip } from './music-switcher-item.styled';
+import { Wrapper, A, Tooltip } from './music.styled';
 import { useMusicStore } from './model';
 
-export const MusicSwitcherItem: FC = () => {
+export const Music: FC = () => {
   const { isMusicOn, toggleMusic, setTime, currentTime } = useMusicStore();
   const [mouseIn, setMouseIn] = useState<number>(0);
-  const t = useTranslations('Header.music-switcher');
+  const t = useTranslations('Header.music');
   const tooltip = t(`tooltip-turn-${isMusicOn ? 'on' : 'off'}`);
   const conditionIcon = isMusicOn ? <MusicOnIcon /> : <MusicOffIcon />;
 

@@ -89,7 +89,7 @@ export const Wrapper = styled.div`
   font-size: 14px;
   font-weight: 500;
   &:hover ${A} {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.15);
   }
   &:active ${A} {
     transform: scale(0.95);

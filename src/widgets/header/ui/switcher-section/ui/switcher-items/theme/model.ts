@@ -2,7 +2,7 @@ import { create } from 'zustand';
 import { immer } from 'zustand/middleware/immer';
 import { persist, createJSONStorage, devtools } from 'zustand/middleware';
 
-import { State } from '@app/types';
+import { State } from './types';
 
 export const useThemeStore = create<State>()(
   persist(

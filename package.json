@@ -36,12 +36,12 @@
     "@splinetool/react-spline": "^2.2.6",
     "gsap": "^3.12.5",
     "immer": "^10.0.4",
-    "next": "14.1.2",
+    "next": "^14.2.4",
     "next-intl": "^3.9.4",
     "react": "^18",
     "react-dom": "^18",
     "react-type-animation": "^3.2.0",
-    "styled-components": "^6.1.8",
+    "styled-components": "^6.1.11",
     "zustand": "^4.5.2"
   },
   "devDependencies": {

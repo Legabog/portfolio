@@ -4,7 +4,7 @@ import { FC } from 'react';
 import { useLocale } from 'next-intl';
 import Spline from '@splinetool/react-spline';
 
-import { useThemeStore } from '@app/model';
+import { useThemeStore } from '@widgets';
 import { Locale } from '@locales';
 import { SplineWrapper } from './page.styled';
 
