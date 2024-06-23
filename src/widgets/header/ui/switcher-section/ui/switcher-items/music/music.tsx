@@ -57,12 +57,12 @@ export const Music: FC = () => {
     >
       <A $isActvie={ isMusicOn } data-testid='music-switcher-item-tooltip' title={ tooltip }>
         {conditionIcon}
-        <audio id='audio'>
-          <source src='cosmos.mp3' type='audio/mpeg' />
-          <track kind='captions' />
-        </audio>
         <Tooltip $mouseIn={ mouseIn }>{tooltip}</Tooltip>
       </A>
+      <audio id='audio'>
+        <source src='cosmos.mp3' type='audio/mpeg' />
+        <track kind='captions' />
+      </audio>
     </Wrapper>
   );
 };

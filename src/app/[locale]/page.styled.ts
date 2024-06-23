@@ -49,13 +49,6 @@ export const InnerTextWrapper = styled.div`
     }
   }
 `;
-export const SplineWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100vh;
-`;
 export const Description = styled.span`
   margin-top: 8px;
   font-size: 16px;

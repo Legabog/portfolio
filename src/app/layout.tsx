@@ -4,7 +4,7 @@ import { FC } from 'react';
 import { ThemeProvider } from 'styled-components';
 
 import { THEME } from '@shared/constants';
-import { useThemeStore } from '@widgets';
+import { useThemeStore } from '@widgets/header';
 import { RootProps } from './types';
 import { GlobalStyles } from './global.styled';
 
