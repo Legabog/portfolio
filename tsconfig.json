@@ -22,7 +22,7 @@
     "paths": {
       "@app/*": ["./src/app/*"],
       "@shared/*": ["./src/shared/*"],
-      "@widgets": ["./src/widgets"],
+      "@widgets/*": ["./src/widgets/*"],
       "@features": ["./src/features"],
       "@locales": ["./src/locales.ts"],
       "@messages/*": ["./messages/*"],

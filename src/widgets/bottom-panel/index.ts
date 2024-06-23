@@ -1,1 +1,1 @@
-export * from './bottom-panel';
+export { BottomPanel as default } from './bottom-panel';
