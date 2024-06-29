@@ -13,7 +13,7 @@ const ComponentWithMocks: FC = () => (
 describe('Loader Component Tests', () => {
   test('The `Loader` component should render without crashing', () => {
     render(<ComponentWithMocks />);
-    const headerElement = screen.getByTestId('loader');
-    expect(headerElement).toBeInTheDocument();
+    const loaderElement = screen.getByTestId('loader');
+    expect(loaderElement).toBeInTheDocument();
   });
 });
