@@ -6,7 +6,7 @@ test.describe('Loader Component Tests', () => {
   });
 
   test('should render the Loader component', async ({ page }) => {
-    const loader = await page.locator('[data-testid="loader"]');
-    await expect(loader).not.toBeNull();
+    const loader = await page.locator('[data-testid="scroll-down"]');
+    await expect(loader).toBeVisible();
   });
 });

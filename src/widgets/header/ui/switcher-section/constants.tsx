@@ -3,11 +3,11 @@ import { Language, Music, Theme, Props } from './ui';
 export const SWITCHER_ITEMS: Props[] = [
   {
     id: '1',
-    text: 'ru',
+    text: 'en',
   },
   {
     id: '2',
-    text: 'en',
+    text: 'ru',
   },
 ];
 export const NAV_MAP = {

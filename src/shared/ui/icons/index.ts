@@ -9,3 +9,4 @@ export * from './music-on';
 export * from './music-off';
 export * from './sun';
 export * from './moon';
+export * from './chevron-down';

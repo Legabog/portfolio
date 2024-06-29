@@ -8,10 +8,13 @@ export const Item: FC<Icon.Props> = ({ Icon, color, id }) => {
   const tooltip = t(`tooltip-${id}`);
   const [mouseIn, setMouseIn] = useState<number>(0);
 
+  const onClickHandler = () => window.scrollTo({ top: id === '1' ? 0 : 700, behavior: 'smooth' });
+
   return (
     <Wrapper
       $hoverColor={ color }
       data-testid='item'
+      onClick={ onClickHandler }
       onMouseEnter={ () => setMouseIn(1) }
       onMouseLeave={ () => setMouseIn(2) }
     >
