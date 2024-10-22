@@ -1,13 +1,14 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-position: relative;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 100vh;
+  left: 20%;
 
   &&& > div {
     margin-bottom: 150px;

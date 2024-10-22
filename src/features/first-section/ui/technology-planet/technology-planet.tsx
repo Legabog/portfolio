@@ -7,23 +7,23 @@ import { useLocale } from 'next-intl';
 import { Loader, ScrollDown } from '@shared/ui';
 import { useThemeStore } from '@widgets/header';
 import { Locale } from '@locales';
-import { Wrapper, ScrollWrapper } from './spline.styled';
+import { Wrapper, ScrollWrapper } from './technology-planet.styled';
 
 const SplineTool = dynamic(() => import('@splinetool/react-spline'), {
   ssr: false,
   loading: () => <Loader />,
 });
 
-export const Spline: FC = () => {
+export const TechnologyPlanet: FC = () => {
   const locale = useLocale() as Locale;
   const { themeType } = useThemeStore();
   const [isLoaded, setIsLoaded] = useState(false);
 
   const isDarkTheme = themeType === 'dark';
-  const conditionSplineScene = `https://prod.spline.design/${isDarkTheme ? (locale === 'ru' ? 'oB2He7F4RYyyx8Z8' : 'IYTSlSqng2fEIZEk') : locale === 'ru' ? 'mkhsyF4Jc5yspLzg' : 'mP8JjpwdEW3Bl9ud'}/scene.splinecode`;
+  const conditionSplineScene = `https://prod.spline.design/${isDarkTheme ? (locale === 'ru' ? 'xNaufbsbqExRyBRR' : 'K5DNOSzN3shyP528') : locale === 'ru' ? 'SftG2fDlL2b9uko7' : 'orWMmaTJcO82Eu-h'}/scene.splinecode`;
 
   return (
-    <Wrapper data-testid='spline'>
+    <Wrapper data-testid='technology-planet'>
       <SplineTool scene={ conditionSplineScene } onLoad={ () => setIsLoaded(true) } />
       {isLoaded && (
         <ScrollWrapper>

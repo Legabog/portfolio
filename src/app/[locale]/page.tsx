@@ -7,8 +7,8 @@ import dynamic from 'next/dynamic';
 import { useLocale } from 'next-intl';
 
 import { Loader, ScrollDown } from '@shared/ui';
-import { ScrollWrapper } from '@widgets/spline/spline.styled';
 import { useThemeStore } from '@widgets/header';
+import { ScrollWrapper } from 'src/features/first-section/ui/technology-planet/technology-planet.styled';
 import { Locale } from '@locales';
 import { useAdditionalLogic } from './lib';
 import { Wrapper } from './page.styled';
@@ -39,7 +39,10 @@ const Background = dynamic(() => import('@widgets/background'), {
   loading: () => <Loader />,
   ssr: false,
 });
-const Spline = dynamic(() => import('@widgets/spline'), { loading: () => <Loader />, ssr: false });
+const FirstSection = dynamic(() => import('@features/first-section'), {
+  loading: () => <Loader />,
+  ssr: false,
+});
 const TypedText = dynamic(() => import('@widgets/typed-text'), {
   loading: () => <Loader />,
   ssr: false,
@@ -54,7 +57,7 @@ const Home: FC = () => {
   return (
     <Wrapper onMouseMove={ onMouseMoveHandler }>
       <Background />
-      <Spline />
+      <FirstSection/>
       <Wrapperrr>
         <Wrapperr>
           <SplineTool
