@@ -22,9 +22,9 @@
 			"dark": "Dark theme"
 		},
 		"info-section": {
-			"section-1": "Github",
-			"section-2": "Linkedin",
-			"section-3": "Resume"
+			"section-1": "<A/> Github",
+			"section-2": "<A/> Linkedin",
+			"section-3": "<A/> Resume"
 		}
 	},
 	"TypedText": {
@@ -35,6 +35,13 @@
 		"crypto": "Learning blockchain and web3 technologies",
 		"egg": "Redux hater",
 		"description": "I'm a Front-end developer with a\u00A0strong passion for\u00A0design and\u00A0a\u00A0desire to\u00A0create beautiful and\u00A0functional websites. I\u00A0have a\u00A0strong background in\u00A0web development and\u00A0have worked in\u00A0a\u00A0variety of\u00A0different projects. I am\u00A0also a\u00A0self-taught programmer and\u00A0I\u00A0am\u00A0always looking for\u00A0new challenges."
+	},
+	"FirstSectionTypedText": {
+		"first": "BUILD",
+		"main": "PORTFOLIO",
+		"main-2": "PART OF ME",
+		"description": "BY FRONTEND DEVEOPER OLEG DOSOV",
+		"second": "CREATE"
 	},
 	"ScrollDown": {
 		"text": "scroll down"
