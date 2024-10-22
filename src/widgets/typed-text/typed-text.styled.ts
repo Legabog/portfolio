@@ -5,12 +5,13 @@ import { COLORS } from '@shared/constants';
 export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
-  width: 100%;
-  height: 100vh;
+  position: absolute;
   pointer-events: none;
+  top: 20%;
+  left: 30%;
 `;
 export const InnerTextWrapper = styled.div`
-  width: 50%;
+  width: 70%;
   display: flex;
   align-items: center;
   flex-direction: column;
