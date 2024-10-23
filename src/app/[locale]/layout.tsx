@@ -10,7 +10,6 @@ import type { Locale } from '@locales';
 import { RootLocaleLayoutProps } from './types';
 
 const Header = dynamic(() => import('@widgets/header'), { loading: () => <Loader /> });
-const BottomPanel = dynamic(() => import('@widgets/bottom-panel'), { loading: () => <Loader /> });
 
 const inter = Figtree({ subsets: ['latin'] });
 
@@ -35,7 +34,6 @@ const RootLocaleLayout: FC<RootLocaleLayoutProps> = async ({ children, params: {
         <NextIntlClientProvider messages={ messages }>
           <Header />
           {children}
-          <BottomPanel />
         </NextIntlClientProvider>
       </body>
     </html>

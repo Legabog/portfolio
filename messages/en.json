@@ -22,9 +22,9 @@
 			"dark": "Dark theme"
 		},
 		"info-section": {
-			"section-1": "<A/> Github",
-			"section-2": "<A/> Linkedin",
-			"section-3": "<A/> Resume"
+			"section-1": "Github",
+			"section-2": "Linkedin",
+			"section-3": "Resume"
 		}
 	},
 	"TypedText": {

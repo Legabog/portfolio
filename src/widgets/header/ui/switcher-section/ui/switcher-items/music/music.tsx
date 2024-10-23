@@ -1,15 +1,14 @@
 'use client';
 
-import { FC, useEffect, useState } from 'react';
+import { FC, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 
 import { MusicOffIcon, MusicOnIcon } from '@shared/ui';
-import { Wrapper, A, Tooltip } from './music.styled';
+import { Wrapper, A } from './music.styled';
 import { useMusicStore } from './model';
 
 export const Music: FC = () => {
   const { isMusicOn, toggleMusic, setTime, currentTime } = useMusicStore();
-  const [mouseIn, setMouseIn] = useState<number>(0);
   const t = useTranslations('Header.music');
   const tooltip = t(`tooltip-turn-${isMusicOn ? 'on' : 'off'}`);
   const conditionIcon = isMusicOn ? <MusicOnIcon /> : <MusicOffIcon />;
@@ -49,15 +48,9 @@ export const Music: FC = () => {
   }, [audio]);
 
   return (
-    <Wrapper
-      data-testid='music-switcher-item'
-      onClick={ handleChange }
-      onMouseEnter={ () => setMouseIn(1) }
-      onMouseLeave={ () => setMouseIn(2) }
-    >
+    <Wrapper data-testid='music-switcher-item' onClick={ handleChange }>
       <A $isActvie={ isMusicOn } data-testid='music-switcher-item-tooltip' title={ tooltip }>
         {conditionIcon}
-        <Tooltip $mouseIn={ mouseIn }>{tooltip}</Tooltip>
       </A>
       <audio id='audio'>
         <source src='cosmos.mp3' type='audio/mpeg' />
