@@ -8,4 +8,9 @@ export const Wrapper = styled.div`
   @media only screen and (max-width: 460px) {
     flex-direction: column;
   }
+
+  a:last-child {
+    border-right: none;
+    padding-right: none;
+  }
 `;
