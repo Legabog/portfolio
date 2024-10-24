@@ -12,6 +12,7 @@ export const InfoSectionItem: FC<Item> = ({ url, id }) => {
   const ref = useRef<number>();
   const [frame, setFrame] = useState<number>(0);
   const [currentText, setCurrentText] = useState<string>(linkText);
+  console.log('currentText', currentText);
 
   const condtitionalString = frame !== 0 ? currentText : linkText;
 

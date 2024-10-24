@@ -9,6 +9,7 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 105px;
 `;
 export const Text = styled.span`
   position: relative;
@@ -40,7 +41,6 @@ export const StyledLink = styled(Link)`
   align-items: center;
   text-decoration: none;
   border-right: 1px solid ${orange};
-  padding-right: 20px;
 
   &:hover ${Text}::after {
     opacity: 1;
