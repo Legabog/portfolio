@@ -10,7 +10,7 @@ export const COLORS = {
 const { white, black, orange, grey, greySecondary, lightGrey, darkGrey } = COLORS;
 export const THEME = {
   dark: {
-    color: orange,
+    color: white,
     colorSecondary: white,
     backgroundColor: black,
     secondaryBackgroundColor: darkGrey,
@@ -31,7 +31,7 @@ export const THEME = {
     boxShadow: 'rgba(0, 0, 0, 0.04)',
     icon: {
       path: {
-        fill: black,
+        fill: orange,
       },
     },
     discription: grey,

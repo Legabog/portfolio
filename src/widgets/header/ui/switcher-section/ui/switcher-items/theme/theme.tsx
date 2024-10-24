@@ -9,6 +9,7 @@ import { Wrapper, A } from './theme.styled';
 
 export const Theme: FC = () => {
   const { themeType, setTheme } = useThemeStore();
+
   const t = useTranslations('Header.theme');
   const isLightMode = themeType === 'light';
   const tooltip = t(`${themeType}`);

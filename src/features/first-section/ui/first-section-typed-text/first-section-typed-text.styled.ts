@@ -5,17 +5,18 @@ import { COLORS } from '@shared/constants';
 export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
-  position: absolute;
   pointer-events: none;
-  top: 25%;
-  left: 10%;
+  width: 50%;
 `;
 export const Title = styled.div`
-  color: ${COLORS.white};
+  color: ${({ theme }) => theme.color};
 `;
 export const InnerTextWrapper = styled.div`
   width: 100%;
+  margin-left: 20%;
+  margin-bottom: 20%;
   display: flex;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
   font-size: 96px;

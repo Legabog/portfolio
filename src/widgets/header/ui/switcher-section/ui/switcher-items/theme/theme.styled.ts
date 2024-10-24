@@ -7,8 +7,8 @@ const { orange } = COLORS;
 export const A = styled.a<{ $isActvie: boolean }>`
   position: relative;
   display: block;
-  height: 28px;
-  width: 28px;
+  height: 16px;
+  width: 16px;
   box-sizing: border-box;
   border-radius: 7px;
   overflow: visible;
@@ -21,7 +21,6 @@ export const A = styled.a<{ $isActvie: boolean }>`
   ${({ $isActvie }) =>
     $isActvie &&
     css`
-      border: 1px ${orange} solid;
       & path {
         fill: ${orange};
       }
@@ -29,16 +28,10 @@ export const A = styled.a<{ $isActvie: boolean }>`
 `;
 export const Wrapper = styled.div`
   position: relative;
-  flex: none;
-  height: auto;
-  width: auto;
-  font-size: 14px;
-  font-weight: 500;
-  &:hover ${A} {
-    background-color: rgba(0, 0, 0, 0.1);
-  }
+  padding: 0px 20px;
+  border-left: 1px solid rgb(232, 176, 89);
+
   &:active ${A} {
     transform: scale(0.95);
-    background-color: rgba(0, 0, 0, 0.15);
   }
 `;

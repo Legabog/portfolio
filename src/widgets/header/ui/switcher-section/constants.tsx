@@ -1,19 +1,9 @@
-import { Language, Music, Theme, Props } from './ui';
+import { Language, Music, Theme } from './ui';
 
-export const SWITCHER_ITEMS: Props[] = [
-  {
-    id: '1',
-    text: 'en',
-  },
-  {
-    id: '2',
-    text: 'ru',
-  },
-];
 export const NAV_MAP = {
   languageSwitcherItems: {
     id: 'language-switcher-items',
-    element: SWITCHER_ITEMS.map((props) => <Language key={ props.id } { ...props } />),
+    element: <Language />,
   },
   themeSwitcherItem: {
     id: 'theme-switcher-item',
