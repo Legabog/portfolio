@@ -1,25 +1,15 @@
-import styled from 'styled-components';
-import Link from 'next/link';
+import styled, { css } from 'styled-components';
 
 import { COLORS } from '@shared/constants';
 
 const { orange } = COLORS;
 
-export const Wrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 105px;
-`;
 export const Text = styled.span`
-  position: relative;
-  display: flex;
-  height: auto;
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
-  color: ${({ theme }) => theme.color};
   text-transform: uppercase;
+  color: ${({ theme }) => theme.color};
 
   &::after {
     content: '';
@@ -36,17 +26,35 @@ export const Text = styled.span`
     background-color: ${orange};
   }
 `;
-export const StyledLink = styled(Link)`
+export const A = styled.a<{ $isActvie: boolean }>`
+  position: relative;
+  display: block;
+  height: 16px;
+  width: 16px;
+  box-sizing: border-box;
+  overflow: visible;
+  text-decoration: none;
   display: flex;
   align-items: center;
-  text-decoration: none;
-  border-right: 1px solid ${orange};
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.5s;
+  ${({ $isActvie }) =>
+    $isActvie &&
+    css`
+      & ${Text} {
+        color: ${orange};
+      }
+    `};
+`;
+export const ItemWrapper = styled.div`
+  position: relative;
 
-  &:hover ${Text} {
-    color: ${orange};
-  }
   &:hover ${Text}::after {
     opacity: 1;
     transform: scaleX(1);
+  }
+  &:active ${A} {
+    transform: scale(0.95);
   }
 `;

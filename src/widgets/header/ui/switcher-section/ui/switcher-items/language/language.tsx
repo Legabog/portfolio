@@ -1,29 +1,15 @@
 'use client';
 
 import { FC } from 'react';
-import { useTranslations, useLocale } from 'next-intl';
 
-import { Locale, usePathname, useRouter } from '@locales';
-import { Props } from './types';
-import { Wrapper, A, Text } from './language.styled';
+import { Wrapper } from './language.styled';
+import { SWITCHER_ITEMS } from './constants';
+import { Item } from './ui';
 
-export const Language: FC<Props> = ({ id, text }) => {
-  const locale = useLocale() as Locale;
-  const router = useRouter();
-  const pathname = usePathname();
-  const t = useTranslations('Header.language');
-  const tooltip = t(`tooltip-${id}`);
-  const isActive = locale === text;
-
-  const handleChange = (locale: Locale) => {
-    router.push(pathname, { locale });
-  };
-
-  return (
-    <Wrapper data-testid='switcher-item' onClick={ () => handleChange(text) }>
-      <A $isActvie={ isActive } data-testid='switcher-item-tooltip' title={ tooltip }>
-        <Text>{text}</Text>
-      </A>
-    </Wrapper>
-  );
-};
+export const Language: FC = () => (
+  <Wrapper>
+    {SWITCHER_ITEMS.map((props) => (
+      <Item key={ props.id } { ...props } />
+    ))}
+  </Wrapper>
+);

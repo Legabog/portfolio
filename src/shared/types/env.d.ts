@@ -1,5 +1,6 @@
 /// <reference types="next" />
 /// <reference types="next/image-types/global" />
+/// <reference types="react" />
 
 declare module '*.mp3' {
   const value: string;

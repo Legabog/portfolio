@@ -1,1 +1,0 @@
-export const RANDOM_LETTERS = `QWERTYUIOPASDFGHJKLZXCVBNM`.split('');

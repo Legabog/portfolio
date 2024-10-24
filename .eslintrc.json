@@ -12,7 +12,8 @@
     "airbnb",
     "prettier",
     "plugin:storybook/recommended",
-    "plugin:import/typescript"
+    "plugin:import/typescript",
+    "plugin:react/jsx-runtime"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
