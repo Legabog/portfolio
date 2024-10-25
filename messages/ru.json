@@ -45,5 +45,9 @@
 		},
 	"ScrollDown": {
 		"text": "прокрутите вниз"
+	},
+	"MobileMenu": {
+		"tooltip-inactive": "Открыть меню",
+		"tooltip-active": "Закрыть меню"
 	}
 }

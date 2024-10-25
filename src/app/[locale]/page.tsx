@@ -1,9 +1,6 @@
 'use client';
 
-import {
-  FC,
-  // useState
-} from 'react';
+import { FC } from 'react';
 // import SplineTool from '@splinetool/react-spline';
 // import styled, { css } from 'styled-components';
 import dynamic from 'next/dynamic';
@@ -37,44 +34,6 @@ import { Wrapper } from './page.styled';
 //   }
 // `;
 
-// const Button = styled.button`
-//   background-color: transparent;
-//   border: 0;
-//   width: 82px;
-//   height: 24px;
-//   position: relative;
-//   z-index: 15;
-//   pointer-events: all;
-// `;
-// const FirstSpan = styled.span<{ $isClicked: boolean }>`
-//   width: 100%;
-//   height: 1px;
-//   position: absolute;
-//   left: 50%;
-//   top: 50%;
-//   ${({ $isClicked }) => $isClicked ? css`transform: translate(-20%, -50%) rotate(-45deg) scaleX(0.5);` : css`transform: translate(-50%, -50%);`}
-//   background-color: #f2f2f2;
-//   opacity: 1;
-//   transition:
-//     transform 0.25s ease-out,
-//     opacity 0.25s ease;
-// `;
-// const SecondSpan = styled.span<{ $isClicked: boolean }>`
-//   width: 100%;
-//   height: 1px;
-//   position: absolute;
-//   left: 50%;
-//   top: 50%;
-//   ${({ $isClicked }) => $isClicked ? css`transform: translate(-20%, -50%) rotate(45deg) scaleX(0.5);` : css`transform: translate(-50%, calc(-50% + 0.4rem));`}
-//   background-color: #f2f2f2;
-//   opacity: 1;
-//   transition:
-//     transform 0.25s ease-out,
-//     opacity 0.25s ease;
-//   background-color: #f2f2f2;
-//   opacity: 1;
-// `;
-
 const Background = dynamic(() => import('@widgets/background'), {
   loading: () => <Loader />,
   ssr: false,
@@ -94,15 +53,9 @@ const Home: FC = () => {
   // const { themeType } = useThemeStore();
   // const isDarkTheme = themeType === 'dark';
 
-  // const [isClicked, setIsClicked] = useState<boolean>(false);
-
   return (
     <Wrapper onMouseMove={ onMouseMoveHandler }>
       <Background />
-      {/* <Button onClick={() => setIsClicked(prev => !prev)}>
-        <FirstSpan $isClicked={ isClicked } />
-        <SecondSpan $isClicked={ isClicked } />
-      </Button> */}
       {/* <FirstSection /> */}
       {/* <Wrapperrr>
         <Wrapperr>
