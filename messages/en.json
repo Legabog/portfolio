@@ -45,5 +45,9 @@
 	},
 	"ScrollDown": {
 		"text": "scroll down"
+	},
+	"MobileMenu": {
+		"tooltip-inactive": "Open menu",
+		"tooltip-active": "Close menu"
 	}
 }

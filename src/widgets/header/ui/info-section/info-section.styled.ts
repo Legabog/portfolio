@@ -6,10 +6,6 @@ export const Wrapper = styled.div`
   align-items: center;
   flex-wrap: nowrap;
 
-  @media only screen and (max-width: 460px) {
-    flex-direction: column;
-  }
-
   a:first-child {
     padding-right: 5px;
   }
