@@ -1,6 +1,7 @@
 import styled, { css, keyframes } from 'styled-components';
 
 import { COLORS } from '@shared/constants';
+import { State } from './types';
 
 const move = keyframes`
   0% {
@@ -25,9 +26,9 @@ export const Wrapper = styled.div`
   align-items: center;
   width: 100%;
 `;
-export const Backdrop = styled.div<{ $isActive: boolean }>`
-  opacity: ${({ $isActive }) => ($isActive ? 1 : 0)};
-  background-color: rgb(10, 10, 10);
+export const Backdrop = styled.div<{ $isUsedBefore: boolean; $state: State['state'] }>`
+  opacity: ${({ $state }) => ($state === 1 ? 1 : 0)};
+  background-color: transparent;
   max-width: 100%;
   position: fixed;
   z-index: 2;
@@ -41,7 +42,8 @@ export const Backdrop = styled.div<{ $isActive: boolean }>`
   outline: 0px;
   transition: opacity 300ms;
   animation: 300ms cubic-bezier(0.5, 0, 0.5, 1) 0s 1 normal none running
-    ${({ $isActive }) => ($isActive ? move : moveOut)};
+    ${({ $state, $isUsedBefore }) =>
+      $state === 1 && $isUsedBefore ? move : $state === 2 && $isUsedBefore ? moveOut : undefined};
 `;
 export const Button = styled.button`
   background-color: transparent;
@@ -53,14 +55,14 @@ export const Button = styled.button`
   pointer-events: all;
   cursor: pointer;
 `;
-export const Span = styled.span<{ $isActive: boolean; $spanType: 'first' | 'second' }>`
+export const Span = styled.span<{ $spanType: 'first' | 'second'; $state: State['state'] }>`
   width: 100%;
   height: 1px;
   position: absolute;
   left: 50%;
   top: 50%;
-  ${({ $isActive, $spanType }) =>
-    $isActive
+  ${({ $state, $spanType }) =>
+    $state === 1
       ? css`
           transform: translate(-20%, -50%) rotate(${$spanType === 'first' ? '-' : ''}45deg)
             scaleX(0.5);

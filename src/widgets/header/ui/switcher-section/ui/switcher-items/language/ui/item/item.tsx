@@ -18,11 +18,11 @@ export const Item: FC<Props> = ({ id, text }) => {
   const tooltip = t(`tooltip-${id}`);
   const isActive = locale === text;
 
+  const { animate, clear, generatedString } = useHoverRandomLettersAnimation(text);
+
   const handleChange = (locale: Locale) => {
     router.push(pathname, { locale });
   };
-
-  const { animate, clear, generatedString } = useHoverRandomLettersAnimation(text);
 
   return (
     <ItemWrapper
