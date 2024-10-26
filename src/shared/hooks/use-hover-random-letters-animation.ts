@@ -1,12 +1,20 @@
 import { useRef, useState } from 'react';
+import { useLocale } from 'next-intl';
 
-export const RANDOM_LETTERS = `QWERTYUIOPASDFGHJKLZXCVBNM`.split('');
+import { Locale } from '@locales';
+
+export const RANDOM_LETTERS = {
+  ru: `ЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ`.split(''),
+  en: `QWERTYUIOPASDFGHJKLZXCVBNM`.split(''),
+};
 
 export const useHoverRandomLettersAnimation = (initalString: string) => {
+  const locale = useLocale() as Locale;
   const ref = useRef<number>();
   const [frame, setFrame] = useState<number>(0);
   const [currentText, setCurrentText] = useState<string>(initalString);
 
+  const currentLanguageRandomLetters = RANDOM_LETTERS[locale];
   const generatedString = frame !== 0 ? currentText : initalString;
 
   const clear = () => {
@@ -19,7 +27,10 @@ export const useHoverRandomLettersAnimation = (initalString: string) => {
     ref.current = requestAnimationFrame(animate);
     const newStr = currentText.split('');
     newStr.forEach((_, index) => {
-      newStr[index] = RANDOM_LETTERS[Math.floor(Math.random() * RANDOM_LETTERS.length)];
+      newStr[index] =
+        currentLanguageRandomLetters[
+          Math.floor(Math.random() * currentLanguageRandomLetters.length)
+        ];
     });
     setCurrentText(newStr.join(''));
 

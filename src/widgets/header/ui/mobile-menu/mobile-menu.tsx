@@ -1,32 +1,40 @@
 'use client';
 
-import { FC, useState } from 'react';
+import { FC, memo, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import dynamic from 'next/dynamic';
 
 import { Loader } from '@shared/ui';
+import { SwitcherSection } from '../switcher-section';
 import { Backdrop, Button, Span, Wrapper } from './mobile-menu.styled';
+import { useMobileMenuStore } from './model';
 
 const Background = dynamic(() => import('@widgets/background'), {
   loading: () => <Loader />,
   ssr: false,
 });
 
-export const MobileMenu: FC = () => {
-  const [isActive, setIsActive] = useState<boolean>(false);
+export const MobileMenu: FC = memo(() => {
+  const [isUsedBefore, setIsUsedBefore] = useState<boolean>(false);
+  const { state, toggleState } = useMobileMenuStore();
   const t = useTranslations('MobileMenu');
-  const text = t(`tooltip-${isActive ? 'active' : 'inactive'}`);
+  const text = t(`tooltip-${state === 1 ? 'active' : 'inactive'}`);
+
+  const onClick = () => {
+    toggleState();
+    setIsUsedBefore(true);
+  };
 
   return (
-    <Wrapper>
-      <Button title={ text } onClick={ () => setIsActive((prev) => !prev) }>
-        <Span $isActive={ isActive } $spanType='first' />
-        <Span $isActive={ isActive } $spanType='second' />
+    <Wrapper key={ state }>
+      <Button title={ text } onClick={ onClick }>
+        <Span $spanType='first' $state={ state } />
+        <Span $spanType='second' $state={ state } />
       </Button>
-      <Backdrop $isActive={ isActive }>
+      <Backdrop $isUsedBefore={ isUsedBefore } $state={ state }>
         <Background />
-        <h1 style={ { color: 'white' } }>ASDASDASDASDASD</h1>
+        <SwitcherSection />
       </Backdrop>
     </Wrapper>
   );
-};
+});

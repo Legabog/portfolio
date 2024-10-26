@@ -25,6 +25,11 @@ export const Text = styled.span`
     transform-origin: left;
     background-color: ${orange};
   }
+
+  @media screen and (max-width: 800px) {
+    font-size: 32px;
+    line-height: 36px;
+  }
 `;
 export const A = styled.a<{ $isActvie: boolean }>`
   position: relative;
@@ -46,6 +51,10 @@ export const A = styled.a<{ $isActvie: boolean }>`
         color: ${orange};
       }
     `};
+  @media screen and (max-width: 800px) {
+    height: 40px;
+    width: 50px;
+  }
 `;
 export const ItemWrapper = styled.div`
   position: relative;
