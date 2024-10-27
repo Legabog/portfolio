@@ -10,6 +10,10 @@ export const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   width: 105px;
+
+  @media screen and (max-width: 800px) {
+    width: 100%;
+  }
 `;
 export const Text = styled.span`
   position: relative;
@@ -35,6 +39,17 @@ export const Text = styled.span`
     transform-origin: left;
     background-color: ${orange};
   }
+
+  @media screen and (max-width: 800px) {
+    width: 100%;
+    font-size: 36px;
+    line-height: 34px;
+    letter-spacing: -1.8px;
+
+    &::after {
+      margin-bottom: -10px;
+    }
+  }
 `;
 export const StyledLink = styled(Link)`
   display: flex;
@@ -48,5 +63,10 @@ export const StyledLink = styled(Link)`
   &:hover ${Text}::after {
     opacity: 1;
     transform: scaleX(1);
+  }
+
+  @media screen and (max-width: 800px) {
+    border-right: none;
+    width: 100%;
   }
 `;

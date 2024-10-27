@@ -25,6 +25,16 @@ export const A = styled.a<{ $isActvie: boolean }>`
         fill: ${orange};
       }
     `};
+
+  @media screen and (max-width: 800px) {
+    height: 40px;
+    width: 50px;
+
+    svg {
+      height: 28px;
+      width: 28px;
+    }
+  }
 `;
 export const Wrapper = styled.div`
   position: relative;
@@ -33,5 +43,12 @@ export const Wrapper = styled.div`
 
   &:active ${A} {
     transform: scale(0.95);
+  }
+
+  @media screen and (max-width: 800px) {
+    padding: 0px 40px;
+  }
+  @media screen and (max-width: 450px) {
+    padding: 0px 20px;
   }
 `;

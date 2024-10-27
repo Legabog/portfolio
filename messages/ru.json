@@ -49,5 +49,8 @@
 	"MobileMenu": {
 		"tooltip-inactive": "Открыть меню",
 		"tooltip-active": "Закрыть меню"
+	},
+	"Footer": {
+		"text": "ВСЕ ПРАВА ЗАЩИЩЕНЫ"
 	}
 }

@@ -7,7 +7,6 @@ const { orange } = COLORS;
 export const Text = styled.span`
   font-size: 12px;
   font-weight: 400;
-  line-height: 16px;
   text-transform: uppercase;
   color: ${({ theme }) => theme.color};
 
@@ -28,7 +27,6 @@ export const Text = styled.span`
 
   @media screen and (max-width: 800px) {
     font-size: 32px;
-    line-height: 36px;
   }
 `;
 export const A = styled.a<{ $isActvie: boolean }>`

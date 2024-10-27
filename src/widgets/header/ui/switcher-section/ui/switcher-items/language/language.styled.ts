@@ -6,4 +6,12 @@ export const Wrapper = styled.div`
   align-self: cemter;
   gap: 8px;
   padding-right: 20px;
+
+  @media screen and (max-width: 800px) {
+    gap: 20px;
+    padding-right: 40px;
+  }
+  @media screen and (max-width: 450px) {
+    padding-right: 20px;
+  }
 `;

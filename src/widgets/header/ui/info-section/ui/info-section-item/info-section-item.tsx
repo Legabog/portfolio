@@ -1,14 +1,15 @@
 import { FC } from 'react';
 
 import { useTranslations } from 'next-intl';
-import { useHoverRandomLettersAnimation } from '@shared/hooks';
+import { useHoverRandomLettersAnimation, useMediaQuery } from '@shared/hooks';
 import { Item } from './types';
 import { Wrapper, Text, StyledLink } from './info-section-item.styled';
 
 export const InfoSectionItem: FC<Item> = ({ url, id }) => {
+  const isBreakpoint = useMediaQuery(800);
   const t = useTranslations('Header.info-section');
   const text = t(`section-${id}`);
-  const linkText = `</A> ${text}`;
+  const linkText = `${isBreakpoint ? '' : '</A> '}${text}`;
   const { animate, clear, generatedString } = useHoverRandomLettersAnimation(linkText);
 
   return (
