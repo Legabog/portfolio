@@ -49,5 +49,8 @@
 	"MobileMenu": {
 		"tooltip-inactive": "Open menu",
 		"tooltip-active": "Close menu"
+	},
+	"Footer": {
+		"text": "ALL RIGHTS RESERVED"
 	}
 }

@@ -2,17 +2,12 @@
 
 import { FC, memo, useState } from 'react';
 import { useTranslations } from 'next-intl';
-import dynamic from 'next/dynamic';
 
-import { Loader } from '@shared/ui';
 import { SwitcherSection } from '../switcher-section';
+import { InfoSection } from '../info-section';
 import { Backdrop, Button, Span, Wrapper } from './mobile-menu.styled';
 import { useMobileMenuStore } from './model';
-
-const Background = dynamic(() => import('@widgets/background'), {
-  loading: () => <Loader />,
-  ssr: false,
-});
+import { Footer } from './ui';
 
 export const MobileMenu: FC = memo(() => {
   const [isUsedBefore, setIsUsedBefore] = useState<boolean>(false);
@@ -32,8 +27,9 @@ export const MobileMenu: FC = memo(() => {
         <Span $spanType='second' $state={ state } />
       </Button>
       <Backdrop $isUsedBefore={ isUsedBefore } $state={ state }>
-        <Background />
         <SwitcherSection />
+        <InfoSection />
+        <Footer />
       </Backdrop>
     </Wrapper>
   );

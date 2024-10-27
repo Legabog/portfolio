@@ -8,6 +8,6 @@ export const Wrapper = styled.div`
 
   @media only screen and (max-width: 800px) {
     justify-content: flex-start;
-    margin: 50px 12px 20px 20px;
+    margin: 20% 20px 15% 20px;
   }
 `;

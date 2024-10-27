@@ -27,21 +27,21 @@ export const Wrapper = styled.div`
   width: 100%;
 `;
 export const Backdrop = styled.div<{ $isUsedBefore: boolean; $state: State['state'] }>`
-  opacity: ${({ $state }) => ($state === 1 ? 1 : 0)};
+  opacity: ${({ $state }) => ($state !== 0 ? 1 : 0)};
   background-color: transparent;
   max-width: 100%;
   position: fixed;
   z-index: 2;
   display: flex;
   flex-direction: column;
-  overflow: hidden scroll;
+  overflow: hidden;
   width: 100%;
   top: 60px;
   bottom: 0px;
   right: 0px;
   outline: 0px;
   transition: opacity 300ms;
-  animation: 300ms cubic-bezier(0.5, 0, 0.5, 1) 0s 1 normal none running
+  animation: 300ms cubic-bezier(0.5, 0, 0.5, 1) 0s 1 normal forwards running
     ${({ $state, $isUsedBefore }) =>
       $state === 1 && $isUsedBefore ? move : $state === 2 && $isUsedBefore ? moveOut : undefined};
 `;
