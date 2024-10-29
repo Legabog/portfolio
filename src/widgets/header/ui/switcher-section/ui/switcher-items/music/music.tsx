@@ -24,7 +24,7 @@ export const Music: FC<Props> = ({ audioRef }) => {
   };
 
   useEffect(() => {
-    if (audioRef.current) audioRef.current[!isMusicOn ? 'pause' : 'play']();
+    if (audioRef.current) (audioRef.current as HTMLAudioElement)[!isMusicOn ? 'pause' : 'play']();
   }, [isMusicOn, audioRef]);
 
   return (
