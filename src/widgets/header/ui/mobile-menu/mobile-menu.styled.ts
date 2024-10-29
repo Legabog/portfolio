@@ -28,11 +28,11 @@ export const Wrapper = styled.div`
 `;
 export const Backdrop = styled.div<{ $isUsedBefore: boolean; $state: State['state'] }>`
   opacity: ${({ $state }) => ($state !== 0 ? 1 : 0)};
+  display: ${({ $state }) => ($state !== 0 ? 'flex' : 'none')};
   background-color: transparent;
   max-width: 100%;
   position: fixed;
   z-index: 2;
-  display: flex;
   flex-direction: column;
   overflow: hidden;
   width: 100%;

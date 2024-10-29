@@ -28,6 +28,9 @@ export const Text = styled.span`
   @media screen and (max-width: 800px) {
     font-size: 32px;
   }
+  @media screen and (max-width: 400px) {
+    font-size: 24px;
+  }
 `;
 export const A = styled.a<{ $isActvie: boolean }>`
   position: relative;

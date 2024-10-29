@@ -1,6 +1,11 @@
+import { RefObject } from 'react';
+
 export interface State {
-  currentTime: any;
+  currentTime: number;
   isMusicOn: boolean;
-  setTime: (time: any) => void;
+  setCurrentTime: (currentTime: number) => void;
   toggleMusic: () => void;
+}
+export interface Props {
+  audioRef: RefObject<HTMLAudioElement>;
 }

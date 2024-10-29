@@ -1,4 +1,7 @@
+import { createRef } from 'react';
 import { Language, Music, Theme } from './ui';
+
+const ref = createRef<HTMLAudioElement>();
 
 export const NAV_MAP = {
   languageSwitcherItems: {
@@ -11,6 +14,6 @@ export const NAV_MAP = {
   },
   musicSwitcherItem: {
     id: 'music-switcher-item',
-    element: <Music />,
+    element: <Music audioRef={ ref } />,
   },
 };

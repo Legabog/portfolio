@@ -10,7 +10,7 @@ export const useMusicStore = create<State>()(
       isMusicOn: false,
       currentTime: 0,
       toggleMusic: () => set({ isMusicOn: !get().isMusicOn }),
-      setTime: (time: any) => set({ currentTime: time }),
+      setCurrentTime: (currentTime: number) => set({ currentTime }),
     })),
   ),
 );
