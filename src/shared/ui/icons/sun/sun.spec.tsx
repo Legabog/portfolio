@@ -19,8 +19,8 @@ describe('SunIcon Component', () => {
     const { getByTestId } = render(<IconWithMocks />);
 
     const svgElement = getByTestId('sun-icon-svg');
-    expect(svgElement).toHaveAttribute('height', '18');
-    expect(svgElement).toHaveAttribute('width', '18');
+    expect(svgElement).toHaveAttribute('height', '16');
+    expect(svgElement).toHaveAttribute('width', '16');
     expect(svgElement).toHaveAttribute('viewBox', '0 0 50 50');
   });
 

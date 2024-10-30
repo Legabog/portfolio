@@ -17,6 +17,10 @@
 			"tooltip-turn-on": "Music on",
 			"tooltip-turn-off": "Music off"
 		},
+		"sound-effects": {
+			"tooltip-turn-on": "Sounds effects on",
+			"tooltip-turn-off": "Sounds effects off"
+		},
 		"theme": {
 			"light": "Light theme",
 			"dark": "Dark theme"

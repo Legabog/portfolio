@@ -18,4 +18,11 @@ export const Text = styled.span`
   &:hover {
     color: ${COLORS.orange};
   }
+
+  @media only screen and (max-width: 600px) {
+    font-size: 16px;
+  }
+  @media only screen and (max-width: 400px) {
+    font-size: 14px;
+  }
 `;

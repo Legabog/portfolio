@@ -5,6 +5,7 @@ import { FC } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 
 import { useHoverRandomLettersAnimation } from '@shared/hooks';
+import { useSoundEffectsStore } from '@widgets/header';
 import { Locale, usePathname, useRouter } from '@locales';
 import { ItemWrapper, A, Text } from './item.styled';
 import { Props } from './types';
@@ -13,6 +14,7 @@ export const Item: FC<Props> = ({ id, text }) => {
   const locale = useLocale() as Locale;
   const router = useRouter();
   const pathname = usePathname();
+  const { play } = useSoundEffectsStore();
 
   const t = useTranslations('Header.language');
   const tooltip = t(`tooltip-${id}`);
@@ -21,6 +23,7 @@ export const Item: FC<Props> = ({ id, text }) => {
   const { animate, clear, generatedString } = useHoverRandomLettersAnimation(text);
 
   const handleChange = (locale: Locale) => {
+    play('click-1.wav');
     router.push(pathname, { locale });
   };
 

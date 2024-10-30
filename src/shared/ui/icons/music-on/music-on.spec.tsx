@@ -19,16 +19,24 @@ describe('MusicOnIcon Component', () => {
     const { getByTestId } = render(<IconWithMocks />);
 
     const svgElement = getByTestId('music-on-icon-svg');
-    expect(svgElement).toHaveAttribute('height', '14');
-    expect(svgElement).toHaveAttribute('width', '14');
-    expect(svgElement).toHaveAttribute('viewBox', '0 0 38 46');
+    expect(svgElement).toHaveAttribute('height', '16');
+    expect(svgElement).toHaveAttribute('width', '16');
+    expect(svgElement).toHaveAttribute('viewBox', '0 0 60 60');
   });
 
   test('Test MusicOnIcon renders correct path attributes', () => {
     const { getByTestId } = render(<IconWithMocks />);
-    const firstPathElement = getByTestId('music-on-icon-path');
+    const firstPathElement = getByTestId('music-on-icon-path-1');
+    const secondPathElement = getByTestId('music-on-icon-path-2');
+    const thirdPathElement = getByTestId('music-on-icon-path-3');
     expect(firstPathElement.getAttribute('d')).toContain(
-      'M20.7384 1.26738C21.4534 0.549999 22.5284 0.336791 23.4634 0.723074C24.3984 1.10685 25.0059 2.02741 25.0059 3.03827V43.1715C25.0059 44.1874 24.3984 45.1029 23.4634 45.4917C22.5284 45.8805 21.4534 45.6648 20.7384 44.9474L10.0059 33.1382H2.50586C1.13086 33.1382 0.00585938 32.0094 0.00585938 30.6298V15.5799C0.00585938 14.2029 1.13086 13.0716 2.50586 13.0716H10.0059L20.7384 1.26738ZM30.0059 15.5797C34.1409 15.5797 37.5059 18.9586 37.5059 23.1048C37.5059 27.2561 34.1409 30.6298 30.0059 30.6298V25.6132C31.3834 25.6132 32.5059 24.4869 32.5059 23.1048C32.5059 21.7227 31.3834 20.5965 30.0059 20.5965V15.5797Z',
+      'M28.4575 7.69964C27.5225 7.31465 26.4475 7.52715 25.7325 8.24213L15 20.0069H7.5C6.125 20.0069 5 21.1344 5 22.5069V37.5066C5 38.8816 6.125 40.0066 7.5 40.0066H15L25.7325 51.7763C26.4475 52.4913 27.5225 52.7063 28.4575 52.3188C29.3925 51.9313 30 51.0189 30 50.0064V10.0071C30 8.99962 29.3925 8.08214 28.4575 7.69964Z',
+    );
+    expect(secondPathElement.getAttribute('d')).toContain(
+      'M35.0001 12.5055V17.5054C41.8926 17.5054 47.5001 23.1153 47.5001 30.0052C47.5001 36.8976 41.8926 42.505 35.0001 42.505V47.5049C44.6501 47.5049 52.5001 39.6575 52.5001 30.0052C52.5001 20.3579 44.6501 12.5055 35.0001 12.5055Z',
+    );
+    expect(thirdPathElement.getAttribute('d')).toContain(
+      'M42.5001 30.0057C42.5001 25.8733 39.1351 22.5058 35.0001 22.5058V27.5057C36.3776 27.5057 37.5001 28.6282 37.5001 30.0057C37.5001 31.3832 36.3776 32.5056 35.0001 32.5056V37.5055C39.1351 37.5055 42.5001 34.1431 42.5001 30.0057Z',
     );
   });
 });

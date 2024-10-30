@@ -53,8 +53,12 @@ export const A = styled.a<{ $isActvie: boolean }>`
       }
     `};
   @media screen and (max-width: 800px) {
-    height: 40px;
     width: 50px;
+    height: 40px;
+  }
+  @media screen and (max-width: 400px) {
+    width: 35px;
+    height: 30px;
   }
 `;
 export const ItemWrapper = styled.div`

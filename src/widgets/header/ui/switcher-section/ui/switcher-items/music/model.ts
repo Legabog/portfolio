@@ -6,11 +6,32 @@ import { State } from './types';
 
 export const useMusicStore = create<State>()(
   devtools(
-    immer((set, get) => ({
-      isMusicOn: false,
-      currentTime: 0,
-      toggleMusic: () => set({ isMusicOn: !get().isMusicOn }),
-      setCurrentTime: (currentTime: number) => set({ currentTime }),
-    })),
+    immer((set) => {
+      let audio;
+      if (typeof window !== 'undefined') {
+        audio = new Audio('cosmos.mp3');
+        audio.loop = true;
+      }
+
+      return {
+        audio,
+        isPlaying: false,
+        play: () =>
+          set(({ audio }) => {
+            if (audio) {
+              audio.play();
+              return { isPlaying: true };
+            }
+          }),
+        stop: () =>
+          set(({ audio }) => {
+            if (audio) {
+              audio.pause();
+              audio.currentTime = 0;
+              return { isPlaying: false };
+            }
+          }),
+      };
+    }),
   ),
 );

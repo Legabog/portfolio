@@ -17,6 +17,10 @@
 			"tooltip-turn-on": "Музыка включена",
 			"tooltip-turn-off": "Музыка выключена"
 		},
+		"sound-effects": {
+			"tooltip-turn-on": "Звуковые эффекты включены",
+			"tooltip-turn-off": "Звуковые эффекты выключены"
+		},
 		"theme": {
 			"light": "Светлая тема",
 			"dark": "Тёмная тема"
