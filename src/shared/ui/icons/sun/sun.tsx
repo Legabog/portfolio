@@ -5,9 +5,9 @@ import { StyledSvg } from '@shared/ui';
 export const SunIcon: FC = () => (
   <StyledSvg
     data-testid='sun-icon-svg'
-    height='18'
+    height='16'
     viewBox='0 0 50 50'
-    width='18'
+    width='16'
     xmlns='http://www.w3.org/2000/svg'
   >
     <path

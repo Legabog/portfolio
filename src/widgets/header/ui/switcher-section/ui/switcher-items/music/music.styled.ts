@@ -1,10 +1,10 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 import { COLORS } from '@shared/constants';
 
 const { orange } = COLORS;
 
-export const A = styled.a<{ $isActvie: boolean }>`
+export const A = styled.a`
   position: relative;
   display: block;
   box-sizing: border-box;
@@ -17,13 +17,10 @@ export const A = styled.a<{ $isActvie: boolean }>`
   width: 16px;
   cursor: pointer;
   transition: background-color 0.5s;
-  ${({ $isActvie }) =>
-    $isActvie &&
-    css`
-      & path {
-        fill: ${orange};
-      }
-    `};
+
+  path {
+    fill: ${orange};
+  }
 
   @media screen and (max-width: 800px) {
     height: 40px;
@@ -33,6 +30,10 @@ export const A = styled.a<{ $isActvie: boolean }>`
       height: 28px;
       width: 28px;
     }
+  }
+  @media screen and (max-width: 400px) {
+    width: 35px;
+    height: 30px;
   }
 `;
 export const Wrapper = styled.div`

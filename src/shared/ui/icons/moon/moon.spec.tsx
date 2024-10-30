@@ -19,8 +19,8 @@ describe('MoonIcon Component', () => {
     const { getByTestId } = render(<IconWithMocks />);
 
     const svgElement = getByTestId('moon-icon-svg');
-    expect(svgElement).toHaveAttribute('height', '18');
-    expect(svgElement).toHaveAttribute('width', '18');
+    expect(svgElement).toHaveAttribute('height', '16');
+    expect(svgElement).toHaveAttribute('width', '16');
     expect(svgElement).toHaveAttribute('viewBox', '0 0 18 19');
   });
 

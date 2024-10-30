@@ -5,9 +5,9 @@ import { StyledSvg } from '@shared/ui';
 export const MoonIcon: FC = () => (
   <StyledSvg
     data-testid='moon-icon-svg'
-    height='18'
+    height='16'
     viewBox='0 0 18 19'
-    width='18'
+    width='16'
     xmlns='http://www.w3.org/2000/svg'
   >
     <path

@@ -1,48 +1,31 @@
 'use client';
 
-import { FC, useEffect } from 'react';
+import { FC } from 'react';
 import { useTranslations } from 'next-intl';
 
 import { MusicOffIcon, MusicOnIcon } from '@shared/ui';
+import { useSoundEffectsStore } from '@widgets/header';
 import { Wrapper, A } from './music.styled';
 import { useMusicStore } from './model';
-import { Props } from './types';
 
-export const Music: FC<Props> = ({ audioRef }) => {
-  const { isMusicOn, toggleMusic, setCurrentTime, currentTime } = useMusicStore();
+export const Music: FC = () => {
+  const { isPlaying, play, stop } = useMusicStore();
+  const { play: playSound } = useSoundEffectsStore();
   const t = useTranslations('Header.music');
-  const tooltip = t(`tooltip-turn-${isMusicOn ? 'on' : 'off'}`);
-  const conditionIcon = isMusicOn ? <MusicOnIcon /> : <MusicOffIcon />;
+  const tooltip = t(`tooltip-turn-${isPlaying ? 'on' : 'off'}`);
+  const conditionIcon = isPlaying ? <MusicOnIcon /> : <MusicOffIcon />;
 
-  let audio;
-  if (typeof document !== 'undefined') audio = document.getElementById('audio') as HTMLAudioElement;
-
-  const handleChange = () => toggleMusic();
-  const handleTimeUpdate = () => setCurrentTime(audio?.currentTime);
-  const handleOnLoadedMetadata = () => {
-    (audioRef.current as HTMLAudioElement).currentTime = currentTime;
+  const handleChange = () => {
+    playSound('click-1.wav');
+    if (isPlaying) stop();
+    else play();
   };
-
-  useEffect(() => {
-    if (audioRef.current) (audioRef.current as HTMLAudioElement)[!isMusicOn ? 'pause' : 'play']();
-  }, [isMusicOn, audioRef]);
 
   return (
     <Wrapper data-testid='music-switcher-item' onClick={ handleChange }>
-      <A $isActvie={ isMusicOn } data-testid='music-switcher-item-tooltip' title={ tooltip }>
+      <A data-testid='music-switcher-item-tooltip' title={ tooltip }>
         {conditionIcon}
       </A>
-      <audio
-        ref={ audioRef }
-        id='audio'
-        preload='auto'
-        loop
-        onLoadedMetadata={ handleOnLoadedMetadata }
-        onTimeUpdate={ handleTimeUpdate }
-      >
-        <source src='cosmos.mp3' type='audio/mpeg' />
-        <track kind='captions' />
-      </audio>
     </Wrapper>
   );
 };

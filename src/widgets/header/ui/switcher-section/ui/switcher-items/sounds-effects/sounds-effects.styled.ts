@@ -7,18 +7,16 @@ const { orange } = COLORS;
 export const A = styled.a`
   position: relative;
   display: block;
-  height: 16px;
-  width: 16px;
   box-sizing: border-box;
-  border-radius: 7px;
   overflow: visible;
   text-decoration: none;
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 16px;
+  width: 16px;
   cursor: pointer;
   transition: background-color 0.5s;
-
   path {
     fill: ${orange};
   }
