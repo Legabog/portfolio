@@ -3,7 +3,7 @@
 import { FC } from 'react';
 import { useTranslations } from 'next-intl';
 
-import { MusicOffIcon, MusicOnIcon } from '@shared/ui';
+import { SoundEffectOnIcon, SoundEffectOffIcon } from '@shared/ui';
 import { Wrapper, A } from './sounds-effects.styled';
 import { useSoundEffectsStore } from './model';
 
@@ -11,7 +11,7 @@ export const SoundEffects: FC = () => {
   const { toggle, isMuted } = useSoundEffectsStore();
   const t = useTranslations('Header.sound-effects');
   const tooltip = t(`tooltip-turn-${!isMuted ? 'on' : 'off'}`);
-  const conditionIcon = !isMuted ? <MusicOnIcon /> : <MusicOffIcon />;
+  const conditionIcon = !isMuted ? <SoundEffectOnIcon /> : <SoundEffectOffIcon />;
 
   const handleChange = () => toggle();
   return (

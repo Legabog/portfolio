@@ -23,10 +23,8 @@ export const Theme: FC = () => {
   };
 
   return (
-    <Wrapper data-testid='theme-switcher-item' onClick={ handleChange }>
-      <A data-testid='theme-switcher-item-tooltip' title={ tooltip }>
-        {conditionIcon}
-      </A>
+    <Wrapper data-testid='theme' onClick={ handleChange }>
+      <A title={ tooltip }>{conditionIcon}</A>
     </Wrapper>
   );
 };

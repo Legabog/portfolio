@@ -10,3 +10,5 @@ export * from './music-off';
 export * from './sun';
 export * from './moon';
 export * from './chevron-down';
+export * from './sound-effects-on';
+export * from './sound-effects-off';

@@ -10,7 +10,7 @@ export const Footer: FC = () => {
   const { animate, clear, generatedString } = useHoverRandomLettersAnimation(text);
 
   return (
-    <Wrapper>
+    <Wrapper data-testid='footer'>
       <Text title={ text } onMouseEnter={ animate } onMouseLeave={ clear }>
         {generatedString}
       </Text>

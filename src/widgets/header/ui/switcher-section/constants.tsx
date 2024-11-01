@@ -1,20 +1,20 @@
 import { Language, Music, Theme, SoundEffects } from './ui';
 
 export const NAV_MAP = {
-  languageSwitcherItems: {
-    id: 'language-switcher-item',
+  languageSwitcherItem: {
+    id: 'language',
     element: <Language />,
   },
   themeSwitcherItem: {
-    id: 'theme-switcher-item',
+    id: 'theme',
     element: <Theme />,
   },
   soundEffectsSwitcherItem: {
-    id: 'sound-effects-switcher-item',
+    id: 'sound',
     element: <SoundEffects />,
   },
   musicSwitcherItem: {
-    id: 'music-switcher-item',
+    id: 'music',
     element: <Music />,
   },
 };

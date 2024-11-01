@@ -25,8 +25,11 @@ export const Text = styled.span`
     background-color: ${orange};
   }
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 900px) {
     font-size: 32px;
+  }
+  @media only screen and (max-width: 600px) {
+    font-size: 28px;
   }
   @media screen and (max-width: 400px) {
     font-size: 24px;
@@ -52,9 +55,13 @@ export const A = styled.a<{ $isActvie: boolean }>`
         color: ${orange};
       }
     `};
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 900px) {
     width: 50px;
     height: 40px;
+  }
+  @media only screen and (max-width: 600px) {
+    width: 47px;
+    height: 35px;
   }
   @media screen and (max-width: 400px) {
     width: 35px;

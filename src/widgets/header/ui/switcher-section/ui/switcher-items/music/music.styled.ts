@@ -22,13 +22,22 @@ export const A = styled.a`
     fill: ${orange};
   }
 
-  @media screen and (max-width: 800px) {
-    height: 40px;
+  @media screen and (max-width: 900px) {
     width: 50px;
+    height: 40px;
 
     svg {
       height: 28px;
       width: 28px;
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    width: 47px;
+    height: 35px;
+
+    svg {
+      height: 24px;
+      width: 24px;
     }
   }
   @media screen and (max-width: 400px) {
@@ -45,7 +54,7 @@ export const Wrapper = styled.div`
     transform: scale(0.95);
   }
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 900px) {
     padding-left: 40px;
   }
   @media screen and (max-width: 450px) {
