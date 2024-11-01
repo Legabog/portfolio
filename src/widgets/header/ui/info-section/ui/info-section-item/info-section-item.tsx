@@ -7,7 +7,7 @@ import { Item } from './types';
 import { Wrapper, Text, StyledLink } from './info-section-item.styled';
 
 export const InfoSectionItem: FC<Item> = ({ url, id }) => {
-  const isBreakpoint = useMediaQuery(800);
+  const isBreakpoint = useMediaQuery(900);
   const t = useTranslations('Header.info-section');
   const text = t(`section-${id}`);
   const linkText = `${isBreakpoint ? '' : '</A> '}${text}`;
@@ -18,6 +18,7 @@ export const InfoSectionItem: FC<Item> = ({ url, id }) => {
 
   return (
     <StyledLink
+      data-testid={ `info-section-${id}` }
       href={ url }
       target='_blank'
       title={ text }

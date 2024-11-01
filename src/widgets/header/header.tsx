@@ -7,7 +7,7 @@ import { IconSection, InfoSection, MobileMenu, SwitcherSection } from './ui';
 import { Wrapper } from './header.styled';
 
 export const Header: FC = () => {
-  const isBreakpoint = useMediaQuery(800);
+  const isBreakpoint = useMediaQuery(900);
 
   const conditionalPanel = isBreakpoint ? (
     <MobileMenu />

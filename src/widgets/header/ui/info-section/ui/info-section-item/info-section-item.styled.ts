@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
   align-items: center;
   width: 105px;
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 900px) {
     width: 100%;
   }
 `;
@@ -40,7 +40,7 @@ export const Text = styled.span`
     background-color: ${orange};
   }
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 900px) {
     width: 100%;
     font-size: 36px;
     line-height: 34px;
@@ -65,7 +65,7 @@ export const StyledLink = styled(Link)`
     transform: scaleX(1);
   }
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 900px) {
     border-right: none;
     width: 100%;
   }

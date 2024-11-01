@@ -2,11 +2,14 @@
 
 import { FC } from 'react';
 // import SplineTool from '@splinetool/react-spline';
-// import styled, { css } from 'styled-components';
+// import styled from 'styled-components';
 import dynamic from 'next/dynamic';
 // import { useLocale } from 'next-intl';
 
-import { Loader } from '@shared/ui';
+import {
+  Loader,
+  // ScrollDown
+} from '@shared/ui';
 // import { useThemeStore } from '@widgets/header';
 // import { Locale } from '@locales';
 import { useAdditionalLogic } from './lib';
@@ -38,7 +41,7 @@ const Background = dynamic(() => import('@widgets/background'), {
   loading: () => <Loader />,
   ssr: false,
 });
-// const FirstSection = dynamic(() => import('@features/first-section'), {
+// const FirstSection = dynamic(() => import('@widgets/first-section'), {
 //   loading: () => <Loader />,
 //   ssr: false,
 // });
@@ -48,16 +51,16 @@ const Background = dynamic(() => import('@widgets/background'), {
 // });
 
 const Home: FC = () => {
-  // const locale = useLocale() as Locale;
   const { onMouseMoveHandler } = useAdditionalLogic();
+  // const locale = useLocale() as Locale;
   // const { themeType } = useThemeStore();
   // const isDarkTheme = themeType === 'dark';
 
   return (
     <Wrapper onMouseMove={ onMouseMoveHandler }>
       <Background />
-      {/* <FirstSection /> */}
-      {/* <Wrapperrr>
+      {/* <FirstSection />
+      <Wrapperrr>
         <Wrapperr>
           <SplineTool
             scene={ `https://prod.spline.design/${isDarkTheme ? 'KitYQfe9ltuZFkAn' : 'Ti0aboptSyKIONzY'}/scene.splinecode` }
@@ -69,6 +72,7 @@ const Home: FC = () => {
         <SplineTool
           scene={ `https://prod.spline.design/${isDarkTheme ? (locale === 'ru' ? 'xgiHCRtcVsbjIgGM' : 'JT-BdgY5mt5q4jxh') : locale === 'ru' ? 'f0QfGcXtdk7PMVgF' : 'MGz6m6545xGiYPY5'}/scene.splinecode` }
         />
+        <ScrollDown/>
       </Wrapperrr> */}
     </Wrapper>
   );

@@ -18,7 +18,7 @@ export const Wrapper = styled.div`
     padding-right: none;
   }
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 900px) {
     width: 100%;
     flex-direction: column;
     justify-content: flex-start;

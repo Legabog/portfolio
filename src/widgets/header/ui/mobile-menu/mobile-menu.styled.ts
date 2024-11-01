@@ -29,14 +29,14 @@ export const Wrapper = styled.div`
 export const Backdrop = styled.div<{ $isUsedBefore: boolean; $state: State['state'] }>`
   opacity: ${({ $state }) => ($state !== 0 ? 1 : 0)};
   display: ${({ $state }) => ($state !== 0 ? 'flex' : 'none')};
-  background-color: transparent;
+  background: ${({ theme }) => theme.backgroundColor};
   max-width: 100%;
   position: fixed;
   z-index: 2;
   flex-direction: column;
   overflow: hidden;
   width: 100%;
-  top: 60px;
+  top: 0px;
   bottom: 0px;
   right: 0px;
   outline: 0px;

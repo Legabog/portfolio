@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
   margin: 12px 20px;
   z-index: 2;
 
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 900px) {
     grid-template-columns: 1fr 1fr;
   }
 `;
