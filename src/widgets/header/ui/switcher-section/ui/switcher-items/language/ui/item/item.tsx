@@ -20,11 +20,14 @@ export const Item: FC<Props> = ({ id, text }) => {
   const tooltip = t(`tooltip-${id}`);
   const isActive = locale === text;
 
+  console.log(locale);
+  console.log(pathname);
+
   const { animate, clear, generatedString } = useHoverRandomLettersAnimation(text);
 
   const handleChange = (locale: Locale) => {
     play('click-1.wav');
-    router.push(pathname, { locale });
+    router.replace(pathname, { locale });
   };
 
   return (
