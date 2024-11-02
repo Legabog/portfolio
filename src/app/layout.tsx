@@ -12,8 +12,8 @@ const RootLayout: FC<RootProps> = ({ children }) => {
   const { themeType } = useThemeStore();
   return (
     <ThemeProvider theme={ THEME[themeType] }>
-      {children}
       <GlobalStyles />
+      {children}
     </ThemeProvider>
   );
 };

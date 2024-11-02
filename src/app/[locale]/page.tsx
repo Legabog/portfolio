@@ -6,12 +6,14 @@ import { FC } from 'react';
 import dynamic from 'next/dynamic';
 // import { useLocale } from 'next-intl';
 
+import { InstallPrompt } from '@features/install-prompt';
 import {
   Loader,
   // ScrollDown
 } from '@shared/ui';
 // import { useThemeStore } from '@widgets/header';
 // import { Locale } from '@locales';
+import { PushNotifications } from '@widgets/push-notifications';
 import { useAdditionalLogic } from './lib';
 import { Wrapper } from './page.styled';
 
@@ -58,6 +60,8 @@ const Home: FC = () => {
 
   return (
     <Wrapper onMouseMove={ onMouseMoveHandler }>
+      <PushNotifications />
+      <InstallPrompt />
       <Background />
       {/* <FirstSection />
       <Wrapperrr>
