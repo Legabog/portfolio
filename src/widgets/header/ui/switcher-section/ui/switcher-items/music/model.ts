@@ -9,7 +9,7 @@ export const useMusicStore = create<State>()(
     immer((set) => {
       let audio;
       if (typeof window !== 'undefined') {
-        audio = new Audio('cosmos.mp3');
+        audio = new Audio('music/cosmos.mp3');
         audio.loop = true;
       }
 

@@ -7,6 +7,7 @@ import { State } from './types';
 export const useSoundEffectsStore = create<State>()(
   devtools(
     immer((set, get) => {
+      const rootPath = 'sound-effects/';
       let audio;
       if (typeof window !== 'undefined') {
         audio = new Audio();
@@ -19,7 +20,7 @@ export const useSoundEffectsStore = create<State>()(
         play: (src: string, ignoreMute?: boolean) =>
           set(({ audio, isMuted }) => {
             if (audio && (!isMuted || ignoreMute)) {
-              audio.src = src;
+              audio.src = `${rootPath}${src}`;
               audio.play();
             }
           }),

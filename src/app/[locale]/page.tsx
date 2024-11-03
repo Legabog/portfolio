@@ -6,14 +6,12 @@ import { FC } from 'react';
 import dynamic from 'next/dynamic';
 // import { useLocale } from 'next-intl';
 
-import { InstallPrompt } from '@features/install-prompt';
 import {
   Loader,
   // ScrollDown
 } from '@shared/ui';
 // import { useThemeStore } from '@widgets/header';
 // import { Locale } from '@locales';
-import { PushNotifications } from '@widgets/push-notifications';
 import { useAdditionalLogic } from './lib';
 import { Wrapper } from './page.styled';
 
@@ -52,7 +50,7 @@ const Background = dynamic(() => import('@widgets/background'), {
 //   ssr: false,
 // });
 
-const Home: FC = () => {
+const Main: FC = () => {
   const { onMouseMoveHandler } = useAdditionalLogic();
   // const locale = useLocale() as Locale;
   // const { themeType } = useThemeStore();
@@ -60,8 +58,6 @@ const Home: FC = () => {
 
   return (
     <Wrapper onMouseMove={ onMouseMoveHandler }>
-      <PushNotifications />
-      <InstallPrompt />
       <Background />
       {/* <FirstSection />
       <Wrapperrr>
@@ -82,4 +78,4 @@ const Home: FC = () => {
   );
 };
 
-export default Home;
+export default Main;
