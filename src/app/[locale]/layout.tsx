@@ -17,13 +17,19 @@ export async function generateMetadata({
   params: { locale },
 }: {
   params: { locale: Locale };
-}): Promise<Metadata> {
+}): Promise<Metadata & { appleTouchIcon?: string }> {
   const t = await getTranslations({ locale, namespace: 'RootLocaleLayout' });
 
   return {
     title: t('title'),
     description: t('description'),
     manifest: 'manifest.json',
+    appleTouchIcon: 'icons/apple-touch-icon.png',
+    appleWebApp: {
+      capable: true,
+      title: t('title'),
+      statusBarStyle: 'black-translucent',
+    },
   };
 }
 
