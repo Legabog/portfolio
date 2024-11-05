@@ -1,5 +1,7 @@
+import { MouseEvent } from 'react';
+
 export const useAdditionalLogic = () => {
-  const onMouseMoveHandler = ({ clientX, clientY }: React.MouseEvent<HTMLDivElement>) => {
+  const onMouseMoveHandler = ({ clientX, clientY }: MouseEvent<HTMLDivElement>) => {
     document.querySelectorAll('[id^="cell-"]').forEach((cell) => {
       const { left, right, top, bottom } = cell.getBoundingClientRect();
       const isInside = clientX > left && clientX < right && clientY > top && clientY < bottom;

@@ -41,10 +41,10 @@ const Background = dynamic(() => import('@widgets/background'), {
   loading: () => <Loader />,
   ssr: false,
 });
-// const FirstSection = dynamic(() => import('@widgets/first-section'), {
-//   loading: () => <Loader />,
-//   ssr: false,
-// });
+const FirstSection = dynamic(() => import('@widgets/first-section'), {
+  loading: () => <Loader />,
+  ssr: false,
+});
 // const TypedText = dynamic(() => import('@widgets/typed-text'), {
 //   loading: () => <Loader />,
 //   ssr: false,
@@ -59,8 +59,8 @@ const Main: FC = () => {
   return (
     <Wrapper onMouseMove={ onMouseMoveHandler }>
       <Background />
-      {/* <FirstSection />
-      <Wrapperrr>
+      <FirstSection />
+      {/* <Wrapperrr>
         <Wrapperr>
           <SplineTool
             scene={ `https://prod.spline.design/${isDarkTheme ? 'KitYQfe9ltuZFkAn' : 'Ti0aboptSyKIONzY'}/scene.splinecode` }
