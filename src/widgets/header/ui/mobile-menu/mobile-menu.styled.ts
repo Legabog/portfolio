@@ -51,7 +51,7 @@ export const Button = styled.button`
   border: 0;
   height: 24px;
   position: relative;
-  z-index: 15;
+  z-index: 3;
   pointer-events: all;
   cursor: pointer;
 `;

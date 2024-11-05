@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   width: 50%;
-  z-index: 2;
+  z-index: 1;
 
   @media only screen and (max-width: 900px) {
     width: 100%;
@@ -34,21 +34,26 @@ export const InnerTextWrapper = styled.div`
   & > span:nth-child(2) {
     color: ${COLORS.orange};
   }
-
-  @media only screen and (max-width: 1350px) {
+  @media only screen and (max-width: 1500px) {
     font-size: 90px;
   }
-  @media only screen and (max-width: 1250px) {
+  @media only screen and (max-width: 1400px) {
     font-size: 84px;
   }
-  @media only screen and (max-width: 1150px) {
+  @media only screen and (max-width: 1300px) {
     font-size: 78px;
   }
-  @media only screen and (max-width: 1050px) {
+  @media only screen and (max-width: 1200px) {
     font-size: 72px;
   }
-  @media only screen and (max-width: 950px) {
+  @media only screen and (max-width: 1100px) {
+    font-size: 60px;
+  }
+  @media only screen and (max-width: 1000px) {
     font-size: 66px;
+  }
+  @media only screen and (max-width: 950px) {
+    font-size: 60px;
   }
   @media only screen and (max-width: 900px) {
     margin: 100px 20px 0px 20px;
@@ -66,6 +71,9 @@ export const InnerTextWrapper = styled.div`
   @media only screen and (max-width: 500px) {
     font-size: 60px;
   }
+  @media only screen and (max-width: 400px) {
+    font-size: 50px;
+  }
 `;
 export const Description = styled.div`
   font-size: 18px;
@@ -73,6 +81,9 @@ export const Description = styled.div`
   letter-spacing: 0px;
   color: ${COLORS.orange};
 
+  @media only screen and (max-width: 1000px) {
+    font-size: 16px;
+  }
   @media only screen and (max-width: 500px) {
     font-size: 12px;
   }
