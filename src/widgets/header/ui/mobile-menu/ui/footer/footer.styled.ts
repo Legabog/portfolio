@@ -14,6 +14,7 @@ export const Text = styled.span`
   font-size: 18px;
   font-weight: 400;
   color: ${({ theme }) => theme.color};
+  text-transform: uppercase;
 
   &:hover {
     color: ${COLORS.orange};
