@@ -11,7 +11,7 @@ const TechnologyPlanet = dynamic(() => import('./ui/technology-planet'), {
 });
 
 export const FirstSection: FC = () => (
-  <Wrapper>
+  <Wrapper data-testid='first-section'>
     <FirstSectionTypedText />
     <TechnologyPlanet />
   </Wrapper>

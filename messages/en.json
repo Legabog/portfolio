@@ -54,7 +54,14 @@
 		"tooltip-inactive": "Open menu",
 		"tooltip-active": "Close menu"
 	},
+	"Navigator": {
+		"title-1": "Portfolio.",
+		"title-2": "Show Skills.",
+		"item-01": "About me",
+		"item-02": "Skills",
+		"item-03": "Projects"
+	},
 	"Footer": {
-		"text": "ALL RIGHTS RESERVED"
+		"text": "All rights reserved"
 	}
 }

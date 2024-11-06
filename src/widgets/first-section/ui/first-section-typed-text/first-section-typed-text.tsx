@@ -6,6 +6,7 @@ import { TypeAnimation } from 'react-type-animation';
 
 import { useHoverRandomLettersAnimation } from '@shared/hooks';
 import { Wrapper, InnerTextWrapper, Title, Description } from './first-section-typed-text.styled';
+import { Navigator } from './ui';
 
 export const FirstSectionTypedText: FC = () => {
   const t = useTranslations(`FirstSectionTypedText`);
@@ -39,6 +40,7 @@ export const FirstSectionTypedText: FC = () => {
         <Title onMouseEnter={ animateSecond } onMouseLeave={ clearSecond }>
           {generatedStringSecond}
         </Title>
+        <Navigator />
       </InnerTextWrapper>
     </Wrapper>
   );
