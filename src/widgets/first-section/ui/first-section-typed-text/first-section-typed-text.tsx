@@ -9,7 +9,7 @@ import { Wrapper, InnerTextWrapper, Title, Description } from './first-section-t
 import { Navigator } from './ui';
 
 export const FirstSectionTypedText: FC = () => {
-  const t = useTranslations(`FirstSectionTypedText`);
+  const t = useTranslations(`FirstSection.FirstSectionTypedText`);
   const { animate, clear, generatedString } = useHoverRandomLettersAnimation(t('first'));
   const {
     animate: animateDescription,

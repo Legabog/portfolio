@@ -32,7 +32,7 @@ export const Text = styled.span`
   }
 `;
 export const Wrapper = styled.div`
-  width: 100%;
+  width: fit-content;
   display: flex;
   align-items: center;
   cursor: pointer;

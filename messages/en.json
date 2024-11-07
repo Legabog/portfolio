@@ -3,15 +3,10 @@
 		"title": "Portfolio",
 		"description": "this is my portfolio"
 	},
-	"BottomPanel": {
-		"tooltip-1": "Home",
-		"tooltip-2": "About me",
-		"tooltip-3": "Projects"
-	},
 	"Header": {
 		"language": {
 			"tooltip-1": "English",
-			"tooltip-2": "Russian" 
+			"tooltip-2": "Russian"
 		},
 		"music": {
 			"tooltip-turn-on": "Music on",
@@ -29,6 +24,32 @@
 			"section-1": "Github",
 			"section-2": "Linkedin",
 			"section-3": "Resume"
+		},
+		"MobileMenu": {
+			"tooltip-inactive": "Open menu",
+			"tooltip-active": "Close menu",
+			"Footer": {
+				"text": "All rights reserved"
+			}
+		}
+	},
+	"FirstSection": {
+		"FirstSectionTypedText": {
+			"first": "BUILD",
+			"main": "PORTFOLIO",
+			"main-2": "PART OF ME",
+			"description": "BY FRONTEND DEVEOPER OLEG DOSOV",
+			"second": "CREATE",
+			"Navigator": {
+				"title-1": "Portfolio.",
+				"title-2": "Show Skills.",
+				"item-01": "About me",
+				"item-02": "Skills",
+				"item-03": "Projects"
+			}
+		},
+		"ScrollDown": {
+			"text": "About me"
 		}
 	},
 	"TypedText": {
@@ -40,28 +61,7 @@
 		"egg": "Redux hater",
 		"description": "I'm a Front-end developer with a\u00A0strong passion for\u00A0design and\u00A0a\u00A0desire to\u00A0create beautiful and\u00A0functional websites. I\u00A0have a\u00A0strong background in\u00A0web development and\u00A0have worked in\u00A0a\u00A0variety of\u00A0different projects. I am\u00A0also a\u00A0self-taught programmer and\u00A0I\u00A0am\u00A0always looking for\u00A0new challenges."
 	},
-	"FirstSectionTypedText": {
-		"first": "BUILD",
-		"main": "PORTFOLIO",
-		"main-2": "PART OF ME",
-		"description": "BY FRONTEND DEVEOPER OLEG DOSOV",
-		"second": "CREATE"
-	},
 	"ScrollDown": {
-		"text": "scroll down"
-	},
-	"MobileMenu": {
-		"tooltip-inactive": "Open menu",
-		"tooltip-active": "Close menu"
-	},
-	"Navigator": {
-		"title-1": "Portfolio.",
-		"title-2": "Show Skills.",
-		"item-01": "About me",
-		"item-02": "Skills",
-		"item-03": "Projects"
-	},
-	"Footer": {
-		"text": "All rights reserved"
+		"text": "scroll to explore"
 	}
 }

@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
 import { COLORS } from '@shared/constants';
 
@@ -26,13 +26,27 @@ const moveDown = keyframes`
   opacity: 1;
 }
 	`;
-export const Wrapper = styled.div`
+export const Wrapper = styled.div<{ $customStyles?: string }>`
+  width: 80%;
+
+  @media only screen and (max-width: 900px) {
+    width: calc(100% - 40px);
+  }
+  ${({ $customStyles }) =>
+    $customStyles &&
+    css`
+      ${$customStyles}
+    `}
+`;
+export const WrapperScroll = styled.div`
+  margin-bottom: 8px;
+  width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   cursor: pointer;
   user-select: none;
-  gap: 4px;
+  gap: 8px;
 
   svg {
     width: 10px;
@@ -45,10 +59,30 @@ export const Wrapper = styled.div`
     }
   }
 `;
+export const WrapperText = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid ${orange};
+
+  p {
+    margin-top: 8px;
+  }
+  p:first-child {
+    width: 33.33%;
+  }
+`;
 export const Text = styled.p`
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 14px;
-  color: ${orange};
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0px;
+  cursor: pointer;
+  color: ${({ theme }) => theme.color};
+  text-transform: uppercase;
+  white-space: break-spaces;
+
+  &:hover {
+    color: ${orange};
+  }
 `;

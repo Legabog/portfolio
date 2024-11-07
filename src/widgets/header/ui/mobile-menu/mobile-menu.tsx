@@ -21,7 +21,7 @@ const Background = dynamic(() => import('@widgets/background'), {
 export const MobileMenu: FC = () => {
   const [isUsedBefore, setIsUsedBefore] = useState<boolean>(false);
   const { state, toggleState } = useMobileMenuStore();
-  const t = useTranslations('MobileMenu');
+  const t = useTranslations('Header.MobileMenu');
   const isActive = state === 1;
   const text = t(`tooltip-${isActive ? 'active' : 'inactive'}`);
   const { play } = useSoundEffectsStore();
