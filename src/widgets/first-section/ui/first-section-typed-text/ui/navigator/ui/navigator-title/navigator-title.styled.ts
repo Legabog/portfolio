@@ -12,7 +12,7 @@ export const Text = styled.span<{ $isFirstTitle?: boolean }>`
   align-items: center;
   font-size: 12px;
   font-weight: 400;
-  line-height: 12px;
+  line-height: 16px;
   letter-spacing: 0px;
   margin-bottom: 8px;
   cursor: pointer;

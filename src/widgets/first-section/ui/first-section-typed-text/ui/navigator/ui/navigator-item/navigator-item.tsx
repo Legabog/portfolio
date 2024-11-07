@@ -9,13 +9,13 @@ import { Item } from './types';
 import { Wrapper, Text } from './navigator-item.styled';
 
 export const NavigatorItem: FC<Item> = ({ id }) => {
-  const t = useTranslations('Navigator');
+  const t = useTranslations('FirstSection.FirstSectionTypedText.Navigator');
   const text = t(`item-${id}`);
   const linkText = `${id}  /  ${text}`;
   const { play } = useSoundEffectsStore();
   const { animate, clear, generatedString } = useHoverRandomLettersAnimation(linkText);
 
-  const onClick = () => play('navigation-1.wav');
+  const onClick = () => play('wooshing-1.wav');
 
   return (
     <Wrapper

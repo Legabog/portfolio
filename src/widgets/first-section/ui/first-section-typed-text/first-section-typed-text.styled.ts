@@ -56,7 +56,7 @@ export const InnerTextWrapper = styled.div`
     font-size: 60px;
   }
   @media only screen and (max-width: 900px) {
-    margin: 100px 20px 0px 20px;
+    margin: 70px 20px 0px 20px;
     font-size: 96px;
   }
   @media only screen and (max-width: 800px) {

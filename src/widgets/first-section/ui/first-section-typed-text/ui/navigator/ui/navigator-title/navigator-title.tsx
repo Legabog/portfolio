@@ -8,7 +8,7 @@ import { Title } from './types';
 import { Wrapper, Text } from './navigator-title.styled';
 
 export const NavigatorTitle: FC<Title> = ({ id }) => {
-  const t = useTranslations('Navigator');
+  const t = useTranslations('FirstSection.FirstSectionTypedText.Navigator');
   const isFirstTitle = id === '1';
   const text = `${isFirstTitle ? '///' : ''}  ${t(`title-${id}`)}`;
 

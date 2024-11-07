@@ -7,16 +7,16 @@ import { Wrapper, WrapperTitles, WrapperItems } from './navigator.styled';
 import { NavigatorItem, NavigatorTitle } from './ui';
 
 export const Navigator: FC = () => (
-    <Wrapper data-testid='navigator'>
-      <WrapperTitles>
-        {NAVIGATOR_TITLES.map(({ id }) => (
-          <NavigatorTitle id={ id } />
-        ))}
-      </WrapperTitles>
-      <WrapperItems>
-        {NAVIGATOR_ITEMS.map(({ id }) => (
-          <NavigatorItem id={ id } />
-        ))}
-      </WrapperItems>
-    </Wrapper>
-  );
+  <Wrapper data-testid='navigator'>
+    <WrapperTitles>
+      {NAVIGATOR_TITLES.map(({ id }) => (
+        <NavigatorTitle key={ id } id={ id } />
+      ))}
+    </WrapperTitles>
+    <WrapperItems>
+      {NAVIGATOR_ITEMS.map(({ id }) => (
+        <NavigatorItem key={ id } id={ id } />
+      ))}
+    </WrapperItems>
+  </Wrapper>
+);

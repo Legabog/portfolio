@@ -5,6 +5,13 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+`;
+export const SecondaryWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   @media only screen and (max-width: 900px) {
     flex-direction: column;
