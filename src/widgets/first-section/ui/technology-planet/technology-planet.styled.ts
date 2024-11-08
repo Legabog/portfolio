@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div<{ $marginBottom: string }>`
+export const Wrapper = styled.div<{ $calculatedHeight: string }>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,8 +13,6 @@ export const Wrapper = styled.div<{ $marginBottom: string }>`
 
   @media only screen and (max-width: 900px) {
     width: 100%;
-    &&& > div {
-      margin-bottom: ${({ $marginBottom }) => $marginBottom};
-    }
+    height: ${({ $calculatedHeight }) => $calculatedHeight};
   }
 `;

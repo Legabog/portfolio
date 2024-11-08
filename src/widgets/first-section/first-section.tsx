@@ -19,12 +19,7 @@ export const FirstSection: FC = () => {
   const t = useTranslations('FirstSection.ScrollDown');
 
   const sectionText = t('text');
-  const calculatedMargin = isBreakpoint
-    ? (document.getElementById('first-section-secondary')?.offsetHeight as number) -
-      window.innerHeight
-    : -80;
-
-  console.log(document.getElementById('first-section-secondary')?.offsetHeight);
+  const calculatedMargin = isBreakpoint ? -110 : -80;
 
   return (
     <Wrapper data-testid='first-section'>
