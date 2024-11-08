@@ -57,22 +57,8 @@ export const InnerTextWrapper = styled.div`
   }
   @media only screen and (max-width: 900px) {
     margin: 70px 20px 0px 20px;
-    font-size: 96px;
-  }
-  @media only screen and (max-width: 800px) {
-    font-size: 90px;
-  }
-  @media only screen and (max-width: 700px) {
-    font-size: 84px;
-  }
-  @media only screen and (max-width: 600px) {
-    font-size: 78px;
-  }
-  @media only screen and (max-width: 500px) {
-    font-size: 60px;
-  }
-  @media only screen and (max-width: 400px) {
-    font-size: 50px;
+    font-size: 52px;
+    letter-spacing: -2.6px;
   }
 `;
 export const Description = styled.div`
@@ -83,8 +69,5 @@ export const Description = styled.div`
 
   @media only screen and (max-width: 1000px) {
     font-size: 16px;
-  }
-  @media only screen and (max-width: 500px) {
-    font-size: 12px;
   }
 `;
