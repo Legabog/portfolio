@@ -7,7 +7,7 @@ import { SWITCHER_ITEMS } from './constants';
 import { Item } from './ui';
 
 export const Language: FC = () => (
-  <Wrapper>
+  <Wrapper data-testid='language'>
     {SWITCHER_ITEMS.map((props) => (
       <Item key={ props.id } { ...props } />
     ))}

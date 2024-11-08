@@ -22,10 +22,8 @@ export const Music: FC = () => {
   };
 
   return (
-    <Wrapper data-testid='music-switcher-item' onClick={ handleChange }>
-      <A data-testid='music-switcher-item-tooltip' title={ tooltip }>
-        {conditionIcon}
-      </A>
+    <Wrapper data-testid='music' onClick={ handleChange }>
+      <A title={ tooltip }>{conditionIcon}</A>
     </Wrapper>
   );
 };
