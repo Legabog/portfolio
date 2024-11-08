@@ -2,28 +2,28 @@
 
 import { FC } from 'react';
 import dynamic from 'next/dynamic';
+
 import { useTranslations } from 'next-intl';
-
 import { Loader, ScrollDown } from '@shared/ui';
-import { Wrapper, SecondaryWrapper } from './first-section.styled';
-import { FirstSectionTypedText } from './ui';
 import { CUSTOM_STYLES_SCROLL_DOWN, SECTION_NUMBER_SCROLL_DOWN } from './constants';
+import { Wrapper, SecondaryWrapper } from './second-section.styled';
+import { SecondSectionTypedText } from './ui';
 
-const TechnologyPlanet = dynamic(() => import('./ui/technology-planet'), {
+const Human = dynamic(() => import('./ui/human'), {
   loading: () => <Loader />,
   ssr: false,
 });
 
-export const FirstSection: FC = () => {
-  const t = useTranslations('FirstSection.ScrollDown');
+export const SecondSection: FC = () => {
+  const t = useTranslations('SecondSection.ScrollDown');
 
   const sectionText = t('text');
 
   return (
-    <Wrapper data-testid='first-section'>
+    <Wrapper data-testid='second-section'>
       <SecondaryWrapper>
-        <FirstSectionTypedText />
-        <TechnologyPlanet />
+        <Human />
+        <SecondSectionTypedText />
       </SecondaryWrapper>
       <ScrollDown
         customStyles={ CUSTOM_STYLES_SCROLL_DOWN }

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import { COLORS } from '@shared/constants';
 
-const { orange } = COLORS;
+const { orangeSecondary } = COLORS;
 
 export const Wrapper = styled.div`
   margin-top: 16px;
@@ -17,7 +17,7 @@ export const WrapperItems = styled.div`
   flex-direction: column;
   justify-content: center;
   gap: 8px;
-  border-top: 1px solid ${orange};
+  border-top: 1px solid ${orangeSecondary};
 
   div:first-child {
     margin-top: 8px;
