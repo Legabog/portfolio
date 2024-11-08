@@ -9,6 +9,7 @@ import { Loader } from '@shared/ui';
 import { useThemeStore } from '@widgets/header';
 import { Locale } from '@locales';
 import { Wrapper } from './technology-planet.styled';
+import { PLANETS_VARIANTS } from './constants';
 
 const SplineTool = dynamic(() => import('@splinetool/react-spline'), {
   ssr: false,
@@ -20,8 +21,7 @@ export const TechnologyPlanet: FC = () => {
   const { themeType } = useThemeStore();
   const isBreakpoint = useMediaQuery(900);
 
-  const isDarkTheme = themeType === 'dark';
-  const conditionSplineScene = `https://prod.spline.design/${isBreakpoint ? '6MITH9RR5f2W9JPV' : isDarkTheme ? (locale === 'ru' ? 'xNaufbsbqExRyBRR' : 'K5DNOSzN3shyP528') : locale === 'ru' ? 'SftG2fDlL2b9uko7' : 'orWMmaTJcO82Eu-h'}/scene.splinecode`;
+  const conditionSplineScene = `https://prod.spline.design/${PLANETS_VARIANTS[themeType][locale]}/scene.splinecode`;
   const calculatedHeight = `${
     isBreakpoint
       ? window.innerHeight -

@@ -2,9 +2,9 @@ import { create } from 'zustand';
 import { immer } from 'zustand/middleware/immer';
 import { devtools } from 'zustand/middleware';
 
-import { State } from './types';
+import { MusicState } from './types';
 
-export const useMusicStore = create<State>()(
+export const useMusicStore = create<MusicState>()(
   devtools(
     immer((set) => {
       let audio;

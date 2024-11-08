@@ -1,4 +1,4 @@
-export interface State {
+export interface MusicState {
   audio: HTMLAudioElement;
   isPlaying: boolean;
   play: () => void;
