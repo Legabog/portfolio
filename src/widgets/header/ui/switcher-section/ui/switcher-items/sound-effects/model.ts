@@ -2,9 +2,9 @@ import { create } from 'zustand';
 import { immer } from 'zustand/middleware/immer';
 import { devtools } from 'zustand/middleware';
 
-import { State } from './types';
+import { SoundEffectsState } from './types';
 
-export const useSoundEffectsStore = create<State>()(
+export const useSoundEffectsStore = create<SoundEffectsState>()(
   devtools(
     immer((set, get) => {
       const rootPath = 'sound-effects/';

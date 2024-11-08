@@ -1,4 +1,4 @@
-export interface State {
+export interface SoundEffectsState {
   audio: HTMLAudioElement;
   isMuted: boolean;
   play: (src: string, ignoreMute?: boolean) => void;
