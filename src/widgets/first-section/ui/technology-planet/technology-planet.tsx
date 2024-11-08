@@ -22,13 +22,15 @@ export const TechnologyPlanet: FC = () => {
 
   const isDarkTheme = themeType === 'dark';
   const conditionSplineScene = `https://prod.spline.design/${isBreakpoint ? '6MITH9RR5f2W9JPV' : isDarkTheme ? (locale === 'ru' ? 'xNaufbsbqExRyBRR' : 'K5DNOSzN3shyP528') : locale === 'ru' ? 'SftG2fDlL2b9uko7' : 'orWMmaTJcO82Eu-h'}/scene.splinecode`;
-  const calculatedMargin = isBreakpoint
-    ? window.innerHeight -
-      (document.getElementById('first-section-typed-text')?.offsetHeight as number)
-    : 0;
+  const calculatedHeight = `${
+    isBreakpoint
+      ? window.innerHeight -
+        (document.getElementById('first-section-typed-text')?.scrollHeight as number)
+      : 0
+  }px`;
 
   return (
-    <Wrapper $marginBottom={ `${calculatedMargin}px` } data-testid='technology-planet'>
+    <Wrapper $calculatedHeight={ calculatedHeight } data-testid='technology-planet'>
       <SplineTool scene={ conditionSplineScene } />
     </Wrapper>
   );
