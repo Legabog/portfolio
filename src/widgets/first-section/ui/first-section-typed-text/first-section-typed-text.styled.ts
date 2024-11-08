@@ -60,6 +60,9 @@ export const InnerTextWrapper = styled.div`
     font-size: 52px;
     letter-spacing: -2.6px;
   }
+  @media only screen and (max-width: 330px) {
+    font-size: 42px;
+  }
 `;
 export const Description = styled.div`
   font-size: 18px;
@@ -69,5 +72,11 @@ export const Description = styled.div`
 
   @media only screen and (max-width: 1000px) {
     font-size: 16px;
+  }
+  @media only screen and (max-width: 500px) {
+    font-size: 14px;
+  }
+  @media only screen and (max-width: 330px) {
+    font-size: 12px;
   }
 `;
