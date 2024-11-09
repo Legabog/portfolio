@@ -2,7 +2,7 @@ import styled, { css, keyframes } from 'styled-components';
 
 import { COLORS } from '@shared/constants';
 
-const { orange } = COLORS;
+const { orangeSecondary, orange } = COLORS;
 
 const moveDown = keyframes`
 0% {
@@ -63,7 +63,7 @@ export const WrapperText = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-  border-top: 1px solid ${orange};
+  border-top: 1px solid ${orangeSecondary};
 
   p {
     margin-top: 8px;

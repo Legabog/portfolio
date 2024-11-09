@@ -4,21 +4,21 @@ import { COLORS } from '@shared/constants';
 
 export const Wrapper = styled.div`
   display: flex;
-  justify-content: center;
-  position: absolute;
   pointer-events: none;
-  top: 20%;
-  left: 30%;
+  width: 50%;
 `;
 export const InnerTextWrapper = styled.div`
-  width: 70%;
+  width: 80%;
+  margin-left: -100px;
   display: flex;
   align-items: center;
   flex-direction: column;
   & > span:nth-child(1) {
     color: ${COLORS.orange};
-    font-size: 36px;
-    font-weight: 600;
+    font-size: 32px;
+    line-height: 32px;
+    letter-spacing: -0.56px;
+    font-weight: 400;
     align-self: start;
 
     @media only screen and (max-width: 500px) {

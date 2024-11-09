@@ -8,7 +8,12 @@ import { ChevronDownIcon } from '@shared/ui';
 import { Wrapper, WrapperScroll, WrapperText, Text } from './scroll-down.styled';
 import { Props } from './types';
 
-export const ScrollDown: FC<Props> = ({ sectionText = 'Section', customStyles }) => {
+export const ScrollDown: FC<Props> = ({
+  sectionText = 'Section',
+  sectionNumber = '01',
+  totalSections = '03',
+  customStyles,
+}) => {
   const t = useTranslations('ScrollDown');
   const text = t('text');
   const { animate, clear, generatedString } = useHoverRandomLettersAnimation(text);
@@ -27,7 +32,9 @@ export const ScrollDown: FC<Props> = ({ sectionText = 'Section', customStyles })
         <ChevronDownIcon />
       </WrapperScroll>
       <WrapperText>
-        <Text>[ 01 / 03 ]</Text>
+        <Text>
+          [ {sectionNumber} / {totalSections} ]
+        </Text>
         <Text title={ sectionText } onMouseEnter={ animateText } onMouseLeave={ clearText }>
           {generatedStringText}
         </Text>

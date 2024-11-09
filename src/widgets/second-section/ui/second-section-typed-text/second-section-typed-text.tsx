@@ -4,15 +4,19 @@ import { FC } from 'react';
 import { useTranslations } from 'next-intl';
 import { TypeAnimation } from 'react-type-animation';
 
-import { Wrapper, InnerTextWrapper, Description } from './typed-text.styled';
+import { Wrapper, InnerTextWrapper, Description } from './second-section-typed-text.styled';
 
-export const TypedText: FC = () => {
-  const t = useTranslations(`TypedText`);
+export const SecondSectionTypedText: FC = () => {
+  const t = useTranslations(`SecondSection.SecondSectionTypedText`);
 
   return (
-    <Wrapper data-testid='typed-text'>
+    <Wrapper data-testid='second-section-typed-text'>
       <InnerTextWrapper>
-        <TypeAnimation sequence={ [t('hello')] } speed={ 50 } />
+        <TypeAnimation
+          repeat={ Infinity }
+          sequence={ [t('hello'), 1000, t('hello').split(' ')[0], 1000] }
+          speed={ 50 }
+        />
         <TypeAnimation
           repeat={ Infinity }
           sequence={ [
