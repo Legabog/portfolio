@@ -10,7 +10,7 @@ import { Props } from './types';
 
 export const ScrollDown: FC<Props> = ({
   sectionText = 'Section',
-  sectionNumber = '00',
+  sectionNumber = '01',
   totalSections = '03',
   customStyles,
 }) => {

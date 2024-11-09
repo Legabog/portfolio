@@ -43,14 +43,13 @@
 			"Navigator": {
 				"title-1": "Portfolio.",
 				"title-2": "Show Skills.",
-				"item-00": "Main",
 				"item-01": "About me",
 				"item-02": "Skills",
 				"item-03": "Projects"
 			}
 		},
 		"ScrollDown": {
-			"text": "Main"
+			"text": "About me"
 		}
 	},
 	"SecondSection": {
@@ -63,8 +62,11 @@
 			"egg": "Redux hater",
 			"description": "I'm a Front-end developer with a\u00A0strong passion for\u00A0design and\u00A0a\u00A0desire to\u00A0create beautiful and\u00A0functional websites. I\u00A0have a\u00A0strong background in\u00A0web development and\u00A0have worked in\u00A0a\u00A0variety of\u00A0different projects. I am\u00A0also a\u00A0self-taught programmer and\u00A0I\u00A0am\u00A0always looking for\u00A0new challenges."
 		},
+		"SecondSectionTitle": {
+			"text": "About me."
+		},
 		"ScrollDown": {
-			"text": "About me"
+			"text": "Skills"
 		}
 	},
 	"ScrollDown": {

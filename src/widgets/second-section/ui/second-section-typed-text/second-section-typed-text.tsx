@@ -12,7 +12,11 @@ export const SecondSectionTypedText: FC = () => {
   return (
     <Wrapper data-testid='second-section-typed-text'>
       <InnerTextWrapper>
-        <TypeAnimation sequence={ [t('hello')] } speed={ 50 } />
+        <TypeAnimation
+          repeat={ Infinity }
+          sequence={ [t('hello'), 1000, t('hello').split(' ')[0], 1000] }
+          speed={ 50 }
+        />
         <TypeAnimation
           repeat={ Infinity }
           sequence={ [
