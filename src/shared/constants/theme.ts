@@ -19,7 +19,8 @@ export const THEME = {
         fill: orange,
       },
     },
-    discription: greySecondary,
+
+    description: greySecondary,
   },
   light: {
     color: black,
@@ -30,6 +31,7 @@ export const THEME = {
         fill: orange,
       },
     },
-    discription: grey,
+
+    description: grey,
   },
 };

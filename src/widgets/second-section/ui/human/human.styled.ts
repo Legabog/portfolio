@@ -5,4 +5,8 @@ export const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   width: 50%;
+
+  @media only screen and (max-width: 900px) {
+    width: 100%;
+  }
 `;

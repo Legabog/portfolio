@@ -17,6 +17,9 @@ export const SecondSectionTypedText: FC = () => {
           sequence={ [t('hello'), 1000, t('hello').split(' ')[0], 1000] }
           speed={ 50 }
         />
+        <Description>{t('description-1')}</Description>
+      </InnerTextWrapper>
+      <InnerTextWrapper>
         <TypeAnimation
           repeat={ Infinity }
           sequence={ [
@@ -34,7 +37,7 @@ export const SecondSectionTypedText: FC = () => {
           speed={ 50 }
           omitDeletionAnimation
         />
-        <Description>{t('description')}</Description>
+        <Description>{t('description-2')}</Description>
       </InnerTextWrapper>
     </Wrapper>
   );
