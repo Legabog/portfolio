@@ -12,4 +12,9 @@ export const SecondaryWrapper = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 80px;
+
+  @media only screen and (max-width: 900px) {
+    flex-direction: column;
+    margin-top: 16px;
+  }
 `;
