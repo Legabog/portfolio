@@ -4,11 +4,12 @@ export const COLORS = {
   orange: 'rgb(232, 176, 89)',
   orangeSecondary: 'rgb(232, 176, 89, 0.6)',
   grey: 'rgb(110, 110, 110)',
+  greyBorder: 'rgb(110, 110, 110, 0.5)',
   greySecondary: 'rgb(140, 140, 140)',
   lightGrey: 'rgb(240, 242, 244)',
   darkGrey: 'rgb(43, 43, 55)',
 };
-const { white, black, orange, grey, greySecondary } = COLORS;
+const { white, black, orange, grey, greySecondary, greyBorder } = COLORS;
 export const THEME = {
   dark: {
     color: white,
@@ -19,7 +20,7 @@ export const THEME = {
         fill: orange,
       },
     },
-
+    cardBorder: greyBorder,
     description: greySecondary,
   },
   light: {
@@ -31,7 +32,7 @@ export const THEME = {
         fill: orange,
       },
     },
-
+    cardBorder: greyBorder,
     description: grey,
   },
 };

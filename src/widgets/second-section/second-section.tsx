@@ -7,7 +7,7 @@ import { useTranslations } from 'next-intl';
 import { Loader, ScrollDown } from '@shared/ui';
 import { CUSTOM_STYLES_SCROLL_DOWN, SECTION_NUMBER_SCROLL_DOWN } from './constants';
 import { Wrapper, SecondaryWrapper } from './second-section.styled';
-import { SecondSectionTitle, SecondSectionTypedText } from './ui';
+import { SecondSectionTitle, SecondSectionCards } from './ui';
 
 const Human = dynamic(() => import('./ui/human'), {
   loading: () => <Loader />,
@@ -24,7 +24,7 @@ export const SecondSection: FC = () => {
       <SecondSectionTitle />
       <SecondaryWrapper>
         <Human />
-        <SecondSectionTypedText />
+        <SecondSectionCards />
       </SecondaryWrapper>
       <ScrollDown
         customStyles={ CUSTOM_STYLES_SCROLL_DOWN }
