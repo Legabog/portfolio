@@ -1,13 +1,8 @@
-import styled from 'styled-components';
-
-import { COLORS } from '@shared/constants';
-
-const { orangeSecondary } = COLORS;
+import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  pointer-events: none;
   width: 50%;
   margin-left: -100px;
   gap: 8px;
@@ -17,19 +12,17 @@ export const Wrapper = styled.div`
     margin: 16px 20px;
   }
 `;
-export const InnerTextWrapper = styled.div`
-  width: calc(100% - 142px);
+export const CardWrapper = styled.div<{ $flip?: boolean }>`
   display: flex;
-  align-items: center;
   flex-direction: column;
-  border: 1px solid ${orangeSecondary};
-  padding: 16px;
-
-  @media only screen and (max-width: 900px) {
-    width: calc(100% - 40px);
-  }
+  ${({ $flip }) =>
+    $flip &&
+    css`
+      transform: rotateX(180deg);
+    `}
 
   & > span:nth-child(1) {
+    visibility: ${({ $flip }) => (!$flip ? 'hidden' : 'visible')};
     color: ${({ theme }) => theme.color};
     font-size: 32px;
     line-height: 32px;
@@ -50,26 +43,9 @@ export const InnerTextWrapper = styled.div`
       font-size: 16px;
     }
   }
-  /* & > span:nth-child(2) {
-    color: ${({ theme }) => theme.colorSecondary};
-    font-size: 32px;
-    font-weight: 600;
-    align-self: start;
-    display: block;
-
-    @media only screen and (max-width: 700px) {
-      font-size: 28px;
-    }
-    @media only screen and (max-width: 600px) {
-      font-size: 22px;
-    }
-    @media only screen and (max-width: 500px) {
-      font-size: 18px;
-    }
-    @media only screen and (max-width: 400px) {
-      font-size: 16px;
-    }
-  } */
+  & > span:nth-child(2) {
+    visibility: ${({ $flip }) => (!$flip ? 'hidden' : 'visible')};
+  }
 `;
 export const Description = styled.span`
   margin-top: 8px;
