@@ -1,9 +1,8 @@
 'use client';
 
-import { FC } from 'react';
+import { cloneElement, FC } from 'react';
 
 import { Wrapper } from './second-section-cards.styled';
-import { SecondSectionCard } from './ui';
 import { useAdditionalLogic } from './lib';
 
 export const SecondSectionCards: FC = () => {
@@ -11,9 +10,7 @@ export const SecondSectionCards: FC = () => {
 
   return (
     <Wrapper data-testid='second-section-cards'>
-      {cards.map((card) => (
-        <SecondSectionCard key={ card.id } JSXElement={ card } />
-      ))}
+      {cards.map(({ JSX, id }) => cloneElement(JSX(), { key: id }))}
     </Wrapper>
   );
 };

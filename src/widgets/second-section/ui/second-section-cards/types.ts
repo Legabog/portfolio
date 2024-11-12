@@ -1,4 +1,4 @@
 export interface JSXElement {
-  JSX: JSX.Element;
+  JSX(): JSX.Element;
   id: string;
 }
