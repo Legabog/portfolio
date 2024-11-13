@@ -53,15 +53,46 @@
 		}
 	},
 	"SecondSection": {
-		"SecondSectionTypedText": {
-			"hello": "Hello! I'm",
-			"name": "Oleg",
-			"specialization": "Front-end developer",
-			"extra-info": "Lover of awesome web applications",
-			"crypto": "Learning blockchain and web3 technologies",
-			"egg": "Redux hater",
-			"description-1": "I'm a Front-end developer with a\u00A0strong passion for\u00A0design and\u00A0a\u00A0desire to\u00A0create beautiful and\u00A0functional websites.",
-			"description-2": "I\u00A0have a\u00A0strong background in\u00A0web development and\u00A0have worked in\u00A0a\u00A0variety of\u00A0different projects. I am\u00A0also a\u00A0self-taught programmer and\u00A0I\u00A0am\u00A0always looking for\u00A0new challenges."
+		"SecondSectionCards": {
+			"card-1": {
+				"front": {
+					"title": "Positive",
+					"description": "I'm really positive person, who cares about team spirit. Not trying to hurt my teammate, even if he's wrong."
+				},
+				"back": {
+					"title": "Details",
+					"typed-1": "Non-toxic",
+					"typed-2": "Affirmative",
+					"typed-3": "Cheerful",
+					"description": "Always trying to keep a positive attitude. I don't start toxic conversations as it won't lead to good stuff."
+				}
+			},
+			"card-2": {
+				"front": {
+					"title": "Performing",
+					"description": "I'm trying to do a better job. I am always interested in improving my product. Love web/web-3 applications and blockchain technologies."
+				},
+				"back": {
+					"title": "Details",
+					"typed-1": "Diligent",
+					"typed-2": "Thorough",
+					"typed-3": "Conscientiousness",
+					"description": "I try to do high quality work in a neat, diligent manner. Love to make quality contributions to web applications. Love web/web-3 applications and blockchain technologies."
+				}
+			},
+			"card-3": {
+				"front": {
+					"title": "Self-Improving",
+					"description": "Always trying to learn something new in the world of Frontend technologies, and not only."
+				},
+				"back": {
+					"title": "Details",
+					"typed-1": "Growing",
+					"typed-2": "Evolving",
+					"typed-3": "Modernising",
+					"description": "Constantly trying to learn new things and maintain my knowledge in frontend development. Open to everything new."
+				}
+			}
 		},
 		"SecondSectionTitle": {
 			"text": "About me."
