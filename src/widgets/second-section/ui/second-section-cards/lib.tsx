@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 
 import { NitroIcon, ScienceIcon, SmileIcon } from '@shared/ui';
-import { useSoundEffectsStore } from '@widgets/header';
+import { useSoundEffectsStore, useThemeStore } from '@widgets/header';
 import {
   CardWrapper,
   FrontWrapper,
@@ -17,6 +17,7 @@ import { JSXElement } from './types';
 
 export const useAdditionalLogic = () => {
   const t = useTranslations(`SecondSection.SecondSectionCards`);
+  const { themeType } = useThemeStore();
   const { play } = useSoundEffectsStore();
 
   const cards: JSXElement[] = [
@@ -55,6 +56,7 @@ export const useAdditionalLogic = () => {
                 <TopSectionText $type='number'>/ 01</TopSectionText>
               </TopSection>
               <StyledTypeAnimation
+                key={ themeType }
                 repeat={ Infinity }
                 sequence={ [firstTyped, 1000, secondTyped, 1000, thirdTyped, 1000] }
                 speed={ 50 }
@@ -101,6 +103,7 @@ export const useAdditionalLogic = () => {
                 <TopSectionText $type='number'>/ 02</TopSectionText>
               </TopSection>
               <StyledTypeAnimation
+                key={ themeType }
                 repeat={ Infinity }
                 sequence={ [firstTyped, 1000, secondTyped, 1000, thirdTyped, 1000] }
                 speed={ 50 }
@@ -147,6 +150,7 @@ export const useAdditionalLogic = () => {
                 <TopSectionText $type='number'>/ 02</TopSectionText>
               </TopSection>
               <StyledTypeAnimation
+                key={ themeType }
                 repeat={ Infinity }
                 sequence={ [firstTyped, 1000, secondTyped, 1000, thirdTyped, 1000] }
                 speed={ 50 }
