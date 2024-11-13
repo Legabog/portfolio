@@ -1,7 +1,6 @@
-import { TypeAnimation } from 'react-type-animation';
+import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 
-import { useState } from 'react';
 import { NitroIcon, ScienceIcon, SmileIcon } from '@shared/ui';
 import { useSoundEffectsStore } from '@widgets/header';
 import {
@@ -11,12 +10,13 @@ import {
   Description,
   Title,
   TopSection,
-  Number,
+  TopSectionText,
+  StyledTypeAnimation,
 } from './second-section-cards.styled';
 import { JSXElement } from './types';
 
 export const useAdditionalLogic = () => {
-  const t = useTranslations(`SecondSection.SecondSectionTypedText`);
+  const t = useTranslations(`SecondSection.SecondSectionCards`);
   const { play } = useSoundEffectsStore();
 
   const cards: JSXElement[] = [
@@ -24,31 +24,42 @@ export const useAdditionalLogic = () => {
       id: 'card-1',
       JSX: () => {
         const [flip, setFlip] = useState<boolean>(false);
+        const card = 'card-1';
+        const front = `${card}.front`;
+        const back = `${card}.back`;
+        const frontTitle = t(`${front}.title`);
+        const frontDescription = t(`${front}.description`);
+        const backTitle = t(`${back}.title`);
+        const backDescription = t(`${back}.description`);
+        const firstTyped = t(`${back}.typed-1`);
+        const secondTyped = t(`${back}.typed-2`);
+        const thirdTyped = t(`${back}.typed-3`);
 
         const onClick = () => {
           play('wooshing-1.wav');
           setFlip((prev) => !prev);
         };
         return (
-          <CardWrapper $flip={ flip } onClick={ onClick }>
+          <CardWrapper key='card-1' $flip={ flip } onClick={ onClick }>
             <FrontWrapper $flip={ flip }>
               <TopSection>
                 <SmileIcon />
-                <Number>/ 01</Number>
+                <TopSectionText $type='number'>/ 01</TopSectionText>
               </TopSection>
-              <Title>Positive</Title>
-              <Description>
-                I'm really positive person, who cares about team spirit. Not trying to hurt my
-                teammate, even if he's wrong.
-              </Description>
+              <Title>{frontTitle}</Title>
+              <Description>{frontDescription}</Description>
             </FrontWrapper>
             <BackWrapper $flip={ flip }>
-              <TypeAnimation
+              <TopSection>
+                <TopSectionText $type='text'>{backTitle}</TopSectionText>
+                <TopSectionText $type='number'>/ 01</TopSectionText>
+              </TopSection>
+              <StyledTypeAnimation
                 repeat={ Infinity }
-                sequence={ [t('hello'), 1000, t('hello').split(' ')[0], 1000] }
+                sequence={ [firstTyped, 1000, secondTyped, 1000, thirdTyped, 1000] }
                 speed={ 50 }
               />
-              <Description>{t('description-1')}</Description>
+              <Description>{backDescription}</Description>
             </BackWrapper>
           </CardWrapper>
         );
@@ -58,6 +69,16 @@ export const useAdditionalLogic = () => {
       id: 'card-2',
       JSX: () => {
         const [flip, setFlip] = useState<boolean>(false);
+        const card = 'card-2';
+        const front = `${card}.front`;
+        const back = `${card}.back`;
+        const frontTitle = t(`${front}.title`);
+        const frontDescription = t(`${front}.description`);
+        const backTitle = t(`${back}.title`);
+        const backDescription = t(`${back}.description`);
+        const firstTyped = t(`${back}.typed-1`);
+        const secondTyped = t(`${back}.typed-2`);
+        const thirdTyped = t(`${back}.typed-3`);
 
         const onClick = () => {
           play('wooshing-1.wav');
@@ -65,36 +86,26 @@ export const useAdditionalLogic = () => {
         };
 
         return (
-          <CardWrapper $flip={ flip } onClick={ onClick }>
+          <CardWrapper key='card-2' $flip={ flip } onClick={ onClick }>
             <FrontWrapper $flip={ flip }>
               <TopSection>
                 <NitroIcon />
-                <Number>/ 02</Number>
+                <TopSectionText $type='number'>/ 02</TopSectionText>
               </TopSection>
-              <Title>Performer</Title>
-              <Description>
-                I'm trying to do a better job. I am always interested in improving my product.
-              </Description>
+              <Title>{frontTitle}</Title>
+              <Description>{frontDescription}</Description>
             </FrontWrapper>
             <BackWrapper $flip={ flip }>
-              <TypeAnimation
+              <TopSection>
+                <TopSectionText $type='text'>{backTitle}</TopSectionText>
+                <TopSectionText $type='number'>/ 02</TopSectionText>
+              </TopSection>
+              <StyledTypeAnimation
                 repeat={ Infinity }
-                sequence={ [
-                  t('name'),
-                  1000,
-                  t('specialization'),
-                  1000,
-                  t('extra-info'),
-                  1000,
-                  t('crypto'),
-                  1000,
-                  t('egg'),
-                  1000,
-                ] }
+                sequence={ [firstTyped, 1000, secondTyped, 1000, thirdTyped, 1000] }
                 speed={ 50 }
-                omitDeletionAnimation
               />
-              <Description>{t('description-2')}</Description>
+              <Description>{backDescription}</Description>
             </BackWrapper>
           </CardWrapper>
         );
@@ -104,6 +115,16 @@ export const useAdditionalLogic = () => {
       id: 'card-3',
       JSX: () => {
         const [flip, setFlip] = useState<boolean>(false);
+        const card = 'card-3';
+        const front = `${card}.front`;
+        const back = `${card}.back`;
+        const frontTitle = t(`${front}.title`);
+        const frontDescription = t(`${front}.description`);
+        const backTitle = t(`${back}.title`);
+        const backDescription = t(`${back}.description`);
+        const firstTyped = t(`${back}.typed-1`);
+        const secondTyped = t(`${back}.typed-2`);
+        const thirdTyped = t(`${back}.typed-3`);
 
         const onClick = () => {
           play('wooshing-1.wav');
@@ -111,37 +132,26 @@ export const useAdditionalLogic = () => {
         };
 
         return (
-          <CardWrapper $flip={ flip } onClick={ onClick }>
+          <CardWrapper key='card-3' $flip={ flip } onClick={ onClick }>
             <FrontWrapper $flip={ flip }>
               <TopSection>
                 <ScienceIcon />
-                <Number>/ 03</Number>
+                <TopSectionText $type='number'>/ 03</TopSectionText>
               </TopSection>
-              <Title>Self-improvement</Title>
-              <Description>
-                Always trying to learn something new in the world of Frontend technologies, and not
-                only.
-              </Description>
+              <Title>{frontTitle}</Title>
+              <Description>{frontDescription}</Description>
             </FrontWrapper>
             <BackWrapper $flip={ flip }>
-              <TypeAnimation
+              <TopSection>
+                <TopSectionText $type='text'>{backTitle}</TopSectionText>
+                <TopSectionText $type='number'>/ 02</TopSectionText>
+              </TopSection>
+              <StyledTypeAnimation
                 repeat={ Infinity }
-                sequence={ [
-                  t('name'),
-                  1000,
-                  t('specialization'),
-                  1000,
-                  t('extra-info'),
-                  1000,
-                  t('crypto'),
-                  1000,
-                  t('egg'),
-                  1000,
-                ] }
+                sequence={ [firstTyped, 1000, secondTyped, 1000, thirdTyped, 1000] }
                 speed={ 50 }
-                omitDeletionAnimation
               />
-              <Description>{t('description-2')}</Description>
+              <Description>{backDescription}</Description>
             </BackWrapper>
           </CardWrapper>
         );

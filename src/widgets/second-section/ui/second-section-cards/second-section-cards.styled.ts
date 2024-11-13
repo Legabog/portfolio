@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { TypeAnimation } from 'react-type-animation';
 
 import { COLORS } from '@shared/constants';
 
@@ -35,29 +36,46 @@ export const Description = styled.span`
     font-size: 14px;
   }
 `;
+export const StyledTypeAnimation = styled(TypeAnimation)`
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: 0px;
+  margin-top: 16px;
+  color: ${({ theme }) => theme.color};
+  text-transform: uppercase;
+`;
 export const TopSection = styled.div`
   width: 100%;
+  height: 32px;
   display: flex;
   justify-content: space-between;
 `;
-export const Number = styled.span`
+export const TopSectionText = styled.span<{ $type: 'number' | 'text' }>`
   font-weight: 400;
   font-size: 12px;
   line-height: 16px;
   color: ${({ theme }) => theme.description};
+  text-transform: uppercase;
+
+  ${({ $type }) =>
+    $type === 'text' &&
+    css`
+      font-weight: 400;
+      font-size: 14px;
+      align-self: center;
+    `}
 `;
 export const CardWrapper = styled.div<{ $flip?: boolean }>`
   width: calc(100% - 32px);
-  height: 120px;
+  min-height: 120px;
   display: flex;
-  align-items: center;
-  flex-direction: column;
   border-radius: 10px;
   border: 1px solid ${({ theme }) => theme.cardBorder};
   background-color: ${({ theme }) => theme.backgroundColor};
   padding: 16px;
   cursor: pointer;
-  transition: 150ms;
+  transition: 500ms;
   transform-style: preserve-3d;
   transform: rotateX(0deg) translateX(0deg);
 
@@ -67,7 +85,7 @@ export const CardWrapper = styled.div<{ $flip?: boolean }>`
     path {
       fill: ${orange};
     }
-    ${Number} {
+    ${TopSectionText} {
       color: ${orange};
     }
   }
@@ -84,6 +102,8 @@ export const CardWrapper = styled.div<{ $flip?: boolean }>`
 export const FrontWrapper = styled.div<{ $flip?: boolean }>`
   width: 100%;
   display: ${({ $flip }) => (!$flip ? 'flex' : 'none')};
+  visibility: ${({ $flip }) => ($flip ? 'hidden' : 'visible')};
+  transition: visibility 500 linea;
   align-items: flex-start;
   flex-direction: column;
 
@@ -107,41 +127,16 @@ export const FrontWrapper = styled.div<{ $flip?: boolean }>`
 export const BackWrapper = styled.div<{ $flip?: boolean }>`
   width: 100%;
   display: ${({ $flip }) => ($flip ? 'flex' : 'none')};
+  visibility: ${({ $flip }) => (!$flip ? 'hidden' : 'visible')};
+  transition: visibility 500 linea;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 
   ${({ $flip }) =>
     $flip &&
     css`
       transform: rotateX(180deg);
     `}
-
-  & > span:nth-child(1) {
-    visibility: ${({ $flip }) => (!$flip ? 'hidden' : 'visible')};
-    color: ${({ theme }) => theme.color};
-    font-size: 32px;
-    line-height: 32px;
-    letter-spacing: -1.6px;
-    font-weight: 400;
-    align-self: start;
-
-    @media only screen and (max-width: 700px) {
-      font-size: 28px;
-    }
-    @media only screen and (max-width: 600px) {
-      font-size: 24px;
-    }
-    @media only screen and (max-width: 500px) {
-      font-size: 20px;
-    }
-    @media only screen and (max-width: 400px) {
-      font-size: 16px;
-    }
-  }
-  & > span:nth-child(2) {
-    visibility: ${({ $flip }) => (!$flip ? 'hidden' : 'visible')};
-  }
 
   @media only screen and (max-width: 900px) {
     width: 100%;
