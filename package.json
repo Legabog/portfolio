@@ -31,10 +31,8 @@
     ]
   },
   "dependencies": {
-    "@gsap/react": "^2.1.0",
     "@sentry/nextjs": "^7.105.0",
     "@splinetool/react-spline": "^2.2.6",
-    "gsap": "^3.12.5",
     "immer": "^10.0.4",
     "next": "^14.2.4",
     "next-intl": "^3.9.4",
@@ -42,7 +40,6 @@
     "react-dom": "^18",
     "react-type-animation": "^3.2.0",
     "styled-components": "^6.1.11",
-    "web-push": "^3.6.7",
     "zustand": "^4.5.2"
   },
   "devDependencies": {
