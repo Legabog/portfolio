@@ -11,7 +11,7 @@ export const SecondaryWrapper = styled.div`
   width: 80%;
   display: flex;
   justify-content: center;
-  margin-top: 80px;
+  margin-top: 40px;
   gap: 40px;
 
   @media only screen and (max-width: 1300px) {

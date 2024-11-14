@@ -28,12 +28,9 @@ const Main: FC = () => {
       <Background />
       <FirstSection />
       <SecondSection />
-      {/* <Wrapperrr>
-        <SplineTool
-          scene={ `https://prod.spline.design/${isDarkTheme ? (locale === 'ru' ? 'xgiHCRtcVsbjIgGM' : 'JT-BdgY5mt5q4jxh') : locale === 'ru' ? 'f0QfGcXtdk7PMVgF' : 'MGz6m6545xGiYPY5'}/scene.splinecode` }
-        />
-        <ScrollDown/>
-      </Wrapperrr> */}
+      {/* <SplineTool
+          scene={ `https://prod.spline.design/${themeType === 'dark' ? (locale === 'ru' ? 'xgiHCRtcVsbjIgGM' : 'JT-BdgY5mt5q4jxh') : locale === 'ru' ? 'f0QfGcXtdk7PMVgF' : 'MGz6m6545xGiYPY5'}/scene.splinecode` }
+        /> */}
     </Wrapper>
   );
 };

@@ -8,5 +8,10 @@ export const Wrapper = styled.div`
 
   @media only screen and (max-width: 900px) {
     width: 100%;
+    height: 400px;
+  }
+  @media only screen and (max-width: 550px) {
+    width: 100%;
+    height: 350px;
   }
 `;
