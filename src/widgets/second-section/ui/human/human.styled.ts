@@ -6,12 +6,20 @@ export const Wrapper = styled.div`
   align-items: center;
   width: 50%;
 
+  @media only screen and (max-width: 950px) {
+    height: calc(100% - 40px);
+  }
   @media only screen and (max-width: 900px) {
     width: 100%;
     height: 400px;
   }
   @media only screen and (max-width: 550px) {
-    width: 100%;
     height: 350px;
+  }
+  @media only screen and (max-width: 450px) {
+    height: 300px;
+  }
+  @media only screen and (max-width: 400px) {
+    height: 250px;
   }
 `;

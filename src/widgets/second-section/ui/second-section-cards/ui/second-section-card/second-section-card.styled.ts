@@ -91,6 +91,9 @@ export const CardWrapper = styled.div<{ $flip?: boolean }>`
   @media only screen and (max-width: 900px) {
     width: calc(100% - 40px);
   }
+  @media only screen and (max-width: 400px) {
+    height: 150px;
+  }
 `;
 export const FrontWrapper = styled.div<{ $flip?: boolean }>`
   width: 100%;
