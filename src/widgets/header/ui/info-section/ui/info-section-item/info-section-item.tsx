@@ -3,7 +3,7 @@ import { useTranslations } from 'next-intl';
 
 import { useHoverRandomLettersAnimation, useMediaQuery } from '@shared/hooks';
 import { useSoundEffectsStore } from '@widgets/header';
-import { Item } from './types';
+import { Item } from '../../types';
 import { Wrapper, Text, StyledLink } from './info-section-item.styled';
 
 export const InfoSectionItem: FC<Item> = ({ url, id }) => {
