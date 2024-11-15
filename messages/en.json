@@ -101,6 +101,14 @@
 			"text": "Skills"
 		}
 	},
+	"ThirdSection": {
+		"ThirdSectionTitle": {
+			"text": "Skills."
+		},
+		"ScrollDown": {
+			"text": "Projects"
+		}
+	},
 	"ScrollDown": {
 		"text": "scroll to explore"
 	}

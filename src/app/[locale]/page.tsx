@@ -19,6 +19,10 @@ const SecondSection = dynamic(() => import('@widgets/second-section'), {
   loading: () => <Loader />,
   ssr: false,
 });
+const ThirdSection = dynamic(() => import('@widgets/third-section'), {
+  loading: () => <Loader />,
+  ssr: false,
+});
 
 const Main: FC = () => {
   const { onMouseMoveHandler } = useAdditionalLogic();
@@ -28,9 +32,7 @@ const Main: FC = () => {
       <Background />
       <FirstSection />
       <SecondSection />
-      {/* <SplineTool
-          scene={ `https://prod.spline.design/${themeType === 'dark' ? (locale === 'ru' ? 'xgiHCRtcVsbjIgGM' : 'JT-BdgY5mt5q4jxh') : locale === 'ru' ? 'f0QfGcXtdk7PMVgF' : 'MGz6m6545xGiYPY5'}/scene.splinecode` }
-        /> */}
+      <ThirdSection />
     </Wrapper>
   );
 };
