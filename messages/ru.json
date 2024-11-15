@@ -101,6 +101,14 @@
 			"text": "Умения"
 		}
 	},
+	"ThirdSection": {
+		"ThirdSectionTitle": {
+			"text": "Умения."
+		},
+		"ScrollDown": {
+			"text": "Проекты"
+		}
+	},
 	"ScrollDown": {
 		"text": "прокрутите для изучения"
 	}
