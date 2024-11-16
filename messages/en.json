@@ -103,7 +103,9 @@
 	},
 	"ThirdSection": {
 		"ThirdSectionTitle": {
-			"text": "Skills."
+			"text": "Skills.",
+			"description-1": "Each part of the brain is responsible for its",
+			"description-2": "own skills."
 		},
 		"ScrollDown": {
 			"text": "Projects"

@@ -5,9 +5,10 @@ export const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
+  height: 680px;
 
   @media only screen and (max-width: 950px) {
-    height: calc(100% - 40px);
+    height: 600px;
   }
   @media only screen and (max-width: 900px) {
     width: 100%;
@@ -18,8 +19,5 @@ export const Wrapper = styled.div`
   }
   @media only screen and (max-width: 450px) {
     height: 300px;
-  }
-  @media only screen and (max-width: 400px) {
-    height: 250px;
   }
 `;
