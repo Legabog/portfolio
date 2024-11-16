@@ -1,9 +1,22 @@
 import styled from 'styled-components';
+import { TypeAnimation } from 'react-type-animation';
+
+import { COLORS } from '@shared/constants';
+
+const { orange, orangeSecondary } = COLORS;
 
 export const Wrapper = styled.div`
   width: 80%;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  @media only screen and (max-width: 900px) {
+    width: calc(100% - 40px);
+    margin: 50px 20px 0px 20px;
+  }
+`;
+export const StyledTypeAnimation = styled(TypeAnimation)`
   margin-top: 80px;
   font-size: 96px;
   font-weight: 400;
@@ -33,12 +46,32 @@ export const Wrapper = styled.div`
     font-size: 60px;
   }
   @media only screen and (max-width: 900px) {
-    width: calc(100% - 40px);
-    margin: 50px 20px 0px 20px;
     font-size: 52px;
     letter-spacing: -2.6px;
   }
   @media only screen and (max-width: 330px) {
     font-size: 42px;
+  }
+`;
+export const DescriptionWrapper = styled.div`
+  margin-top: 8px;
+  font-size: 36px;
+  font-weight: 500;
+  letter-spacing: -2.5px;
+  gap: 8px;
+
+  @media only screen and (max-width: 900px) {
+    font-size: 32px;
+  }
+`;
+export const FirstPart = styled.span`
+  color: ${({ theme }) => theme.description};
+`;
+export const SecondPart = styled.span`
+  margin-left: 8px;
+  color: ${orangeSecondary};
+
+  &:hover {
+    color: ${orange};
   }
 `;

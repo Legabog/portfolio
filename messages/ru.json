@@ -103,7 +103,9 @@
 	},
 	"ThirdSection": {
 		"ThirdSectionTitle": {
-			"text": "Умения."
+			"text": "Умения.",
+			"description-1": "Каждая часть мозга отвечает за ",
+			"description-2": "свои навыки."
 		},
 		"ScrollDown": {
 			"text": "Проекты"

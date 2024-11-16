@@ -4,7 +4,7 @@ import { Locale } from '@locales';
 export const BRAIN_VARIANTS: { [key in ThemeState['themeType']]: { [key in Locale]: string } } = {
   dark: {
     ru: 'xgiHCRtcVsbjIgGM',
-    en: 'xWfbQ1dWnmYIGBDr',
+    en: 'ssiAdkC5BVejr0xs',
   },
   light: {
     ru: 'f0QfGcXtdk7PMVgF',
