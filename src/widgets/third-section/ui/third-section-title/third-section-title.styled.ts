@@ -3,7 +3,7 @@ import { TypeAnimation } from 'react-type-animation';
 
 import { COLORS } from '@shared/constants';
 
-const { orange, orangeSecondary } = COLORS;
+const { orange } = COLORS;
 
 export const Wrapper = styled.div`
   width: 80%;
@@ -69,9 +69,5 @@ export const FirstPart = styled.span`
 `;
 export const SecondPart = styled.span`
   margin-left: 8px;
-  color: ${orangeSecondary};
-
-  &:hover {
-    color: ${orange};
-  }
+  color: ${orange};
 `;

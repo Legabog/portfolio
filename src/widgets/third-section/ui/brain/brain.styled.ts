@@ -5,13 +5,19 @@ export const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 680px;
+  height: 500px;
 
-  @media only screen and (max-width: 950px) {
+  /* @media only screen and (max-width: 950px) {
     height: 600px;
-  }
+  } */
   @media only screen and (max-width: 900px) {
     width: 100%;
+    /* height: 500px; */
+  }
+  @media only screen and (max-width: 650px) {
+    height: 450px;
+  }
+  @media only screen and (max-width: 550px) {
     height: 400px;
   }
   @media only screen and (max-width: 550px) {
@@ -19,5 +25,8 @@ export const Wrapper = styled.div`
   }
   @media only screen and (max-width: 450px) {
     height: 300px;
+  }
+  @media only screen and (max-width: 400px) {
+    height: 250px;
   }
 `;
