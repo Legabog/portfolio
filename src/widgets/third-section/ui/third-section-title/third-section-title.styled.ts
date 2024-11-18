@@ -1,10 +1,21 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { TypeAnimation } from 'react-type-animation';
 
 import { COLORS } from '@shared/constants';
 
-const { orange } = COLORS;
+const { orange, greySecondary, orangeSecondary } = COLORS;
 
+const blink = keyframes`
+  0% { 
+    color: ${greySecondary};
+  }
+  50% {
+    color: ${orangeSecondary};
+  }
+  100% {
+    color: ${orange};
+  }
+`;
 export const Wrapper = styled.div`
   width: 80%;
   display: flex;
@@ -17,7 +28,7 @@ export const Wrapper = styled.div`
   }
 `;
 export const StyledTypeAnimation = styled(TypeAnimation)`
-  margin-top: 80px;
+  margin-top: 40px;
   font-size: 96px;
   font-weight: 400;
   line-height: 1;
@@ -56,12 +67,22 @@ export const StyledTypeAnimation = styled(TypeAnimation)`
 export const DescriptionWrapper = styled.div`
   margin-top: 8px;
   font-size: 36px;
+  line-height: 36px;
   font-weight: 500;
   letter-spacing: -2.5px;
   gap: 8px;
 
-  @media only screen and (max-width: 900px) {
+  @media only screen and (max-width: 1000px) {
     font-size: 32px;
+    line-height: 32px;
+  }
+  @media only screen and (max-width: 500px) {
+    font-size: 28px;
+    line-height: 28px;
+  }
+  @media only screen and (max-width: 330px) {
+    font-size: 24px;
+    line-height: 24px;
   }
 `;
 export const FirstPart = styled.span`
@@ -70,4 +91,15 @@ export const FirstPart = styled.span`
 export const SecondPart = styled.span`
   margin-left: 8px;
   color: ${orange};
+`;
+export const AnimatedTitle = styled.span`
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  text-transform: uppercase;
+  animation: ${blink} 1s ease-in-out infinite;
+
+  @media only screen and (max-width: 900px) {
+    margin-top: 8px;
+  }
 `;

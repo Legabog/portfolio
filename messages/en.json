@@ -104,8 +104,9 @@
 	"ThirdSection": {
 		"ThirdSectionTitle": {
 			"text": "Skills.",
-			"description-1": "Each part of the brain is responsible for its",
-			"description-2": "own skills."
+			"first-part": "Each part of the brain is responsible for its",
+			"second-part": "own skills.",
+			"animated-text": "click a dot to show skills"
 		},
 		"ScrollDown": {
 			"text": "Projects"
