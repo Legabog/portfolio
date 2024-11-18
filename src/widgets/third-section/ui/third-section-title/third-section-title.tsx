@@ -8,6 +8,7 @@ import {
   DescriptionWrapper,
   FirstPart,
   SecondPart,
+  AnimatedTitle,
 } from './third-section-title.styled';
 
 export const ThirdSectionTitle: FC = () => {
@@ -15,8 +16,9 @@ export const ThirdSectionTitle: FC = () => {
   const { themeType } = useThemeStore();
 
   const text = t('text');
-  const firstDescription = t('description-1');
-  const secondDescription = t('description-2');
+  const firstDescription = t('first-part');
+  const secondDescription = t('second-part');
+  const animatedText = t('animated-text');
 
   return (
     <Wrapper data-testid='third-section-title' title={ text }>
@@ -30,6 +32,7 @@ export const ThirdSectionTitle: FC = () => {
         <FirstPart title={ firstDescription }>{firstDescription}</FirstPart>
         <SecondPart title={ secondDescription }>{secondDescription}</SecondPart>
       </DescriptionWrapper>
+      <AnimatedTitle>{animatedText}</AnimatedTitle>
     </Wrapper>
   );
 };
