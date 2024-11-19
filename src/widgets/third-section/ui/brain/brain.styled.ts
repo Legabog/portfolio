@@ -5,8 +5,20 @@ export const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 450px;
+  height: calc(100vh - 300px);
 
+  @media only screen and (max-width: 1400px) {
+    height: calc(100vh - 350px);
+  }
+  @media only screen and (max-width: 1300px) {
+    height: calc(100vh - 400px);
+  }
+  @media only screen and (max-width: 1200px) {
+    height: calc(100vh - 450px);
+  }
+  @media only screen and (max-width: 1000px) {
+    height: calc(100vh - 500px);
+  }
   @media only screen and (max-width: 900px) {
     width: 100%;
     height: 500px;
