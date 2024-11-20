@@ -1,12 +1,16 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.div<{ $isFullHeight: boolean }>`
   width: 100%;
-  height: 100vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
+  ${({ $isFullHeight }) =>
+    $isFullHeight &&
+    css`
+      height: 100vh;
+    `}
 
   @media only screen and (max-width: 900px) {
     height: auto;

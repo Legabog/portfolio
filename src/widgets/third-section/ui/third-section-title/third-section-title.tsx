@@ -21,7 +21,7 @@ export const ThirdSectionTitle: FC = () => {
   const animatedText = t('animated-text');
 
   return (
-    <Wrapper data-testid='third-section-title' title={ text }>
+    <Wrapper data-testid='third-section-title' id='third-section-title' title={ text }>
       <StyledTypeAnimation
         key={ themeType }
         repeat={ Infinity }

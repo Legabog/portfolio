@@ -20,11 +20,6 @@ export const Description = styled.span`
   line-height: 18px;
   font-weight: 500;
   color: ${({ theme }) => theme.description};
-
-  /* @media only screen and (max-width: 600px) {
-    font-size: 12px;
-    line-height: 18px;
-  } */
 `;
 export const StyledTypeAnimation = styled(TypeAnimation)`
   font-size: 20px;
