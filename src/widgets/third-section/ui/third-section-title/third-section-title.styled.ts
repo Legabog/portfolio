@@ -18,6 +18,7 @@ const blink = keyframes`
 `;
 export const Wrapper = styled.div`
   width: 80%;
+  margin-top: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -28,7 +29,6 @@ export const Wrapper = styled.div`
   }
 `;
 export const StyledTypeAnimation = styled(TypeAnimation)`
-  margin-top: 40px;
   font-size: 96px;
   font-weight: 400;
   line-height: 1;

@@ -1,6 +1,6 @@
 'use client';
 
-import { FC } from 'react';
+import { FC, useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 
 import { useTranslations } from 'next-intl';
@@ -16,11 +16,18 @@ const Human = dynamic(() => import('./ui/human'), {
 
 export const SecondSection: FC = () => {
   const t = useTranslations('SecondSection.ScrollDown');
+  const [isFullHeight, setIsFullHeight] = useState<boolean>(false);
 
   const sectionText = t('text');
 
+  useEffect(() => {
+    setIsFullHeight(
+      (document.getElementById('second-section')?.scrollHeight as number) <= window.innerHeight,
+    );
+  }, []);
+
   return (
-    <Wrapper data-testid='second-section'>
+    <Wrapper $isFullHeight={ isFullHeight } data-testid='second-section' id='second-section'>
       <SecondSectionTitle />
       <SecondaryWrapper>
         <Human />

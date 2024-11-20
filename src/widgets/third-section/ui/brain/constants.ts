@@ -1,13 +1,27 @@
 import { ThemeState } from '@widgets/header';
 import { Locale } from '@locales';
 
-export const BRAIN_VARIANTS: { [key in ThemeState['themeType']]: { [key in Locale]: string } } = {
-  dark: {
-    ru: 'xgiHCRtcVsbjIgGM',
-    en: 'ssiAdkC5BVejr0xs',
+export const BRAIN_VARIANTS: {
+  [key in 'desktop' | 'mobile']: { [key in ThemeState['themeType']]: { [key in Locale]: string } };
+} = {
+  desktop: {
+    dark: {
+      ru: 'AcdB438zzZy6WSBY',
+      en: 'S1XjmIyqXUVUreIp',
+    },
+    light: {
+      ru: 'xQkOmUYTSzIIBxdi',
+      en: '6GcWzpVWEOxO91mA',
+    },
   },
-  light: {
-    ru: 'f0QfGcXtdk7PMVgF',
-    en: 'MGz6m6545xGiYPY5',
+  mobile: {
+    dark: {
+      ru: 'bXiKOVZ1WN1UnDwg',
+      en: 'sSGnlHFPJSaSIweZ',
+    },
+    light: {
+      ru: 'I0GGzFQInn8uXjHR',
+      en: 'W00fNMlS6-gN2Vyw',
+    },
   },
 };
