@@ -6,8 +6,8 @@ export const BRAIN_VARIANTS: {
 } = {
   desktop: {
     dark: {
-      ru: 'AcdB438zzZy6WSBY',
-      en: 'S1XjmIyqXUVUreIp',
+      ru: '9CHsG9oQYfbSg6K8',
+      en: 'fBQpd7Wt7dhdzxro',
     },
     light: {
       ru: 'xQkOmUYTSzIIBxdi',
@@ -17,11 +17,11 @@ export const BRAIN_VARIANTS: {
   mobile: {
     dark: {
       ru: 'bXiKOVZ1WN1UnDwg',
-      en: 'sSGnlHFPJSaSIweZ',
+      en: 'ecM7Zn-vjo4cBmcs',
     },
     light: {
       ru: 'I0GGzFQInn8uXjHR',
-      en: 'W00fNMlS6-gN2Vyw',
+      en: 'DLg12FQVQUMlnVeR',
     },
   },
 };
