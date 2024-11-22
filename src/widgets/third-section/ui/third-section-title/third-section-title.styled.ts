@@ -25,7 +25,7 @@ export const Wrapper = styled.div`
 
   @media only screen and (max-width: 900px) {
     width: calc(100% - 40px);
-    margin: 60px 20px 0px 20px;
+    margin: 50px 20px 0px 20px;
   }
 `;
 export const StyledTypeAnimation = styled(TypeAnimation)`
