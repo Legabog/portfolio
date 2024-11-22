@@ -6,22 +6,22 @@ export const BRAIN_VARIANTS: {
 } = {
   desktop: {
     dark: {
-      ru: '9CHsG9oQYfbSg6K8',
+      ru: 'nPgqBUS6B5w9cGZj',
       en: '2NrEbnagCdf6yD6e',
     },
     light: {
-      ru: 'xQkOmUYTSzIIBxdi',
-      en: '6GcWzpVWEOxO91mA',
+      ru: '4gkVhJV1lWZQyJPj',
+      en: 'R9j3ECqYQtVbrD4w',
     },
   },
   mobile: {
     dark: {
-      ru: 'bXiKOVZ1WN1UnDwg',
-      en: 'ecM7Zn-vjo4cBmcs',
+      ru: 'TOFWDyLLUf1gEaAl',
+      en: 'raLmRZPAuREPy1C9',
     },
     light: {
-      ru: 'I0GGzFQInn8uXjHR',
-      en: 'DLg12FQVQUMlnVeR',
+      ru: 'SgaJ-gZnDoznvAuv',
+      en: 'PRly5cp-1adMvN1v',
     },
   },
 };

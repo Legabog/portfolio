@@ -23,17 +23,9 @@ export const Brain: FC = () => {
 
   const isMobile = isBreakpoint ? 'mobile' : 'desktop';
   const conditionSplineScene = `https://prod.spline.design/${BRAIN_VARIANTS[isMobile][themeType][locale]}/scene.splinecode`;
-  const calculatedHeight = `${
-    isBreakpoint
-      ? window.innerHeight -
-        (document.getElementById('first-section-typed-text')?.scrollHeight as number)
-      : window.innerHeight -
-        (document.getElementById('third-section-title')?.scrollHeight as number) -
-        120
-  }px`;
 
   return (
-    <Wrapper $calculatedHeight={ calculatedHeight } data-testid='brain'>
+    <Wrapper data-testid='brain'>
       <SplineTool scene={ conditionSplineScene } />
     </Wrapper>
   );
