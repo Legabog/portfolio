@@ -7,7 +7,7 @@ export const BRAIN_VARIANTS: {
   desktop: {
     dark: {
       ru: '9CHsG9oQYfbSg6K8',
-      en: 'fBQpd7Wt7dhdzxro',
+      en: '2NrEbnagCdf6yD6e',
     },
     light: {
       ru: 'xQkOmUYTSzIIBxdi',
