@@ -19,6 +19,7 @@ const blink = keyframes`
 export const Wrapper = styled.div`
   width: 80%;
   margin-top: 40px;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -34,21 +35,28 @@ export const StyledTypeAnimation = styled(TypeAnimation)`
   line-height: 1;
   letter-spacing: -4.8px;
   color: ${({ theme }) => theme.color};
+  margin-left: 35px;
 
   @media only screen and (max-width: 1500px) {
     font-size: 90px;
-  }
-  @media only screen and (max-width: 1400px) {
-    font-size: 84px;
+    & span:nth-child(2) {
+      margin-left: 40px;
+    }
   }
   @media only screen and (max-width: 1300px) {
     font-size: 78px;
+    & span:nth-child(2) {
+      margin-left: 45px;
+    }
   }
   @media only screen and (max-width: 1200px) {
     font-size: 72px;
   }
   @media only screen and (max-width: 1100px) {
     font-size: 60px;
+    & span:nth-child(2) {
+      margin-left: 50px;
+    }
   }
   @media only screen and (max-width: 1000px) {
     font-size: 66px;
@@ -66,23 +74,21 @@ export const StyledTypeAnimation = styled(TypeAnimation)`
 `;
 export const DescriptionWrapper = styled.div`
   margin-top: 8px;
-  font-size: 36px;
-  line-height: 36px;
-  font-weight: 500;
-  letter-spacing: -2.5px;
+  margin-left: 6px;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0px;
+  text-transform: uppercase;
   gap: 8px;
 
   @media only screen and (max-width: 1000px) {
-    font-size: 32px;
-    line-height: 32px;
+    font-size: 16px;
   }
   @media only screen and (max-width: 500px) {
-    font-size: 28px;
-    line-height: 28px;
+    font-size: 14px;
   }
   @media only screen and (max-width: 330px) {
-    font-size: 24px;
-    line-height: 24px;
+    font-size: 12px;
   }
 `;
 export const FirstPart = styled.span`
@@ -96,10 +102,34 @@ export const AnimatedTitle = styled.span`
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
+  margin-left: 6px;
   text-transform: uppercase;
   animation: ${blink} 1s ease-in-out infinite;
 
   @media only screen and (max-width: 900px) {
     margin-top: 8px;
+  }
+`;
+export const TopNumber = styled.span`
+  position: absolute;
+  top: 15px;
+  display: flex;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0px;
+  color: ${({ theme }) => theme.color};
+  text-transform: uppercase;
+  white-space: break-spaces;
+  cursor: pointer;
+
+  &:hover {
+    color: ${COLORS.orange};
+  }
+
+  @media only screen and (max-width: 1300px) {
+    top: 10px;
+  }
+  @media only screen and (max-width: 1100px) {
+    top: 8px;
   }
 `;
