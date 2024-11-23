@@ -9,7 +9,9 @@ import {
   FirstPart,
   SecondPart,
   AnimatedTitle,
+  TopNumber,
 } from './third-section-title.styled';
+import { TOP_NUMBER } from './constants';
 
 export const ThirdSectionTitle: FC = () => {
   const t = useTranslations(`ThirdSection.ThirdSectionTitle`);
@@ -22,6 +24,7 @@ export const ThirdSectionTitle: FC = () => {
 
   return (
     <Wrapper data-testid='third-section-title' id='third-section-title' title={ text }>
+      <TopNumber>{TOP_NUMBER}</TopNumber>
       <StyledTypeAnimation
         key={ themeType }
         repeat={ Infinity }
@@ -32,7 +35,7 @@ export const ThirdSectionTitle: FC = () => {
         <FirstPart title={ firstDescription }>{firstDescription}</FirstPart>
         <SecondPart title={ secondDescription }>{secondDescription}</SecondPart>
       </DescriptionWrapper>
-      <AnimatedTitle>{animatedText}</AnimatedTitle>
+      <AnimatedTitle title={ animatedText }>{animatedText}</AnimatedTitle>
     </Wrapper>
   );
 };
