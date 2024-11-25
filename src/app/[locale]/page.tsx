@@ -23,6 +23,10 @@ const ThirdSection = dynamic(() => import('@widgets/third-section'), {
   loading: () => <Loader />,
   ssr: false,
 });
+const FourthSection = dynamic(() => import('@widgets/fourth-section'), {
+  loading: () => <Loader />,
+  ssr: false,
+});
 
 const Main: FC = () => {
   const { onMouseMoveHandler } = useAdditionalLogic();
@@ -33,6 +37,7 @@ const Main: FC = () => {
       <FirstSection />
       <SecondSection />
       <ThirdSection />
+      <FourthSection />
     </Wrapper>
   );
 };
