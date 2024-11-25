@@ -112,6 +112,11 @@
 			"text": "Projects"
 		}
 	},
+	"FourthSection": {
+		"FourthSectionTitle": {
+			"text": "Projects."
+		}
+	},
 	"ScrollDown": {
 		"text": "scroll to explore"
 	}

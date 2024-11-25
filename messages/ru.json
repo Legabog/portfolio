@@ -112,6 +112,11 @@
 			"text": "Проекты"
 		}
 	},
+	"FourthSection": {
+		"FourthSectionTitle": {
+			"text": "Проекты."
+		}
+	},
 	"ScrollDown": {
 		"text": "прокрутите для изучения"
 	}
