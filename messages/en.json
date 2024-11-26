@@ -115,6 +115,13 @@
 	"FourthSection": {
 		"FourthSectionTitle": {
 			"text": "Projects."
+		},
+		"FourthSectionProjects": {
+			"FourthSectionLeftPart": {
+				"linkify": "Linkify.",
+				"vtb": "VTB.",
+				"amusic": "Amusic."
+			}
 		}
 	},
 	"ScrollDown": {
