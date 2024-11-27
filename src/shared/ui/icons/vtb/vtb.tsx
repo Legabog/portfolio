@@ -1,9 +1,6 @@
 import { FC } from 'react';
 
 import { StyledSvg } from '@shared/ui';
-import { COLORS } from '@shared/constants';
-
-const { vtb } = COLORS;
 
 export const VTBIcon: FC = () => (
   <StyledSvg
@@ -17,7 +14,6 @@ export const VTBIcon: FC = () => (
     <path
       d='m1222 969.3h-1222l82.6-242.3h1221.9zm132.2-363.5h-1222l88-242.3h1216.5zm132.1-363.5h-1222l88.1-242.4h1222z'
       data-testid='vtb-icon-path'
-      fill={ vtb }
     />
   </StyledSvg>
 );
