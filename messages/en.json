@@ -118,9 +118,9 @@
 		},
 		"FourthSectionProjects": {
 			"FourthSectionLeftPart": {
-				"linkify": "Linkify.",
-				"vtb": "VTB.",
-				"amusic": "Amusic."
+				"linkify": "Linkify",
+				"vtb": "VTB",
+				"amusic": "Amusic"
 			}
 		}
 	},

@@ -1,30 +1,63 @@
-import styled from 'styled-components';
-import { TypeAnimation } from 'react-type-animation';
+import styled, { css } from 'styled-components';
 
 import { COLORS } from '@shared/constants';
+import { Props } from './types';
 
 const { orange, orangeSecondary } = COLORS;
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.div<Pick<Props, 'overlappingType'>>`
   width: 100%;
+  height: 400px;
+  display: flex;
   position: sticky;
   top: 0;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 408px;
-  padding: 120px 0 132px;
+  padding: 250px 0 132px;
+
+  & svg:nth-child(2) {
+    width: 64px;
+    height: 64px;
+    ${({ overlappingType }) =>
+      overlappingType === 'amusic' &&
+      css`
+        & path:nth-child(3) {
+          fill: ${({ theme }) => theme.backgroundColor};
+        }
+      `};
+  }
+  & svg:nth-child(3) {
+    width: 64px;
+    height: 64px;
+    ${({ overlappingType }) =>
+      overlappingType === 'amusic' &&
+      css`
+        & path:nth-child(3) {
+          fill: ${({ theme }) => theme.backgroundColor};
+        }
+      `};
+  }
 `;
-export const StyledTypeAnimation = styled(TypeAnimation)<{ $color: string }>`
-  color: ${({ $color }) => $color};
+export const TitleWrapper = styled.div`
   width: 80%;
   display: flex;
-  font-size: 96px;
+  gap: 8px;
+`;
+export const Circle = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 50%;
+`;
+export const Panel = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+export const Title = styled.span`
+  color: ${({ theme }) => theme.color};
+  font-size: 36px;
+  height: fit-content;
   font-weight: 400;
-  line-height: 1;
-  letter-spacing: -4.8px;
-  align-self: start;
-  display: block;
 
   & > span:nth-child(2) {
     color: ${orange};
@@ -59,29 +92,7 @@ export const StyledTypeAnimation = styled(TypeAnimation)<{ $color: string }>`
     font-size: 42px;
   }
 `;
-export const IconWrapper = styled.div`
-  position: sticky;
-  top: 0;
-  margin-top: 200px;
-`;
-export const IconWrapperSecondary = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 130px;
-  height: 130px;
-  border-radius: 100%;
-  background-color: ${({ theme }) => theme.backgroundColor};
-  border: 1px solid ${orangeSecondary};
-  box-sizing: border-box;
-  cursor: pointer;
-
-  & svg {
-    width: 64px;
-    height: 64px;
-  }
-`;
-export const Seperator = styled.div`
+export const SeperatorWrapper = styled.div`
   position: absolute;
   top: 0;
   bottom: 0;
@@ -99,4 +110,21 @@ export const Seperator = styled.div`
     width: 1px;
     background: ${orangeSecondary};
   }
+`;
+export const Seperator = styled.div`
+  position: sticky;
+  top: 0;
+  margin-top: 250px;
+`;
+export const IconWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 130px;
+  height: 130px;
+  border-radius: 100%;
+  background-color: ${({ theme }) => theme.backgroundColor};
+  border: 1px solid ${orangeSecondary};
+  box-sizing: border-box;
+  cursor: pointer;
 `;
