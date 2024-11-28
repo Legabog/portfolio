@@ -20,15 +20,12 @@ export const RightPart = styled.div`
 export const VTB = styled.div`
   width: 500px;
   height: 800px;
-  background-color: #123274;
 `;
 export const LINKIFY = styled.div`
   width: 500px;
   height: 800px;
-  background-color: #2e81f4;
 `;
 export const AMUSIC = styled.div`
   width: 500px;
   height: 800px;
-  background-color: #feda00;
 `;
