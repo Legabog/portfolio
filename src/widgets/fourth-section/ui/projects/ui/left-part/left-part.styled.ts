@@ -10,7 +10,7 @@ const animation = keyframes`
     transform: translateX(0);
 }
 100% {
-    transform: translateX(calc(100% - 20px));
+    transform: translateX(calc(-100% - 20px));
 }
 `;
 export const Wrapper = styled.div<Pick<Props, 'overlappingType'>>`
@@ -116,7 +116,7 @@ export const IconWrapper = styled.div`
   cursor: pointer;
 `;
 export const AnimatedCarusel = styled.div`
-  width: 100%;
+  width: 500px;
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
@@ -130,7 +130,14 @@ export const AnimatedCarusel = styled.div`
     justify-content: space-between;
     flex-wrap: nowrap;
     align-items: center;
-    animation: ${animation} 20s linear infinite;
+    animation: ${animation} 40s linear infinite;
     animation-play-state: running;
+
+    & li {
+      font-size: 90px;
+      font-weight: 400;
+      background-clip: text;
+      margin-left: 64px;
+    }
   }
 `;

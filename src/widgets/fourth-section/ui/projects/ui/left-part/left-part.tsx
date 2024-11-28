@@ -41,11 +41,20 @@ export const LeftPart: FC<Props> = ({ absoluteRef, overlappingType }) => {
         </SeperatorWrapper>
       </Wrapper>
       <AnimatedCarusel>
-        <span>sdfsdf</span>
-        <span>zxczxc</span>
-        <span>hgjghjghjsdf</span>
-        <span>sdfwerwer</span>
-        <span>kkkkkkkkk</span>
+        <span>
+          <li>Make</li>
+          <li>Create</li>
+          <li>Da</li>
+          <li>Net</li>
+          <li>Alo</li>
+        </span>
+        <span>
+          <li>Ura</li>
+          <li>Aga</li>
+          <li>Hg</li>
+          <li>Qer</li>
+          <li>Wet</li>
+        </span>
       </AnimatedCarusel>
     </>
   );
