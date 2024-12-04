@@ -4,21 +4,21 @@ export const useLogic = () => {
   const absoluteRef = useRef<HTMLDivElement | null>(null);
   const vtbRef = useRef<HTMLDivElement | null>(null);
   const linkifyRef = useRef<HTMLDivElement | null>(null);
-  const amusicRef = useRef<HTMLDivElement | null>(null);
-  const [overlappingType, setOverlappingType] = useState<'vtb' | 'amusic' | 'linkify'>('linkify');
+  const musiconRef = useRef<HTMLDivElement | null>(null);
+  const [overlappingType, setOverlappingType] = useState<'vtb' | 'musicon' | 'linkify'>('linkify');
 
   const checkOverlap = () => {
-    if (absoluteRef.current && vtbRef.current && linkifyRef.current && amusicRef.current) {
+    if (absoluteRef.current && vtbRef.current && linkifyRef.current && musiconRef.current) {
       const absoluteRect = absoluteRef.current.getBoundingClientRect();
       const targetVtbRef = vtbRef.current.getBoundingClientRect();
       const targetLinkifyRef = linkifyRef.current.getBoundingClientRect();
-      const targetAmusicRef = amusicRef.current.getBoundingClientRect();
+      const targetMusiconRef = musiconRef.current.getBoundingClientRect();
 
       const overlappingTypeSetter = (type: typeof overlappingType) => {
         const targetRef = {
           vtb: targetVtbRef,
           linkify: targetLinkifyRef,
-          amusic: targetAmusicRef,
+          musicon: targetMusiconRef,
         }[type];
 
         return (
@@ -30,7 +30,7 @@ export const useLogic = () => {
           ) && setOverlappingType(type)
         );
       };
-      ['vtb', 'amusic', 'linkify'].forEach((type) =>
+      ['vtb', 'musicon', 'linkify'].forEach((type) =>
         overlappingTypeSetter(type as typeof overlappingType),
       );
     }
@@ -44,5 +44,5 @@ export const useLogic = () => {
     };
   }, []);
 
-  return { overlappingType, absoluteRef, vtbRef, linkifyRef, amusicRef };
+  return { overlappingType, absoluteRef, vtbRef, linkifyRef, musiconRef };
 };

@@ -8,9 +8,6 @@ export const COLORS = {
   greySecondary: 'rgb(140, 140, 140)',
   lightGrey: 'rgb(240, 242, 244)',
   darkGrey: 'rgb(43, 43, 55)',
-  vtb: '#009de0',
-  linkify: '#2e81f4',
-  amusic: '#FEDA00',
 };
 const { white, black, orange, grey, greySecondary, greyBorder } = COLORS;
 export const THEME = {

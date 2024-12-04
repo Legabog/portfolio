@@ -12,6 +12,6 @@ export * from './moon';
 export * from './chevron-down';
 export * from './sound-effects-on';
 export * from './sound-effects-off';
-export * from './amusic';
+export * from './musicon';
 export * from './linkify';
 export * from './vtb';

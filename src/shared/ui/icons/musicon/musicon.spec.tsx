@@ -2,34 +2,34 @@ import { FC } from 'react';
 import { render } from '@testing-library/react';
 
 import { CombineMocks } from '@mocks';
-import { AmusicIcon } from './amusic';
+import { MusicOnProjectIcon } from './musicon';
 
 const IconWithMocks: FC = () => (
   <CombineMocks>
-    <AmusicIcon />
+    <MusicOnProjectIcon />
   </CombineMocks>
 );
 
-describe('AmusicIcon Component', () => {
-  test('Test AmusicIcon renders without errors', () => {
+describe('MusicOnIcon Component', () => {
+  test('Test MusicOnProjectIcon renders without errors', () => {
     expect(() => render(<IconWithMocks />)).not.toThrow();
   });
 
-  test('Test AmusicIcon renders correct svg attributes', () => {
+  test('Test MusicOnProjectIcon renders correct svg attributes', () => {
     const { getByTestId } = render(<IconWithMocks />);
-    const svgElement = getByTestId('amusic-icon-svg');
+    const svgElement = getByTestId('musicon-icon-svg');
     expect(svgElement).toHaveAttribute('height', '24');
     expect(svgElement).toHaveAttribute('width', '24');
     expect(svgElement).toHaveAttribute('viewBox', '0 0 35 35');
   });
 
-  test('Test AmusicIcon renders correct path attributes', () => {
+  test('Test MusicOnProjectIcon renders correct path attributes', () => {
     const { getByTestId } = render(<IconWithMocks />);
-    const firstPathElement = getByTestId('amusic-icon-path-1');
-    const secondPathElement = getByTestId('amusic-icon-path-2');
-    const thirdPathElement = getByTestId('amusic-icon-path-3');
-    const fourPathElement = getByTestId('amusic-icon-path-4');
-    const fivePathElement = getByTestId('amusic-icon-path-5');
+    const firstPathElement = getByTestId('musicon-icon-path-1');
+    const secondPathElement = getByTestId('musicon-icon-path-2');
+    const thirdPathElement = getByTestId('musicon-icon-path-3');
+    const fourPathElement = getByTestId('musicon-icon-path-4');
+    const fivePathElement = getByTestId('musicon-icon-path-5');
 
     expect(firstPathElement.getAttribute('d')).toContain(
       'M26.3427 31.5218C23.7868 33.1443 20.7534 34.0841 17.5 34.0841C8.3873 34.0841 1 26.7104 1 17.6143C1 8.51831 8.3873 1.14453 17.5 1.14453C26.6127 1.14453 34 8.51831 34 17.6143C34 18.336 33.9535 19.0467 33.8633 19.7439C33.8841 19.7279 33.8949 19.7198 33.8949 19.7198L33.9507 33.4773C33.9507 33.4773 28.3925 34.0547 26.3427 31.5218Z',

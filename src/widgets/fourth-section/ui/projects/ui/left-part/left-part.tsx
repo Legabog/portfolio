@@ -3,7 +3,7 @@
 import { FC, ReactElement, useRef, useState } from 'react';
 import { useTranslations } from 'next-intl';
 
-import { AmusicIcon, LinkifyIcon, VTBIcon } from '@shared/ui';
+import { MusicOnProjectIcon, LinkifyIcon, VTBIcon } from '@shared/ui';
 import {
   Wrapper,
   TitleWrapper,
@@ -17,6 +17,10 @@ import {
   CardBody,
   Description,
   AnimatedCarusel,
+  StyledImage,
+  Badge,
+  BlinkingStatus,
+  TopNumber,
 } from './left-part.styled';
 import { Props } from './types';
 import { Panels } from './ui';
@@ -29,7 +33,7 @@ export const LeftPart: FC<Props> = ({ absoluteRef, overlappingType }) => {
   const customStylesCarusel = `width: ${refCardBody.current?.clientWidth}px;`;
   const conditionalSvg: { [key in typeof overlappingType]: ReactElement } = {
     vtb: <VTBIcon />,
-    amusic: <AmusicIcon />,
+    musicon: <MusicOnProjectIcon />,
     linkify: <LinkifyIcon />,
   };
   const text = t(`${overlappingType}`);
@@ -43,11 +47,42 @@ export const LeftPart: FC<Props> = ({ absoluteRef, overlappingType }) => {
         <CardBody ref={ refCardBody }>
           <Panels />
           <InfoSection>
+            <TopNumber>
+              0{overlappingType === 'linkify' ? 1 : overlappingType === 'musicon' ? 2 : 3}
+            </TopNumber>
             <TitleWrapper>
               <IconWrapper overlappingType={ overlappingType }>
                 {conditionalSvg[overlappingType]}
               </IconWrapper>
               <Title title={ text }>{text}</Title>
+              <Badge
+                title={
+                  overlappingType === 'linkify'
+                    ? 'Social app'
+                    : overlappingType === 'musicon'
+                      ? 'Music app'
+                      : 'Cash management'
+                }
+              >
+                {overlappingType === 'linkify'
+                  ? 'Social app'
+                  : overlappingType === 'musicon'
+                    ? 'Music app'
+                    : 'Cash management'}
+                <BlinkingStatus
+                  isActive={ overlappingType === 'vtb' }
+                  title={ overlappingType === 'vtb' ? 'Active' : 'Inactive' }
+                />
+              </Badge>
+            </TitleWrapper>
+            <TitleWrapper>
+              <Title title={ text }>
+                {overlappingType === 'linkify'
+                  ? 'Social network'
+                  : overlappingType === 'musicon'
+                    ? 'Music player'
+                    : 'Cash management'}
+              </Title>
             </TitleWrapper>
             <Description>
               Here might be your information. This project is about this. Hello daga bugag dasdas.
@@ -64,18 +99,16 @@ export const LeftPart: FC<Props> = ({ absoluteRef, overlappingType }) => {
             onMouseLeave={ onLeave }
           >
             <span>
-              <li>01</li>
               <li>Linkify</li>
               <li>Projects</li>
-              <li>Linkify</li>
-              <li>Projects</li>
+              <li>Social</li>
+              <li>Network</li>
             </span>
             <span>
-              <li>01</li>
               <li>Linkify</li>
               <li>Projects</li>
-              <li>Linkify</li>
-              <li>Projects</li>
+              <li>Social</li>
+              <li>Network</li>
             </span>
           </AnimatedCarusel>
           <AnimatedCarusel
@@ -84,18 +117,16 @@ export const LeftPart: FC<Props> = ({ absoluteRef, overlappingType }) => {
             isPaused={ isPaused }
           >
             <span>
-              <li>01</li>
               <li>Linkify</li>
               <li>Projects</li>
-              <li>Linkify</li>
-              <li>Projects</li>
+              <li>Social</li>
+              <li>Network</li>
             </span>
             <span>
-              <li>01</li>
-              <li>Linkify</li>
               <li>Projects</li>
+              <li>Social</li>
+              <li>Network</li>
               <li>Linkify</li>
-              <li>Projects</li>
             </span>
           </AnimatedCarusel>
         </Example>
@@ -107,6 +138,7 @@ export const LeftPart: FC<Props> = ({ absoluteRef, overlappingType }) => {
           </IconWrapper>
         </Seperator>
       </SeperatorWrapper>
+      <StyledImage alt='background' height={ 1200 } src='/images/background.png' width={ 1200 } />
     </Wrapper>
   );
 };
