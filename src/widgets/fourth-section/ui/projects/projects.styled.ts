@@ -6,6 +6,7 @@ export const Wrapper = styled.div`
   position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  background-color: ${({ theme }) => theme.backgroundColor};
 `;
 export const RightPart = styled.div`
   display: flex;
@@ -14,15 +15,15 @@ export const RightPart = styled.div`
 export const VTB = styled.div`
   width: 500px;
   height: 800px;
-  background-color: red;
+  /* background-color: red; */
 `;
 export const LINKIFY = styled.div`
   width: 500px;
   height: 800px;
-  background-color: pink;
+  /* background-color: pink; */
 `;
-export const AMUSIC = styled.div`
+export const MUSICON = styled.div`
   width: 500px;
   height: 800px;
-  background-color: purple;
+  /* background-color: purple; */
 `;

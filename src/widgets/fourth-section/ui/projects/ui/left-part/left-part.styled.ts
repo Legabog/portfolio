@@ -1,10 +1,19 @@
 import styled, { css, keyframes } from 'styled-components';
+import Image from 'next/image';
 
 import { COLORS } from '@shared/constants';
 import { Props } from './types';
 
 const { orange, orangeSecondary } = COLORS;
 
+const blink = keyframes`
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+`;
 const moving = (caruselType: 'left' | 'right') => {
   const translateX0: { [key in typeof caruselType]: string } = {
     left: '0',
@@ -31,6 +40,7 @@ export const Wrapper = styled.div`
   flex-direction: column;
   position: sticky;
   top: 0;
+  overflow: clip;
 `;
 export const Example = styled.div`
   width: 100%;
@@ -42,6 +52,7 @@ export const AnimatedCarusel = styled.div<{
   customStyles?: string;
 }>`
   width: 600px;
+  height: 10vh;
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
@@ -58,12 +69,20 @@ export const AnimatedCarusel = styled.div<{
     animation-play-state: ${({ isPaused }) => (isPaused ? 'paused' : 'running')};
 
     & li {
-      color: ${orangeSecondary};
-      list-style-type: none;
-      font-size: 50px;
-      line-height: 50px;
+      color: ${orange};
+      font-size: 80px;
+      line-height: 80px;
       font-weight: 500;
       margin-left: 32px;
+      list-style-type: none;
+    }
+    & li:nth-child(even) {
+      color: ${({ theme }) => theme.backgroundColor};
+      text-shadow:
+        -1px 1px 2px ${orange},
+        1px 1px 2px ${orange},
+        1px -1px 0 ${orange},
+        -1px -1px 0 ${orange};
     }
   }
   ${({ customStyles }) =>
@@ -80,52 +99,56 @@ export const CardBody = styled.div`
   display: grid;
   grid-template-columns: 0.5fr 1fr;
   align-items: center;
-  height: 80vh;
+  height: calc(80vh - 100px);
 `;
 export const InfoSection = styled.div``;
+export const TopNumber = styled.span`
+  display: flex;
+  font-size: 24px;
+  font-weight: 500;
+  color: ${({ theme }) => theme.description};
+  margin-bottom: 3px;
+`;
 export const TitleWrapper = styled.div`
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 8px;
 `;
 export const Title = styled.span`
   color: ${({ theme }) => theme.color};
-  font-size: 60px;
+  font-size: 36px;
+  line-height: 44px;
+  font-weight: 500;
   height: fit-content;
-  font-weight: 400;
 
   & > span:nth-child(2) {
     color: ${orange};
   }
-  @media only screen and (max-width: 1500px) {
-    font-size: 90px;
-  }
-  @media only screen and (max-width: 1400px) {
-    font-size: 84px;
-  }
-  @media only screen and (max-width: 1300px) {
-    font-size: 78px;
-  }
-  @media only screen and (max-width: 1200px) {
-    font-size: 72px;
-  }
-  @media only screen and (max-width: 1100px) {
-    font-size: 60px;
-  }
-  @media only screen and (max-width: 1000px) {
-    font-size: 66px;
-  }
-  @media only screen and (max-width: 950px) {
-    font-size: 60px;
-  }
-  @media only screen and (max-width: 900px) {
-    margin: 70px 20px 0px 20px;
-    font-size: 52px;
-    letter-spacing: -2.6px;
-  }
-  @media only screen and (max-width: 330px) {
-    font-size: 42px;
-  }
+`;
+export const Badge = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid ${orangeSecondary};
+  color: ${orange};
+  background-color: ${({ theme }) => theme.backgroundColor};
+  border-radius: 6px;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  line-height: 150%;
+  padding: 3px 6px;
+`;
+export const BlinkingStatus = styled.div<{ isActive: boolean }>`
+  width: 8px;
+  height: 8px;
+  background-color: ${orangeSecondary};
+  border-radius: 50%;
+  ${({ isActive }) =>
+    isActive &&
+    css`
+      background-color: ${orange};
+      animation: ${blink} 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    `}
 `;
 export const Description = styled.span`
   font-size: 18px;
@@ -172,10 +195,10 @@ export const IconWrapper = styled.div<
   Pick<Props, 'overlappingType'> & { isCenterWrapper?: boolean }
 >`
   svg {
-    width: 64px;
-    height: 64px;
+    width: 40px;
+    height: 40px;
     ${({ overlappingType }) =>
-      overlappingType === 'amusic' &&
+      overlappingType === 'musicon' &&
       css`
         & path:nth-child(3) {
           fill: ${({ theme }) => theme.backgroundColor};
@@ -195,5 +218,22 @@ export const IconWrapper = styled.div<
       border: 1px solid ${orangeSecondary};
       box-sizing: border-box;
       cursor: pointer;
+
+      svg {
+        width: 64px;
+        height: 64px;
+      }
     `}
+`;
+export const StyledImage = styled(Image)`
+  pointer-events: none;
+  z-index: -2;
+  /* width: 1512px;
+    min-width: 1512px; */
+  /* height: 1512px; */
+  /* min-height: 1512px; */
+  position: absolute;
+  object-fit: fill;
+  top: 0;
+  inset: -300px auto auto;
 `;
