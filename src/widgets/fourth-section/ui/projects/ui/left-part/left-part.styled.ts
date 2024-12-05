@@ -14,25 +14,6 @@ const blink = keyframes`
     opacity: 0;
   }
 `;
-const moving = (caruselType: 'left' | 'right') => {
-  const translateX0: { [key in typeof caruselType]: string } = {
-    left: '0',
-    right: 'calc(-100% - 20px)',
-  };
-  const translateX100: { [key in typeof caruselType]: string } = {
-    left: 'calc(-100% - 20px)',
-    right: '0',
-  };
-
-  return keyframes`
-  0% {
-    transform: translateX(${translateX0[caruselType]});
-  }
-  100% {
-    transform: translateX(${translateX100[caruselType]});
-  }
-`;
-};
 export const Wrapper = styled.div`
   width: 100%;
   height: 100vh;
@@ -45,51 +26,6 @@ export const Wrapper = styled.div`
 export const Example = styled.div`
   width: 100%;
   height: 20vh;
-`;
-export const AnimatedCarusel = styled.div<{
-  caruselType: 'left' | 'right';
-  isPaused: boolean;
-  customStyles?: string;
-}>`
-  width: 600px;
-  height: 10vh;
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  overflow: hidden;
-  text-rendering: optimizeSpeed;
-
-  & span {
-    text-rendering: optimizeSpeed;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: nowrap;
-    align-items: center;
-    animation: ${({ caruselType }) => moving(caruselType)} 40s linear infinite;
-    animation-play-state: ${({ isPaused }) => (isPaused ? 'paused' : 'running')};
-
-    & li {
-      color: ${orange};
-      font-size: 80px;
-      line-height: 80px;
-      font-weight: 500;
-      margin-left: 32px;
-      list-style-type: none;
-    }
-    & li:nth-child(even) {
-      color: ${({ theme }) => theme.backgroundColor};
-      text-shadow:
-        -1px 1px 2px ${orange},
-        1px 1px 2px ${orange},
-        1px -1px 0 ${orange},
-        -1px -1px 0 ${orange};
-    }
-  }
-  ${({ customStyles }) =>
-    customStyles &&
-    css`
-      ${customStyles}
-    `}
 `;
 export const CardWrapper = styled.div`
   width: 100%;
@@ -235,5 +171,5 @@ export const StyledImage = styled(Image)`
   position: absolute;
   object-fit: fill;
   top: 0;
-  inset: -300px auto auto;
+  inset: -250px 80px auto;
 `;
