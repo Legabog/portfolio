@@ -23,19 +23,15 @@ export const Wrapper = styled.div`
   top: 0;
   overflow: clip;
 `;
-export const Example = styled.div`
-  width: 100%;
-  height: 20vh;
-`;
 export const CardWrapper = styled.div`
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 100px);
 `;
 export const CardBody = styled.div`
   display: grid;
   grid-template-columns: 0.5fr 1fr;
   align-items: center;
-  height: calc(80vh - 100px);
+  height: 73vh;
 `;
 export const InfoSection = styled.div``;
 export const TopNumber = styled.span`
@@ -74,13 +70,13 @@ export const Badge = styled.div`
   line-height: 150%;
   padding: 3px 6px;
 `;
-export const BlinkingStatus = styled.div<{ isActive: boolean }>`
+export const BlinkingStatus = styled.div<{ $isActive: boolean }>`
   width: 8px;
   height: 8px;
   background-color: ${orangeSecondary};
   border-radius: 50%;
-  ${({ isActive }) =>
-    isActive &&
+  ${({ $isActive }) =>
+    $isActive &&
     css`
       background-color: ${orange};
       animation: ${blink} 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
@@ -128,7 +124,7 @@ export const Seperator = styled.div`
   margin-top: 150px;
 `;
 export const IconWrapper = styled.div<
-  Pick<Props, 'overlappingType'> & { isCenterWrapper?: boolean }
+  Pick<Props, 'overlappingType'> & { $isCenterWrapper?: boolean }
 >`
   svg {
     width: 40px;
@@ -141,8 +137,8 @@ export const IconWrapper = styled.div<
         }
       `};
   }
-  ${({ isCenterWrapper }) =>
-    isCenterWrapper &&
+  ${({ $isCenterWrapper }) =>
+    $isCenterWrapper &&
     css`
       display: flex;
       align-items: center;

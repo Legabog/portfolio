@@ -23,16 +23,18 @@ const moving = (caruselType: 'left' | 'right') => {
   }
 `;
 };
-export const Span = styled.span<{ caruselType: 'left' | 'right'; isPaused: boolean }>`
+export const Span = styled.span<{ $caruselType: 'left' | 'right'; $isPaused: boolean }>`
   text-rendering: optimizeSpeed;
   display: flex;
   justify-content: space-between;
   flex-wrap: nowrap;
   align-items: center;
-  animation: ${({ caruselType }) => moving(caruselType)} 40s linear infinite;
-  animation-play-state: ${({ isPaused }) => (isPaused ? 'paused' : 'running')};
+  animation: ${({ $caruselType }) => moving($caruselType)} 40s linear infinite;
+  animation-play-state: ${({ $isPaused }) => ($isPaused ? 'paused' : 'running')};
 `;
-export const Li = styled.li`
+export const Li = styled.li<{
+  $customStyles?: string;
+}>`
   color: ${orange};
   font-size: 80px;
   line-height: 80px;
@@ -48,21 +50,25 @@ export const Li = styled.li`
       1px -1px 0 ${orange},
       -1px -1px 0 ${orange};
   }
+
+  ${({ $customStyles }) =>
+    $customStyles &&
+    css`
+      ${$customStyles}
+    `}
 `;
 export const Wrapper = styled.div<{
-  customStyles?: string;
+  $customStyles?: string;
 }>`
-  width: 600px;
-  height: 10vh;
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
   overflow: hidden;
   text-rendering: optimizeSpeed;
 
-  ${({ customStyles }) =>
-    customStyles &&
+  ${({ $customStyles }) =>
+    $customStyles &&
     css`
-      ${customStyles}
+      ${$customStyles}
     `}
 `;
