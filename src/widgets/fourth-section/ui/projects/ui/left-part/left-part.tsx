@@ -1,8 +1,9 @@
 'use client';
 
-import { FC, ReactElement, useRef } from 'react';
+import { FC, ReactElement, useState } from 'react';
 import { useTranslations } from 'next-intl';
 
+import { useResizeObserver } from '@shared/hooks';
 import { MusicOnProjectIcon, LinkifyIcon, VTBIcon } from '@shared/ui';
 import { WORDS } from './constants';
 import {
@@ -12,7 +13,6 @@ import {
   IconWrapper,
   Seperator,
   SeperatorWrapper,
-  Example,
   CardWrapper,
   InfoSection,
   CardBody,
@@ -26,10 +26,8 @@ import { Props } from './types';
 import { Carusel, Panels } from './ui';
 
 export const LeftPart: FC<Props> = ({ absoluteRef, overlappingType }) => {
-  const refCardBody = useRef<HTMLDivElement | null>(null);
   const t = useTranslations(`FourthSection.FourthSectionProjects.FourthSectionLeftPart`);
 
-  const customStylesCarusel = `width: ${refCardBody.current?.clientWidth}px;`;
   const conditionalSvg: { [key in typeof overlappingType]: ReactElement } = {
     vtb: <VTBIcon />,
     musicon: <MusicOnProjectIcon />,
@@ -37,10 +35,18 @@ export const LeftPart: FC<Props> = ({ absoluteRef, overlappingType }) => {
   };
   const text = t(`${overlappingType}`);
 
+  const [width, setWidth] = useState<number>(window.innerWidth * 0.5);
+  const resizeHandler = () => {
+    setWidth(window.innerWidth * 0.8);
+  };
+  const resizeRef = useResizeObserver(resizeHandler);
+
+  console.log('resizeRef', resizeRef);
+
   return (
     <Wrapper data-testid='left-part'>
       <CardWrapper>
-        <CardBody ref={ refCardBody }>
+        <CardBody>
           <Panels />
           <InfoSection>
             <TopNumber>
@@ -66,7 +72,7 @@ export const LeftPart: FC<Props> = ({ absoluteRef, overlappingType }) => {
                     ? 'Music app'
                     : 'Cash management'}
                 <BlinkingStatus
-                  isActive={ overlappingType === 'vtb' }
+                  $isActive={ overlappingType === 'vtb' }
                   title={ overlappingType === 'vtb' ? 'Active' : 'Inactive' }
                 />
               </Badge>
@@ -86,24 +92,18 @@ export const LeftPart: FC<Props> = ({ absoluteRef, overlappingType }) => {
             </Description>
           </InfoSection>
         </CardBody>
-        <Example>
-          {['left', 'right'].map((type) => (
-            <Carusel
-              caruselType={ type as 'left' | 'right' }
-              customStyles={ customStylesCarusel }
-              words={ WORDS[overlappingType][type] }
-            />
-          ))}
-        </Example>
+        {['left', 'right'].map((type) => (
+          <Carusel caruselType={ type as 'left' | 'right' } words={ WORDS[overlappingType][type] } />
+        ))}
       </CardWrapper>
       <SeperatorWrapper>
         <Seperator>
-          <IconWrapper ref={ absoluteRef } overlappingType={ overlappingType } isCenterWrapper>
+          <IconWrapper ref={ absoluteRef } overlappingType={ overlappingType } $isCenterWrapper>
             {conditionalSvg[overlappingType]}
           </IconWrapper>
         </Seperator>
       </SeperatorWrapper>
-      <StyledImage alt='background' height={ 1200 } src='/images/background.png' width={ 1200 } />
+      <StyledImage alt='background' height={ width } src='/images/background.png' width={ width } />
     </Wrapper>
   );
 };

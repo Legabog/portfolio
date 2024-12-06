@@ -14,16 +14,16 @@ export const RightPart = styled.div`
 `;
 export const VTB = styled.div`
   width: 500px;
-  height: 800px;
+  height: 1200px;
   /* background-color: red; */
 `;
 export const LINKIFY = styled.div`
   width: 500px;
-  height: 800px;
+  height: 1200px;
   /* background-color: pink; */
 `;
 export const MUSICON = styled.div`
   width: 500px;
-  height: 800px;
+  height: 1200px;
   /* background-color: purple; */
 `;
