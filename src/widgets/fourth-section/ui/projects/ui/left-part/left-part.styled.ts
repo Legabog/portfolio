@@ -28,12 +28,14 @@ export const CardWrapper = styled.div`
   height: calc(100vh - 100px);
 `;
 export const CardBody = styled.div`
-  display: grid;
-  grid-template-columns: 0.5fr 1fr;
+  display: flex;
+  justify-content: center;
   align-items: center;
   height: 73vh;
 `;
-export const InfoSection = styled.div``;
+export const InfoSection = styled.div`
+  width: 80%;
+`;
 export const TopNumber = styled.span`
   display: flex;
   font-size: 24px;
@@ -48,9 +50,9 @@ export const TitleWrapper = styled.div`
 `;
 export const Title = styled.span`
   color: ${({ theme }) => theme.color};
-  font-size: 36px;
-  line-height: 44px;
-  font-weight: 500;
+  font-size: 60px;
+  line-height: 60px;
+  font-weight: 600;
   height: fit-content;
 
   & > span:nth-child(2) {
@@ -127,8 +129,8 @@ export const IconWrapper = styled.div<
   Pick<Props, 'overlappingType'> & { $isCenterWrapper?: boolean }
 >`
   svg {
-    width: 40px;
-    height: 40px;
+    width: 64px;
+    height: 64px;
     ${({ overlappingType }) =>
       overlappingType === 'musicon' &&
       css`
@@ -157,15 +159,16 @@ export const IconWrapper = styled.div<
       }
     `}
 `;
-export const StyledImage = styled(Image)`
+export const StyledImage = styled(Image)<{ $customStyles?: string }>`
   pointer-events: none;
   z-index: -2;
-  /* width: 1512px;
-    min-width: 1512px; */
-  /* height: 1512px; */
-  /* min-height: 1512px; */
   position: absolute;
   object-fit: fill;
   top: 0;
-  inset: -250px 80px auto;
+
+  ${({ $customStyles }) =>
+    $customStyles &&
+    css`
+      ${$customStyles}
+    `}
 `;

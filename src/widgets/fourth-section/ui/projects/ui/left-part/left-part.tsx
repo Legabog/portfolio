@@ -1,6 +1,6 @@
 'use client';
 
-import { FC, ReactElement, useState } from 'react';
+import { FC, ReactElement, RefObject, useState } from 'react';
 import { useTranslations } from 'next-intl';
 
 import { useResizeObserver } from '@shared/hooks';
@@ -23,7 +23,7 @@ import {
   TopNumber,
 } from './left-part.styled';
 import { Props } from './types';
-import { Carusel, Panels } from './ui';
+import { Carusel } from './ui';
 
 export const LeftPart: FC<Props> = ({ absoluteRef, overlappingType }) => {
   const t = useTranslations(`FourthSection.FourthSectionProjects.FourthSectionLeftPart`);
@@ -35,9 +35,13 @@ export const LeftPart: FC<Props> = ({ absoluteRef, overlappingType }) => {
   };
   const text = t(`${overlappingType}`);
 
-  const [width, setWidth] = useState<number>(window.innerWidth * 0.5);
+  const [width, setWidth] = useState<number>(window.innerWidth * 0.8);
+  const [customStyles, setCustomStyles] = useState<string>(
+    `inset: ${-window.innerHeight / 4}px ${window.innerWidth / 250}px auto;`,
+  );
   const resizeHandler = () => {
     setWidth(window.innerWidth * 0.8);
+    setCustomStyles(`inset: ${-window.innerHeight / 4}px ${window.innerWidth / 250}px auto;`);
   };
   const resizeRef = useResizeObserver(resizeHandler);
 
@@ -47,7 +51,7 @@ export const LeftPart: FC<Props> = ({ absoluteRef, overlappingType }) => {
     <Wrapper data-testid='left-part'>
       <CardWrapper>
         <CardBody>
-          <Panels />
+          {/* <Panels /> */}
           <InfoSection>
             <TopNumber>
               0{overlappingType === 'linkify' ? 1 : overlappingType === 'musicon' ? 2 : 3}
@@ -103,7 +107,14 @@ export const LeftPart: FC<Props> = ({ absoluteRef, overlappingType }) => {
           </IconWrapper>
         </Seperator>
       </SeperatorWrapper>
-      <StyledImage alt='background' height={ width } src='/images/background.png' width={ width } />
+      <StyledImage
+        ref={ resizeRef as RefObject<HTMLImageElement> }
+        $customStyles={ customStyles }
+        alt='background'
+        height={ width }
+        src='/images/background.png'
+        width={ width }
+      />
     </Wrapper>
   );
 };
