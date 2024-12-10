@@ -119,12 +119,12 @@
 		"FourthSectionProjects": {
 			"FourthSectionLeftPart": {
 				"Card": {
-					"Tiltle": {
+					"Title": {
 						"linkify": "Linkify",
 						"vtb": "VTB",
 						"musicon": "MusicOn"
 					},
-					"SecondaryTiltle": {
+					"SecondaryTitle": {
 						"linkify": "Social network",
 						"vtb": "Cash management",
 						"musicon": "Music player"
