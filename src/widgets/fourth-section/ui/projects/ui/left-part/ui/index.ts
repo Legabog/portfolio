@@ -1,2 +1,3 @@
-export * from './panels';
-export * from './carusel';
+export * from './card';
+export * from './background';
+export * from './seperator';
