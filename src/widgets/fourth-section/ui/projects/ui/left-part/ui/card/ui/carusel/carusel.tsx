@@ -24,9 +24,6 @@ export const Carusel: FC<Props> = ({ caruselType, customStyles = '', words }) =>
 
   const customCaruselStyles = `${styles} ${customStyles}`;
 
-  console.log('window.innerWidth', window.innerWidth);
-  console.log('resizeRef', resizeRef.current?.scrollHeight);
-
   return (
     <Wrapper
       ref={ resizeRef }

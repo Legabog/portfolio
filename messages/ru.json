@@ -118,9 +118,23 @@
 		},
 		"FourthSectionProjects": {
 			"FourthSectionLeftPart": {
-				"linkify": "Linkify",
-				"vtb": "VTB",
-				"musicon": "MusicOn"
+				"Card": {
+					"Title": {
+						"linkify": "Linkify",
+						"vtb": "VTB",
+						"musicon": "MusicOn"
+					},
+					"SecondaryTitle": {
+						"linkify": "Social network",
+						"vtb": "Cash management",
+						"musicon": "Music player"
+					},
+					"Badge": {
+						"linkify": "Social app",
+						"vtb": "Cash app",
+						"musicon": "Music app"
+					}
+				}
 			}
 		}
 	},
