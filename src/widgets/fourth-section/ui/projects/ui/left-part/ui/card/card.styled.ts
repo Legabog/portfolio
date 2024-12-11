@@ -48,12 +48,12 @@ export const TopNumber = styled.span`
   font-weight: 600;
   line-height: 24px;
   letter-spacing: 0px;
-  color: ${orange};
+  color: ${({ theme }) => theme.color};
 `;
-export const TitleWrapper = styled.div`
+export const SectionWrapper = styled.div`
   display: flex;
   align-items: center;
-  margin: 12px 0px;
+  margin: 8px 0px;
   gap: 18px;
 `;
 export const Title = styled.span`
@@ -69,7 +69,7 @@ export const SecondaryTitle = styled.span`
   font-weight: 600;
   line-height: 24px;
   letter-spacing: 0px;
-  color: ${orange};
+  color: ${({ theme }) => theme.color};
   margin-left: 3px;
   text-transform: uppercase;
   height: fit-content;
@@ -101,18 +101,9 @@ export const BlinkingStatus = styled.div<{ $isActive: boolean }>`
     `}
 `;
 export const Description = styled.span`
-  font-size: 18px;
+  width: 90%;
+  font-size: 14px;
+  line-height: 18px;
   font-weight: 400;
-  letter-spacing: 0px;
-  color: ${({ theme }) => theme.description};
-
-  @media only screen and (max-width: 1000px) {
-    font-size: 16px;
-  }
-  @media only screen and (max-width: 500px) {
-    font-size: 14px;
-  }
-  @media only screen and (max-width: 330px) {
-    font-size: 12px;
-  }
+  color: ${orangeSecondary};
 `;

@@ -24,21 +24,19 @@ const moving = (caruselType: 'left' | 'right') => {
 `;
 };
 export const Span = styled.span<{ $caruselType: 'left' | 'right'; $isPaused: boolean }>`
-  text-rendering: optimizeSpeed;
   display: flex;
-  justify-content: space-between;
   flex-wrap: nowrap;
   align-items: center;
+  justify-content: space-between;
   animation: ${({ $caruselType }) => moving($caruselType)} 40s linear infinite;
   animation-play-state: ${({ $isPaused }) => ($isPaused ? 'paused' : 'running')};
+  text-rendering: optimizeSpeed;
 `;
 export const Li = styled.li<{
   $customStyles?: string;
 }>`
   color: ${orange};
-  font-size: 80px;
-  line-height: 80px;
-  font-weight: 500;
+  font-weight: 800;
   margin-left: 32px;
   list-style-type: none;
 

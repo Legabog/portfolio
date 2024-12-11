@@ -8,7 +8,7 @@ export const Seperator: FC<Pick<Props, 'absoluteRef' | 'overlappingType'>> = ({
   absoluteRef,
   overlappingType,
 }) => (
-  <Wrapper>
+  <Wrapper data-testid='left-part-seperator'>
     <StickyObject>
       <IconWrapper ref={ absoluteRef } overlappingType={ overlappingType }>
         {PROJECTS_SVG[overlappingType]}

@@ -13,17 +13,31 @@ export const RightPart = styled.div`
   flex-direction: column;
 `;
 export const VTB = styled.div`
-  width: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
   height: 1200px;
   /* background-color: red; */
 `;
 export const LINKIFY = styled.div`
-  width: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
   height: 1200px;
   /* background-color: pink; */
 `;
+export const TempCard = styled.div`
+  width: 100%;
+  height: 300px;
+  background-color: green;
+`;
 export const MUSICON = styled.div`
-  width: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
   height: 1200px;
   /* background-color: purple; */
 `;
