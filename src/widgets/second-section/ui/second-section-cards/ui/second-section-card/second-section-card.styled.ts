@@ -94,7 +94,7 @@ export const FrontWrapper = styled.div<{ $flip?: boolean }>`
   width: 100%;
   display: ${({ $flip }) => (!$flip ? 'flex' : 'none')};
   visibility: ${({ $flip }) => ($flip ? 'hidden' : 'visible')};
-  transition: visibility 500 linea;
+  transition: visibility 0.5s linear;
   align-items: flex-start;
   flex-direction: column;
 
@@ -119,7 +119,7 @@ export const BackWrapper = styled.div<{ $flip?: boolean }>`
   width: 100%;
   display: ${({ $flip }) => ($flip ? 'flex' : 'none')};
   visibility: ${({ $flip }) => (!$flip ? 'hidden' : 'visible')};
-  transition: visibility 500 linea;
+  transition: visibility 0.5s linear;
   flex-direction: column;
   align-items: flex-start;
 

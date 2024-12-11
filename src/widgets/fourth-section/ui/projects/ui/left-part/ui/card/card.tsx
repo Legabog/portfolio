@@ -7,12 +7,11 @@ import { Props } from '../../types';
 import { PROJECTS_SVG } from '../../constants';
 import {
   Wrapper,
+  SectionWrapper,
   IconWrapper,
-  TitleWrapper,
   Title,
   InfoSection,
   CardBody,
-  Description,
   Badge,
   BlinkingStatus,
   TopNumber,
@@ -23,45 +22,37 @@ import { WORDS } from './constants';
 
 export const Card: FC<Pick<Props, 'overlappingType'>> = ({ overlappingType }) => {
   const t = useTranslations(`FourthSection.FourthSectionProjects.FourthSectionLeftPart.Card`);
-  const conditionTranslate = (type: 'Title' | 'SecondaryTitle' | 'Badge') =>
-    t(`${type}.${overlappingType}`);
+  const conditionTranslate = (
+    type: 'Title' | 'SecondaryTitle' | 'Badge' | 'Description' | 'TopNumber' | 'BadgeStatus',
+  ) => t(`${type}.${overlappingType}`);
 
-  console.log('overlappingType');
   const title = conditionTranslate('Title');
   const secondaryTitle = conditionTranslate('SecondaryTitle');
   const badge = conditionTranslate('Badge');
+  const badgeStatus = conditionTranslate('BadgeStatus');
+  const topNumber = conditionTranslate('TopNumber');
+  const isActive = overlappingType === 'vtb';
 
   return (
     <Wrapper data-testid='left-part-card'>
       <CardBody>
         <InfoSection>
-          <TitleWrapper>
+          <SectionWrapper>
             <Badge title={ badge }>
               {badge}
-              <BlinkingStatus
-                $isActive={ overlappingType === 'vtb' }
-                title={ overlappingType === 'vtb' ? 'Active' : 'Inactive' }
-              />
+              <BlinkingStatus $isActive={ isActive } title={ badgeStatus } />
             </Badge>
-          </TitleWrapper>
-          <TitleWrapper>
+          </SectionWrapper>
+          <SectionWrapper>
             <IconWrapper overlappingType={ overlappingType }>
               {PROJECTS_SVG[overlappingType]}
             </IconWrapper>
             <Title title={ title }>{title}</Title>
-          </TitleWrapper>
-          <TitleWrapper>
-            <TopNumber>
-              0{overlappingType === 'linkify' ? 1 : overlappingType === 'musicon' ? 2 : 3}
-            </TopNumber>
+          </SectionWrapper>
+          <SectionWrapper>
+            <TopNumber title={ topNumber }>{topNumber}</TopNumber>
             <SecondaryTitle title={ secondaryTitle }>{secondaryTitle}</SecondaryTitle>
-          </TitleWrapper>
-          <TitleWrapper>
-            <Description>
-              Here might be your information. This project is about this. Hello daga bugag dasdas.
-              Dkklasd asdasddasd.
-            </Description>
-          </TitleWrapper>
+          </SectionWrapper>
         </InfoSection>
       </CardBody>
       {['left', 'right'].map((type) => (

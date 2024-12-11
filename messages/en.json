@@ -133,6 +133,21 @@
 						"linkify": "Social app",
 						"vtb": "Cash app",
 						"musicon": "Music app"
+					},
+					"BadgeStatus": {
+						"linkify": "Inactive",
+						"vtb": "Active",
+						"musicon": "Inactive"
+					},
+					"TopNumber": {
+						"linkify": "01",
+						"musicon": "02",
+						"vtb": "03"
+					},
+					"Description": {
+						"linkify": "The main goal of the project is to create a social network with standard features such as: publishing posts, messaging, user interaction by viewing each other's profiles, commenting, browsing the news feed and much more.",
+						"vtb": "The system is designed to automate the execution of services for material pooling products and allows managing several bank accounts for a corporate client. The system is designed to automate the execution of services for material pooling products and allows managing several bank accounts for a corporate client.",
+						"musicon": "A media streaming and downloading service where users can search for music by artist, album or genre, and create, edit and share playlists. The platform offers two usage options: basic features are free with ads or restrictions, while advanced features such as offline or ad-free listening are offered through a paid subscription."
 					}
 				}
 			}
