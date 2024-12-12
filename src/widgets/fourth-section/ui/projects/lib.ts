@@ -7,36 +7,36 @@ export const useLogic = () => {
   const musiconRef = useRef<HTMLDivElement | null>(null);
   const [overlappingType, setOverlappingType] = useState<'vtb' | 'musicon' | 'linkify'>('linkify');
 
-  const checkOverlap = () => {
-    if (absoluteRef.current && vtbRef.current && linkifyRef.current && musiconRef.current) {
-      const absoluteRect = absoluteRef.current.getBoundingClientRect();
-      const targetVtbRef = vtbRef.current.getBoundingClientRect();
-      const targetLinkifyRef = linkifyRef.current.getBoundingClientRect();
-      const targetMusiconRef = musiconRef.current.getBoundingClientRect();
-
-      const overlappingTypeSetter = (type: typeof overlappingType) => {
-        const targetRef = {
-          vtb: targetVtbRef,
-          linkify: targetLinkifyRef,
-          musicon: targetMusiconRef,
-        }[type];
-
-        return (
-          !(
-            absoluteRect.right < targetRef.left ||
-            absoluteRect.left > targetRef.right ||
-            absoluteRect.bottom < targetRef.top ||
-            absoluteRect.top > targetRef.bottom
-          ) && setOverlappingType(type)
-        );
-      };
-      ['vtb', 'musicon', 'linkify'].forEach((type) =>
-        overlappingTypeSetter(type as typeof overlappingType),
-      );
-    }
-  };
-
   useEffect(() => {
+    const checkOverlap = () => {
+      if (absoluteRef.current && vtbRef.current && linkifyRef.current && musiconRef.current) {
+        const absoluteRect = absoluteRef.current.getBoundingClientRect();
+        const targetVtbRef = vtbRef.current.getBoundingClientRect();
+        const targetLinkifyRef = linkifyRef.current.getBoundingClientRect();
+        const targetMusiconRef = musiconRef.current.getBoundingClientRect();
+
+        const overlappingTypeSetter = (type: typeof overlappingType) => {
+          const targetRef = {
+            vtb: targetVtbRef,
+            linkify: targetLinkifyRef,
+            musicon: targetMusiconRef,
+          }[type];
+
+          return (
+            !(
+              absoluteRect.right < targetRef.left ||
+              absoluteRect.left > targetRef.right ||
+              absoluteRect.bottom < targetRef.top ||
+              absoluteRect.top > targetRef.bottom
+            ) && setOverlappingType(type)
+          );
+        };
+        ['vtb', 'musicon', 'linkify'].forEach((type) =>
+          overlappingTypeSetter(type as typeof overlappingType),
+        );
+      }
+    };
+
     window.addEventListener('scroll', checkOverlap);
 
     return () => {

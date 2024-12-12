@@ -1,8 +1,8 @@
 import { FC } from 'react';
 
-import { Wrapper, RightPart, VTB, LINKIFY, MUSICON, TempCard } from './projects.styled';
+import { Wrapper } from './projects.styled';
 import { useLogic } from './lib';
-import { LeftPart } from './ui';
+import { LeftPart, RightPart } from './ui';
 
 export const Projects: FC = () => {
   const { overlappingType, absoluteRef, linkifyRef, musiconRef, vtbRef } = useLogic();
@@ -10,17 +10,7 @@ export const Projects: FC = () => {
   return (
     <Wrapper data-testid='projects'>
       <LeftPart absoluteRef={ absoluteRef } overlappingType={ overlappingType } />
-      <RightPart>
-        <LINKIFY ref={ linkifyRef }>
-          <TempCard>LINKIFY</TempCard>
-        </LINKIFY>
-        <MUSICON ref={ musiconRef }>
-          <TempCard>MUSICON</TempCard>
-        </MUSICON>
-        <VTB ref={ vtbRef }>
-          <TempCard>VTB</TempCard>
-        </VTB>
-      </RightPart>
+      <RightPart linkifyRef={ linkifyRef } musiconRef={ musiconRef } vtbRef={ vtbRef } />
     </Wrapper>
   );
 };
