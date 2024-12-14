@@ -44,7 +44,7 @@ export const Card: FC<Pick<Props, 'overlappingType'>> = ({ overlappingType }) =>
             </Badge>
           </SectionWrapper>
           <SectionWrapper>
-            <IconWrapper overlappingType={ overlappingType }>
+            <IconWrapper $overlappingType={ overlappingType }>
               {PROJECTS_SVG[overlappingType]}
             </IconWrapper>
             <Title title={ title }>{title}</Title>
@@ -55,8 +55,12 @@ export const Card: FC<Pick<Props, 'overlappingType'>> = ({ overlappingType }) =>
           </SectionWrapper>
         </InfoSection>
       </CardBody>
-      {['left', 'right'].map((type) => (
-        <Carusel caruselType={ type as 'left' | 'right' } words={ WORDS[overlappingType][type] } />
+      {['left', 'right'].map((type, index) => (
+        <Carusel
+          key={ `${index} - ${type}` }
+          caruselType={ type as 'left' | 'right' }
+          words={ WORDS[overlappingType][type] }
+        />
       ))}
     </Wrapper>
   );

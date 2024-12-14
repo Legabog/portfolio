@@ -26,12 +26,12 @@ export const CardBody = styled.div`
 export const InfoSection = styled.div`
   width: 80%;
 `;
-export const IconWrapper = styled.div<Pick<Props, 'overlappingType'>>`
+export const IconWrapper = styled.div<{ $overlappingType: Props['overlappingType'] }>`
   svg {
     width: 96px;
     height: 96px;
-    ${({ overlappingType }) =>
-      overlappingType === 'musicon' &&
+    ${({ $overlappingType }) =>
+      $overlappingType === 'musicon' &&
       css`
         & path:nth-child(3) {
           fill: ${({ theme }) => theme.backgroundColor};

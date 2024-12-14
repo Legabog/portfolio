@@ -2,49 +2,89 @@ import styled, { css } from 'styled-components';
 
 import { COLORS } from '@shared/constants';
 
-const { orange, orangeSecondary } = COLORS;
+const { orange } = COLORS;
 
+export const FrontText = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-left: 24px;
+`;
+export const FrontTitle = styled.span`
+  transition: 0.9s;
+  font-size: 50px;
+  line-height: 62px;
+  font-weight: 600;
+  color: ${({ theme }) => theme.color};
+`;
+export const FrontDescription = styled.span`
+  transition: 0.9s;
+  font-size: 22px;
+  line-height: 40px;
+  font-weight: 300;
+  color: ${({ theme }) => theme.description};
+`;
+export const TechnologyWrapper = styled.div`
+  display: flex;
+  align-items: center;
+
+  svg {
+    width: 48px;
+    height: 48px;
+  }
+`;
+export const TechnologyTitle = styled.span`
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 12px;
+  letter-spacing: 0px;
+  text-transform: uppercase;
+  margin: 0px 8px 0px 5px;
+  color: ${({ theme }) => theme.description};
+`;
 export const FrontHeader = styled.div`
   display: flex;
   justify-content: flex-end;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 16px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
   color: ${({ theme }) => theme.description};
   transition: 0.9s;
   text-transform: uppercase;
 `;
 export const FrontBody = styled.div`
   display: flex;
-  justify-content: center;
   align-items: center;
-  transition: 0.9s;
 
-  h3 {
-    font-size: 48px;
-    line-height: 56px;
-    color: ${({ theme }) => theme.color};
-  }
   svg {
     width: 150px;
     height: 150px;
-    margin-right: 16px;
 
     path {
-      fill: ${orangeSecondary};
+      fill: ${orange};
     }
   }
 `;
-export const FrontFooter = styled.div``;
+export const FrontFooter = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  div {
+    border-right: 1px solid rgb(232, 176, 89);
+  }
+  div:last-child {
+    border-right: none;
+  }
+`;
 const baseCard = css`
   display: flex;
   position: absolute;
   position: absolute;
   left: 0px;
   top: 0px;
-  width: calc(100% - 32px);
+  width: calc(100% - 64px);
   height: 100%;
-  padding: 16px;
+  padding: 32px;
   backface-visibility: hidden;
   transition: 0.9s;
   overflow: hidden;
@@ -55,17 +95,8 @@ const baseCard = css`
 
   &:hover {
     border: 1px solid ${orange};
-    filter: brightness(1.05);
-    path {
-      fill: ${orange};
-    }
     ${FrontHeader} {
       color: ${orange};
-    }
-    ${FrontBody} {
-      path {
-        fill: ${orange};
-      }
     }
   }
 `;

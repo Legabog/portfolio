@@ -150,6 +150,20 @@
 						"musicon": "A media streaming and downloading service where users can search for music by artist, album or genre, and create, edit and share playlists. The platform offers two usage options: basic features are free with ads or restrictions, while advanced features such as offline or ad-free listening are offered through a paid subscription."
 					}
 				}
+			},
+			"FourthSectionRightPart": {
+				"Section": {
+					"Title": {
+						"linkify": "Linkify",
+						"vtb": "VTB",
+						"musicon": "MusicOn"
+					},
+					"Description": {
+						"linkify": "Social Network, facebook",
+						"vtb": "Bank app, aga",
+						"musicon": "Music player, aga"
+					}
+				}
 			}
 		}
 	},
