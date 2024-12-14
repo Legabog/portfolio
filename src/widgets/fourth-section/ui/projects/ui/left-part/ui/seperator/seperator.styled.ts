@@ -30,7 +30,7 @@ export const StickyObject = styled.div`
   top: 0;
   margin-top: 150px;
 `;
-export const IconWrapper = styled.div<Pick<Props, 'overlappingType'>>`
+export const IconWrapper = styled.div<{ $overlappingType: Props['overlappingType'] }>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -46,8 +46,8 @@ export const IconWrapper = styled.div<Pick<Props, 'overlappingType'>>`
     width: 64px;
     height: 64px;
   }
-  ${({ overlappingType }) =>
-    overlappingType === 'musicon' &&
+  ${({ $overlappingType }) =>
+    $overlappingType === 'musicon' &&
     css`
       & path:nth-child(3) {
         fill: ${({ theme }) => theme.backgroundColor};
