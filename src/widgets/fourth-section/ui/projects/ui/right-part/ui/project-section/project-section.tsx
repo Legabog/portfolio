@@ -1,6 +1,7 @@
 import { FC, useState } from 'react';
 import { useTranslations } from 'next-intl';
 
+import { useSoundEffectsStore } from '@widgets/header';
 import {
   Wrapper,
   Card,
@@ -13,7 +14,7 @@ import {
   FrontTitle,
   FrontDescription,
   TechnologyWrapper,
-  TechnologyTitle,
+  BackHeader,
 } from './project-section.styled';
 import { Props } from './types';
 
@@ -22,18 +23,25 @@ export const ProjectSection: FC<Props> = ({
   icon,
   topNumber,
   overlappingType,
-  technologyIcons,
+  frontTechnologyIcons,
+  backTechnologyIcons,
 }) => {
   const [isFliped, setFliped] = useState<boolean>(false);
+  const { play } = useSoundEffectsStore();
   const t = useTranslations(`FourthSection.FourthSectionProjects.FourthSectionRightPart.Section`);
   const conditionTranslate = (type: 'Title' | 'Description') => t(`${type}.${overlappingType}`);
 
   const title = conditionTranslate('Title');
   const description = conditionTranslate('Description');
 
+  const onClick = () => {
+    play('wooshing-1.wav');
+    setFliped((prev) => !prev);
+  };
+
   return (
     <Wrapper ref={ sectionRef }>
-      <Card $isFliped={ isFliped } onClick={ () => setFliped((prev) => !prev) }>
+      <Card $isFliped={ isFliped } onClick={ onClick }>
         <Front>
           <FrontHeader title={ topNumber }>{topNumber}</FrontHeader>
           <FrontBody>
@@ -44,15 +52,22 @@ export const ProjectSection: FC<Props> = ({
             </FrontText>
           </FrontBody>
           <FrontFooter>
-            {technologyIcons.map(({ icon, id, title }) => (
+            {frontTechnologyIcons.map(({ icon, id, title }) => (
               <TechnologyWrapper key={ id } title={ title }>
                 {icon}
-                <TechnologyTitle>{title}</TechnologyTitle>
               </TechnologyWrapper>
             ))}
           </FrontFooter>
         </Front>
-        <Back>BACK</Back>
+        <Back>
+          <BackHeader>
+            {backTechnologyIcons.map(({ icon, id, title }) => (
+              <TechnologyWrapper key={ id } title={ title }>
+                {icon}
+              </TechnologyWrapper>
+            ))}
+          </BackHeader>
+        </Back>
       </Card>
     </Wrapper>
   );
