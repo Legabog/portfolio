@@ -2,8 +2,11 @@ import { MutableRefObject } from 'react';
 
 import {
   BemIcon,
+  ExpressIcon,
+  FirebaseIcon,
   JsIcon,
   LinkifyIcon,
+  MongodbIcon,
   MusicOnProjectIcon,
   ReactIcon,
   ReduxIcon,
@@ -11,6 +14,7 @@ import {
   StyledComponentsIcon,
   TsIcon,
   VTBIcon,
+  WebpackIcon,
 } from '@shared/ui';
 import { MusicOnWrapper } from './right-part.styled';
 import { Props } from './ui';
@@ -26,15 +30,29 @@ export const useAdditionalLogic = (
       overlappingType: 'linkify',
       icon: <LinkifyIcon />,
       topNumber: '/ 01',
-      technologyIcons: [
+      frontTechnologyIcons: [
         {
-          id: 'technology-icon-1',
+          id: 'front-technology-icon-1',
           icon: <JsIcon />,
           title: 'JavaScript',
         },
-        { id: 'technology-icon-2', icon: <ReactIcon />, title: 'React' },
-        { id: 'technology-icon-3', icon: <ReduxIcon />, title: 'Redux' },
-        { id: 'technology-icon-4', icon: <BemIcon />, title: 'BEM' },
+        { id: 'front-technology-icon-2', icon: <ReactIcon />, title: 'React' },
+        { id: 'front-technology-icon-3', icon: <ReduxIcon />, title: 'Redux' },
+        { id: 'front-technology-icon-4', icon: <BemIcon />, title: 'BEM' },
+      ],
+      backTechnologyIcons: [
+        {
+          id: 'back-technology-icon-1',
+          icon: <JsIcon />,
+          title: 'JavaScript',
+        },
+        { id: 'back-technology-icon-2', icon: <ReactIcon />, title: 'React' },
+        { id: 'back-technology-icon-3', icon: <ReduxIcon />, title: 'Redux' },
+        { id: 'back-technology-icon-4', icon: <BemIcon />, title: 'BEM' },
+        { id: 'back-technology-icon-5', icon: <WebpackIcon />, title: 'Webpack' },
+        { id: 'back-technology-icon-6', icon: <ExpressIcon />, title: 'Express' },
+        { id: 'back-technology-icon-7', icon: <FirebaseIcon />, title: 'Firebase' },
+        { id: 'back-technology-icon-8', icon: <MongodbIcon />, title: 'MongoDB' },
       ],
       sectionRef: linkifyRef,
     },
@@ -47,15 +65,25 @@ export const useAdditionalLogic = (
         </MusicOnWrapper>
       ),
       topNumber: '/ 02',
-      technologyIcons: [
+      frontTechnologyIcons: [
         {
-          id: 'technology-icon-5',
+          id: 'front-technology-icon-5',
           icon: <TsIcon />,
           title: 'TypeScript',
         },
-        { id: 'technology-icon-6', icon: <ReactIcon />, title: 'React' },
-        { id: 'technology-icon-7', icon: <ReduxIcon />, title: 'Redux' },
-        { id: 'technology-icon-8', icon: <ScssIcon />, title: 'Scss' },
+        { id: 'front-technology-icon-6', icon: <ReactIcon />, title: 'React' },
+        { id: 'front-technology-icon-7', icon: <ReduxIcon />, title: 'Redux' },
+        { id: 'front-technology-icon-8', icon: <ScssIcon />, title: 'Scss' },
+      ],
+      backTechnologyIcons: [
+        {
+          id: 'back-technology-icon-1',
+          icon: <JsIcon />,
+          title: 'JavaScript',
+        },
+        { id: 'back-technology-icon-2', icon: <ReactIcon />, title: 'React' },
+        { id: 'back-technology-icon-3', icon: <ReduxIcon />, title: 'Redux' },
+        { id: 'back-technology-icon-4', icon: <ScssIcon />, title: 'Scss' },
       ],
       sectionRef: musiconRef,
     },
@@ -64,15 +92,29 @@ export const useAdditionalLogic = (
       overlappingType: 'vtb',
       icon: <VTBIcon />,
       topNumber: '/ 03',
-      technologyIcons: [
+      frontTechnologyIcons: [
         {
-          id: 'technology-icon-9',
+          id: 'front-technology-icon-9',
           icon: <TsIcon />,
           title: 'TypeScript',
         },
-        { id: 'technology-icon-10', icon: <ReactIcon />, title: 'React' },
-        { id: 'technology-icon-11', icon: <ReduxIcon />, title: 'RTK' },
-        { id: 'technology-icon-12', icon: <StyledComponentsIcon />, title: 'Styled Components' },
+        { id: 'front-technology-icon-10', icon: <ReactIcon />, title: 'React' },
+        { id: 'front-technology-icon-11', icon: <ReduxIcon />, title: 'RTK' },
+        {
+          id: 'front-technology-icon-12',
+          icon: <StyledComponentsIcon />,
+          title: 'Styled Components',
+        },
+      ],
+      backTechnologyIcons: [
+        {
+          id: 'back-technology-icon-1',
+          icon: <JsIcon />,
+          title: 'JavaScript',
+        },
+        { id: 'back-technology-icon-2', icon: <ReactIcon />, title: 'React' },
+        { id: 'back-technology-icon-3', icon: <ReduxIcon />, title: 'Redux' },
+        { id: 'back-technology-icon-4', icon: <BemIcon />, title: 'BEM' },
       ],
       sectionRef: vtbRef,
     },

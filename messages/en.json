@@ -159,9 +159,9 @@
 						"musicon": "MusicOn"
 					},
 					"Description": {
-						"linkify": "Social Network, facebook",
-						"vtb": "Bank app, aga",
-						"musicon": "Music player, aga"
+						"linkify": "Social network were built using the style features and user interface of facebook.",
+						"vtb": "The system is designed to automate the execution of services for cash pooling.",
+						"musicon": "A media streaming and downloading service where users can search for music by artist."
 					}
 				}
 			}

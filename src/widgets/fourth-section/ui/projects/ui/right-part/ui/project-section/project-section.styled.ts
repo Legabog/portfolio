@@ -11,35 +11,28 @@ export const FrontText = styled.div`
 `;
 export const FrontTitle = styled.span`
   transition: 0.9s;
-  font-size: 50px;
-  line-height: 62px;
+  font-size: 60px;
+  line-height: 60px;
   font-weight: 600;
   color: ${({ theme }) => theme.color};
 `;
 export const FrontDescription = styled.span`
   transition: 0.9s;
-  font-size: 22px;
-  line-height: 40px;
-  font-weight: 300;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 500;
   color: ${({ theme }) => theme.description};
 `;
 export const TechnologyWrapper = styled.div`
+  width: 100%;
   display: flex;
+  justify-content: center;
   align-items: center;
 
   svg {
-    width: 48px;
-    height: 48px;
+    width: 38px;
+    height: 38px;
   }
-`;
-export const TechnologyTitle = styled.span`
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 12px;
-  letter-spacing: 0px;
-  text-transform: uppercase;
-  margin: 0px 8px 0px 5px;
-  color: ${({ theme }) => theme.description};
 `;
 export const FrontHeader = styled.div`
   display: flex;
@@ -51,13 +44,19 @@ export const FrontHeader = styled.div`
   transition: 0.9s;
   text-transform: uppercase;
 `;
+export const BackHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
 export const FrontBody = styled.div`
   display: flex;
   align-items: center;
 
   svg {
-    width: 150px;
-    height: 150px;
+    min-width: 150px;
+    min-height: 150px;
+    align-self: flex-start;
 
     path {
       fill: ${orange};
@@ -65,16 +64,11 @@ export const FrontBody = styled.div`
   }
 `;
 export const FrontFooter = styled.div`
-  display: flex;
+  display: grid;
   align-items: center;
-  justify-content: space-between;
-
-  div {
-    border-right: 1px solid rgb(232, 176, 89);
-  }
-  div:last-child {
-    border-right: none;
-  }
+  justify-content: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin-bottom: 20px;
 `;
 const baseCard = css`
   display: flex;
