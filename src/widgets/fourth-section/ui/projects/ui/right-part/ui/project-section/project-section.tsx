@@ -17,6 +17,7 @@ import {
   BackHeader,
 } from './project-section.styled';
 import { Props } from './types';
+import { Carusel } from './ui';
 
 export const ProjectSection: FC<Props> = ({
   sectionRef,
@@ -61,11 +62,7 @@ export const ProjectSection: FC<Props> = ({
         </Front>
         <Back>
           <BackHeader>
-            {backTechnologyIcons.map(({ icon, id, title }) => (
-              <TechnologyWrapper key={ id } title={ title }>
-                {icon}
-              </TechnologyWrapper>
-            ))}
+            <Carusel caruselType='left' technologies={ backTechnologyIcons } />
           </BackHeader>
         </Back>
       </Card>

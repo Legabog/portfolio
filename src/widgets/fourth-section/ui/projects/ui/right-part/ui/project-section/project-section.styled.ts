@@ -46,8 +46,9 @@ export const FrontHeader = styled.div`
 `;
 export const BackHeader = styled.div`
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
 `;
 export const FrontBody = styled.div`
   display: flex;
