@@ -17,7 +17,11 @@ export const Carusel: FC<Props> = ({ caruselType, technologies }) => {
   const resizeRef = useResizeObserver(resizeHandler);
 
   return (
-    <Wrapper ref={ resizeRef } $customStyles={ caruselStyles } data-testid={ `${caruselType}-carusel` }>
+    <Wrapper
+      ref={ resizeRef }
+      $customStyles={ caruselStyles }
+      data-testid={ `project-section-${caruselType}-carusel` }
+    >
       {[...Array(2)].map((_, index) => (
         <Span key={ index } $caruselType={ caruselType } $isPaused={ isPaused }>
           {technologies.map(({ id, icon, title }) => (

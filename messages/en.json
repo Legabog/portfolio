@@ -158,10 +158,20 @@
 						"vtb": "VTB",
 						"musicon": "MusicOn"
 					},
+					"SecondaryTitle": {
+						"linkify": "Social network with facebook style",
+						"vtb": "The system is designed to automate material pooling",
+						"musicon": "A media streaming and downloading service"
+					},
 					"Description": {
 						"linkify": "Social network were built using the style features and user interface of facebook.",
 						"vtb": "The system is designed to automate the execution of services for cash pooling.",
 						"musicon": "A media streaming and downloading service where users can search for music by artist."
+					},
+					"DescriptionFull": {
+						"linkify": "The main goal of the project is to create a social network with standard features such as: publishing posts, messaging, user interaction by viewing each other's profiles, commenting, browsing the news feed and much more. The first versions of this social network were built using the style features and user interface of Facebook.",
+						"vtb": "The system is designed to automate the execution of services for material pooling products and allows managing several bank accounts for a corporate client. The system is designed to automate the execution of services for material pooling products and allows managing several bank accounts for a corporate client.",
+						"musicon": "A media streaming and downloading service where users can search for music by artist, album or genre, and create, edit and share playlists. The platform offers two usage options: basic features are free with ads or restrictions, while advanced features such as offline or ad-free listening are offered through a paid subscription. A media streaming and downloading service where users can search for music by artist, album or genre, and create, edit and share playlists. The platform offers two use cases: basic features are free with advertising or restrictions, while advanced features such as offline or ad-free listening are offered through a paid subscription."
 					}
 				}
 			}
