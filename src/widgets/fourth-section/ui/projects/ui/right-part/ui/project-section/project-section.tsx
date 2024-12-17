@@ -15,6 +15,10 @@ import {
   FrontDescription,
   TechnologyWrapper,
   BackHeader,
+  BackBody,
+  BackTitleWrapper,
+  BackTitle,
+  BackSecondaryTitle,
 } from './project-section.styled';
 import { Props } from './types';
 import { Carusel } from './ui';
@@ -30,10 +34,14 @@ export const ProjectSection: FC<Props> = ({
   const [isFliped, setFliped] = useState<boolean>(false);
   const { play } = useSoundEffectsStore();
   const t = useTranslations(`FourthSection.FourthSectionProjects.FourthSectionRightPart.Section`);
-  const conditionTranslate = (type: 'Title' | 'Description') => t(`${type}.${overlappingType}`);
+  const conditionTranslate = (
+    type: 'Title' | 'Description' | 'SecondaryTitle' | 'DescriptionFull',
+  ) => t(`${type}.${overlappingType}`);
 
   const title = conditionTranslate('Title');
+  const secondaryTitle = conditionTranslate('SecondaryTitle');
   const description = conditionTranslate('Description');
+  const descriptionFull = conditionTranslate('DescriptionFull');
 
   const onClick = () => {
     play('wooshing-1.wav');
@@ -41,7 +49,7 @@ export const ProjectSection: FC<Props> = ({
   };
 
   return (
-    <Wrapper ref={ sectionRef }>
+    <Wrapper ref={ sectionRef } data-testid='project-section'>
       <Card $isFliped={ isFliped } onClick={ onClick }>
         <Front>
           <FrontHeader title={ topNumber }>{topNumber}</FrontHeader>
@@ -64,6 +72,14 @@ export const ProjectSection: FC<Props> = ({
           <BackHeader>
             <Carusel caruselType='left' technologies={ backTechnologyIcons } />
           </BackHeader>
+          <BackBody>
+            <BackTitleWrapper title={ title }>
+              {icon}
+              <BackTitle>{title}</BackTitle>
+            </BackTitleWrapper>
+            <BackSecondaryTitle title={ secondaryTitle }>{secondaryTitle}</BackSecondaryTitle>
+            <FrontDescription>{descriptionFull}</FrontDescription>
+          </BackBody>
         </Back>
       </Card>
     </Wrapper>

@@ -10,14 +10,12 @@ export const FrontText = styled.div`
   margin-left: 24px;
 `;
 export const FrontTitle = styled.span`
-  transition: 0.9s;
   font-size: 60px;
   line-height: 60px;
   font-weight: 600;
   color: ${({ theme }) => theme.color};
 `;
 export const FrontDescription = styled.span`
-  transition: 0.9s;
   font-size: 18px;
   line-height: 22px;
   font-weight: 500;
@@ -49,6 +47,45 @@ export const BackHeader = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+`;
+export const BackBody = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+`;
+export const BackTitleWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    min-width: 60px;
+    min-height: 60px;
+    border-right: 1px solid rgb(232, 176, 89);
+    padding-right: 16px;
+
+    path {
+      fill: ${orange};
+    }
+  }
+`;
+export const BackTitle = styled.span`
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 34px;
+  padding-left: 16px;
+  color: ${({ theme }) => theme.color};
+  text-transform: uppercase;
+`;
+export const BackSecondaryTitle = styled.span`
+  margin-top: 8px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 20px;
+  color: ${({ theme }) => theme.description};
+  text-transform: uppercase;
 `;
 export const FrontBody = styled.div`
   display: flex;
