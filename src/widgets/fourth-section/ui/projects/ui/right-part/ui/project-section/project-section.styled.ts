@@ -1,9 +1,17 @@
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
 import { COLORS } from '@shared/constants';
 
-const { orange } = COLORS;
+const { orange, orangeSecondary } = COLORS;
 
+const blink = keyframes`
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+`;
 export const FrontText = styled.div`
   display: flex;
   flex-direction: column;
@@ -12,14 +20,18 @@ export const FrontText = styled.div`
 export const FrontTitle = styled.span`
   font-size: 60px;
   line-height: 60px;
-  font-weight: 600;
-  color: ${({ theme }) => theme.color};
-`;
-export const FrontDescription = styled.span`
-  font-size: 18px;
-  line-height: 22px;
   font-weight: 500;
+  color: ${({ theme }) => theme.color};
+  transition: 0.9s;
+`;
+export const Description = styled.span`
+  margin-top: 6px;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+  letter-spacing: 0px;
   color: ${({ theme }) => theme.description};
+  transition: 0.9s;
 `;
 export const TechnologyWrapper = styled.div`
   width: 100%;
@@ -30,14 +42,19 @@ export const TechnologyWrapper = styled.div`
   svg {
     width: 38px;
     height: 38px;
+
+    path {
+      transition: 0.9s;
+      fill: ${orangeSecondary};
+    }
   }
 `;
 export const FrontHeader = styled.div`
   display: flex;
   justify-content: flex-end;
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 22px;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
   color: ${({ theme }) => theme.description};
   transition: 0.9s;
   text-transform: uppercase;
@@ -47,13 +64,18 @@ export const BackHeader = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  path {
+    transition: 0.9s;
+    fill: ${orangeSecondary};
+  }
 `;
 export const BackBody = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 40px;
+  margin-top: 32px;
 `;
 export const BackTitleWrapper = styled.div`
   display: flex;
@@ -63,29 +85,55 @@ export const BackTitleWrapper = styled.div`
   svg {
     min-width: 60px;
     min-height: 60px;
-    border-right: 1px solid rgb(232, 176, 89);
+    border-right: 1px solid ${orangeSecondary};
     padding-right: 16px;
 
     path {
-      fill: ${orange};
+      transition: 0.9s;
+      fill: ${orangeSecondary};
     }
   }
 `;
 export const BackTitle = styled.span`
   font-size: 32px;
-  font-weight: 500;
-  line-height: 34px;
+  font-weight: 400;
+  line-height: 32px;
   padding-left: 16px;
   color: ${({ theme }) => theme.color};
   text-transform: uppercase;
 `;
-export const BackSecondaryTitle = styled.span`
-  margin-top: 8px;
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 20px;
-  color: ${({ theme }) => theme.description};
+export const BackSecondaryTitleWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 16px 0px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18px;
+  color: ${({ theme }) => theme.color};
   text-transform: uppercase;
+`;
+export const BackSecondaryNumberWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-right: 1px solid ${orangeSecondary};
+  padding-right: 16px;
+`;
+export const BackBlinkingStatus = styled.div<{ $isActive: boolean }>`
+  width: 8px;
+  height: 8px;
+  background-color: ${orangeSecondary};
+  border-radius: 50%;
+  ${({ $isActive }) =>
+    $isActive &&
+    css`
+      background-color: ${orange};
+      animation: ${blink} 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    `}
+`;
+export const BackSecondaryTitle = styled.span`
+  padding-left: 16px;
 `;
 export const FrontBody = styled.div`
   display: flex;
@@ -97,7 +145,8 @@ export const FrontBody = styled.div`
     align-self: flex-start;
 
     path {
-      fill: ${orange};
+      transition: 0.9s;
+      fill: ${orangeSecondary};
     }
   }
 `;
@@ -128,6 +177,29 @@ const baseCard = css`
   &:hover {
     border: 1px solid ${orange};
     ${FrontHeader} {
+      color: ${orange};
+    }
+    ${FrontBody} {
+      path:first-child {
+        fill: ${orange};
+      }
+    }
+    ${TechnologyWrapper} {
+      path {
+        fill: ${orange};
+      }
+    }
+    ${BackHeader} {
+      path {
+        fill: ${orange};
+      }
+    }
+    ${BackTitleWrapper} {
+      path:first-child {
+        fill: ${orange};
+      }
+    }
+    ${Description} {
       color: ${orange};
     }
   }

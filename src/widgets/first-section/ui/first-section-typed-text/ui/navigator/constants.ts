@@ -8,6 +8,9 @@ export const NAVIGATOR_ITEMS: Item[] = [
   {
     id: '03',
   },
+  {
+    id: '04',
+  },
 ];
 export const NAVIGATOR_TITLES: Title[] = [
   { id: '1' },
