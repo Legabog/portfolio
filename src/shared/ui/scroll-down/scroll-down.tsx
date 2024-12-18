@@ -11,7 +11,7 @@ import { Props } from './types';
 export const ScrollDown: FC<Props> = ({
   sectionText = 'Section',
   sectionNumber = '01',
-  totalSections = '03',
+  totalSections = '04',
   customStyles,
 }) => {
   const t = useTranslations('ScrollDown');

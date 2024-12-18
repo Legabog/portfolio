@@ -2,17 +2,17 @@ import { FC } from 'react';
 import { useTranslations } from 'next-intl';
 
 import { useThemeStore } from '@widgets/header';
-import { Wrapper, StyledTypeAnimation, TopNumber } from './fourth-section-title.styled';
+import { Wrapper, StyledTypeAnimation, TopNumber } from './fifth-section-title.styled';
 import { TOP_NUMBER } from './constants';
 
-export const FourthSectionTitle: FC = () => {
-  const t = useTranslations(`FourthSection.FourthSectionTitle`);
+export const FifthSectionTitle: FC = () => {
+  const t = useTranslations(`FifthSection.FifthSectionTitle`);
   const { themeType } = useThemeStore();
 
   const text = t('text');
 
   return (
-    <Wrapper data-testid='fourth-section-title' id='fourth-section-title' title={ text }>
+    <Wrapper data-testid='fifth-section-title' id='fifth-section-title' title={ text }>
       <TopNumber>{TOP_NUMBER}</TopNumber>
       <StyledTypeAnimation
         key={ themeType }

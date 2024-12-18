@@ -45,7 +45,8 @@
 				"title-2": "Show Skills.",
 				"item-01": "About me",
 				"item-02": "Skills",
-				"item-03": "Projects"
+				"item-03": "Projects",
+				"item-04": "Used technologies"
 			}
 		},
 		"ScrollDown": {
@@ -158,10 +159,15 @@
 						"vtb": "VTB",
 						"musicon": "MusicOn"
 					},
+					"BadgeStatus": {
+						"linkify": "Inactive",
+						"vtb": "Active",
+						"musicon": "Inactive"
+					},
 					"SecondaryTitle": {
 						"linkify": "Social network with facebook style",
-						"vtb": "The system is designed to automate material pooling",
-						"musicon": "A media streaming and downloading service"
+						"vtb": "Automated cash pooling system",
+						"musicon": "A media streaming service"
 					},
 					"Description": {
 						"linkify": "Social network were built using the style features and user interface of facebook.",
@@ -175,6 +181,14 @@
 					}
 				}
 			}
+		},
+		"ScrollDown": {
+			"text": "Used technologies"
+		}
+	},
+	"FifthSection": {
+		"FifthSectionTitle": {
+			"text": "Used technologies."
 		}
 	},
 	"ScrollDown": {

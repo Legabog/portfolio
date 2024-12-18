@@ -12,13 +12,16 @@ import {
   FrontFooter,
   FrontText,
   FrontTitle,
-  FrontDescription,
+  Description,
   TechnologyWrapper,
   BackHeader,
   BackBody,
   BackTitleWrapper,
   BackTitle,
   BackSecondaryTitle,
+  BackSecondaryTitleWrapper,
+  BackBlinkingStatus,
+  BackSecondaryNumberWrapper,
 } from './project-section.styled';
 import { Props } from './types';
 import { Carusel } from './ui';
@@ -30,18 +33,21 @@ export const ProjectSection: FC<Props> = ({
   overlappingType,
   frontTechnologyIcons,
   backTechnologyIcons,
+  secondaryTitleNumber,
 }) => {
   const [isFliped, setFliped] = useState<boolean>(false);
   const { play } = useSoundEffectsStore();
   const t = useTranslations(`FourthSection.FourthSectionProjects.FourthSectionRightPart.Section`);
   const conditionTranslate = (
-    type: 'Title' | 'Description' | 'SecondaryTitle' | 'DescriptionFull',
+    type: 'Title' | 'Description' | 'SecondaryTitle' | 'DescriptionFull' | 'BadgeStatus',
   ) => t(`${type}.${overlappingType}`);
 
   const title = conditionTranslate('Title');
   const secondaryTitle = conditionTranslate('SecondaryTitle');
   const description = conditionTranslate('Description');
   const descriptionFull = conditionTranslate('DescriptionFull');
+  const badgeStatus = conditionTranslate('BadgeStatus');
+  const isActive = overlappingType === 'vtb';
 
   const onClick = () => {
     play('wooshing-1.wav');
@@ -57,7 +63,7 @@ export const ProjectSection: FC<Props> = ({
             {icon}
             <FrontText>
               <FrontTitle title={ title }>{title}</FrontTitle>
-              <FrontDescription title={ description }>{description}</FrontDescription>
+              <Description title={ description }>{description}</Description>
             </FrontText>
           </FrontBody>
           <FrontFooter>
@@ -77,8 +83,14 @@ export const ProjectSection: FC<Props> = ({
               {icon}
               <BackTitle>{title}</BackTitle>
             </BackTitleWrapper>
-            <BackSecondaryTitle title={ secondaryTitle }>{secondaryTitle}</BackSecondaryTitle>
-            <FrontDescription>{descriptionFull}</FrontDescription>
+            <BackSecondaryTitleWrapper title={ title }>
+              <BackSecondaryNumberWrapper title={ secondaryTitleNumber }>
+                <BackBlinkingStatus $isActive={ isActive } title={ badgeStatus } />
+                {secondaryTitleNumber}
+              </BackSecondaryNumberWrapper>
+              <BackSecondaryTitle title={ secondaryTitle }>{secondaryTitle}</BackSecondaryTitle>
+            </BackSecondaryTitleWrapper>
+            <Description>{descriptionFull}</Description>
           </BackBody>
         </Back>
       </Card>

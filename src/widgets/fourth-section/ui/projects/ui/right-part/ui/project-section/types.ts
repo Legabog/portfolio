@@ -6,6 +6,7 @@ export interface Props {
   icon: ReactElement;
   id: string;
   overlappingType: 'vtb' | 'musicon' | 'linkify';
+  secondaryTitleNumber: string;
   sectionRef: MutableRefObject<HTMLDivElement | null>;
   topNumber: string;
 }

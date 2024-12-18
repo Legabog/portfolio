@@ -38,6 +38,7 @@ export const useAdditionalLogic = (
       overlappingType: 'linkify',
       icon: <LinkifyIcon />,
       topNumber: '/ 01',
+      secondaryTitleNumber: '01',
       frontTechnologyIcons: [
         {
           id: 'front-technology-icon-1',
@@ -74,6 +75,7 @@ export const useAdditionalLogic = (
         </MusicOnWrapper>
       ),
       topNumber: '/ 02',
+      secondaryTitleNumber: '02',
       frontTechnologyIcons: [
         {
           id: 'front-technology-icon-5',
@@ -107,6 +109,7 @@ export const useAdditionalLogic = (
       overlappingType: 'vtb',
       icon: <VTBIcon />,
       topNumber: '/ 03',
+      secondaryTitleNumber: '03',
       frontTechnologyIcons: [
         {
           id: 'front-technology-icon-9',
