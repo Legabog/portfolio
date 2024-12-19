@@ -7,6 +7,7 @@ import { Loader } from '@shared/ui';
 import { useAdditionalLogic } from './lib';
 import { Wrapper } from './page.styled';
 
+const Header = dynamic(() => import('@widgets/header'), { loading: () => <Loader />, ssr: false });
 const Background = dynamic(() => import('@widgets/background'), {
   loading: () => <Loader />,
   ssr: false,
@@ -37,6 +38,7 @@ const Main: FC = () => {
 
   return (
     <Wrapper onMouseMove={ onMouseMoveHandler }>
+      <Header />
       <Background />
       <FirstSection />
       <SecondSection />
