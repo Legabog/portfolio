@@ -37,3 +37,5 @@ export * from './sonar';
 export * from './next';
 export * from './playwright';
 export * from './sentry';
+export * from './vercel';
+export * from './three';
