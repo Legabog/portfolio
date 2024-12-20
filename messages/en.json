@@ -46,7 +46,7 @@
 				"item-01": "About me",
 				"item-02": "Skills",
 				"item-03": "Projects",
-				"item-04": "Used technologies"
+				"item-04": "Technologies"
 			}
 		},
 		"ScrollDown": {
@@ -183,12 +183,12 @@
 			}
 		},
 		"ScrollDown": {
-			"text": "Used technologies"
+			"text": "Technologies"
 		}
 	},
 	"FifthSection": {
 		"FifthSectionTitle": {
-			"text": "Used technologies."
+			"text": "Technologies."
 		}
 	},
 	"ScrollDown": {

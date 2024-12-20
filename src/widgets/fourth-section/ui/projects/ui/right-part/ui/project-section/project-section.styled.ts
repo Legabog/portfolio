@@ -210,6 +210,10 @@ export const Wrapper = styled.div`
   justify-content: center;
   width: 100%;
   height: 150vh;
+
+  @media only screen and (max-width: 900px) {
+    height: auto;
+  }
 `;
 export const Front = styled.div`
   flex-direction: column;
@@ -237,5 +241,10 @@ export const Card = styled.div<{ $isFliped: boolean }>`
   }
   ${Back} {
     transform: rotateY(${({ $isFliped }) => ($isFliped ? '1turn' : '180deg')});
+  }
+
+  @media only screen and (max-width: 900px) {
+    margin: 0;
+    height: calc(70vh);
   }
 `;
