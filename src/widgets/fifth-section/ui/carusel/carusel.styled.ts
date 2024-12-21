@@ -35,6 +35,10 @@ export const Span = styled.span<{ $caruselType: 'left' | 'right'; $isPaused: boo
 export const Li = styled.li`
   margin-left: 50px;
   list-style-type: none;
+
+  @media only screen and (max-width: 600px) {
+    margin-left: 20px;
+  }
 `;
 export const IconWrapper = styled.div`
   width: 100px;
@@ -58,6 +62,7 @@ export const IconWrapper = styled.div`
 
   @media only screen and (max-width: 600px) {
     width: 50px;
+    padding: 32px;
   }
 `;
 export const IconText = styled.span`
@@ -76,9 +81,9 @@ export const IconText = styled.span`
   text-transform: uppercase;
   white-space: nowrap;
 
-  /* @media only screen and (max-width: 900px) {
-    top: 60px;
-  } */
+  @media only screen and (max-width: 600px) {
+    display: none;
+  }
 `;
 export const Wrapper = styled.div<{
   $customStyles?: string;

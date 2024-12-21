@@ -191,6 +191,14 @@
 			"text": "Technologies."
 		}
 	},
+	"Footer": {
+		"rights": "All rights reserved",
+		"footer-info-section": {
+			"section-1": "Github",
+			"section-2": "Linkedin",
+			"section-3": "Resume"
+		}
+	},
 	"ScrollDown": {
 		"text": "scroll to explore"
 	}
