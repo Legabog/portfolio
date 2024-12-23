@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import { useTranslations } from 'next-intl';
 
+import { AlertIcon } from '@shared/ui';
 import { useThemeStore } from '@widgets/header';
 import {
   Wrapper,
@@ -10,6 +11,8 @@ import {
   SecondPart,
   AnimatedTitle,
   TopNumber,
+  Card,
+  CardAnimatedSection,
 } from './third-section-title.styled';
 import { TOP_NUMBER } from './constants';
 
@@ -31,11 +34,16 @@ export const ThirdSectionTitle: FC = () => {
         sequence={ [text, 1000, '', 1000] }
         speed={ 50 }
       />
-      <DescriptionWrapper>
-        <FirstPart title={ firstDescription }>{firstDescription}</FirstPart>
-        <SecondPart title={ secondDescription }>{secondDescription}</SecondPart>
-      </DescriptionWrapper>
-      <AnimatedTitle title={ animatedText }>{animatedText}</AnimatedTitle>
+      <Card>
+        <DescriptionWrapper>
+          <FirstPart title={ firstDescription }>{firstDescription}</FirstPart>
+          <SecondPart title={ secondDescription }>{secondDescription}</SecondPart>
+        </DescriptionWrapper>
+        <CardAnimatedSection>
+          <AlertIcon />
+          <AnimatedTitle title={ animatedText }>{animatedText}</AnimatedTitle>
+        </CardAnimatedSection>
+      </Card>
     </Wrapper>
   );
 };
