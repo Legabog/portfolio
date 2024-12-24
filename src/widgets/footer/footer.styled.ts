@@ -10,7 +10,6 @@ export const Wrapper = styled.div`
   @media only screen and (max-width: 900px) {
     margin-top: 50px;
   }
-
   @media only screen and (max-width: 600px) {
     grid-template-columns: 1fr 1fr;
   }
