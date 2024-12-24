@@ -4,8 +4,13 @@ import { COLORS } from '@shared/constants';
 
 export const Wrapper = styled.div`
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+
+  @media only screen and (max-width: 600px) {
+    align-items: flex-start;
+  }
 `;
 export const Text = styled.span`
   font-size: 12px;
@@ -19,9 +24,13 @@ export const Text = styled.span`
   }
 
   @media only screen and (max-width: 600px) {
-    font-size: 16px;
+    font-size: 10px;
+    line-height: 14px;
   }
-  @media only screen and (max-width: 400px) {
-    font-size: 14px;
-  }
+`;
+export const MobileTextWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 `;

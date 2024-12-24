@@ -7,26 +7,24 @@ export const Wrapper = styled.div`
   flex-wrap: nowrap;
 
   a:first-child {
-    padding-right: 5px;
+    margin-right: 30px;
   }
   a:nth-child(2) {
-    padding: 0px 10px;
+    margin: 0px 30px;
   }
   a:last-child {
-    border-right: none;
-    padding-left: 7px;
-    padding-right: none;
+    margin-left: 30px;
   }
 
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: 800px) {
     a:first-child {
-      padding-right: 0px;
+      margin-right: 0px;
     }
     a:nth-child(2) {
-      padding: 0px;
+      margin: 0px 0px;
     }
     a:last-child {
-      padding-left: 0px;
+      margin-left: 0px;
     }
   }
 `;
