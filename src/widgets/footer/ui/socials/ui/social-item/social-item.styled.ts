@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 import { COLORS } from '@shared/constants';
 
-const { orange } = COLORS;
+const { orange, orangeSecondary } = COLORS;
 
 export const Wrapper = styled.div`
   display: flex;
@@ -18,10 +18,23 @@ export const StyledLink = styled(Link)`
   display: flex;
   align-items: center;
   text-decoration: none;
-  border-right: 1px solid ${orange};
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+  path {
+    fill: ${orangeSecondary};
+    transition: fill 0.1s ease;
+  }
+
+  :hover {
+    path {
+      fill: ${orange};
+    }
+  }
 
   @media screen and (max-width: 900px) {
-    border-right: none;
     width: 100%;
   }
 `;
