@@ -23,6 +23,19 @@ export const FrontTitle = styled.span`
   font-weight: 500;
   color: ${({ theme }) => theme.color};
   transition: 0.9s;
+
+  @media only screen and (max-width: 1400px) {
+    font-size: 45px;
+    line-height: 45px;
+  }
+  @media only screen and (max-width: 1100px) {
+    font-size: 35px;
+    line-height: 35px;
+  }
+  @media only screen and (max-width: 900px) {
+    font-size: 60px;
+    line-height: 60px;
+  }
 `;
 export const Description = styled.span`
   margin-top: 6px;
@@ -32,6 +45,15 @@ export const Description = styled.span`
   letter-spacing: 0px;
   color: ${({ theme }) => theme.description};
   transition: 0.9s;
+
+  @media only screen and (max-width: 1000px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+  @media only screen and (max-width: 900px) {
+    font-size: 18px;
+    line-height: 22px;
+  }
 `;
 export const TechnologyWrapper = styled.div`
   width: 100%;
@@ -48,6 +70,13 @@ export const TechnologyWrapper = styled.div`
       fill: ${orangeSecondary};
     }
   }
+
+  @media only screen and (max-width: 900px) {
+    svg {
+      width: 48px;
+      height: 48px;
+    }
+  }
 `;
 export const FrontHeader = styled.div`
   display: flex;
@@ -58,6 +87,11 @@ export const FrontHeader = styled.div`
   color: ${({ theme }) => theme.description};
   transition: 0.9s;
   text-transform: uppercase;
+
+  @media only screen and (max-width: 900px) {
+    font-size: 18px;
+    line-height: 22px;
+  }
 `;
 export const BackHeader = styled.div`
   display: flex;
@@ -76,6 +110,10 @@ export const BackBody = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 32px;
+
+  @media only screen and (max-width: 1000px) {
+    margin-top: 16px;
+  }
 `;
 export const BackTitleWrapper = styled.div`
   display: flex;
@@ -93,25 +131,41 @@ export const BackTitleWrapper = styled.div`
       fill: ${orangeSecondary};
     }
   }
+
+  @media only screen and (max-width: 1000px) {
+    svg {
+      width: 36px;
+      height: 36px;
+    }
+  }
 `;
 export const BackTitle = styled.span`
   font-size: 32px;
-  font-weight: 400;
   line-height: 32px;
+  font-weight: 400;
   padding-left: 16px;
   color: ${({ theme }) => theme.color};
   text-transform: uppercase;
+
+  @media only screen and (max-width: 1000px) {
+    font-size: 28px;
+    line-height: 28px;
+  }
 `;
 export const BackSecondaryTitleWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 16px 0px;
+  margin: 16px 0 10px 0;
   font-size: 16px;
   font-weight: 400;
   line-height: 18px;
   color: ${({ theme }) => theme.color};
   text-transform: uppercase;
+
+  @media only screen and (max-width: 1000px) {
+    margin: 8px 0 2px 0;
+  }
 `;
 export const BackSecondaryNumberWrapper = styled.div`
   display: flex;
@@ -147,6 +201,25 @@ export const FrontBody = styled.div`
     path {
       transition: 0.9s;
       fill: ${orangeSecondary};
+    }
+  }
+
+  @media only screen and (max-width: 1400px) {
+    svg {
+      min-width: 100px;
+      min-height: 100px;
+    }
+  }
+  @media only screen and (max-width: 1000px) {
+    svg {
+      min-width: 80px;
+      min-height: 80px;
+    }
+  }
+  @media only screen and (max-width: 900px) {
+    svg {
+      min-width: 150px;
+      min-height: 150px;
     }
   }
 `;
@@ -203,6 +276,15 @@ const baseCard = css`
       color: ${orange};
     }
   }
+
+  @media only screen and (max-width: 1000px) {
+    width: calc(100% - 32px);
+    padding: 16px;
+  }
+  @media only screen and (max-width: 900px) {
+    width: calc(100% - 128px);
+    padding: 64px;
+  }
 `;
 export const Wrapper = styled.div`
   display: flex;
@@ -243,8 +325,7 @@ export const Card = styled.div<{ $isFliped: boolean }>`
     transform: rotateY(${({ $isFliped }) => ($isFliped ? '1turn' : '180deg')});
   }
 
-  @media only screen and (max-width: 900px) {
-    margin: 0;
-    height: calc(70vh);
+  @media only screen and (max-width: 1000px) {
+    height: 35vh;
   }
 `;
