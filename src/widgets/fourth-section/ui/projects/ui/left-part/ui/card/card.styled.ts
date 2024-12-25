@@ -38,6 +38,13 @@ export const IconWrapper = styled.div<{ $overlappingType: Props['overlappingType
         }
       `};
   }
+
+  @media only screen and (max-width: 1200px) {
+    svg {
+      width: 80px;
+      height: 80px;
+    }
+  }
 `;
 export const TopNumber = styled.span`
   display: flex;
@@ -63,16 +70,35 @@ export const Title = styled.span`
   letter-spacing: -3px;
   color: ${orange};
   height: fit-content;
+
+  @media only screen and (max-width: 1400px) {
+    font-size: 86px;
+  }
+  @media only screen and (max-width: 1200px) {
+    font-size: 64px;
+  }
+  @media only screen and (max-width: 1000px) {
+    font-size: 58px;
+  }
 `;
 export const SecondaryTitle = styled.span`
   font-size: 24px;
-  font-weight: 600;
   line-height: 24px;
+  font-weight: 600;
   letter-spacing: 0px;
   color: ${({ theme }) => theme.color};
   margin-left: 3px;
   text-transform: uppercase;
   height: fit-content;
+
+  @media only screen and (max-width: 1200px) {
+    font-size: 18px;
+    line-height: 18px;
+  }
+  @media only screen and (max-width: 1200px) {
+    font-size: 16px;
+    line-height: 16px;
+  }
 `;
 export const Badge = styled.div`
   display: flex;

@@ -33,6 +33,19 @@ export const Li = styled.li<{
 }>`
   margin-left: 32px;
   list-style-type: none;
+
+  @media only screen and (max-width: 1000px) {
+    svg {
+      width: 36px;
+      height: 36px;
+    }
+  }
+  @media only screen and (max-width: 900px) {
+    svg {
+      width: 54px;
+      height: 54px;
+    }
+  }
 `;
 export const Wrapper = styled.div<{
   $customStyles?: string;

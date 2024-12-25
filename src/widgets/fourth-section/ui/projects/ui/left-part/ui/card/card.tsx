@@ -23,14 +23,14 @@ import { WORDS } from './constants';
 export const Card: FC<Pick<Props, 'overlappingType'>> = ({ overlappingType }) => {
   const t = useTranslations(`FourthSection.FourthSectionProjects.FourthSectionLeftPart.Card`);
   const conditionTranslate = (
-    type: 'Title' | 'SecondaryTitle' | 'Badge' | 'Description' | 'TopNumber' | 'BadgeStatus',
+    type: 'Title' | 'SecondaryTitle' | 'Badge' | 'Description' | 'Number' | 'BadgeStatus',
   ) => t(`${type}.${overlappingType}`);
 
   const title = conditionTranslate('Title');
   const secondaryTitle = conditionTranslate('SecondaryTitle');
   const badge = conditionTranslate('Badge');
   const badgeStatus = conditionTranslate('BadgeStatus');
-  const topNumber = conditionTranslate('TopNumber');
+  const number = conditionTranslate('Number');
   const isActive = overlappingType === 'vtb';
 
   return (
@@ -50,7 +50,7 @@ export const Card: FC<Pick<Props, 'overlappingType'>> = ({ overlappingType }) =>
             <Title title={ title }>{title}</Title>
           </SectionWrapper>
           <SectionWrapper>
-            <TopNumber title={ topNumber }>{topNumber}</TopNumber>
+            <TopNumber title={ number }>{number}</TopNumber>
             <SecondaryTitle title={ secondaryTitle }>{secondaryTitle}</SecondaryTitle>
           </SectionWrapper>
         </InfoSection>
