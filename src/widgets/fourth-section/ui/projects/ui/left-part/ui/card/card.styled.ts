@@ -74,7 +74,7 @@ export const Title = styled.span`
   @media only screen and (max-width: 1400px) {
     font-size: 86px;
   }
-  @media only screen and (max-width: 1200px) {
+  @media only screen and (max-width: 1300px) {
     font-size: 64px;
   }
   @media only screen and (max-width: 1000px) {

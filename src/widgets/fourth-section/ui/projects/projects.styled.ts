@@ -9,6 +9,8 @@ export const Wrapper = styled.div`
   background-color: ${({ theme }) => theme.backgroundColor};
 
   @media only screen and (max-width: 900px) {
+    width: calc(100% - 40px);
+    margin-top: 16px;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -36,6 +36,18 @@ export const FrontTitle = styled.span`
     font-size: 60px;
     line-height: 60px;
   }
+  @media only screen and (max-width: 600px) {
+    font-size: 45px;
+    line-height: 45px;
+  }
+  @media only screen and (max-width: 500px) {
+    font-size: 40px;
+    line-height: 40px;
+  }
+  @media only screen and (max-width: 400px) {
+    font-size: 35px;
+    line-height: 35px;
+  }
 `;
 export const Description = styled.span`
   margin-top: 6px;
@@ -53,6 +65,14 @@ export const Description = styled.span`
   @media only screen and (max-width: 900px) {
     font-size: 18px;
     line-height: 22px;
+  }
+  @media only screen and (max-width: 600px) {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  @media only screen and (max-width: 500px) {
+    font-size: 14px;
+    line-height: 18px;
   }
 `;
 export const TechnologyWrapper = styled.div`
@@ -75,6 +95,12 @@ export const TechnologyWrapper = styled.div`
     svg {
       width: 48px;
       height: 48px;
+    }
+  }
+  @media only screen and (max-width: 500px) {
+    svg {
+      width: 38px;
+      height: 38px;
     }
   }
 `;
@@ -114,6 +140,9 @@ export const BackBody = styled.div`
   @media only screen and (max-width: 1000px) {
     margin-top: 16px;
   }
+  @media only screen and (max-width: 900px) {
+    margin-top: 32px;
+  }
 `;
 export const BackTitleWrapper = styled.div`
   display: flex;
@@ -138,6 +167,18 @@ export const BackTitleWrapper = styled.div`
       height: 36px;
     }
   }
+  @media only screen and (max-width: 900px) {
+    svg {
+      width: 80px;
+      height: 80px;
+    }
+  }
+  @media only screen and (max-width: 400px) {
+    svg {
+      width: 60px;
+      height: 60px;
+    }
+  }
 `;
 export const BackTitle = styled.span`
   font-size: 32px;
@@ -148,6 +189,14 @@ export const BackTitle = styled.span`
   text-transform: uppercase;
 
   @media only screen and (max-width: 1000px) {
+    font-size: 28px;
+    line-height: 28px;
+  }
+  @media only screen and (max-width: 900px) {
+    font-size: 32px;
+    line-height: 32px;
+  }
+  @media only screen and (max-width: 400px) {
     font-size: 28px;
     line-height: 28px;
   }
@@ -165,6 +214,9 @@ export const BackSecondaryTitleWrapper = styled.div`
 
   @media only screen and (max-width: 1000px) {
     margin: 8px 0 2px 0;
+  }
+  @media only screen and (max-width: 900px) {
+    margin: 16px 0 10px 0;
   }
 `;
 export const BackSecondaryNumberWrapper = styled.div`
@@ -220,6 +272,12 @@ export const FrontBody = styled.div`
     svg {
       min-width: 150px;
       min-height: 150px;
+    }
+  }
+  @media only screen and (max-width: 500px) {
+    svg {
+      min-width: 100px;
+      min-height: 100px;
     }
   }
 `;
@@ -285,6 +343,10 @@ const baseCard = css`
     width: calc(100% - 128px);
     padding: 64px;
   }
+  @media only screen and (max-width: 600px) {
+    width: calc(100% - 64px);
+    padding: 32px;
+  }
 `;
 export const Wrapper = styled.div`
   display: flex;
@@ -294,7 +356,26 @@ export const Wrapper = styled.div`
   height: 150vh;
 
   @media only screen and (max-width: 900px) {
-    height: auto;
+    height: 508px;
+    align-items: flex-start;
+  }
+  @media only screen and (max-width: 800px) {
+    height: 528px;
+  }
+  @media only screen and (max-width: 700px) {
+    height: 568px;
+  }
+  @media only screen and (max-width: 650px) {
+    height: 628px;
+  }
+  @media only screen and (max-width: 600px) {
+    height: 668px;
+  }
+  @media only screen and (max-width: 500px) {
+    height: 648px;
+  }
+  @media only screen and (max-width: 400px) {
+    height: 678px;
   }
 `;
 export const Front = styled.div`
@@ -308,7 +389,7 @@ export const Back = styled.div`
 `;
 export const Card = styled.div<{ $isFliped: boolean }>`
   width: 100%;
-  height: 50vh;
+  height: 350px;
   display: flex;
   position: relative;
   perspective: 4000px;
@@ -325,7 +406,43 @@ export const Card = styled.div<{ $isFliped: boolean }>`
     transform: rotateY(${({ $isFliped }) => ($isFliped ? '1turn' : '180deg')});
   }
 
+  @media only screen and (max-width: 1500px) {
+    height: 400px;
+  }
+  @media only screen and (max-width: 1400px) {
+    height: 420px;
+  }
+  @media only screen and (max-width: 1200px) {
+    height: 500px;
+  }
   @media only screen and (max-width: 1000px) {
-    height: 35vh;
+    height: 420px;
+  }
+  @media only screen and (max-width: 950px) {
+    height: 440px;
+  }
+  @media only screen and (max-width: 950px) {
+    margin: 0;
+  }
+  @media only screen and (max-width: 900px) {
+    height: 380px;
+  }
+  @media only screen and (max-width: 800px) {
+    height: 400px;
+  }
+  @media only screen and (max-width: 700px) {
+    height: 440px;
+  }
+  @media only screen and (max-width: 650px) {
+    height: 500px;
+  }
+  @media only screen and (max-width: 600px) {
+    height: 540px;
+  }
+  @media only screen and (max-width: 500px) {
+    height: 520px;
+  }
+  @media only screen and (max-width: 400px) {
+    height: 550px;
   }
 `;
