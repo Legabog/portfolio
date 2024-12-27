@@ -5,9 +5,9 @@ import { Wrapper, Span, Li } from './carusel.styled';
 import { Props } from './types';
 
 export const Carusel: FC<Props> = ({ caruselType, technologies }) => {
-  const isBreakpoint = useMediaQuery(600);
+  const isBreakpoint = useMediaQuery(900);
   const [caruselStyles, setCaruselStyles] = useState<string>(
-    `width: ${window.innerWidth / (isBreakpoint ? 2.5 : 1)}px;`,
+    `width: ${window.innerWidth / (!isBreakpoint ? 2.5 : 1)}px;`,
   );
   const [isPaused, setIsPaused] = useState<boolean>(false);
 
@@ -15,7 +15,7 @@ export const Carusel: FC<Props> = ({ caruselType, technologies }) => {
   const onLeave = () => setIsPaused(false);
 
   const resizeHandler = () =>
-    setCaruselStyles(`width: ${window.innerWidth / (isBreakpoint ? 2.5 : 1)}px;`);
+    setCaruselStyles(`width: ${window.innerWidth / (!isBreakpoint ? 2.5 : 1)}px;`);
   const resizeRef = useResizeObserver(resizeHandler);
 
   return (

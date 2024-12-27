@@ -6,7 +6,13 @@ export const Wrapper = styled.div`
 
   @media only screen and (max-width: 900px) {
     width: 100%;
-    gap: 150px;
+
+    & > div {
+      margin-bottom: 50px;
+    }
+    & > div:last-child {
+      margin-bottom: 0px;
+    }
   }
 `;
 export const MusicOnWrapper = styled.div`
