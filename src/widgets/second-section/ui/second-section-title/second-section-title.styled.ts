@@ -12,6 +12,7 @@ export const Wrapper = styled.div`
   line-height: 1;
   letter-spacing: -4.8px;
   color: ${({ theme }) => theme.color};
+  user-select: none;
 
   & span:nth-child(2) {
     margin-left: 35px;
@@ -55,7 +56,6 @@ export const TopNumber = styled.span`
   color: ${({ theme }) => theme.color};
   text-transform: uppercase;
   white-space: break-spaces;
-  cursor: pointer;
 
   &:hover {
     color: ${COLORS.orange};

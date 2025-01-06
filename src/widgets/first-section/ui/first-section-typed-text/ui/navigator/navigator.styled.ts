@@ -16,7 +16,6 @@ export const WrapperItems = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 8px;
   border-top: 1px solid ${orangeSecondary};
 
   div:first-child {

@@ -14,7 +14,7 @@ export const FourthSection: FC = () => {
   const sectionText = t('text');
 
   return (
-    <Wrapper data-testid='fourth-section'>
+    <Wrapper data-testid='fourth-section' id='fourth-section'>
       <FourthSectionTitle />
       <Projects />
       <ScrollDown

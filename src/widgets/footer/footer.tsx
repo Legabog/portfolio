@@ -25,5 +25,9 @@ export const Footer: FC = () => {
     </>
   );
 
-  return <Wrapper data-testid='footer'>{conditionalPanel}</Wrapper>;
+  return (
+    <Wrapper data-testid='footer' id='footer'>
+      {conditionalPanel}
+    </Wrapper>
+  );
 };

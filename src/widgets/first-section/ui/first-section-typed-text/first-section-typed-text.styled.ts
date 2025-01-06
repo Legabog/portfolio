@@ -30,6 +30,7 @@ export const InnerTextWrapper = styled.div`
   letter-spacing: -4.8px;
   align-self: start;
   display: block;
+  user-select: none;
 
   & > span:nth-child(2) {
     color: ${COLORS.orange};
