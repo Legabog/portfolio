@@ -291,7 +291,6 @@ export const FrontFooter = styled.div`
 const baseCard = css`
   display: flex;
   position: absolute;
-  position: absolute;
   left: 0px;
   top: 0px;
   width: calc(100% - 64px);

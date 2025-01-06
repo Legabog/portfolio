@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Link from 'next/link';
 
 import { COLORS } from '@shared/constants';
 
@@ -31,11 +32,16 @@ export const Text = styled.span`
     background-color: ${orange};
   }
 `;
+export const StyledLink = styled(Link)`
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  width: fit-content;
+`;
 export const Wrapper = styled.div`
   width: fit-content;
   display: flex;
   align-items: center;
-  cursor: pointer;
 
   &:hover ${Text} {
     color: ${orange};

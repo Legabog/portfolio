@@ -36,7 +36,7 @@ export const SecondSectionCard: FC<CardProps> = ({ id, Icon }) => {
   };
   return (
     <CardWrapper $flip={ flip } data-testid={ `second-section-card-${id}` } onClick={ onClick }>
-      <FrontWrapper $flip={ flip }>
+      <FrontWrapper>
         <TopSection>
           <Icon />
           <TopSectionText $type='number'>{orderText}</TopSectionText>
@@ -44,7 +44,7 @@ export const SecondSectionCard: FC<CardProps> = ({ id, Icon }) => {
         <Title>{frontTitle}</Title>
         <Description>{frontDescription}</Description>
       </FrontWrapper>
-      <BackWrapper $flip={ flip }>
+      <BackWrapper>
         <TopSection>
           <TopSectionText $type='text'>{backTitle}</TopSectionText>
           <TopSectionText $type='number'>{orderText}</TopSectionText>

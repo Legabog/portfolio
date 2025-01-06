@@ -20,7 +20,7 @@ export const ThirdSection: FC = () => {
   const sectionText = t('text');
 
   return (
-    <Wrapper data-testid='third-section'>
+    <Wrapper data-testid='third-section' id='third-section'>
       <ThirdSectionTitle />
       <SecondaryWrapper>
         <Brain />

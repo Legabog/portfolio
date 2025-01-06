@@ -14,8 +14,8 @@ export const Navigator: FC = () => (
       ))}
     </WrapperTitles>
     <WrapperItems>
-      {NAVIGATOR_ITEMS.map(({ id }) => (
-        <NavigatorItem key={ id } id={ id } />
+      {NAVIGATOR_ITEMS.map((props) => (
+        <NavigatorItem key={ props.id } { ...props } />
       ))}
     </WrapperItems>
   </Wrapper>

@@ -15,10 +15,10 @@ export const Text = styled.span<{ $isFirstTitle?: boolean }>`
   line-height: 16px;
   letter-spacing: 0px;
   margin-bottom: 8px;
-  cursor: pointer;
   color: ${({ theme, $isFirstTitle }) => theme[$isFirstTitle ? 'color' : 'description']};
   text-transform: uppercase;
   white-space: break-spaces;
+  user-select: none;
 
   &:hover {
     color: ${orange};

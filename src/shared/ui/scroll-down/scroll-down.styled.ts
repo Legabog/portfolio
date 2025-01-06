@@ -28,6 +28,7 @@ const moveDown = keyframes`
 	`;
 export const Wrapper = styled.div<{ $customStyles?: string }>`
   width: 80%;
+  user-select: none;
 
   @media only screen and (max-width: 900px) {
     width: calc(100% - 40px);
@@ -44,8 +45,6 @@ export const WrapperScroll = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  cursor: pointer;
-  user-select: none;
   gap: 8px;
 
   svg {
@@ -69,7 +68,13 @@ export const WrapperText = styled.div`
     margin-top: 8px;
   }
   p:first-child {
-    width: 33.33%;
+    margin-right: 30%;
+  }
+
+  @media only screen and (max-width: 900px) {
+    p:first-child {
+      margin-right: 20%;
+    }
   }
 `;
 export const Text = styled.p`
@@ -77,7 +82,6 @@ export const Text = styled.p`
   font-weight: 400;
   line-height: 16px;
   letter-spacing: 0px;
-  cursor: pointer;
   color: ${({ theme }) => theme.color};
   text-transform: uppercase;
   white-space: break-spaces;

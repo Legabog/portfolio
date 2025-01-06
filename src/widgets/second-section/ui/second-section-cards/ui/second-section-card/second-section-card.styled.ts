@@ -51,18 +51,31 @@ export const TopSectionText = styled.span<{ $type: 'number' | 'text' }>`
       align-self: center;
     `}
 `;
-export const CardWrapper = styled.div<{ $flip?: boolean }>`
-  width: calc(100% - 32px);
-  height: 120px;
+const baseCard = css`
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: calc(100% - 32px);
+  height: calc(100% - 32px);
+  padding: 16px;
+  backface-visibility: hidden;
+  transition: 0.9s;
+  overflow: hidden;
   border-radius: 10px;
   border: 1px solid ${({ theme }) => theme.cardBorder};
   background-color: ${({ theme }) => theme.backgroundColor};
-  padding: 16px;
   cursor: pointer;
-  transition: 500ms;
-  transform-style: preserve-3d;
-  transform: rotateX(0deg) translateX(0deg);
+
+  svg {
+    width: 32px;
+    height: 32px;
+    path {
+      fill: ${({ theme }) => theme.color};
+    }
+  }
 
   &:hover {
     border: 1px solid ${orange};
@@ -74,62 +87,36 @@ export const CardWrapper = styled.div<{ $flip?: boolean }>`
       color: ${orange};
     }
   }
-  ${({ $flip }) =>
-    $flip &&
-    css`
-      transform: rotateX(180deg);
-    `}
+`;
+export const FrontWrapper = styled.div`
+  ${baseCard}
+`;
+export const BackWrapper = styled.div`
+  ${baseCard}
+`;
+export const CardWrapper = styled.div<{ $flip?: boolean }>`
+  width: 100%;
+  height: 152px;
+  display: flex;
+  cursor: pointer;
+  position: relative;
+  perspective: 4000px;
+
+  ${FrontWrapper} {
+    ${({ $flip }) =>
+      $flip &&
+      css`
+        transform: rotateX(180deg);
+      `}
+  }
+  ${BackWrapper} {
+    transform: rotateX(${({ $flip }) => ($flip ? '1turn' : '180deg')});
+  }
 
   @media only screen and (max-width: 1300px) {
-    height: 130px;
+    height: 162px;
   }
-  @media only screen and (max-width: 900px) {
-    width: calc(100% - 40px);
-  }
-  @media only screen and (max-width: 400px) {
-    height: 150px;
-  }
-`;
-export const FrontWrapper = styled.div<{ $flip?: boolean }>`
-  width: 100%;
-  display: ${({ $flip }) => (!$flip ? 'flex' : 'none')};
-  visibility: ${({ $flip }) => ($flip ? 'hidden' : 'visible')};
-  transition: visibility 0.5s linear;
-  align-items: flex-start;
-  flex-direction: column;
-
-  svg {
-    width: 32px;
-    height: 32px;
-    path {
-      fill: ${({ theme }) => theme.color};
-    }
-  }
-  ${({ $flip }) =>
-    $flip &&
-    css`
-      transform: rotateX(180deg);
-    `}
-
-  @media only screen and (max-width: 900px) {
-    width: 100%;
-  }
-`;
-export const BackWrapper = styled.div<{ $flip?: boolean }>`
-  width: 100%;
-  display: ${({ $flip }) => ($flip ? 'flex' : 'none')};
-  visibility: ${({ $flip }) => (!$flip ? 'hidden' : 'visible')};
-  transition: visibility 0.5s linear;
-  flex-direction: column;
-  align-items: flex-start;
-
-  ${({ $flip }) =>
-    $flip &&
-    css`
-      transform: rotateX(180deg);
-    `}
-
-  @media only screen and (max-width: 900px) {
-    width: 100%;
+  @media only screen and (max-width: 450px) {
+    height: 182px;
   }
 `;
