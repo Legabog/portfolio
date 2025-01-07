@@ -20,9 +20,16 @@ export const NavigatorItem: FC<Item> = ({ id, elementId }) => {
     event.preventDefault();
 
     play('navigation-1.wav');
-    const element = document.getElementById(elementId);
-    const block = ['01', '03'].includes(id) ? 'start' : 'end';
-    element?.scrollIntoView({ behavior: 'smooth', block });
+    if (id === '04')
+      window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: 'smooth',
+      });
+    else {
+      const element = document.getElementById(elementId);
+      const block = ['01', '03'].includes(id) ? 'start' : 'end';
+      element?.scrollIntoView({ behavior: 'smooth', block });
+    }
   };
 
   return (
