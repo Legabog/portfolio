@@ -36,6 +36,7 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  user-select: none;
 
   @media only screen and (max-width: 900px) {
     width: calc(100% - 40px);
@@ -115,6 +116,18 @@ export const CardAnimatedSection = styled.div`
   @media only screen and (max-width: 600px) {
     justify-content: flex-start;
   }
+  @media only screen and (max-width: 400px) {
+    svg {
+      width: 10px;
+      height: 10px;
+    }
+  }
+  @media only screen and (max-width: 350px) {
+    svg {
+      width: 9px;
+      height: 9px;
+    }
+  }
 `;
 export const DescriptionWrapper = styled.div`
   width: fit-content;
@@ -146,6 +159,15 @@ export const AnimatedTitle = styled.span`
   text-transform: uppercase;
   animation: ${({ theme }) => blink('title', theme)} 0.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   margin-left: 3px;
+
+  @media only screen and (max-width: 400px) {
+    font-size: 11px;
+    margin-left: 2px;
+  }
+  @media only screen and (max-width: 355px) {
+    font-size: 10px;
+    margin-left: 1px;
+  }
 `;
 export const TopNumber = styled.span`
   position: absolute;
@@ -157,7 +179,6 @@ export const TopNumber = styled.span`
   color: ${({ theme }) => theme.color};
   text-transform: uppercase;
   white-space: break-spaces;
-  cursor: pointer;
 
   &:hover {
     color: ${COLORS.orange};

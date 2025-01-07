@@ -24,7 +24,7 @@ export const Item: FC<Props> = ({ id, text }) => {
 
   const handleChange = (locale: Locale) => {
     play('click-1.wav');
-    router.replace(pathname, { locale });
+    router.replace(pathname, { locale, scroll: false });
   };
 
   return (
