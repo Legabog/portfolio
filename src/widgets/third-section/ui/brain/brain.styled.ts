@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: calc(100vh - 280px);
+  height: calc(100vh - 300px);
 
   @media only screen and (min-height: 900px) {
     height: 450px;
