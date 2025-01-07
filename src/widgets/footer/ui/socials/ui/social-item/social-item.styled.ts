@@ -13,6 +13,9 @@ export const Wrapper = styled.div`
   @media screen and (max-width: 900px) {
     width: 100%;
   }
+  @media screen and (max-width: 600px) {
+    justify-content: flex-end;
+  }
 `;
 export const StyledLink = styled(Link)`
   display: flex;
