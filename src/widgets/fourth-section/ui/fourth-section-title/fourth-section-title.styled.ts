@@ -10,6 +10,7 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  user-select: none;
 
   @media only screen and (max-width: 900px) {
     width: calc(100% - 40px);
