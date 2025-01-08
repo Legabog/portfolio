@@ -6,7 +6,7 @@ import { Wrapper, Text } from './footer.styled';
 
 export const Footer: FC = () => {
   const t = useTranslations('Header.MobileMenu.Footer');
-  const text = `@ 2024 ${t('text')}`;
+  const text = `@ 2025 ${t('text')}`;
   const { animate, clear, generatedString } = useHoverRandomLettersAnimation(text);
 
   return (

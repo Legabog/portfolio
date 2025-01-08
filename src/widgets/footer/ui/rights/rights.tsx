@@ -8,7 +8,7 @@ export const Rights: FC = () => {
   const isBreakpoint = useMediaQuery(600);
   const t = useTranslations('Footer');
   const rights = isBreakpoint ? t('rights') : ` ${t('rights')}`;
-  const text = `@ 2024${isBreakpoint ? '' : rights}`;
+  const text = `@ 2025${isBreakpoint ? '' : rights}`;
 
   return (
     <Wrapper data-testid='footer-rights'>

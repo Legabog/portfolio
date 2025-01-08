@@ -9,6 +9,7 @@ export const Wrapper = styled.div`
   width: 100%;
   height: 2.5rem;
   margin: 0px 20px;
+  user-select: none;
 `;
 export const Text = styled.span`
   font-size: 18px;
