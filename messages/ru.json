@@ -184,6 +184,16 @@
 	"FifthSection": {
 		"FifthSectionTitle": {
 			"text": "Технологии."
+		},
+		"FifthSectionCards": {
+			"FifthSectionCard": {
+				"tech-card-1": {
+					"title": "Сгенерированные активы с помощью ИИ."
+				},
+				"tech-card-2": {
+					"title": "3д модели были созданы с Spline 3d."
+				}
+			}
 		}
 	},
 	"Footer": {

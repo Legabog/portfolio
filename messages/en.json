@@ -184,6 +184,16 @@
 	"FifthSection": {
 		"FifthSectionTitle": {
 			"text": "Technologies."
+		},
+		"FifthSectionCards": {
+			"FifthSectionCard": {
+				"tech-card-1": {
+					"title": "Generated assets with AI."
+				},
+				"tech-card-2": {
+					"title": "3d models was created with Spline 3d."
+				}
+			}
 		}
 	},
 	"Footer": {
