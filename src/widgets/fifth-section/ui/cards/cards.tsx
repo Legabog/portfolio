@@ -1,15 +1,13 @@
 import { FC } from 'react';
 
-import { Wrapper, WrapperCard } from './cards.styled';
-import { Robot, Figure } from './ui';
+import { Wrapper } from './cards.styled';
+import { CARDS } from './constants';
+import { Card } from './ui';
 
 export const Cards: FC = () => (
   <Wrapper>
-    <WrapperCard>
-      <Robot />
-    </WrapperCard>
-    <WrapperCard>
-      <Figure />
-    </WrapperCard>
+    {CARDS.map((props) => (
+      <Card key={ props.id } { ...props } />
+    ))}
   </Wrapper>
 );

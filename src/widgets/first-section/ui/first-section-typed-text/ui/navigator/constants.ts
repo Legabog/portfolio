@@ -12,7 +12,7 @@ export const NAVIGATOR_ITEMS: Item[] = [
   },
   {
     id: '04',
-    elementId: 'footer',
+    elementId: 'fifth-section',
   },
 ];
 export const NAVIGATOR_TITLES: Title[] = [

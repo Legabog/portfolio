@@ -70,7 +70,6 @@ export const TopNumber = styled.span`
   color: ${({ theme }) => theme.color};
   text-transform: uppercase;
   white-space: break-spaces;
-  cursor: pointer;
 
   &:hover {
     color: ${COLORS.orange};
