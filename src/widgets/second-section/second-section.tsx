@@ -2,12 +2,14 @@
 
 import { FC, useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
-
 import { useTranslations } from 'next-intl';
-import { Loader, ScrollDown } from '@shared/ui';
-import { CUSTOM_STYLES_SCROLL_DOWN, SECTION_NUMBER_SCROLL_DOWN } from './constants';
+
+import { useObserverDetectSection } from '@shared/hooks';
+import { Loader, ScrollDown, SectionTitle } from '@shared/ui';
+import { CUSTOM_STYLES_SCROLL_DOWN, SECTION_NUMBER_SCROLL_DOWN, TOP_NUMBER } from './constants';
 import { Wrapper, SecondaryWrapper } from './second-section.styled';
-import { SecondSectionTitle, SecondSectionCards } from './ui';
+import { SecondSectionCards } from './ui';
+import { useSecondSectionStore } from './model';
 
 const Human = dynamic(() => import('./ui/human'), {
   loading: () => <Loader />,
@@ -15,10 +17,16 @@ const Human = dynamic(() => import('./ui/human'), {
 });
 
 export const SecondSection: FC = () => {
+  const { isVisible, setIsVisible } = useSecondSectionStore();
+  const ref = useObserverDetectSection(setIsVisible);
   const t = useTranslations('SecondSection.ScrollDown');
+  const f = useTranslations(`SecondSection.SecondSectionTitle`);
+
   const [isFullHeight, setIsFullHeight] = useState<boolean>(false);
 
   const sectionText = t('text');
+  const title = f('text');
+  const titleWithoutLastWord = title.split(' ')[0];
 
   useEffect(() => {
     setIsFullHeight(
@@ -27,8 +35,18 @@ export const SecondSection: FC = () => {
   }, []);
 
   return (
-    <Wrapper $isFullHeight={ isFullHeight } data-testid='second-section' id='second-section'>
-      <SecondSectionTitle />
+    <Wrapper
+      ref={ ref }
+      $isFullHeight={ isFullHeight }
+      $isVisible={ isVisible }
+      data-testid='second-section'
+      id='second-section'
+    >
+      <SectionTitle
+        animatedSlicedTitle={ titleWithoutLastWord }
+        title={ title }
+        topNumber={ TOP_NUMBER }
+      />
       <SecondaryWrapper>
         <Human />
         <SecondSectionCards />

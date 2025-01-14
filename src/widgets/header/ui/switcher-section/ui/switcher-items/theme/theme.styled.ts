@@ -62,3 +62,25 @@ export const Wrapper = styled.div`
     padding: 0px 20px;
   }
 `;
+export const IconWrapper = styled.div<{ $isLightMode: boolean }>`
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+
+  svg {
+    position: absolute;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  & svg:first-child {
+    opacity: ${({ $isLightMode }) => ($isLightMode ? 1 : 0)};
+    transform: translateX(${({ $isLightMode }) => ($isLightMode ? '0deg' : '90deg')});
+  }
+  & svg:last-child {
+    opacity: ${({ $isLightMode }) => (!$isLightMode ? 1 : 0)};
+    transform: translateX(${({ $isLightMode }) => (!$isLightMode ? '0deg' : '-90deg')});
+  }
+`;
