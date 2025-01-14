@@ -82,3 +82,4 @@ export const TECHNOLOGIES: Props['technologies'] = [
     title: 'Github actions',
   },
 ];
+export const TOP_NUMBER = '04  |  ';

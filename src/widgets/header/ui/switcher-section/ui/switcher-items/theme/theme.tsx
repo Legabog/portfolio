@@ -6,7 +6,7 @@ import { useTranslations } from 'next-intl';
 import { MoonIcon, SunIcon } from '@shared/ui';
 import { useSoundEffectsStore } from '@widgets/header';
 import { useThemeStore } from './model';
-import { Wrapper, A } from './theme.styled';
+import { Wrapper, A, IconWrapper } from './theme.styled';
 
 export const Theme: FC = () => {
   const { play } = useSoundEffectsStore();
@@ -15,7 +15,6 @@ export const Theme: FC = () => {
   const t = useTranslations('Header.theme');
   const isLightMode = themeType === 'light';
   const tooltip = t(`${themeType}`);
-  const conditionIcon = isLightMode ? <SunIcon /> : <MoonIcon />;
 
   const handleChange = () => {
     play(`switch-${isLightMode ? 'off' : 'on'}.mp3`);
@@ -24,7 +23,12 @@ export const Theme: FC = () => {
 
   return (
     <Wrapper data-testid='theme' onClick={ handleChange }>
-      <A title={ tooltip }>{conditionIcon}</A>
+      <A title={ tooltip }>
+        <IconWrapper $isLightMode={ isLightMode }>
+          <SunIcon />
+          <MoonIcon />
+        </IconWrapper>
+      </A>
     </Wrapper>
   );
 };

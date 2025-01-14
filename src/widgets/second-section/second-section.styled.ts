@@ -1,6 +1,16 @@
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
-export const Wrapper = styled.div<{ $isFullHeight: boolean }>`
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+export const Wrapper = styled.div<{ $isFullHeight: boolean; $isVisible: boolean }>`
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -11,6 +21,12 @@ export const Wrapper = styled.div<{ $isFullHeight: boolean }>`
     css`
       height: 100vh;
     `}
+
+  ${({ $isVisible }) =>
+    $isVisible &&
+    css`
+      animation: ${fadeIn} 1s ease-out;
+    `} 
 
   @media only screen and (max-width: 900px) {
     height: auto;
