@@ -3,20 +3,35 @@
 import { FC } from 'react';
 import { useTranslations } from 'next-intl';
 
+import { useObserverDetectSection } from '@shared/hooks';
 import { ScrollDown, SectionTitle } from '@shared/ui';
 import { Wrapper } from './fourth-section.styled';
 import { Projects } from './ui';
 import { CUSTOM_STYLES_SCROLL_DOWN, SECTION_NUMBER_SCROLL_DOWN, TOP_NUMBER } from './constants';
+// TODO: temp for tomorrow
+// import { useSecondSectionStore } from '@widgets/second-section/model';
+// import { useThirdSectionStore } from '@widgets/third-section/model';
+import { useFourthSectionStore } from './model';
 
 export const FourthSection: FC = () => {
+  // TODO: temp for tomorrow
+  // const { setIsIgnore } = useSecondSectionStore();
+  //   const { setIsIgnore: dva} = useThirdSectionStore();
+  const { isVisible, setIsVisible } = useFourthSectionStore();
+  const ref = useObserverDetectSection(setIsVisible, undefined, undefined, { threshold: 0.2 });
+
   const t = useTranslations('FourthSection.ScrollDown');
   const f = useTranslations(`FourthSection.FourthSectionTitle`);
+
+  console.log('isVisible@!#ASDSDSD', isVisible);
+  console.log('ref', ref.current);
+  console.log('чек', document.getElementById('fourth-section'));
 
   const title = f('text');
   const sectionText = t('text');
 
   return (
-    <Wrapper data-testid='fourth-section' id='fourth-section'>
+    <Wrapper ref={ ref } $isVisible={ isVisible } data-testid='fourth-section' id='fourth-section'>
       <SectionTitle title={ title } topNumber={ TOP_NUMBER } />
       <Projects />
       <ScrollDown

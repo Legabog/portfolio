@@ -1,4 +1,4 @@
-export interface SecondSectionState {
+export interface ThirdSectionState {
   isIgnore: boolean;
   isVisible: boolean;
   setIsIgnore: (isIgnore: boolean) => void;

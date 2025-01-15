@@ -107,9 +107,9 @@
 			"text": "Умения."
 		},
 		"ThirdSectionCard": {
-			"first-part": "Each part of the brain is responsible for its ",
-			"second-part": "own skills.",
-			"animated-text": "click a dot to show skills"
+			"first-part": "Каждая часть мозга отвечает за ",
+			"second-part": "свои навыки.",
+			"animated-text": "нажмите на точку, чтобы показать навыки"
 		},
 		"ScrollDown": {
 			"text": "Проекты"
