@@ -2,9 +2,9 @@ import { create } from 'zustand';
 import { immer } from 'zustand/middleware/immer';
 import { devtools } from 'zustand/middleware';
 
-import { SecondSectionState } from './types';
+import { FourthSectionState } from './types';
 
-export const useSecondSectionStore = create<SecondSectionState>()(
+export const useFourthSectionStore = create<FourthSectionState>()(
   devtools(
     immer((set) => ({
       isVisible: false,

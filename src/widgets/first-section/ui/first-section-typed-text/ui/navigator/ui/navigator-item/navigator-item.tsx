@@ -5,10 +5,16 @@ import { useLocale, useTranslations } from 'next-intl';
 
 import { useHoverRandomLettersAnimation } from '@shared/hooks';
 import { useSoundEffectsStore } from '@widgets/header';
+import { useSecondSectionStore } from '@widgets/second-section/model';
+import { useThirdSectionStore } from '@widgets/third-section/model';
 import { Item } from './types';
 import { StyledLink, Wrapper, Text } from './navigator-item.styled';
 
 export const NavigatorItem: FC<Item> = ({ id, elementId }) => {
+  const { setIsIgnore: setIsIgnoreSecondSection, setIsVisible: setIsVisibleSecondSection } =
+    useSecondSectionStore();
+  const { setIsIgnore: setIsIgnoreThirdSection, setIsVisible: setIsVisibleThirdSection } =
+    useThirdSectionStore();
   const t = useTranslations('FirstSection.FirstSectionTypedText.Navigator');
   const path = useLocale();
   const text = t(`item-${id}`);
@@ -23,6 +29,20 @@ export const NavigatorItem: FC<Item> = ({ id, elementId }) => {
     const element = document.getElementById(elementId);
     const block = ['01', '03', '04'].includes(id) ? 'start' : 'end';
     element?.scrollIntoView({ behavior: 'smooth', block });
+
+    if (id === '01') {
+      setIsVisibleSecondSection(false);
+      setIsIgnoreSecondSection(false);
+    }
+    if (id === '02') {
+      setIsIgnoreSecondSection(true);
+      setIsVisibleThirdSection(false);
+      setIsIgnoreThirdSection(false);
+    }
+    if (id === '03') {
+      setIsIgnoreSecondSection(true);
+      setIsIgnoreThirdSection(true);
+    }
   };
 
   return (

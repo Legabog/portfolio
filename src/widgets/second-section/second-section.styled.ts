@@ -16,12 +16,12 @@ export const Wrapper = styled.div<{ $isFullHeight: boolean; $isVisible: boolean 
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
+
   ${({ $isFullHeight }) =>
     $isFullHeight &&
     css`
       height: 100vh;
     `}
-
   ${({ $isVisible }) =>
     $isVisible &&
     css`
