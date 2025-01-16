@@ -9,7 +9,7 @@ import { useSoundEffectsStore } from '@widgets/header';
 import { IconSection } from '../icon-section';
 import { SwitcherSection } from '../switcher-section';
 import { InfoSection } from '../info-section';
-import { Backdrop, Button, Span, Wrapper } from './mobile-menu.styled';
+import { Backdrop, Button, Span, Wrapper, BackdropWrapper } from './mobile-menu.styled';
 import { useMobileMenuStore } from './model';
 import { Footer } from './ui';
 
@@ -39,11 +39,13 @@ export const MobileMenu: FC = () => {
         <Span $spanType='second' $state={ state } />
       </Button>
       <Backdrop $isUsedBefore={ isUsedBefore } $state={ state }>
-        <Background />
-        <IconSection isMobile />
-        <SwitcherSection />
-        <InfoSection />
-        <Footer />
+        <BackdropWrapper $isUsedBefore={ isUsedBefore } $state={ state }>
+          <Background />
+          <IconSection isMobile />
+          <SwitcherSection />
+          <InfoSection />
+          <Footer />
+        </BackdropWrapper>
       </Backdrop>
     </Wrapper>
   );
