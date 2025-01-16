@@ -5,8 +5,9 @@ import { useLocale, useTranslations } from 'next-intl';
 
 import { useHoverRandomLettersAnimation } from '@shared/hooks';
 import { useSoundEffectsStore } from '@widgets/header';
-import { useSecondSectionStore } from '@widgets/second-section/model';
-import { useThirdSectionStore } from '@widgets/third-section/model';
+import { useSecondSectionStore } from '@widgets/second-section';
+import { useThirdSectionStore } from '@widgets/third-section';
+import { useFourthSectionStore } from '@widgets/fourth-section';
 import { Item } from './types';
 import { StyledLink, Wrapper, Text } from './navigator-item.styled';
 
@@ -15,6 +16,8 @@ export const NavigatorItem: FC<Item> = ({ id, elementId }) => {
     useSecondSectionStore();
   const { setIsIgnore: setIsIgnoreThirdSection, setIsVisible: setIsVisibleThirdSection } =
     useThirdSectionStore();
+  const { setIsIgnore: setIsIgnoreFourthSection, setIsVisible: setIsVisibleFourthSection } =
+    useFourthSectionStore();
   const t = useTranslations('FirstSection.FirstSectionTypedText.Navigator');
   const path = useLocale();
   const text = t(`item-${id}`);
@@ -42,6 +45,8 @@ export const NavigatorItem: FC<Item> = ({ id, elementId }) => {
     if (id === '03') {
       setIsIgnoreSecondSection(true);
       setIsIgnoreThirdSection(true);
+      setIsIgnoreFourthSection(false);
+      setIsVisibleFourthSection(false);
     }
   };
 

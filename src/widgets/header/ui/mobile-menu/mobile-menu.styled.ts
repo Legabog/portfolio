@@ -3,6 +3,16 @@ import styled, { css, keyframes } from 'styled-components';
 import { COLORS } from '@shared/constants';
 import { State } from './types';
 
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
 const move = keyframes`
   0% {
     transform: translateX(100%)
@@ -44,6 +54,20 @@ export const Backdrop = styled.div<{ $isUsedBefore: boolean; $state: State['stat
   animation: 300ms cubic-bezier(0.5, 0, 0.5, 1) 0s 1 normal forwards running
     ${({ $state, $isUsedBefore }) =>
       $state === 1 && $isUsedBefore ? move : $state === 2 && $isUsedBefore ? moveOut : undefined};
+`;
+export const BackdropWrapper = styled.div<{ $isUsedBefore: boolean; $state: State['state'] }>`
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+
+  ${({ $state, $isUsedBefore }) =>
+    $state === 1 &&
+    $isUsedBefore &&
+    css`
+      animation: ${fadeIn} 1s ease-out;
+    `}
 `;
 export const Button = styled.button`
   background-color: transparent;

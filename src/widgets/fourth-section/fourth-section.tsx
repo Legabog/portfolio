@@ -5,20 +5,23 @@ import { useTranslations } from 'next-intl';
 
 import { useObserverDetectSection } from '@shared/hooks';
 import { ScrollDown, SectionTitle } from '@shared/ui';
+import { useSecondSectionStore } from '@widgets/second-section';
+import { useThirdSectionStore } from '@widgets/third-section';
 import { Wrapper } from './fourth-section.styled';
 import { Projects } from './ui';
 import { CUSTOM_STYLES_SCROLL_DOWN, SECTION_NUMBER_SCROLL_DOWN, TOP_NUMBER } from './constants';
-// TODO: temp for tomorrow
-// import { useSecondSectionStore } from '@widgets/second-section/model';
-// import { useThirdSectionStore } from '@widgets/third-section/model';
 import { useFourthSectionStore } from './model';
 
 export const FourthSection: FC = () => {
-  // TODO: temp for tomorrow
-  // const { setIsIgnore } = useSecondSectionStore();
-  //   const { setIsIgnore: dva} = useThirdSectionStore();
-  const { isVisible, setIsVisible } = useFourthSectionStore();
-  const ref = useObserverDetectSection(setIsVisible, undefined, undefined, { threshold: 0.2 });
+  const { setIsIgnore: setIsIgnoreFirstSection } = useSecondSectionStore();
+  const { setIsIgnore: setIsIgnoreSecondSection } = useThirdSectionStore();
+  const { isVisible, setIsVisible, isIgnore } = useFourthSectionStore();
+  const ref = useObserverDetectSection(
+    setIsVisible,
+    isIgnore,
+    [setIsIgnoreFirstSection, setIsIgnoreSecondSection],
+    0.2,
+  );
 
   const t = useTranslations('FourthSection.ScrollDown');
   const f = useTranslations(`FourthSection.FourthSectionTitle`);

@@ -10,8 +10,6 @@ import { CUSTOM_STYLES_SCROLL_DOWN, SECTION_NUMBER_SCROLL_DOWN, TOP_NUMBER } fro
 import { Wrapper, SecondaryWrapper } from './second-section.styled';
 import { SecondSectionCards } from './ui';
 import { useSecondSectionStore } from './model';
-// TODO: temp for tomorrow
-// import { useThirdSectionStore } from '@widgets/third-section/model';
 
 const Human = dynamic(() => import('./ui/human'), {
   loading: () => <Loader />,
@@ -29,8 +27,6 @@ export const SecondSection: FC = () => {
   const sectionText = t('text');
   const title = f('text');
   const titleWithoutLastWord = title.split(' ')[0];
-
-  console.log('ref---', ref.current);
 
   useEffect(() => {
     setIsFullHeight(

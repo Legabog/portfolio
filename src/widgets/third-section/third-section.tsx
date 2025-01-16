@@ -6,7 +6,7 @@ import { useTranslations } from 'next-intl';
 
 import { useObserverDetectSection } from '@shared/hooks';
 import { Loader, ScrollDown, SectionTitle } from '@shared/ui';
-import { useSecondSectionStore } from '@widgets/second-section/model';
+import { useSecondSectionStore } from '@widgets/second-section';
 import { CUSTOM_STYLES_SCROLL_DOWN, SECTION_NUMBER_SCROLL_DOWN, TOP_NUMBER } from './constants';
 import { Wrapper, SecondaryWrapper } from './third-section.styled';
 import { useThirdSectionStore } from './model';

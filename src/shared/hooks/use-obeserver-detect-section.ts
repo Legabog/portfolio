@@ -4,16 +4,19 @@ export const useObserverDetectSection = (
   setIsVisible: (isVisible: boolean) => void,
   cond?: boolean,
   setIsIgnore?: ((isIgnore: boolean) => void)[],
-  options: IntersectionObserverInit = { threshold: 0.5 },
+  threshold: IntersectionObserverInit['threshold'] = 0.5,
 ) => {
   const ref = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const sectionRef = ref.current as HTMLDivElement;
-    const observer = new IntersectionObserver(([{ isIntersecting }]) => {
-      if (isIntersecting) setIsVisible(true);
-      else setIsIgnore?.forEach((set) => set(false));
-    }, options);
+    const observer = new IntersectionObserver(
+      ([{ isIntersecting }]) => {
+        if (isIntersecting) setIsVisible(true);
+        else setIsIgnore?.forEach((set) => set(false));
+      },
+      { threshold },
+    );
 
     if (sectionRef && !cond) observer.observe(sectionRef);
     else observer.disconnect();
@@ -21,7 +24,7 @@ export const useObserverDetectSection = (
     return () => {
       if (sectionRef) observer.unobserve(sectionRef);
     };
-  }, [setIsVisible, cond, JSON.stringify(options)]);
+  }, [cond, setIsVisible, threshold]);
 
   return ref;
 };
