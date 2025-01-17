@@ -8,6 +8,7 @@ import { useSoundEffectsStore } from '@widgets/header';
 import { useSecondSectionStore } from '@widgets/second-section';
 import { useThirdSectionStore } from '@widgets/third-section';
 import { useFourthSectionStore } from '@widgets/fourth-section';
+import { useFifthSectionStore } from '@widgets/fifth-section';
 import { Item } from './types';
 import { StyledLink, Wrapper, Text } from './navigator-item.styled';
 
@@ -18,6 +19,8 @@ export const NavigatorItem: FC<Item> = ({ id, elementId }) => {
     useThirdSectionStore();
   const { setIsIgnore: setIsIgnoreFourthSection, setIsVisible: setIsVisibleFourthSection } =
     useFourthSectionStore();
+  const { setIsIgnore: setIsIgnoreFifthSection, setIsVisible: setIsVisibleFifthSection } =
+    useFifthSectionStore();
   const t = useTranslations('FirstSection.FirstSectionTypedText.Navigator');
   const path = useLocale();
   const text = t(`item-${id}`);
@@ -33,21 +36,34 @@ export const NavigatorItem: FC<Item> = ({ id, elementId }) => {
     const block = ['01', '03', '04'].includes(id) ? 'start' : 'end';
     element?.scrollIntoView({ behavior: 'smooth', block });
 
-    if (id === '01') {
-      setIsVisibleSecondSection(false);
-      setIsIgnoreSecondSection(false);
-    }
-    if (id === '02') {
-      setIsIgnoreSecondSection(true);
-      setIsVisibleThirdSection(false);
-      setIsIgnoreThirdSection(false);
-    }
-    if (id === '03') {
-      setIsIgnoreSecondSection(true);
-      setIsIgnoreThirdSection(true);
-      setIsIgnoreFourthSection(false);
-      setIsVisibleFourthSection(false);
-    }
+    const sectionVisibilityMap = (
+      {
+        '01': () => {
+          setIsVisibleSecondSection(false);
+          setIsIgnoreSecondSection(false);
+        },
+        '02': () => {
+          setIsIgnoreSecondSection(true);
+          setIsVisibleThirdSection(false);
+          setIsIgnoreThirdSection(false);
+        },
+        '03': () => {
+          setIsIgnoreSecondSection(true);
+          setIsIgnoreThirdSection(true);
+          setIsIgnoreFourthSection(false);
+          setIsVisibleFourthSection(false);
+        },
+        '04': () => {
+          setIsIgnoreSecondSection(true);
+          setIsIgnoreThirdSection(true);
+          setIsIgnoreFourthSection(true);
+          setIsIgnoreFifthSection(false);
+          setIsVisibleFifthSection(false);
+        },
+      } as { [key: string]: () => void }
+    )[id];
+
+    sectionVisibilityMap();
   };
 
   return (

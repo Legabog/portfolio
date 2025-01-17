@@ -13,13 +13,13 @@ import { CUSTOM_STYLES_SCROLL_DOWN, SECTION_NUMBER_SCROLL_DOWN, TOP_NUMBER } fro
 import { useFourthSectionStore } from './model';
 
 export const FourthSection: FC = () => {
-  const { setIsIgnore: setIsIgnoreFirstSection } = useSecondSectionStore();
-  const { setIsIgnore: setIsIgnoreSecondSection } = useThirdSectionStore();
+  const { setIsIgnore: setIsIgnoreSecondSection } = useSecondSectionStore();
+  const { setIsIgnore: setIsIgnoreThirdSection } = useThirdSectionStore();
   const { isVisible, setIsVisible, isIgnore } = useFourthSectionStore();
   const ref = useObserverDetectSection(
     setIsVisible,
     isIgnore,
-    [setIsIgnoreFirstSection, setIsIgnoreSecondSection],
+    [setIsIgnoreSecondSection, setIsIgnoreThirdSection],
     0.2,
   );
 
