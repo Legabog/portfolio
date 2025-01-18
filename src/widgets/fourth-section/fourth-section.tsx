@@ -26,10 +26,6 @@ export const FourthSection: FC = () => {
   const t = useTranslations('FourthSection.ScrollDown');
   const f = useTranslations(`FourthSection.FourthSectionTitle`);
 
-  console.log('isVisible@!#ASDSDSD', isVisible);
-  console.log('ref', ref.current);
-  console.log('чек', document.getElementById('fourth-section'));
-
   const title = f('text');
   const sectionText = t('text');
 
