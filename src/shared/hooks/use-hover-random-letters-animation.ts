@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useLayoutEffect, useRef, useState } from 'react';
 import { useLocale } from 'next-intl';
 
 import { Locale } from '@locales';
@@ -35,7 +35,7 @@ export const useHoverRandomLettersAnimation = (initalString: string) => {
     setTimeout(() => clear(), 300);
   };
 
-  useEffect(() => setCurrentText(initalString), [initalString]);
+  useLayoutEffect(() => setCurrentText(initalString), [initalString]);
 
   return { generatedString: currentText, animate, clear };
 };
