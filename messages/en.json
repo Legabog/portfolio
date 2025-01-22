@@ -208,5 +208,8 @@
 	},
 	"ScrollDown": {
 		"text": "scroll to explore"
+	},
+	"NavigateButton": {
+		"text": "navigate to first section"
 	}
 }
