@@ -1,4 +1,4 @@
 export interface FirstSectionState {
   isVisible: boolean;
-  setIsVisible: (isVisible: boolean) => void;
+  setIsVisible: (isVisible: boolean, isExtra?: boolean) => void;
 }

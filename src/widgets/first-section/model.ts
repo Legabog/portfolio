@@ -8,8 +8,8 @@ export const useFirstSectionStore = create<FirstSectionState>()(
   devtools(
     immer((set, get) => ({
       isVisible: false,
-      setIsVisible: (isVisible: boolean) => {
-        if (!get().isVisible) set({ isVisible });
+      setIsVisible: (isVisible: boolean, isExtra?: boolean) => {
+        if (!get().isVisible || isExtra) set({ isVisible });
       },
     })),
   ),

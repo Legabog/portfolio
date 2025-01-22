@@ -6,6 +6,7 @@ import { useTranslations } from 'next-intl';
 
 import { useObserverDetectSection } from '@shared/hooks';
 import { Loader, ScrollDown } from '@shared/ui';
+import { NavigateButton } from '@widgets/navigate-button';
 import { Wrapper, SecondaryWrapper } from './first-section.styled';
 import { FirstSectionTypedText } from './ui';
 import { CUSTOM_STYLES_SCROLL_DOWN, SECTION_NUMBER_SCROLL_DOWN } from './constants';
@@ -29,6 +30,7 @@ export const FirstSection: FC = () => {
         <FirstSectionTypedText />
         <TechnologyPlanet />
       </SecondaryWrapper>
+      <NavigateButton />
       <ScrollDown
         customStyles={ CUSTOM_STYLES_SCROLL_DOWN }
         sectionNumber={ SECTION_NUMBER_SCROLL_DOWN }
