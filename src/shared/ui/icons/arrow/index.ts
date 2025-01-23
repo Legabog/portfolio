@@ -1,1 +1,1 @@
-export * from './arrow.tsx';
+export * from './arrow';
