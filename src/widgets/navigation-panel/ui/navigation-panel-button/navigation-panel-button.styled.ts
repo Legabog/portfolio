@@ -29,7 +29,7 @@ const moveDown = keyframes`
   `;
 export const border = (customStyle?: string) => css`
   border: 1px solid ${orange};
-  border-radius: 5px;
+  border-radius: 6px;
   ${customStyle}
 `;
 export const flexCenter = (customStyle?: string) => css`
@@ -97,7 +97,7 @@ export const Wrapper = styled.button<{ $type: Props['type'] }>`
   rotate: ${({ $type }) => ($type === 'top' ? '' : '-')}90deg;
 
   &:hover {
-    border: 1px solid ${({ theme }) => theme.color};
+    border: 1px solid ${orange};
     ${SecondaryWrapper} {
       background-color: ${orange};
     }

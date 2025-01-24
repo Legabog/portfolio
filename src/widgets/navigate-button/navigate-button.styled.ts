@@ -59,7 +59,7 @@ export const Wrapper = styled.div<{ $isInitalized: boolean; $isVisible: boolean 
   justify-content: center;
   position: fixed;
   top: 80%;
-  right: 4%;
+  right: 2%;
   z-index: 1;
   padding: 14px;
   border: 1px solid ${orange};
@@ -69,8 +69,8 @@ export const Wrapper = styled.div<{ $isInitalized: boolean; $isVisible: boolean 
 
   svg {
     rotate: 180deg;
-    width: 10px;
-    height: 6px;
+    width: 11px;
+    height: 11px;
     border-radius: 5px;
     animation: ${moveDown} 0.75s ease-out infinite;
 

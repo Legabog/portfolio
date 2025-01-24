@@ -1,3 +1,33 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const Wrapper = styled.div``;
+import { COLORS } from '@shared/constants';
+
+const { orange, orangeSecondary } = COLORS;
+
+export const Button = styled.button<{ $isActive: boolean }>`
+  border: 1px solid ${orange};
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.15s;
+  border-radius: 9999px;
+  background-color: transparent;
+  background-image: none;
+  cursor: pointer;
+  width: 15px;
+  height: 15px;
+
+  ${({ $isActive }) =>
+    !$isActive &&
+    css`
+      &:hover {
+        background-color: ${orangeSecondary};
+      }
+    `}
+
+  ${({ $isActive }) =>
+    $isActive &&
+    css`
+      height: 30px;
+      background-color: ${orange};
+    `}
+`;
