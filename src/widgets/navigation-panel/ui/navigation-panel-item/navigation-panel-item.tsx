@@ -1,5 +1,10 @@
 import { FC } from 'react';
 
-import { Wrapper } from './navigation-panel-item.styled';
+import { Button } from './navigation-panel-item.styled';
+import { Props } from './types';
 
-export const NavigationPanelItem: FC = () => <Wrapper>ITEM 1</Wrapper>;
+export const NavigationPanelItem: FC<Props> = ({ sectionId, activeSectionId }) => {
+  const isActive = activeSectionId === sectionId;
+
+  return <Button $isActive={ isActive } />;
+};

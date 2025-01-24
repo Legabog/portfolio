@@ -13,10 +13,10 @@ export const NavigateButton: FC = () => {
   const [isInitalized, setIsInitialized] = useState<boolean>(false);
   const t = useTranslations('NavigateButton');
   const text = t('text');
-  const firstSectionRef = document.getElementById('first-section');
+  const firstSection = document.getElementById('first-section');
 
   const onClick = () => {
-    firstSectionRef?.scrollIntoView({ behavior: 'smooth' });
+    firstSection?.scrollIntoView({ behavior: 'smooth' });
     setIsVisibleFirstSection(false, true);
     play('navigation-1.wav');
   };
@@ -30,12 +30,12 @@ export const NavigateButton: FC = () => {
       { threshold: 0.001 },
     );
 
-    if (firstSectionRef) observer.observe(firstSectionRef);
+    if (firstSection) observer.observe(firstSection);
 
     return () => {
-      if (firstSectionRef) observer.unobserve(firstSectionRef);
+      if (firstSection) observer.unobserve(firstSection);
     };
-  }, [firstSectionRef, isVisible]);
+  }, [firstSection, isVisible]);
 
   return (
     <Wrapper
