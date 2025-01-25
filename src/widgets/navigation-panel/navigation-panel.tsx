@@ -72,7 +72,7 @@ export const NavigationPanel: FC = () => {
       window.removeEventListener('scroll', checkOverlap);
     };
   }, []);
-
+  // TODO: временный коммит
   return (
     <Wrapper
       $isInitalized={ isInitalized }
