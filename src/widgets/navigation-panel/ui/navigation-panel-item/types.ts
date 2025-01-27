@@ -1,4 +1,4 @@
-type SectionIds = 'second-section' | 'third-section' | 'fourth-section' | 'fifth-section';
+import { SectionIds } from '../../types';
 
 export interface Props {
   activeSectionId: SectionIds;
