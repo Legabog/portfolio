@@ -51,7 +51,7 @@ to {
 }
 `;
 
-export const Wrapper = styled.div<{ $isInitalized: boolean; $isVisible: boolean }>`
+export const Wrapper = styled.button<{ $isInitalized: boolean; $isVisible: boolean }>`
   opacity: ${({ $isVisible }) => ($isVisible ? 1 : 0)};
   visibility: ${({ $isVisible }) => ($isVisible ? 'visible' : 'hidden')};
   display: flex;
@@ -80,9 +80,16 @@ export const Wrapper = styled.div<{ $isInitalized: boolean; $isVisible: boolean 
   }
 
   &:hover {
+    background-color: ${orange};
     svg {
       animation: none;
+      path {
+        fill: ${({ theme }) => theme.backgroundColor};
+      }
     }
+  }
+  &:disabled {
+    cursor: not-allowed;
   }
   &:active {
     transform: scale(0.9);

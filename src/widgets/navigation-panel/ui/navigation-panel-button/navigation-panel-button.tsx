@@ -1,7 +1,6 @@
 import { FC } from 'react';
 
 import { ArrowIcon } from '@shared/ui';
-import { useSoundEffectsStore } from '@widgets/header';
 import {
   Wrapper,
   SecondaryWrapper,
@@ -11,16 +10,18 @@ import {
   SecondIconWrapper,
 } from './navigation-panel-button.styled';
 import { Props } from './types';
+import { useLogic } from './lib';
 
-export const NavigationPanelButton: FC<Props> = ({ type }) => {
-  const { play } = useSoundEffectsStore();
-
-  const onClick = () => {
-    play('navigation-1.wav');
-  };
+export const NavigationPanelButton: FC<Props> = ({ type, activeSectionId }) => {
+  const { throttledOnClick, isBottomAndLastSection } = useLogic({ type, activeSectionId });
 
   return (
-    <Wrapper $type={ type } onClick={ onClick }>
+    <Wrapper
+      $isVisible={ !isBottomAndLastSection }
+      $type={ type }
+      disabled={ isBottomAndLastSection }
+      onClick={ throttledOnClick }
+    >
       <SecondaryWrapper>
         <ThirdWrapper>
           <FourthWrapper>

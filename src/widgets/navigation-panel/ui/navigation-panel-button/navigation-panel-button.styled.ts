@@ -27,6 +27,30 @@ const moveDown = keyframes`
   opacity: 1;
 }
   `;
+const fadeIn = keyframes`
+  from {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(10px);
+  }
+  to {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
+  }
+`;
+const fadeOut = keyframes`
+from {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(0);
+}
+to {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateX(10px);
+}
+`;
 export const border = (customStyle?: string) => css`
   border: 1px solid ${orange};
   border-radius: 6px;
@@ -87,8 +111,10 @@ export const SecondIconWrapper = styled.div`
   transform: translate(0, 0) rotate(0deg) skewX(0) skewY(0) scaleX(1) scaleY(1);
   rotate: 0deg;
 `;
-export const Wrapper = styled.button<{ $type: Props['type'] }>`
+export const Wrapper = styled.button<{ $isVisible: boolean, $type: Props['type']; }>`
   ${border()}
+  opacity: ${({ $isVisible }) => ($isVisible ? 1 : 0)};
+  visibility: ${({ $isVisible }) => ($isVisible ? 'visible' : 'hidden')};
   margin: 0;
   padding: 0;
   background-color: transparent;
@@ -107,11 +133,15 @@ export const Wrapper = styled.button<{ $type: Props['type'] }>`
     svg {
       animation: none;
       path {
-        fill: ${({ theme }) => theme.color};
+        fill: ${({ theme }) => theme.backgroundColor};
       }
     }
   }
   &:active {
     transform: scale(0.9);
   }
+
+  ${({ $isVisible }) => css`
+    animation: ${$isVisible ? fadeIn : fadeOut} 0.3s ease-out;
+  `}
 `;
