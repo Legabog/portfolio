@@ -29,7 +29,7 @@ to {
 }
 `;
 
-export const Wrapper = styled.div<{ $isInitalized: boolean; $isVisible: boolean }>`
+export const Wrapper = styled.div<{ $isInitialized: boolean; $isVisible: boolean }>`
   opacity: ${({ $isVisible }) => ($isVisible ? 1 : 0)};
   visibility: ${({ $isVisible }) => ($isVisible ? 'visible' : 'hidden')};
   display: flex;
@@ -42,8 +42,8 @@ export const Wrapper = styled.div<{ $isInitalized: boolean; $isVisible: boolean 
   right: 2%;
   z-index: 1;
 
-  ${({ $isVisible, $isInitalized }) =>
-    $isInitalized &&
+  ${({ $isVisible, $isInitialized }) =>
+    $isInitialized &&
     css`
       animation: ${$isVisible ? fadeIn : fadeOut} 0.75s ease-out;
     `}

@@ -1,3 +1,5 @@
+import { useTranslations } from 'next-intl';
+
 import { useThrottle } from '@shared/hooks';
 import { useSoundEffectsStore } from '@widgets/header';
 import { useFirstSectionStore } from '@widgets/first-section';
@@ -8,6 +10,7 @@ import { useFifthSectionStore } from '@widgets/fifth-section';
 import { Props } from './types';
 
 export const useLogic = ({ type, activeSectionId }: Props) => {
+  const t = useTranslations(`NavigationPanelButton.${type}`);
   const { setIsVisible: setIsVisibleFirstSection } = useFirstSectionStore();
   const { setIsIgnore: setIsIgnoreSecondSection, setIsVisible: setIsVisibleSecondSection } =
     useSecondSectionStore();
@@ -19,57 +22,55 @@ export const useLogic = ({ type, activeSectionId }: Props) => {
     useFifthSectionStore();
   const { play } = useSoundEffectsStore();
 
+  const title = t(activeSectionId);
   const isBottomAndLastSection = type === 'bottom' && activeSectionId === 'fifth-section';
 
   const onClick = () => {
-    const firstSection = document.getElementById('first-section');
-    const secondSection = document.getElementById('second-section');
-    const thirdSection = document.getElementById('third-section');
-    const fourthSection = document.getElementById('fourth-section');
-    const fifthSection = document.getElementById('fifth-section');
+    const sections = [
+      {
+        id: 'first-section',
+        element: document.getElementById('first-section'),
+        setVisible: setIsVisibleFirstSection,
+        setIgnore: null,
+      },
+      {
+        id: 'second-section',
+        element: document.getElementById('second-section'),
+        setVisible: setIsVisibleSecondSection,
+        setIgnore: setIsIgnoreSecondSection,
+      },
+      {
+        id: 'third-section',
+        element: document.getElementById('third-section'),
+        setVisible: setIsVisibleThirdSection,
+        setIgnore: setIsIgnoreThirdSection,
+      },
+      {
+        id: 'fourth-section',
+        element: document.getElementById('fourth-section'),
+        setVisible: setIsVisibleFourthSection,
+        setIgnore: setIsIgnoreFourthSection,
+      },
+      {
+        id: 'fifth-section',
+        element: document.getElementById('fifth-section'),
+        setVisible: setIsVisibleFifthSection,
+        setIgnore: setIsIgnoreFifthSection,
+      },
+    ];
 
-    if (activeSectionId === 'second-section') {
-      if (type === 'top') {
-        firstSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        setIsVisibleFirstSection(false, true);
-      } else {
-        thirdSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        setIsVisibleThirdSection(false);
-        setIsIgnoreThirdSection(false);
-      }
-      play('navigation-1.wav');
-    } else if (activeSectionId === 'third-section') {
-      if (type === 'top') {
-        secondSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        setIsVisibleSecondSection(false);
-        setIsIgnoreSecondSection(false);
-      } else {
-        fourthSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        setIsIgnoreFourthSection(false);
-        setIsVisibleFourthSection(false);
-      }
-      play('navigation-1.wav');
-    } else if (activeSectionId === 'fourth-section') {
-      if (type === 'top') {
-        thirdSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        setIsVisibleThirdSection(false);
-        setIsIgnoreThirdSection(false);
-      } else {
-        fifthSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        setIsIgnoreFifthSection(false);
-        setIsVisibleFifthSection(false);
-      }
-      play('navigation-1.wav');
-    } else {
-      if (type === 'top') {
-        fourthSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        setIsVisibleFourthSection(false);
-        setIsIgnoreFourthSection(false);
-      }
-      play('navigation-1.wav');
+    const currentIndex = sections.findIndex((section) => section.id === activeSectionId);
+    const targetIndex = type === 'top' ? currentIndex - 1 : currentIndex + 1;
+
+    if (targetIndex >= 0 && targetIndex < sections.length) {
+      const { element, setVisible, setIgnore } = sections[targetIndex];
+      element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setVisible(false);
+      if (setIgnore) setIgnore(false);
     }
+    play('navigation-1.wav');
   };
   const throttledOnClick = useThrottle(onClick, 1000);
 
-  return { throttledOnClick, isBottomAndLastSection };
+  return { throttledOnClick, isBottomAndLastSection, title };
 };

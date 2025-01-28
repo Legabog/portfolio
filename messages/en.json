@@ -210,6 +210,25 @@
 		"text": "scroll to explore"
 	},
 	"NavigateButton": {
-		"text": "navigate to first section"
+		"text": "main section"
+	},
+	"NavigationPanelButton": {
+		"top": {
+			"second-section": "main section",
+			"third-section": "about me section",
+			"fourth-section": "skills section",
+			"fifth-section": "projects section"
+		},
+		"bottom": {
+			"second-section": "skills section",
+			"third-section": "projects section",
+			"fourth-section": "technology section"
+		}
+	},
+	"NavigationPanelItem": {
+			"second-section": "about me section",
+			"third-section": "skills section",
+			"fourth-section": "projects section",
+			"fifth-section": "technology section"
 	}
 }

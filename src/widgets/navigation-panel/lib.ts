@@ -1,11 +1,16 @@
-import { useEffect, useLayoutEffect, useState } from 'react';
+import { useEffect, useLayoutEffect } from 'react';
 
-import { SectionIds } from './types';
+import { useNavigationPanelStore } from './model';
 
 export const useLogic = () => {
-  const [isVisible, setIsVisible] = useState<boolean>(false);
-  const [isInitalized, setIsInitialized] = useState<boolean>(false);
-  const [activeSectionId, setActiveSectionId] = useState<SectionIds>('second-section');
+  const {
+    isInitialized,
+    isVisible,
+    activeSectionId,
+    setActiveSectionId,
+    setIsInitialized,
+    setIsVisible,
+  } = useNavigationPanelStore();
 
   useLayoutEffect(() => {
     const firstSection = document.getElementById('first-section');
@@ -22,7 +27,7 @@ export const useLogic = () => {
     return () => {
       if (firstSection) observer.unobserve(firstSection);
     };
-  }, [isVisible]);
+  }, [isVisible, setIsInitialized, setIsVisible]);
 
   useEffect(() => {
     const checkOverlap = () => {
@@ -61,13 +66,12 @@ export const useLogic = () => {
         );
       }
     };
-
     window.addEventListener('scroll', checkOverlap);
 
     return () => {
       window.removeEventListener('scroll', checkOverlap);
     };
-  }, []);
+  }, [setActiveSectionId]);
 
-  return { isVisible, isInitalized, activeSectionId };
+  return { isVisible, isInitialized, activeSectionId };
 };

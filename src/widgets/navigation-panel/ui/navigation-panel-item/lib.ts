@@ -1,3 +1,5 @@
+import { useTranslations } from 'next-intl';
+
 import { useThrottle } from '@shared/hooks';
 import { useFifthSectionStore } from '@widgets/fifth-section';
 import { useFourthSectionStore } from '@widgets/fourth-section';
@@ -7,6 +9,7 @@ import { useThirdSectionStore } from '@widgets/third-section';
 import { Props } from './types';
 
 export const useLogic = ({ activeSectionId, sectionId }: Omit<Props, 'id'>) => {
+  const t = useTranslations(`NavigationPanelItem`);
   const { setIsIgnore: setIsIgnoreSecondSection, setIsVisible: setIsVisibleSecondSection } =
     useSecondSectionStore();
   const { setIsIgnore: setIsIgnoreThirdSection, setIsVisible: setIsVisibleThirdSection } =
@@ -18,33 +21,41 @@ export const useLogic = ({ activeSectionId, sectionId }: Omit<Props, 'id'>) => {
   const { play } = useSoundEffectsStore();
 
   const isActive = activeSectionId === sectionId;
+  const title = isActive ? undefined : t(sectionId);
 
   const onClick = () => {
-    const secondSection = document.getElementById('second-section');
-    const thirdSection = document.getElementById('third-section');
-    const fourthSection = document.getElementById('fourth-section');
-    const fifthSection = document.getElementById('fifth-section');
-
-    if (sectionId === 'second-section') {
-      secondSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      setIsVisibleSecondSection(false);
-      setIsIgnoreSecondSection(false);
-    } else if (sectionId === 'third-section') {
-      thirdSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      setIsVisibleThirdSection(false);
-      setIsIgnoreThirdSection(false);
-    } else if (sectionId === 'fourth-section') {
-      fourthSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      setIsVisibleFourthSection(false);
-      setIsIgnoreFourthSection(false);
-    } else {
-      fifthSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      setIsVisibleFifthSection(false);
-      setIsIgnoreFifthSection(false);
-    }
+    const { setVisible, setIgnore } = (
+      {
+        'second-section': {
+          setVisible: setIsVisibleSecondSection,
+          setIgnore: setIsIgnoreSecondSection,
+        },
+        'third-section': {
+          setVisible: setIsVisibleThirdSection,
+          setIgnore: setIsIgnoreThirdSection,
+        },
+        'fourth-section': {
+          setVisible: setIsVisibleFourthSection,
+          setIgnore: setIsIgnoreFourthSection,
+        },
+        'fifth-section': {
+          setVisible: setIsVisibleFifthSection,
+          setIgnore: setIsIgnoreFifthSection,
+        },
+      } as {
+        [key in Props['sectionId']]: {
+          setIgnore: (isIgnore: boolean) => void;
+          setVisible: (isVisible: boolean) => void;
+        };
+      }
+    )[sectionId];
+    const element = document.getElementById(sectionId);
+    element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    setVisible(false);
+    setIgnore(false);
     play('navigation-1.wav');
   };
   const throttledOnClick = useThrottle(onClick, 1000);
 
-  return { throttledOnClick, isActive };
+  return { throttledOnClick, isActive, title };
 };

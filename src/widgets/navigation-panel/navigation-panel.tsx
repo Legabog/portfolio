@@ -6,11 +6,11 @@ import { PANEL_ITEMS } from './constants';
 import { useLogic } from './lib';
 
 export const NavigationPanel: FC = () => {
-  const { isVisible, isInitalized, activeSectionId } = useLogic();
+  const { isVisible, isInitialized, activeSectionId } = useLogic();
 
   return (
     <Wrapper
-      $isInitalized={ isInitalized }
+      $isInitialized={ isInitialized }
       $isVisible={ isVisible }
       data-testid='navigation-panel'
       id='navigation-panel'
