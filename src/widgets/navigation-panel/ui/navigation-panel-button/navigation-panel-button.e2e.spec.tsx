@@ -5,8 +5,16 @@ test.describe('NavigationPanelButton Component Tests', () => {
     await page.goto('/');
   });
 
-  test('should render the NavigationPanelButton component', async ({ page }) => {
-    const navigationPanelButton = await page.locator('[data-testid="navigation-panel-button"]');
-    await expect(navigationPanelButton).toBeVisible();
+  test('should render the top NavigationPanelButton component', async ({ page }) => {
+    const navigationPanelTopButton = await page.locator(
+      '[data-testid="navigation-panel-top-button"]',
+    );
+    await expect(navigationPanelTopButton).toBeVisible();
+  });
+  test('should render the bottom NavigationPanelButton component', async ({ page }) => {
+    const navigationPanelBottomButton = await page.locator(
+      '[data-testid="navigation-panel-bottom-button"]',
+    );
+    await expect(navigationPanelBottomButton).toBeVisible();
   });
 });
