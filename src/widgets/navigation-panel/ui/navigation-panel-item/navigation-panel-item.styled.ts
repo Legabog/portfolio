@@ -12,7 +12,6 @@ export const Button = styled.button<{ $isActive: boolean }>`
   border-radius: 9999px;
   background-color: transparent;
   background-image: none;
-  cursor: pointer;
   width: 15px;
   height: 15px;
 
@@ -20,6 +19,7 @@ export const Button = styled.button<{ $isActive: boolean }>`
     !$isActive &&
     css`
       &:hover {
+        cursor: pointer;
         background-color: ${orangeSecondary};
       }
     `}
@@ -27,6 +27,7 @@ export const Button = styled.button<{ $isActive: boolean }>`
   ${({ $isActive }) =>
     $isActive &&
     css`
+      cursor: not-allowed;
       height: 30px;
       background-color: ${orange};
     `}

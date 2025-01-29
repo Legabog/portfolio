@@ -22,8 +22,8 @@ export const useLogic = ({ type, activeSectionId }: Props) => {
     useFifthSectionStore();
   const { play } = useSoundEffectsStore();
 
-  const title = t(activeSectionId);
   const isBottomAndLastSection = type === 'bottom' && activeSectionId === 'fifth-section';
+  const title = isBottomAndLastSection ? undefined : t(activeSectionId);
 
   const onClick = () => {
     const sections = [
@@ -59,7 +59,7 @@ export const useLogic = ({ type, activeSectionId }: Props) => {
       },
     ];
 
-    const currentIndex = sections.findIndex((section) => section.id === activeSectionId);
+    const currentIndex = sections.findIndex(({ id }) => id === activeSectionId);
     const targetIndex = type === 'top' ? currentIndex - 1 : currentIndex + 1;
 
     if (targetIndex >= 0 && targetIndex < sections.length) {

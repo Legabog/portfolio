@@ -1,1 +1,1 @@
-export * from './navigation-panel';
+export { NavigationPanel as default } from './navigation-panel';

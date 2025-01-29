@@ -24,36 +24,38 @@ export const useLogic = ({ activeSectionId, sectionId }: Omit<Props, 'id'>) => {
   const title = isActive ? undefined : t(sectionId);
 
   const onClick = () => {
-    const { setVisible, setIgnore } = (
-      {
-        'second-section': {
-          setVisible: setIsVisibleSecondSection,
-          setIgnore: setIsIgnoreSecondSection,
-        },
-        'third-section': {
-          setVisible: setIsVisibleThirdSection,
-          setIgnore: setIsIgnoreThirdSection,
-        },
-        'fourth-section': {
-          setVisible: setIsVisibleFourthSection,
-          setIgnore: setIsIgnoreFourthSection,
-        },
-        'fifth-section': {
-          setVisible: setIsVisibleFifthSection,
-          setIgnore: setIsIgnoreFifthSection,
-        },
-      } as {
-        [key in Props['sectionId']]: {
-          setIgnore: (isIgnore: boolean) => void;
-          setVisible: (isVisible: boolean) => void;
-        };
-      }
-    )[sectionId];
-    const element = document.getElementById(sectionId);
-    element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    setVisible(false);
-    setIgnore(false);
-    play('navigation-1.wav');
+    if (!isActive) {
+      const { setVisible, setIgnore } = (
+        {
+          'second-section': {
+            setVisible: setIsVisibleSecondSection,
+            setIgnore: setIsIgnoreSecondSection,
+          },
+          'third-section': {
+            setVisible: setIsVisibleThirdSection,
+            setIgnore: setIsIgnoreThirdSection,
+          },
+          'fourth-section': {
+            setVisible: setIsVisibleFourthSection,
+            setIgnore: setIsIgnoreFourthSection,
+          },
+          'fifth-section': {
+            setVisible: setIsVisibleFifthSection,
+            setIgnore: setIsIgnoreFifthSection,
+          },
+        } as {
+          [key in Props['sectionId']]: {
+            setIgnore: (isIgnore: boolean) => void;
+            setVisible: (isVisible: boolean) => void;
+          };
+        }
+      )[sectionId];
+      const element = document.getElementById(sectionId);
+      element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setVisible(false);
+      setIgnore(false);
+      play('navigation-1.wav');
+    }
   };
   const throttledOnClick = useThrottle(onClick, 1000);
 

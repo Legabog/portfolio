@@ -1,1 +1,1 @@
-export * from './navigate-button';
+export { NavigateButton as default } from './navigate-button';

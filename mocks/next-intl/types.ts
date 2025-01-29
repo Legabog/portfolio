@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 export interface Props {
-  children: React.ReactNode;
+  children: ReactNode;
 }
