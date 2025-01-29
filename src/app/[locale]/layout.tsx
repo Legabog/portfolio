@@ -4,6 +4,7 @@ import { Figtree } from 'next/font/google';
 import { getMessages, getTranslations } from 'next-intl/server';
 import { NextIntlClientProvider } from 'next-intl';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from '@vercel/analytics/next';
 
 import type { Locale } from '@locales';
 import { RootLocaleLayoutProps } from './types';
@@ -37,6 +38,7 @@ const RootLocaleLayout: FC<RootLocaleLayoutProps> = async ({ children, params: {
       <body className={ inter.className }>
         <NextIntlClientProvider messages={ messages }>
           {children}
+          <Analytics />
           <SpeedInsights />
         </NextIntlClientProvider>
       </body>
