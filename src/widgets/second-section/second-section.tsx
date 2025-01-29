@@ -4,10 +4,8 @@ import { FC, useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 import { useTranslations } from 'next-intl';
 
-import { useMediaQuery, useObserverDetectSection } from '@shared/hooks';
+import { useObserverDetectSection } from '@shared/hooks';
 import { Loader, ScrollDown, SectionTitle } from '@shared/ui';
-import { NavigateButton } from '@widgets/navigate-button';
-import { NavigationPanel } from '@widgets/navigation-panel';
 import { CUSTOM_STYLES_SCROLL_DOWN, SECTION_NUMBER_SCROLL_DOWN, TOP_NUMBER } from './constants';
 import { Wrapper, SecondaryWrapper } from './second-section.styled';
 import { SecondSectionCards } from './ui';
@@ -21,7 +19,6 @@ const Human = dynamic(() => import('./ui/human'), {
 export const SecondSection: FC = () => {
   const { isVisible, setIsVisible, isIgnore } = useSecondSectionStore();
   const ref = useObserverDetectSection(setIsVisible, isIgnore);
-  const isBreakpoint = useMediaQuery(900);
   const t = useTranslations('SecondSection.ScrollDown');
   const f = useTranslations(`SecondSection.SecondSectionTitle`);
 
@@ -54,8 +51,6 @@ export const SecondSection: FC = () => {
         <Human />
         <SecondSectionCards />
       </SecondaryWrapper>
-      {!isBreakpoint && <NavigationPanel />}
-      <NavigateButton />
       <ScrollDown
         customStyles={ CUSTOM_STYLES_SCROLL_DOWN }
         sectionNumber={ SECTION_NUMBER_SCROLL_DOWN }

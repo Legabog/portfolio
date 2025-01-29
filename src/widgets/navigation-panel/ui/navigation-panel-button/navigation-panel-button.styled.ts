@@ -111,7 +111,7 @@ export const SecondIconWrapper = styled.div`
   transform: translate(0, 0) rotate(0deg) skewX(0) skewY(0) scaleX(1) scaleY(1);
   rotate: 0deg;
 `;
-export const Wrapper = styled.button<{ $isVisible: boolean, $type: Props['type']; }>`
+export const Wrapper = styled.button<{ $isVisible: boolean; $type: Props['type'] }>`
   ${border()}
   opacity: ${({ $isVisible }) => ($isVisible ? 1 : 0)};
   visibility: ${({ $isVisible }) => ($isVisible ? 'visible' : 'hidden')};

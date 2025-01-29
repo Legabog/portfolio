@@ -20,7 +20,6 @@ export const NavigationPanelButton: FC<Props> = ({ type, activeSectionId }) => {
       $isVisible={ !isBottomAndLastSection }
       $type={ type }
       data-testid={ `navigation-panel-${type}-button` }
-      disabled={ isBottomAndLastSection }
       title={ title }
       onClick={ throttledOnClick }
     >

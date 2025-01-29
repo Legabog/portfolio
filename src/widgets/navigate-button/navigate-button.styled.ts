@@ -100,8 +100,23 @@ export const Wrapper = styled.button<{ $isInitalized: boolean; $isVisible: boole
     css`
       animation: ${$isVisible ? fadeIn : fadeOut} 0.75s ease-out;
     `}
-
   @media only screen and (max-width: 900px) {
     right: 6px;
+
+    &&&:hover {
+      background-color: ${({ theme }) => theme.backgroundColor};
+      path {
+        fill: ${orange};
+      }
+    }
+    &&&:active {
+      background-color: ${orange};
+      svg {
+        animation: none;
+        path {
+          fill: ${({ theme }) => theme.backgroundColor};
+        }
+      }
+    }
   }
 `;
