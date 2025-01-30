@@ -51,18 +51,18 @@ to {
   transform: translateX(10px);
 }
 `;
-export const border = (customStyle?: string) => css`
+const border = (customStyle?: string) => css`
   border: 1px solid ${orange};
   border-radius: 6px;
   ${customStyle}
 `;
-export const flexCenter = (customStyle?: string) => css`
+const flexCenter = (customStyle?: string) => css`
   display: flex;
   justify-content: center;
   align-items: center;
   ${customStyle}
 `;
-export const absoluteWithFullSize = (customStyle?: string) => css`
+const absoluteWithFullSize = (customStyle?: string) => css`
   position: absolute;
   top: 0;
   left: 0;
