@@ -3,7 +3,7 @@ import { useLocale } from 'next-intl';
 
 import { Locale } from '@locales';
 
-export const RANDOM_LETTERS = {
+const RANDOM_LETTERS = {
   ru: `ЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ`.split(''),
   en: `QWERTYUIOPASDFGHJKLZXCVBNM`.split(''),
 };
