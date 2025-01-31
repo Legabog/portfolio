@@ -5,7 +5,7 @@ export const useLogic = () => {
   const vtbRef = useRef<HTMLDivElement | null>(null);
   const linkifyRef = useRef<HTMLDivElement | null>(null);
   const musiconRef = useRef<HTMLDivElement | null>(null);
-  const [overlappingType, setOverlappingType] = useState<'vtb' | 'musicon' | 'linkify'>('linkify');
+  const [overlappingType, setOverlappingType] = useState<FourthSection.OverlappingType>('linkify');
 
   useEffect(() => {
     const checkOverlap = () => {

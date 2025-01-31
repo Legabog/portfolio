@@ -5,7 +5,7 @@ export interface Props {
   frontTechnologyIcons: { icon: ReactElement; id: string; title: string }[];
   icon: ReactElement;
   id: string;
-  overlappingType: 'vtb' | 'musicon' | 'linkify';
+  overlappingType: FourthSection.OverlappingType;
   secondaryTitleNumber: string;
   sectionRef: MutableRefObject<HTMLDivElement | null>;
   topNumber: string;

@@ -11,7 +11,15 @@ export const Projects: FC = () => {
 
   return (
     <Wrapper data-testid='projects'>
-      {!isBreakpoint && <LeftPart absoluteRef={ absoluteRef } overlappingType={ overlappingType } />}
+      {!isBreakpoint && (
+        <LeftPart
+          absoluteRef={ absoluteRef }
+          linkifyRef={ linkifyRef }
+          musiconRef={ musiconRef }
+          overlappingType={ overlappingType }
+          vtbRef={ vtbRef }
+        />
+      )}
       <RightPart linkifyRef={ linkifyRef } musiconRef={ musiconRef } vtbRef={ vtbRef } />
     </Wrapper>
   );
