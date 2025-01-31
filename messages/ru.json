@@ -146,6 +146,15 @@
 						"linkify": "01",
 						"musicon": "02",
 						"vtb": "03"
+					},
+					"NavigationSections": {
+						"NavigationSectionItem": {
+							"tooltip": {
+								"linkify": "перход на Linkify",
+								"vtb": "перход на VTB",
+								"musicon": "перход на MusicOn"
+							}
+						}
 					}
 				}
 			},
