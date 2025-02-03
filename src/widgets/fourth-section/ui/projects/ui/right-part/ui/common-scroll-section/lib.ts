@@ -12,11 +12,6 @@ export const useLogic = () => {
       const musicOnCard = document.getElementById('musicon-card');
       const vtbCard = document.getElementById('vtb-card');
 
-      console.log('isVisible---', isVisible);
-      console.log('linkifyCard---', linkifyCard);
-      console.log('musicOnCard---', musicOnCard);
-      console.log('vtbCard---', vtbCard);
-
       if (linkifyCard && musicOnCard && vtbCard && commonScrollSection) {
         const commonScrollSectionRect = commonScrollSection.getBoundingClientRect();
         const linkifyCardRect = linkifyCard.getBoundingClientRect();
