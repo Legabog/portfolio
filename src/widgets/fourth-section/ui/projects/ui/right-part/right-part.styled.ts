@@ -13,6 +13,9 @@ export const Wrapper = styled.div`
     & > div:last-child {
       margin-bottom: 0px;
     }
+    & > div:first-child {
+      margin-bottom: 20px;
+    }
   }
 `;
 export const MusicOnWrapper = styled.div`
