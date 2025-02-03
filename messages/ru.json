@@ -159,6 +159,9 @@
 				}
 			},
 			"FourthSectionRightPart": {
+				"CommonScrollSection": {
+					"text": "прокрутите вниз"
+				},
 				"Section": {
 					"Title": {
 						"linkify": "Linkify",

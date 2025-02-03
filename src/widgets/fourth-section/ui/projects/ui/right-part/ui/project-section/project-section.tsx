@@ -56,7 +56,7 @@ export const ProjectSection: FC<Props> = ({
 
   return (
     <Wrapper ref={ sectionRef } data-testid='project-section'>
-      <Card $isFliped={ isFliped } onClick={ onClick }>
+      <Card $isFliped={ isFliped } id={ `${overlappingType}-card` } onClick={ onClick }>
         <Front>
           <FrontHeader title={ topNumber }>{topNumber}</FrontHeader>
           <FrontBody>

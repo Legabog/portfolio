@@ -159,6 +159,9 @@
 				}
 			},
 			"FourthSectionRightPart": {
+				"CommonScrollSection": {
+					"text": "scroll down"
+				},
 				"Section": {
 					"Title": {
 						"linkify": "Linkify",
