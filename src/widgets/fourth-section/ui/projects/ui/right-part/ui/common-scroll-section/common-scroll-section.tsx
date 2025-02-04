@@ -12,10 +12,15 @@ export const CommonScrollSection: FC = () => {
   );
   const text = t('text');
   const { animate, clear, generatedString } = useHoverRandomLettersAnimation(text);
-  const { isVisible } = useLogic();
+  const { isVisible, isPlayingAnimation } = useLogic();
 
   return (
-    <Wrapper $isVisible={ isVisible } data-testid='common-scroll-section'>
+    <Wrapper
+      $isPlayingAnimation={ isPlayingAnimation }
+      $isVisible={ isVisible }
+      data-testid='common-scroll-section'
+      id='common-scroll-section'
+    >
       <Text title={ text } onMouseEnter={ animate } onMouseLeave={ clear }>
         {generatedString}
       </Text>

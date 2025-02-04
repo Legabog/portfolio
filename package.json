@@ -43,7 +43,6 @@
     "react-dom": "18",
     "react-type-animation": "3.2.0",
     "styled-components": "6.1.11",
-    "ts-node": "^10.9.2",
     "zustand": "5.0.1"
   },
   "devDependencies": {
@@ -84,7 +83,9 @@
     "jest-environment-jsdom": "29.7.0",
     "lint-staged": "15.2.2",
     "prettier": "3.2.5",
+    "sonda": "^0.7.1",
     "storybook": "7.6.19",
+    "ts-node": "^10.9.2",
     "typescript": "5"
   },
   "peerDependencies": {
