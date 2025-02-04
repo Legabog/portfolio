@@ -8,24 +8,20 @@ const fadeIn = keyframes`
   from {
     visibility: hidden;
     opacity: 0;
-    transform: translateY(10px);
   }
   to {
     visibility: visible;
     opacity: 1;
-    transform: translateY(0);
   }
 `;
 const fadeOut = keyframes`
 from {
   visibility: visible;
   opacity: 1;
-  transform: translateY(0);
 }
 to {
   visibility: hidden;
   opacity: 0;
-  transform: translateY(10px);
 }
 `;
 const moveDown = keyframes`
@@ -51,7 +47,7 @@ const moveDown = keyframes`
 }
   `;
 
-export const Wrapper = styled.div<{ $isVisible: boolean }>`
+export const Wrapper = styled.div<{ $isPlayingAnimation: boolean; $isVisible: boolean }>`
   opacity: ${({ $isVisible }) => ($isVisible ? 1 : 0)};
   visibility: ${({ $isVisible }) => ($isVisible ? 'visible' : 'hidden')};
   width: calc(100% - 64px);
@@ -63,6 +59,8 @@ export const Wrapper = styled.div<{ $isVisible: boolean }>`
   margin: 60px 32px 20px 32px;
   user-select: none;
   gap: 8px;
+  animation-play-state: ${({ $isPlayingAnimation }) =>
+    $isPlayingAnimation ? 'running' : 'paused'};
 
   svg {
     width: 10px;
@@ -75,9 +73,11 @@ export const Wrapper = styled.div<{ $isVisible: boolean }>`
     }
   }
 
-  ${({ $isVisible }) => css`
-    animation: ${$isVisible ? fadeIn : fadeOut} 0.75s ease-out;
-  `}
+  ${({ $isVisible, $isPlayingAnimation }) =>
+    $isPlayingAnimation &&
+    css`
+      animation: ${$isVisible ? fadeIn : fadeOut} 0.75s ease-out;
+    `}
 
   @media only screen and (max-width: 900px) {
     width: 100%;

@@ -3,11 +3,12 @@ import { useEffect } from 'react';
 import { useCommonScrollStore } from './model';
 
 export const useLogic = () => {
-  const { isVisible, setIsVisible } = useCommonScrollStore();
+  const { isVisible, setIsVisible, isPlayingAnimation, setIsPlayingAnimation } =
+    useCommonScrollStore();
 
   useEffect(() => {
     const checkOverlap = () => {
-      const commonScrollSection = document.getElementById('navigation-panel');
+      const commonScrollSection = document.getElementById('common-scroll-section');
       const linkifyCard = document.getElementById('linkify-card');
       const musicOnCard = document.getElementById('musicon-card');
       const vtbCard = document.getElementById('vtb-card');
@@ -24,18 +25,24 @@ export const useLogic = () => {
             musicon: musicOnCardRect,
             vtb: vtbCardRect,
           }[type];
-
-          return (
+          const lastSectionPlace = commonScrollSectionRect.y > vtbCardRect.y;
+          const intersectionCondition =
             !(
               commonScrollSectionRect.right < targetRef.left ||
               commonScrollSectionRect.left > targetRef.right ||
               commonScrollSectionRect.bottom < targetRef.top ||
               commonScrollSectionRect.top > targetRef.bottom
-            ) && setIsVisible(false)
-          );
+            ) || lastSectionPlace;
+
+          setIsPlayingAnimation(!lastSectionPlace);
+
+          return intersectionCondition;
         };
-        ['linkify', 'musicon', 'vtb'].forEach((type) =>
-          overlappingTypeSetter(type as FourthSection.OverlappingType),
+
+        setIsVisible(
+          ['linkify', 'musicon', 'vtb']
+            .map((type) => overlappingTypeSetter(type as FourthSection.OverlappingType))
+            .filter((value) => value === false).length === 3,
         );
       }
     };
@@ -44,7 +51,7 @@ export const useLogic = () => {
     return () => {
       window.removeEventListener('scroll', checkOverlap);
     };
-  }, [isVisible, setIsVisible]);
+  }, [setIsVisible, setIsPlayingAnimation]);
 
-  return { isVisible };
+  return { isVisible, isPlayingAnimation };
 };
