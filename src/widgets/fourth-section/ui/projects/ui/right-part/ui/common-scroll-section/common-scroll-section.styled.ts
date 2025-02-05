@@ -1,29 +1,9 @@
-import styled, { css, keyframes } from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 import { COLORS } from '@shared/constants';
 
 const { orange } = COLORS;
 
-const fadeIn = keyframes`
-  from {
-    visibility: hidden;
-    opacity: 0;
-  }
-  to {
-    visibility: visible;
-    opacity: 1;
-  }
-`;
-const fadeOut = keyframes`
-from {
-  visibility: visible;
-  opacity: 1;
-}
-to {
-  visibility: hidden;
-  opacity: 0;
-}
-`;
 const moveDown = keyframes`
 0% {
   transform: translateY(0px);
@@ -73,15 +53,9 @@ export const Wrapper = styled.div<{ $isPlayingAnimation: boolean; $isVisible: bo
     }
   }
 
-  ${({ $isVisible, $isPlayingAnimation }) =>
-    $isPlayingAnimation &&
-    css`
-      animation: ${$isVisible ? fadeIn : fadeOut} 0.75s ease-out;
-    `}
-
   @media only screen and (max-width: 900px) {
     width: 100%;
-    margin: 60px 0px 20px 0px;
+    margin: 20px 0px;
   }
 `;
 export const Text = styled.p`
