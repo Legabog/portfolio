@@ -1,18 +1,11 @@
 import { FC } from 'react';
-import { useTranslations } from 'next-intl';
 
-import { useHoverRandomLettersAnimation } from '@shared/hooks';
 import { ChevronDownIcon } from '@shared/ui';
 import { Wrapper, Text } from './common-scroll-section.styled';
 import { useLogic } from './lib';
 
 export const CommonScrollSection: FC = () => {
-  const t = useTranslations(
-    `FourthSection.FourthSectionProjects.FourthSectionRightPart.CommonScrollSection`,
-  );
-  const text = t('text');
-  const { animate, clear, generatedString } = useHoverRandomLettersAnimation(text);
-  const { isVisible, isPlayingAnimation } = useLogic();
+  const { isVisible, isPlayingAnimation, text, animate, clear, generatedString } = useLogic();
 
   return (
     <Wrapper
