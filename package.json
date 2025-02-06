@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint ./src --color",
     "lint:types": "tsc --noEmit",
     "lint:css": "stylelint \"./src/**/*.styled.ts\"",
     "lint:css:fix": "stylelint --fix \"./src/**/*.styled.ts\"",
@@ -25,7 +25,7 @@
     "*.{js,jsx,ts,tsx}": [
       "pnpm prettier:fix",
       "pnpm lint:fix",
-      "pnpm lint:css"
+      "pnpm lint:css:fix"
     ]
   },
   "eslintConfig": {
