@@ -15,6 +15,9 @@ jobs:
           node-version: '20.x.x'
           cache: pnpm
       - run: pnpm install
-      - run: pnpm lint
+      - run: pnpm lint:prettier:fix
+      - run: pnpm lint:eslint:fix
+      - run: pnpm lint:css:fix
+      - run: pnpm lint:scripts:fix
       - run: pnpm lint:types
       - run: pnpm test
