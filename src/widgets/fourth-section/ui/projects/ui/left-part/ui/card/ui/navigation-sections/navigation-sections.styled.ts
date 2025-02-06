@@ -10,6 +10,6 @@ export const Wrapper = styled.div`
 `;
 export const SecondaryWrapper = styled.div`
   display: flex;
-  width: 80%;
   gap: 16px;
+  width: 80%;
 `;

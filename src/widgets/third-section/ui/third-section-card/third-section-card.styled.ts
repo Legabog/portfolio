@@ -29,34 +29,34 @@ const blink = (type: 'icon' | 'title', { backgroundColor }: DefaultTheme) => key
   }
 `;
 export const Wrapper = styled.div`
-  width: 80%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 80%;
   user-select: none;
 
-  @media only screen and (max-width: 900px) {
+  @media only screen and (width <= 900px) {
     width: calc(100% - 40px);
-    margin: 0px 20px;
+    margin: 0 20px;
   }
 `;
 export const Card = styled.div`
-  margin-top: 16px;
-  width: fit-content;
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 3px;
+  align-items: center;
+  width: fit-content;
   padding: 8px 16px;
-  border-radius: 10px;
-  border: 1px solid ${orangeSecondary};
+  margin-top: 16px;
   background-color: ${({ theme }) => theme.backgroundColor};
+  border: 1px solid ${orangeSecondary};
+  border-radius: 10px;
 `;
 export const CardAnimatedSection = styled.div`
-  width: 100%;
   display: flex;
-  justify-content: flex-end;
   align-items: center;
+  justify-content: flex-end;
+  width: 100%;
 
   svg {
     width: 11px;
@@ -67,16 +67,18 @@ export const CardAnimatedSection = styled.div`
     }
   }
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (width <= 600px) {
     justify-content: flex-start;
   }
-  @media only screen and (max-width: 400px) {
+
+  @media only screen and (width <= 400px) {
     svg {
       width: 10px;
       height: 10px;
     }
   }
-  @media only screen and (max-width: 350px) {
+
+  @media only screen and (width <= 350px) {
     svg {
       width: 9px;
       height: 9px;
@@ -87,16 +89,18 @@ export const DescriptionWrapper = styled.div`
   width: fit-content;
   font-size: 18px;
   font-weight: 400;
-  letter-spacing: 0px;
   text-transform: uppercase;
+  letter-spacing: 0;
 
-  @media only screen and (max-width: 1000px) {
+  @media only screen and (width <= 1000px) {
     font-size: 16px;
   }
-  @media only screen and (max-width: 500px) {
+
+  @media only screen and (width <= 500px) {
     font-size: 14px;
   }
-  @media only screen and (max-width: 330px) {
+
+  @media only screen and (width <= 330px) {
     font-size: 12px;
   }
 `;
@@ -107,19 +111,20 @@ export const SecondPart = styled.span`
   color: ${orange};
 `;
 export const AnimatedTitle = styled.span`
+  margin-left: 3px;
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
   text-transform: uppercase;
   animation: ${({ theme }) => blink('title', theme)} 0.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  margin-left: 3px;
 
-  @media only screen and (max-width: 400px) {
-    font-size: 11px;
+  @media only screen and (width <= 400px) {
     margin-left: 2px;
+    font-size: 11px;
   }
-  @media only screen and (max-width: 355px) {
-    font-size: 10px;
+
+  @media only screen and (width <= 355px) {
     margin-left: 1px;
+    font-size: 10px;
   }
 `;

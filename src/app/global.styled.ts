@@ -4,6 +4,7 @@ export const GlobalStyles = createGlobalStyle`
   * {
     margin: 0;
   }
+
   body {
     min-height: 100vh;
 		background: ${({ theme }) => theme.backgroundColor};

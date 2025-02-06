@@ -30,58 +30,59 @@ export const Span = styled.span<{ $caruselType: 'left' | 'right'; $isPaused: boo
   justify-content: space-between;
   animation: ${({ $caruselType }) => moving($caruselType)} 40s linear infinite;
   animation-play-state: ${({ $isPaused }) => ($isPaused ? 'paused' : 'running')};
-  text-rendering: optimizeSpeed;
+  text-rendering: optimizespeed;
 `;
 export const Li = styled.li`
   margin-left: 50px;
   list-style-type: none;
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (width <= 600px) {
     margin-left: 20px;
   }
 `;
 export const IconWrapper = styled.div`
-  width: 100px;
+  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  position: relative;
+  justify-content: center;
+  width: 100px;
   padding: 64px;
-  border-radius: 10px;
-  border: 1px solid ${orange};
   background-color: ${({ theme }) => theme.backgroundColor};
+  border: 1px solid ${orange};
+  border-radius: 10px;
 
   svg {
     width: 48px;
     height: 48px;
   }
+
   g {
     stroke: ${({ theme }) => theme.backgroundColor};
   }
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (width <= 600px) {
     width: 50px;
     padding: 32px;
   }
 `;
 export const IconText = styled.span`
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: absolute;
   top: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
+  color: ${({ theme }) => theme.color};
   font-size: 12px;
   font-weight: 700;
   line-height: 16px;
-  letter-spacing: 0px;
   margin-top: 8px;
-  color: ${({ theme }) => theme.color};
   text-transform: uppercase;
+  letter-spacing: 0;
   white-space: nowrap;
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (width <= 600px) {
     display: none;
   }
 `;
@@ -93,7 +94,7 @@ export const Wrapper = styled.div<{
   flex-wrap: nowrap;
   align-items: center;
   overflow: hidden;
-  text-rendering: optimizeSpeed;
+  text-rendering: optimizespeed;
 
   ${({ $customStyles }) =>
     $customStyles &&

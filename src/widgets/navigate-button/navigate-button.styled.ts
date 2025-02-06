@@ -52,26 +52,26 @@ to {
 `;
 
 export const Wrapper = styled.button<{ $isInitalized: boolean; $isVisible: boolean }>`
-  opacity: ${({ $isVisible }) => ($isVisible ? 1 : 0)};
-  visibility: ${({ $isVisible }) => ($isVisible ? 'visible' : 'hidden')};
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: fixed;
   top: 80%;
   right: 2%;
-  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 14px;
+  background-color: ${({ theme }) => theme.backgroundColor};
   border: 1px solid ${orange};
   border-radius: 6px;
-  background-color: ${({ theme }) => theme.backgroundColor};
+  opacity: ${({ $isVisible }) => ($isVisible ? 1 : 0)};
+  visibility: ${({ $isVisible }) => ($isVisible ? 'visible' : 'hidden')};
+  z-index: 1;
   cursor: pointer;
 
   svg {
-    rotate: 180deg;
     width: 11px;
     height: 11px;
     border-radius: 5px;
+    rotate: 180deg;
     animation: ${moveDown} 0.75s ease-out infinite;
 
     path {
@@ -81,16 +81,20 @@ export const Wrapper = styled.button<{ $isInitalized: boolean; $isVisible: boole
 
   &:hover {
     background-color: ${orange};
+
     svg {
       animation: none;
+
       path {
         fill: ${({ theme }) => theme.backgroundColor};
       }
     }
   }
+
   &:disabled {
     cursor: not-allowed;
   }
+
   &:active {
     transform: scale(0.9);
   }
@@ -100,19 +104,23 @@ export const Wrapper = styled.button<{ $isInitalized: boolean; $isVisible: boole
     css`
       animation: ${$isVisible ? fadeIn : fadeOut} 0.75s ease-out;
     `}
-  @media only screen and (max-width: 900px) {
+  @media only screen and (width <= 900px) {
     right: 6px;
 
     &&&:hover {
       background-color: ${({ theme }) => theme.backgroundColor};
+
       path {
         fill: ${orange};
       }
     }
+
     &&&:active {
       background-color: ${orange};
+
       svg {
         animation: none;
+
         path {
           fill: ${({ theme }) => theme.backgroundColor};
         }

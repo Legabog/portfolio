@@ -4,11 +4,11 @@ export const Wrapper = styled.div<{ $isMobile?: boolean }>`
   display: flex;
   align-items: center;
 
-  @media screen and (max-width: 900px) {
+  @media screen and (width <= 900px) {
     ${({ $isMobile }) =>
       $isMobile &&
       css`
-        margin: 12px 0px 0px 20px;
+        margin: 12px 0 0 20px;
       `}
   }
 `;

@@ -22,15 +22,16 @@ export const Main = styled.div`
   z-index: 3;
   width: 60px;
   height: 60px;
+
   &::after {
-    content: ' ';
     display: block;
     width: 30px;
     height: 30px;
     margin: 8px;
-    border-radius: 50%;
+    content: ' ';
     border: 6px solid ${orange};
     border-color: ${orange} transparent;
+    border-radius: 50%;
     animation: ${animation} 1.2s linear infinite;
   }
 `;

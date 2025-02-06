@@ -6,72 +6,73 @@ import { COLORS } from '@shared/constants';
 const { orange } = COLORS;
 
 export const Title = styled.span`
+  color: ${({ theme }) => theme.color};
   font-size: 20px;
   font-weight: 500;
   line-height: 22px;
-  letter-spacing: 0px;
   margin-top: 16px;
-  color: ${({ theme }) => theme.color};
   text-transform: uppercase;
+  letter-spacing: 0;
 `;
 export const Description = styled.span`
-  margin-top: 8px;
-  font-size: 14px;
-  line-height: 18px;
-  font-weight: 500;
   color: ${({ theme }) => theme.description};
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  margin-top: 8px;
 `;
 export const StyledTypeAnimation = styled(TypeAnimation)`
+  color: ${({ theme }) => theme.color};
   font-size: 20px;
   font-weight: 500;
   line-height: 22px;
-  letter-spacing: 0px;
   margin-top: 16px;
-  color: ${({ theme }) => theme.color};
   text-transform: uppercase;
+  letter-spacing: 0;
 `;
 export const TopSection = styled.div`
-  width: 100%;
-  height: 32px;
   display: flex;
   justify-content: space-between;
+  width: 100%;
+  height: 32px;
 `;
 export const TopSectionText = styled.span<{ $type: 'number' | 'text' }>`
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 16px;
   color: ${({ theme }) => theme.description};
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
   text-transform: uppercase;
 
   ${({ $type }) =>
     $type === 'text' &&
     css`
-      font-weight: 400;
-      font-size: 14px;
       align-self: center;
+      font-size: 14px;
+      font-weight: 400;
     `}
 `;
 const baseCard = css`
+  position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  position: absolute;
-  left: 0px;
-  top: 0px;
   width: calc(100% - 32px);
   height: calc(100% - 32px);
   padding: 16px;
-  backface-visibility: hidden;
-  transition: 0.9s;
-  overflow: hidden;
-  border-radius: 10px;
-  border: 1px solid ${({ theme }) => theme.cardBorder};
   background-color: ${({ theme }) => theme.backgroundColor};
+  border: 1px solid ${({ theme }) => theme.cardBorder};
+  border-radius: 10px;
+  transition: 0.9s;
   cursor: pointer;
+  overflow: hidden;
+  backface-visibility: hidden;
 
   svg {
     width: 32px;
     height: 32px;
+
     path {
       fill: ${({ theme }) => theme.color};
     }
@@ -80,6 +81,7 @@ const baseCard = css`
   &:hover {
     border: 1px solid ${orange};
     filter: brightness(1.05);
+
     path {
       fill: ${orange};
     }
@@ -95,11 +97,11 @@ export const BackWrapper = styled.div`
   ${baseCard}
 `;
 export const CardWrapper = styled.div<{ $flip?: boolean }>`
+  position: relative;
+  display: flex;
   width: 100%;
   height: 152px;
-  display: flex;
   cursor: pointer;
-  position: relative;
   perspective: 4000px;
 
   ${FrontWrapper} {
@@ -113,10 +115,11 @@ export const CardWrapper = styled.div<{ $flip?: boolean }>`
     transform: rotateX(${({ $flip }) => ($flip ? '1turn' : '180deg')});
   }
 
-  @media only screen and (max-width: 1300px) {
+  @media only screen and (width <= 1300px) {
     height: 162px;
   }
-  @media only screen and (max-width: 450px) {
+
+  @media only screen and (width <= 450px) {
     height: 182px;
   }
 `;

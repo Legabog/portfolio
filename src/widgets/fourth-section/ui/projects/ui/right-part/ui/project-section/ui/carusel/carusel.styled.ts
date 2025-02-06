@@ -26,7 +26,7 @@ export const Span = styled.span<{ $caruselType: 'left' | 'right'; $isPaused: boo
   justify-content: space-between;
   animation: ${({ $caruselType }) => moving($caruselType)} 40s linear infinite;
   animation-play-state: ${({ $isPaused }) => ($isPaused ? 'paused' : 'running')};
-  text-rendering: optimizeSpeed;
+  text-rendering: optimizespeed;
 `;
 export const Li = styled.li<{
   $customStyles?: string;
@@ -34,13 +34,14 @@ export const Li = styled.li<{
   margin-left: 32px;
   list-style-type: none;
 
-  @media only screen and (max-width: 1000px) {
+  @media only screen and (width <= 1000px) {
     svg {
       width: 36px;
       height: 36px;
     }
   }
-  @media only screen and (max-width: 900px) {
+
+  @media only screen and (width <= 900px) {
     svg {
       width: 54px;
       height: 54px;
@@ -54,7 +55,7 @@ export const Wrapper = styled.div<{
   flex-wrap: nowrap;
   align-items: center;
   overflow: hidden;
-  text-rendering: optimizeSpeed;
+  text-rendering: optimizespeed;
 
   ${({ $customStyles }) =>
     $customStyles &&

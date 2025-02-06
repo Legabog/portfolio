@@ -30,7 +30,7 @@ export const Wrapper = styled.div<{ $customStyles?: string }>`
   width: 80%;
   user-select: none;
 
-  @media only screen and (max-width: 900px) {
+  @media only screen and (width <= 900px) {
     width: calc(100% - 40px);
   }
   ${({ $customStyles }) =>
@@ -40,12 +40,12 @@ export const Wrapper = styled.div<{ $customStyles?: string }>`
     `}
 `;
 export const WrapperScroll = styled.div`
-  margin-bottom: 8px;
-  width: 100%;
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
   gap: 8px;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  margin-bottom: 8px;
 
   svg {
     width: 10px;
@@ -59,31 +59,32 @@ export const WrapperScroll = styled.div`
   }
 `;
 export const WrapperText = styled.div`
-  width: 100%;
   display: flex;
   align-items: center;
+  width: 100%;
   border-top: 1px solid ${orangeSecondary};
 
   p {
     margin-top: 8px;
   }
+
   p:first-child {
     margin-right: 30%;
   }
 
-  @media only screen and (max-width: 900px) {
+  @media only screen and (width <= 900px) {
     p:first-child {
       margin-right: 20%;
     }
   }
 `;
 export const Text = styled.p`
+  color: ${({ theme }) => theme.color};
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
-  letter-spacing: 0px;
-  color: ${({ theme }) => theme.color};
   text-transform: uppercase;
+  letter-spacing: 0;
   white-space: break-spaces;
 
   &:hover {

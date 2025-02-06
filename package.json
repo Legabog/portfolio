@@ -8,6 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "lint:types": "tsc --noEmit",
+    "lint:css": "stylelint \"./src/**/*.styled.ts\"",
+    "lint:css:fix": "stylelint --fix \"./src/**/*.styled.ts\"",
     "test": "jest",
     "test:e2e": "pnpx playwright test",
     "lint:fix": "eslint ./src --fix --color",
@@ -22,7 +24,8 @@
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
       "pnpm prettier:fix",
-      "pnpm run lint:fix"
+      "pnpm lint:fix",
+      "pnpm lint:css"
     ]
   },
   "eslintConfig": {
@@ -84,9 +87,14 @@
     "jest-environment-jsdom": "29.7.0",
     "knip": "^5.43.6",
     "lint-staged": "15.2.2",
+    "postcss-styled-syntax": "^0.7.1",
     "prettier": "3.2.5",
     "sonda": "^0.7.1",
     "storybook": "7.6.19",
+    "stylelint": "^16.14.1",
+    "stylelint-config-recess-order": "^6.0.0",
+    "stylelint-config-standard": "^37.0.0",
+    "stylelint-order": "^6.0.4",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.3"
   },

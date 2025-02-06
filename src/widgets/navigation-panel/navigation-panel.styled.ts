@@ -30,16 +30,16 @@ to {
 `;
 
 export const Wrapper = styled.div<{ $isInitialized: boolean; $isVisible: boolean }>`
-  opacity: ${({ $isVisible }) => ($isVisible ? 1 : 0)};
-  visibility: ${({ $isVisible }) => ($isVisible ? 'visible' : 'hidden')};
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
   position: fixed;
-  gap: 24px;
   top: 30%;
   right: 2%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: ${({ $isVisible }) => ($isVisible ? 1 : 0)};
+  visibility: ${({ $isVisible }) => ($isVisible ? 'visible' : 'hidden')};
+  gap: 24px;
   z-index: 1;
 
   ${({ $isVisible, $isInitialized }) =>
@@ -50,12 +50,11 @@ export const Wrapper = styled.div<{ $isInitialized: boolean; $isVisible: boolean
 `;
 export const NavigationPanelItemsWrapper = styled.div`
   display: flex;
+  flex-flow: column wrap;
+  gap: 8px;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  flex-wrap: wrap;
-  gap: 8px;
   padding: 8px;
-  border-radius: 9999px;
   border: 1px solid ${orange};
+  border-radius: 9999px;
 `;

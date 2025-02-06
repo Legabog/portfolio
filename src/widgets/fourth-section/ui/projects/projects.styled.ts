@@ -11,20 +11,20 @@ const fadeIn = keyframes`
   }
 `;
 export const Wrapper = styled.div`
-  margin-top: 40px;
-  width: 80%;
   position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  width: 80%;
+  margin-top: 40px;
   background-color: ${({ theme }) => theme.backgroundColor};
   animation: ${fadeIn} 1s ease-out;
 
-  @media only screen and (max-width: 900px) {
+  @media only screen and (width <= 900px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: calc(100% - 40px);
     margin-top: 16px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: transparent;
   }
 `;

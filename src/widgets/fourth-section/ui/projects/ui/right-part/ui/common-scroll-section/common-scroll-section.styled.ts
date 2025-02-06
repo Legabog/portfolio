@@ -28,17 +28,17 @@ const moveDown = keyframes`
   `;
 
 export const Wrapper = styled.div<{ $isPlayingAnimation: boolean; $isVisible: boolean }>`
-  opacity: ${({ $isVisible }) => ($isVisible ? 1 : 0)};
-  visibility: ${({ $isVisible }) => ($isVisible ? 'visible' : 'hidden')};
-  width: calc(100% - 64px);
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
   position: sticky;
   top: 60px;
-  margin: 60px 32px 20px 32px;
-  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: calc(100% - 64px);
+  margin: 60px 32px 20px;
+  opacity: ${({ $isVisible }) => ($isVisible ? 1 : 0)};
+  visibility: ${({ $isVisible }) => ($isVisible ? 'visible' : 'hidden')};
   gap: 8px;
+  user-select: none;
   animation-play-state: ${({ $isPlayingAnimation }) =>
     $isPlayingAnimation ? 'running' : 'paused'};
 
@@ -53,18 +53,18 @@ export const Wrapper = styled.div<{ $isPlayingAnimation: boolean; $isVisible: bo
     }
   }
 
-  @media only screen and (max-width: 900px) {
+  @media only screen and (width <= 900px) {
     width: 100%;
-    margin: 20px 0px;
+    margin: 20px 0;
   }
 `;
 export const Text = styled.p`
+  color: ${({ theme }) => theme.color};
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
-  letter-spacing: 0px;
-  color: ${({ theme }) => theme.color};
   text-transform: uppercase;
+  letter-spacing: 0;
   white-space: break-spaces;
 
   &:hover {

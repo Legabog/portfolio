@@ -4,15 +4,17 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
 
-  @media only screen and (max-width: 900px) {
+  @media only screen and (width <= 900px) {
     width: 100%;
 
     & > div {
       margin-bottom: 50px;
     }
+
     & > div:last-child {
-      margin-bottom: 0px;
+      margin-bottom: 0;
     }
+
     & > div:first-child {
       margin-bottom: 20px;
     }

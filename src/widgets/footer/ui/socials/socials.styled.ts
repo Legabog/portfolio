@@ -2,29 +2,33 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
 
   a:first-child {
     margin-right: 30px;
   }
+
   a:nth-child(2) {
-    margin: 0px 30px;
+    margin: 0 30px;
   }
+
   a:last-child {
     margin-left: 30px;
   }
 
-  @media screen and (max-width: 800px) {
+  @media screen and (width <= 800px) {
     a:first-child {
-      margin-right: 0px;
+      margin-right: 0;
     }
+
     a:nth-child(2) {
-      margin: 0px 0px;
+      margin: 0;
     }
+
     a:last-child {
-      margin-left: 0px;
+      margin-left: 0;
     }
   }
 `;

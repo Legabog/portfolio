@@ -2,37 +2,41 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
   flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-end;
 
   a:first-child {
     padding-right: 5px;
   }
+
   a:nth-child(2) {
-    padding: 0px 10px;
-  }
-  a:last-child {
-    border-right: none;
-    padding-left: 7px;
-    padding-right: none;
+    padding: 0 10px;
   }
 
-  @media screen and (max-width: 900px) {
-    width: 100%;
+  a:last-child {
+    padding-right: 0;
+    padding-left: 7px;
+    border-right: none;
+  }
+
+  @media screen and (width <= 900px) {
     flex-direction: column;
-    justify-content: flex-start;
-    margin: 0px 20px;
     gap: 40px;
+    justify-content: flex-start;
+    width: 100%;
+    margin: 0 20px;
 
     a:first-child {
-      padding-right: 0px;
+      padding-right: 0;
     }
+
     a:nth-child(2) {
-      padding: 0px;
+      padding: 0;
     }
+
     a:last-child {
-      padding-left: 0px;
+      padding-left: 0;
     }
   }
 `;
