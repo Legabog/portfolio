@@ -3,7 +3,6 @@
 import { FC } from 'react';
 import { useTranslations } from 'next-intl';
 
-import { Props } from '../../types';
 import { PROJECTS_SVG } from '../../constants';
 import {
   Wrapper,
@@ -17,10 +16,11 @@ import {
   TopNumber,
   SecondaryTitle,
 } from './card.styled';
-import { Carusel } from './ui';
+import { Carusel, NavigationSections } from './ui';
 import { WORDS } from './constants';
+import { Props } from './types';
 
-export const Card: FC<Pick<Props, 'overlappingType'>> = ({ overlappingType }) => {
+export const Card: FC<Props> = ({ overlappingType, linkifyRef, musiconRef, vtbRef }) => {
   const t = useTranslations(`FourthSection.FourthSectionProjects.FourthSectionLeftPart.Card`);
   const conditionTranslate = (
     type: 'Title' | 'SecondaryTitle' | 'Badge' | 'Description' | 'Number' | 'BadgeStatus',
@@ -35,6 +35,12 @@ export const Card: FC<Pick<Props, 'overlappingType'>> = ({ overlappingType }) =>
 
   return (
     <Wrapper data-testid='left-part-card'>
+      <NavigationSections
+        linkifyRef={ linkifyRef }
+        musiconRef={ musiconRef }
+        overlappingType={ overlappingType }
+        vtbRef={ vtbRef }
+      />
       <CardBody>
         <InfoSection>
           <SectionWrapper>

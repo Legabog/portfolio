@@ -4,7 +4,7 @@ import { FC } from 'react';
 import dynamic from 'next/dynamic';
 
 import { Loader } from '@shared/ui';
-import { useAdditionalLogic } from './lib';
+import { useLogic } from './lib';
 import { Wrapper } from './page.styled';
 
 const Header = dynamic(() => import('@widgets/header'), { loading: () => <Loader />, ssr: false });
@@ -32,10 +32,18 @@ const FifthSection = dynamic(() => import('@widgets/fifth-section'), {
   loading: () => <Loader />,
   ssr: false,
 });
+const NavigationPanel = dynamic(() => import('@widgets/navigation-panel'), {
+  loading: () => <Loader />,
+  ssr: false,
+});
+const NavigateButton = dynamic(() => import('@widgets/navigate-button'), {
+  loading: () => <Loader />,
+  ssr: false,
+});
 const Footer = dynamic(() => import('@widgets/footer'), { loading: () => <Loader />, ssr: false });
 
 const Main: FC = () => {
-  const { onMouseMoveHandler } = useAdditionalLogic();
+  const { onMouseMoveHandler, isBreakpoint } = useLogic();
 
   return (
     <Wrapper onMouseMove={ onMouseMoveHandler }>
@@ -46,6 +54,8 @@ const Main: FC = () => {
       <ThirdSection />
       <FourthSection />
       <FifthSection />
+      {!isBreakpoint && <NavigationPanel />}
+      <NavigateButton />
       <Footer />
     </Wrapper>
   );

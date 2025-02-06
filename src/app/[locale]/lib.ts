@@ -1,6 +1,10 @@
 import { MouseEvent } from 'react';
 
-export const useAdditionalLogic = () => {
+import { useMediaQuery } from '@shared/hooks';
+
+export const useLogic = () => {
+  const isBreakpoint = useMediaQuery(900);
+
   const onMouseMoveHandler = ({ clientX, clientY }: MouseEvent<HTMLDivElement>) => {
     document.querySelectorAll('[id^="cell-"]').forEach((cell) => {
       const { left, right, top, bottom } = cell.getBoundingClientRect();
@@ -15,5 +19,5 @@ export const useAdditionalLogic = () => {
     });
   };
 
-  return { onMouseMoveHandler };
+  return { onMouseMoveHandler, isBreakpoint };
 };

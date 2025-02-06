@@ -2,5 +2,8 @@ import { MutableRefObject } from 'react';
 
 export interface Props {
   absoluteRef: MutableRefObject<HTMLDivElement | null>;
-  overlappingType: 'vtb' | 'musicon' | 'linkify';
+  linkifyRef: MutableRefObject<HTMLDivElement | null>;
+  musiconRef: MutableRefObject<HTMLDivElement | null>;
+  overlappingType: FourthSection.OverlappingType;
+  vtbRef: MutableRefObject<HTMLDivElement | null>;
 }

@@ -63,10 +63,6 @@ export const Description = styled.span`
     line-height: 16px;
   }
   @media only screen and (max-width: 900px) {
-    font-size: 18px;
-    line-height: 22px;
-  }
-  @media only screen and (max-width: 600px) {
     font-size: 16px;
     line-height: 20px;
   }
@@ -339,10 +335,6 @@ const baseCard = css`
     padding: 16px;
   }
   @media only screen and (max-width: 900px) {
-    width: calc(100% - 128px);
-    padding: 64px;
-  }
-  @media only screen and (max-width: 600px) {
     width: calc(100% - 64px);
     padding: 32px;
   }
@@ -420,11 +412,9 @@ export const Card = styled.div<{ $isFliped: boolean }>`
   @media only screen and (max-width: 950px) {
     height: 440px;
   }
-  @media only screen and (max-width: 950px) {
-    margin: 0;
-  }
   @media only screen and (max-width: 900px) {
     height: 380px;
+    margin: 0px;
   }
   @media only screen and (max-width: 800px) {
     height: 400px;

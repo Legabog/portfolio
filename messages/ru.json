@@ -146,10 +146,22 @@
 						"linkify": "01",
 						"musicon": "02",
 						"vtb": "03"
+					},
+					"NavigationSections": {
+						"NavigationSectionItem": {
+							"tooltip": {
+								"linkify": "перход на Linkify",
+								"vtb": "перход на VTB",
+								"musicon": "перход на MusicOn"
+							}
+						}
 					}
 				}
 			},
 			"FourthSectionRightPart": {
+				"CommonScrollSection": {
+					"text": "прокрутите вниз"
+				},
 				"Section": {
 					"Title": {
 						"linkify": "Linkify",
@@ -208,5 +220,27 @@
 	},
 	"ScrollDown": {
 		"text": "прокрутите для изучения"
+	},
+	"NavigateButton": {
+		"text": "главный раздел"
+	},
+	"NavigationPanelButton": {
+		"top": {
+			"second-section": "главный раздел",
+			"third-section": "раздел обо мне",
+			"fourth-section": "раздел умений",
+			"fifth-section": "раздел проектов"
+		},
+		"bottom": {
+			"second-section": "раздел умений",
+			"third-section": "раздел проектов",
+			"fourth-section": "раздел технологий"
+		}
+	},
+	"NavigationPanelItem": {
+		"second-section": "раздел обо мне",
+		"third-section": "раздел умений",
+		"fourth-section": "раздел проектов",
+		"fifth-section": "раздел технологий"
 	}
 }

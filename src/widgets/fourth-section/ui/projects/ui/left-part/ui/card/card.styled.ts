@@ -126,10 +126,3 @@ export const BlinkingStatus = styled.div<{ $isActive: boolean }>`
       animation: ${blink} 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
     `}
 `;
-export const Description = styled.span`
-  width: 90%;
-  font-size: 14px;
-  line-height: 18px;
-  font-weight: 400;
-  color: ${orangeSecondary};
-`;

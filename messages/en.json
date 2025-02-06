@@ -146,10 +146,22 @@
 						"linkify": "01",
 						"musicon": "02",
 						"vtb": "03"
+					},
+					"NavigationSections": {
+						"NavigationSectionItem": {
+							"tooltip": {
+								"linkify": "navigate to Linkify",
+								"vtb": "navigate to VTB",
+								"musicon": "navigate to MusicOn"
+							}
+						}
 					}
 				}
 			},
 			"FourthSectionRightPart": {
+				"CommonScrollSection": {
+					"text": "scroll down"
+				},
 				"Section": {
 					"Title": {
 						"linkify": "Linkify",
@@ -208,5 +220,27 @@
 	},
 	"ScrollDown": {
 		"text": "scroll to explore"
+	},
+	"NavigateButton": {
+		"text": "main section"
+	},
+	"NavigationPanelButton": {
+		"top": {
+			"second-section": "main section",
+			"third-section": "about me section",
+			"fourth-section": "skills section",
+			"fifth-section": "projects section"
+		},
+		"bottom": {
+			"second-section": "skills section",
+			"third-section": "projects section",
+			"fourth-section": "technology section"
+		}
+	},
+	"NavigationPanelItem": {
+			"second-section": "about me section",
+			"third-section": "skills section",
+			"fourth-section": "projects section",
+			"fifth-section": "technology section"
 	}
 }
