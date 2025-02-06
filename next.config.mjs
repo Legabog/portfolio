@@ -1,8 +1,6 @@
 import { withSentryConfig } from '@sentry/nextjs';
 import createNextIntlPlugin from 'next-intl/plugin';
-import sonda from 'sonda/next';
 
-const withSondaAnalyzer = sonda();
 const withNextIntl = createNextIntlPlugin();
 
 /** @type {import('next').NextConfig} */
@@ -58,7 +56,7 @@ const nextConfig = {
 };
 
 export default withSentryConfig(
-  withNextIntl(withSondaAnalyzer(nextConfig)),
+  withNextIntl(nextConfig),
   {
     // For all available options, see:
     // https://github.com/getsentry/sentry-webpack-plugin#options

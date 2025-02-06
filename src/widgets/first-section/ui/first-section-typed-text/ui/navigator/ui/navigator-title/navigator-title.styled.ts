@@ -6,14 +6,10 @@ const { orange } = COLORS;
 
 export const Wrapper = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`;
-export const Text = styled.span<{ $isFirstTitle?: boolean }>`
-  display: flex;
   align-items: center;
   justify-content: flex-end;
+`;
+export const Text = styled.span<{ $isFirstTitle?: boolean }>`
   width: 100%;
   color: ${({ theme, $isFirstTitle }) => theme[$isFirstTitle ? 'color' : 'description']};
   font-size: 12px;

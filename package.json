@@ -89,7 +89,6 @@
     "lint-staged": "15.2.2",
     "postcss-styled-syntax": "^0.7.1",
     "prettier": "3.2.5",
-    "sonda": "^0.7.1",
     "storybook": "7.6.19",
     "stylelint": "^16.14.1",
     "stylelint-config-recess-order": "^6.0.0",
