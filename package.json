@@ -26,7 +26,7 @@
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
       "pnpm lint:prettier:fix",
-      "pnpm lint:fix",
+      "pnpm lint:eslint:fix",
       "pnpm lint:css:fix",
       "pnpm lint:scripts:fix"
     ]
