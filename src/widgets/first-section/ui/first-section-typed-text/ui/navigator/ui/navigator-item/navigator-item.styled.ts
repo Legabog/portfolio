@@ -9,39 +9,39 @@ export const Text = styled.span`
   position: relative;
   display: flex;
   height: auto;
+  color: ${({ theme }) => theme.color};
   font-size: 12px;
   font-weight: 400;
   line-height: 12px;
-  letter-spacing: 0px;
-  color: ${({ theme }) => theme.color};
   text-transform: uppercase;
+  letter-spacing: 0;
   white-space: break-spaces;
 
   &::after {
-    content: '';
-    opacity: 0;
     position: absolute;
-    left: 0;
     bottom: 0;
-    margin-bottom: -2px;
+    left: 0;
     width: 100%;
     height: 1px;
-    transform: scaleX(0);
-    transition: transform 150ms cubic-bezier(0.5, 0, 0.5, 1);
-    transform-origin: left;
     background-color: ${orange};
+    opacity: 0;
+    transition: transform 150ms cubic-bezier(0.5, 0, 0.5, 1);
+    transform: scaleX(0);
+    margin-bottom: -2px;
+    content: '';
+    transform-origin: left;
   }
 `;
 export const StyledLink = styled(Link)`
   display: flex;
   align-items: center;
-  text-decoration: none;
   width: fit-content;
+  text-decoration: none;
 `;
 export const Wrapper = styled.div`
-  width: fit-content;
   display: flex;
   align-items: center;
+  width: fit-content;
 
   &:hover ${Text} {
     color: ${orange};

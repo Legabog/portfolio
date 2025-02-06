@@ -1,15 +1,15 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  width: 80%;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  width: 80%;
   margin-top: 40px;
 
-  @media only screen and (max-width: 900px) {
-    width: calc(100% - 40px);
+  @media only screen and (width <= 900px) {
     flex-direction: column;
+    width: calc(100% - 40px);
     margin-top: 20px;
   }
 `;

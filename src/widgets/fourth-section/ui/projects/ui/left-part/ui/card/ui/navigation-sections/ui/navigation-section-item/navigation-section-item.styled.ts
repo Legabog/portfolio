@@ -6,25 +6,25 @@ const { orange, orangeSecondary } = COLORS;
 
 const transition = css`
   transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 0.15s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 `;
 export const TopBlock = styled.div`
   ${transition}
   display: flex;
   width: 100%;
   height: 8px;
+  background-color: ${({ theme }) => theme.backgroundColor};
   border: 1px solid ${orange};
   border-radius: 999px;
-  background-color: ${({ theme }) => theme.backgroundColor};
 `;
 export const Title = styled.div`
   ${transition}
+  color: ${({ theme }) => theme.color};
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
-  letter-spacing: 0px;
-  color: ${({ theme }) => theme.color};
+  letter-spacing: 0;
   text-transform: uppercase;
   white-space: break-spaces;
 `;

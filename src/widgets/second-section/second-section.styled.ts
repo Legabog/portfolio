@@ -11,11 +11,11 @@ const fadeIn = keyframes`
   }
 `;
 export const Wrapper = styled.div<{ $isFullHeight: boolean; $isVisible: boolean }>`
-  width: 100%;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 
   ${({ $isFullHeight }) =>
     $isFullHeight &&
@@ -28,25 +28,26 @@ export const Wrapper = styled.div<{ $isFullHeight: boolean; $isVisible: boolean 
       animation: ${fadeIn} 1s ease-out;
     `} 
 
-  @media only screen and (max-width: 900px) {
+  @media only screen and (width <= 900px) {
     height: auto;
   }
 `;
 export const SecondaryWrapper = styled.div`
-  width: 80%;
   display: flex;
-  justify-content: center;
-  margin-top: 40px;
   gap: 40px;
+  justify-content: center;
+  width: 80%;
+  margin-top: 40px;
 
-  @media only screen and (max-width: 1300px) {
+  @media only screen and (width <= 1300px) {
     gap: 20px;
   }
-  @media only screen and (max-width: 900px) {
+
+  @media only screen and (width <= 900px) {
+    flex-direction: column;
+    gap: 0;
     width: 100%;
     height: auto;
     margin-top: 16px;
-    flex-direction: column;
-    gap: 0px;
   }
 `;

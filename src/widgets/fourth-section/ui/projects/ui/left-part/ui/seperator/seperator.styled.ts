@@ -6,23 +6,23 @@ import { Props } from '../../types';
 const { orangeSecondary } = COLORS;
 
 export const Wrapper = styled.div`
-  visibility: hidden;
   position: absolute;
   top: 0;
   bottom: 0;
-  transform: translateX(-50%);
   left: 100%;
   z-index: -2;
+  visibility: hidden;
+  transform: translateX(-50%);
 
   &::before {
     position: absolute;
     top: 0;
     bottom: 0;
-    transform: translateX(-50%);
-    content: '';
     left: 50%;
     width: 1px;
+    content: '';
     background: ${orangeSecondary};
+    transform: translateX(-50%);
   }
 `;
 export const StickyObject = styled.div`
@@ -36,9 +36,9 @@ export const IconWrapper = styled.div<{ $overlappingType: Props['overlappingType
   justify-content: center;
   width: 130px;
   height: 130px;
-  border-radius: 100%;
   background-color: ${({ theme }) => theme.backgroundColor};
   border: 1px solid ${orangeSecondary};
+  border-radius: 100%;
   box-sizing: border-box;
   cursor: pointer;
 

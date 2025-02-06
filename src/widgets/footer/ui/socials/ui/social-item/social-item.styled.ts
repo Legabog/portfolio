@@ -7,13 +7,14 @@ const { orange, orangeSecondary } = COLORS;
 
 export const Wrapper = styled.div`
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 
-  @media screen and (max-width: 900px) {
+  @media screen and (width <= 900px) {
     width: 100%;
   }
-  @media screen and (max-width: 600px) {
+
+  @media screen and (width <= 600px) {
     justify-content: flex-end;
   }
 `;
@@ -26,6 +27,7 @@ export const StyledLink = styled(Link)`
     width: 20px;
     height: 20px;
   }
+
   path {
     fill: ${orangeSecondary};
     transition: fill 0.1s ease;
@@ -37,7 +39,7 @@ export const StyledLink = styled(Link)`
     }
   }
 
-  @media screen and (max-width: 900px) {
+  @media screen and (width <= 900px) {
     width: 100%;
   }
 `;

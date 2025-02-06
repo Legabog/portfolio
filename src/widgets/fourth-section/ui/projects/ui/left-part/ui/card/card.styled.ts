@@ -19,8 +19,8 @@ export const Wrapper = styled.div`
 `;
 export const CardBody = styled.div`
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   height: 73vh;
 `;
 export const InfoSection = styled.div`
@@ -39,7 +39,7 @@ export const IconWrapper = styled.div<{ $overlappingType: Props['overlappingType
       `};
   }
 
-  @media only screen and (max-width: 1200px) {
+  @media only screen and (width <= 1200px) {
     svg {
       width: 80px;
       height: 80px;
@@ -48,54 +48,57 @@ export const IconWrapper = styled.div<{ $overlappingType: Props['overlappingType
 `;
 export const TopNumber = styled.span`
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   width: 96px;
+  color: ${({ theme }) => theme.color};
   font-size: 24px;
   font-weight: 600;
   line-height: 24px;
-  letter-spacing: 0px;
-  color: ${({ theme }) => theme.color};
+  letter-spacing: 0;
 `;
 export const SectionWrapper = styled.div`
   display: flex;
-  align-items: center;
-  margin: 8px 0px;
   gap: 18px;
+  align-items: center;
+  margin: 8px 0;
 `;
 export const Title = styled.span`
+  height: fit-content;
+  color: ${orange};
   font-size: 96px;
   font-weight: 800;
   line-height: 1;
   letter-spacing: -3px;
-  color: ${orange};
-  height: fit-content;
 
-  @media only screen and (max-width: 1400px) {
+  @media only screen and (width <= 1400px) {
     font-size: 86px;
   }
-  @media only screen and (max-width: 1300px) {
+
+  @media only screen and (width <= 1300px) {
     font-size: 64px;
   }
-  @media only screen and (max-width: 1000px) {
+
+  @media only screen and (width <= 1000px) {
     font-size: 58px;
   }
 `;
 export const SecondaryTitle = styled.span`
-  font-size: 24px;
-  line-height: 24px;
-  font-weight: 600;
-  letter-spacing: 0px;
+  height: fit-content;
   color: ${({ theme }) => theme.color};
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 24px;
   margin-left: 3px;
   text-transform: uppercase;
-  height: fit-content;
+  letter-spacing: 0;
 
-  @media only screen and (max-width: 1200px) {
+  @media only screen and (width <= 1200px) {
     font-size: 18px;
     line-height: 18px;
   }
-  @media only screen and (max-width: 1200px) {
+
+  @media only screen and (width <= 1200px) {
     font-size: 16px;
     line-height: 16px;
   }
@@ -103,15 +106,15 @@ export const SecondaryTitle = styled.span`
 export const Badge = styled.div`
   display: flex;
   align-items: center;
-  gap: 6px;
   padding: 6px;
-  border-radius: 6px;
-  border: 1px solid ${orangeSecondary};
-  color: ${orange};
   background-color: ${({ theme }) => theme.backgroundColor};
+  color: ${orange};
   font-size: 14px;
-  line-height: 16px;
   font-weight: 400;
+  line-height: 16px;
+  border: 1px solid ${orangeSecondary};
+  border-radius: 6px;
+  gap: 6px;
   text-transform: uppercase;
 `;
 export const BlinkingStatus = styled.div<{ $isActive: boolean }>`

@@ -32,35 +32,35 @@ const moveOut = keyframes`
 
 export const Wrapper = styled.div`
   display: flex;
-  justify-content: flex-end;
   align-items: center;
+  justify-content: flex-end;
   width: 100%;
 `;
 export const Backdrop = styled.div<{ $isUsedBefore: boolean; $state: State['state'] }>`
-  opacity: ${({ $state }) => ($state !== 0 ? 1 : 0)};
-  display: ${({ $state }) => ($state !== 0 ? 'flex' : 'none')};
-  background: ${({ theme }) => theme.backgroundColor};
-  max-width: 100%;
   position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
   z-index: 2;
+  display: ${({ $state }) => ($state !== 0 ? 'flex' : 'none')};
   flex-direction: column;
-  overflow: hidden;
   width: 100%;
-  top: 0px;
-  bottom: 0px;
-  right: 0px;
-  outline: 0px;
+  max-width: 100%;
+  overflow: hidden;
+  outline: 0;
+  background: ${({ theme }) => theme.backgroundColor};
+  opacity: ${({ $state }) => ($state !== 0 ? 1 : 0)};
   transition: opacity 300ms;
   animation: 300ms cubic-bezier(0.5, 0, 0.5, 1) 0s 1 normal forwards running
     ${({ $state, $isUsedBefore }) =>
       $state === 1 && $isUsedBefore ? move : $state === 2 && $isUsedBefore ? moveOut : undefined};
 `;
 export const BackdropWrapper = styled.div<{ $isUsedBefore: boolean; $state: State['state'] }>`
-  width: 100%;
   position: fixed;
-  top: 0px;
-  bottom: 0px;
-  right: 0px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
 
   ${({ $state, $isUsedBefore }) =>
     $state === 1 &&
@@ -70,21 +70,21 @@ export const BackdropWrapper = styled.div<{ $isUsedBefore: boolean; $state: Stat
     `}
 `;
 export const Button = styled.button`
-  background-color: transparent;
-  width: 82px;
-  border: 0;
-  height: 24px;
   position: relative;
+  width: 82px;
+  height: 24px;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
   z-index: 3;
   pointer-events: all;
-  cursor: pointer;
 `;
 export const Span = styled.span<{ $spanType: 'first' | 'second'; $state: State['state'] }>`
+  position: absolute;
+  top: 50%;
+  left: 50%;
   width: 100%;
   height: 1px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
   ${({ $state, $spanType }) =>
     $state === 1
       ? css`

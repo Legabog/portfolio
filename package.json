@@ -3,26 +3,32 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
+    "build:chromatic": "pnpx chromatic --project-token",
+    "build:storybook": "storybook build",
+    "dev": "next dev",
+    "dev:storybook": "storybook dev -p 6006 --debug-webpack",
+    "lint:css": "stylelint \"./src/**/*.styled.ts\"",
+    "lint:css:fix": "stylelint --fix \"./src/**/*.styled.ts\"",
+    "lint:eslint": "eslint ./src --color",
+    "lint:eslint:fix": "eslint ./src --fix --color",
+    "lint:prettier:fix": "prettier --config .prettierrc --write ./src",
+    "lint:scripts": "scriptlint",
+    "lint:scripts:fix": "scriptlint --fix",
     "lint:types": "tsc --noEmit",
-    "test": "jest",
-    "test:e2e": "pnpx playwright test",
-    "lint:fix": "eslint ./src --fix --color",
-    "prettier:fix": "prettier --config .prettierrc --write ./src",
     "precommit": "lint-staged",
     "prepare": "husky",
-    "storybook": "storybook dev -p 6006 --debug-webpack",
-    "build-storybook": "storybook build",
-    "chromatic": "pnpx chromatic --project-token",
-    "knip": "knip"
+    "report:boundle": "knip",
+    "start": "next start",
+    "test": "jest",
+    "test:e2e": "pnpx playwright test"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
-      "pnpm prettier:fix",
-      "pnpm run lint:fix"
+      "pnpm lint:prettier:fix",
+      "pnpm lint:fix",
+      "pnpm lint:css:fix",
+      "pnpm lint:scripts:fix"
     ]
   },
   "eslintConfig": {
@@ -84,9 +90,14 @@
     "jest-environment-jsdom": "29.7.0",
     "knip": "^5.43.6",
     "lint-staged": "15.2.2",
+    "postcss-styled-syntax": "^0.7.1",
     "prettier": "3.2.5",
-    "sonda": "^0.7.1",
+    "scriptlint": "^3.0.0",
     "storybook": "7.6.19",
+    "stylelint": "^16.14.1",
+    "stylelint-config-recess-order": "^6.0.0",
+    "stylelint-config-standard": "^37.0.0",
+    "stylelint-order": "^6.0.4",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.3"
   },

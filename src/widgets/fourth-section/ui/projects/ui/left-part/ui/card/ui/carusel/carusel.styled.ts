@@ -30,7 +30,7 @@ export const Span = styled.span<{ $caruselType: 'left' | 'right'; $isPaused: boo
   justify-content: space-between;
   animation: ${({ $caruselType }) => moving($caruselType)} 40s linear infinite;
   animation-play-state: ${({ $isPaused }) => ($isPaused ? 'paused' : 'running')};
-  text-rendering: optimizeSpeed;
+  text-rendering: optimizespeed;
 `;
 export const Li = styled.li<{
   $customStyles?: string;
@@ -62,7 +62,7 @@ export const Wrapper = styled.div<{
   flex-wrap: nowrap;
   align-items: center;
   overflow: hidden;
-  text-rendering: optimizeSpeed;
+  text-rendering: optimizespeed;
 
   ${({ $customStyles }) =>
     $customStyles &&

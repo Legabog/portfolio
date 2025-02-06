@@ -7,11 +7,11 @@ const { orange } = COLORS;
 
 export const Wrapper = styled.div`
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   width: 105px;
 
-  @media screen and (max-width: 900px) {
+  @media screen and (width <= 900px) {
     width: 100%;
   }
 `;
@@ -19,28 +19,28 @@ export const Text = styled.span`
   position: relative;
   display: flex;
   height: auto;
+  color: ${({ theme }) => theme.color};
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
-  color: ${({ theme }) => theme.color};
   text-transform: uppercase;
 
   &::after {
-    content: '';
-    opacity: 0;
     position: absolute;
-    left: 0;
     bottom: 0;
-    margin-bottom: -2px;
+    left: 0;
     width: 100%;
     height: 1px;
-    transform: scaleX(0);
-    transition: transform 150ms cubic-bezier(0.5, 0, 0.5, 1);
-    transform-origin: left;
     background-color: ${orange};
+    opacity: 0;
+    transition: transform 150ms cubic-bezier(0.5, 0, 0.5, 1);
+    transform: scaleX(0);
+    margin-bottom: -2px;
+    content: '';
+    transform-origin: left;
   }
 
-  @media screen and (max-width: 900px) {
+  @media screen and (width <= 900px) {
     width: 100%;
     font-size: 36px;
     line-height: 34px;
@@ -65,8 +65,8 @@ export const StyledLink = styled(Link)`
     transform: scaleX(1);
   }
 
-  @media screen and (max-width: 900px) {
-    border-right: none;
+  @media screen and (width <= 900px) {
     width: 100%;
+    border-right: none;
   }
 `;

@@ -9,8 +9,8 @@ export const Wrapper = styled.div`
 `;
 export const WrapperTitles = styled.div`
   display: flex;
-  justify-content: flex-end;
   align-items: center;
+  justify-content: flex-end;
 `;
 export const WrapperItems = styled.div`
   display: flex;

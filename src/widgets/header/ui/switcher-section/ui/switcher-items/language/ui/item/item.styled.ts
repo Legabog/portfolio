@@ -5,49 +5,51 @@ import { COLORS } from '@shared/constants';
 const { orange } = COLORS;
 
 export const Text = styled.span`
+  color: ${({ theme }) => theme.color};
   font-size: 12px;
   font-weight: 400;
   text-transform: uppercase;
-  color: ${({ theme }) => theme.color};
 
   &::after {
-    content: '';
-    opacity: 0;
     position: absolute;
-    left: 0;
     bottom: 0;
-    margin-bottom: -2px;
+    left: 0;
     width: 100%;
     height: 1px;
-    transform: scaleX(0);
-    transition: transform 150ms cubic-bezier(0.5, 0, 0.5, 1);
-    transform-origin: left;
     background-color: ${orange};
+    opacity: 0;
+    transition: transform 150ms cubic-bezier(0.5, 0, 0.5, 1);
+    transform: scaleX(0);
+    margin-bottom: -2px;
+    content: '';
+    transform-origin: left;
   }
 
-  @media screen and (max-width: 900px) {
+  @media screen and (width <= 900px) {
     font-size: 32px;
   }
-  @media only screen and (max-width: 600px) {
+
+  @media only screen and (width <= 600px) {
     font-size: 28px;
   }
-  @media screen and (max-width: 400px) {
+
+  @media screen and (width <= 400px) {
     font-size: 24px;
   }
 `;
 export const A = styled.a<{ $isActvie: boolean }>`
   position: relative;
-  display: block;
-  height: 16px;
-  width: 16px;
-  box-sizing: border-box;
-  overflow: visible;
-  text-decoration: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  box-sizing: border-box;
+  overflow: visible;
+  text-decoration: none;
   transition: background-color 0.5s;
+  cursor: pointer;
+
   ${({ $isActvie }) =>
     $isActvie &&
     css`
@@ -55,15 +57,17 @@ export const A = styled.a<{ $isActvie: boolean }>`
         color: ${orange};
       }
     `};
-  @media screen and (max-width: 900px) {
+  @media screen and (width <= 900px) {
     width: 50px;
     height: 40px;
   }
-  @media only screen and (max-width: 600px) {
+
+  @media only screen and (width <= 600px) {
     width: 47px;
     height: 35px;
   }
-  @media screen and (max-width: 400px) {
+
+  @media screen and (width <= 400px) {
     width: 35px;
     height: 30px;
   }

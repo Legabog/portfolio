@@ -11,10 +11,10 @@ const fadeIn = keyframes`
   }
 `;
 export const Wrapper = styled.div<{ $isVisible: boolean }>`
-  width: 100%;
   display: flex;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
+  width: 100%;
 
   ${({ $isVisible }) =>
     $isVisible &&

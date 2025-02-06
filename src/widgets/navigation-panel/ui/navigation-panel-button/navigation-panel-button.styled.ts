@@ -58,8 +58,8 @@ const border = (customStyle?: string) => css`
 `;
 const flexCenter = (customStyle?: string) => css`
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   ${customStyle}
 `;
 const absoluteWithFullSize = (customStyle?: string) => css`
@@ -71,27 +71,27 @@ const absoluteWithFullSize = (customStyle?: string) => css`
   ${customStyle}
 `;
 export const SecondaryWrapper = styled.div`
-  border-radius: 5px;
+  position: relative;
   width: 40px;
   height: 40px;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 0.2s;
-  overflow: hidden;
-  position: relative;
   background-color: ${({ theme }) => theme.backgroundColor};
+  border-radius: 5px;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-duration: 0.2s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
 `;
 export const ThirdWrapper = styled.div`
   ${absoluteWithFullSize()}
   transition-property: transform;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 0.15s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transform: translate(0, 0) rotate(-90deg) skewX(0) skewY(0) scaleX(1) scaleY(1);
 `;
 export const FourthWrapper = styled.div`
   ${absoluteWithFullSize()}
-  transition-duration: 0.3s;
   transition-property: all;
+  transition-duration: 0.3s;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 `;
 export const FirstIconWrapper = styled.div`
@@ -106,19 +106,19 @@ export const SecondIconWrapper = styled.div`
   ${absoluteWithFullSize(`top: 100%;`)}
   ${flexCenter()}
   transition-property: transform;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 0.15s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transform: translate(0, 0) rotate(0deg) skewX(0) skewY(0) scaleX(1) scaleY(1);
   rotate: 0deg;
 `;
 export const Wrapper = styled.button<{ $isVisible: boolean; $type: Props['type'] }>`
   ${border()}
-  opacity: ${({ $isVisible }) => ($isVisible ? 1 : 0)};
-  visibility: ${({ $isVisible }) => ($isVisible ? 'visible' : 'hidden')};
   margin: 0;
   padding: 0;
   background-color: transparent;
   background-image: none;
+  opacity: ${({ $isVisible }) => ($isVisible ? 1 : 0)};
+  visibility: ${({ $isVisible }) => ($isVisible ? 'visible' : 'hidden')};
   cursor: pointer;
   rotate: ${({ $type }) => ($type === 'top' ? '' : '-')}90deg;
 
@@ -130,13 +130,16 @@ export const Wrapper = styled.button<{ $isVisible: boolean; $type: Props['type']
     ${FourthWrapper} {
       top: -100%;
     }
+
     svg {
       animation: none;
+
       path {
         fill: ${({ theme }) => theme.backgroundColor};
       }
     }
   }
+
   &:active {
     transform: scale(0.9);
   }

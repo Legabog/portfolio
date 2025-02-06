@@ -11,12 +11,12 @@ const fadeIn = keyframes`
   }
 `;
 export const Wrapper = styled.div<{ $isVisible: boolean }>`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
   height: 100vh;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
 
   ${({ $isVisible }) =>
     $isVisible &&
@@ -25,12 +25,12 @@ export const Wrapper = styled.div<{ $isVisible: boolean }>`
     `}
 `;
 export const SecondaryWrapper = styled.div`
-  width: 80%;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  width: 80%;
 
-  @media only screen and (max-width: 900px) {
+  @media only screen and (width <= 900px) {
     width: 100%;
   }
 `;

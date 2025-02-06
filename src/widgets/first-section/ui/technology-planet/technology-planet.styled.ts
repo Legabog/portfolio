@@ -11,7 +11,7 @@ export const Wrapper = styled.div<{ $calculatedHeight: string }>`
     margin-bottom: 150px;
   }
 
-  @media only screen and (max-width: 900px) {
+  @media only screen and (width <= 900px) {
     width: 100%;
     height: ${({ $calculatedHeight }) => $calculatedHeight};
   }
