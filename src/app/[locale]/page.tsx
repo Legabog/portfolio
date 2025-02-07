@@ -46,7 +46,7 @@ const Main: FC = () => {
   const { onMouseMoveHandler, isBreakpoint } = useLogic();
 
   return (
-    <Wrapper onMouseMove={ onMouseMoveHandler }>
+    <Wrapper onMouseMove={ onMouseMoveHandler}>
       <Header />
       <Background />
       <FirstSection />
