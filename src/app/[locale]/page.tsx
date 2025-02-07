@@ -44,7 +44,6 @@ const Footer = dynamic(() => import('@widgets/footer'), { loading: () => <Loader
 
 const Main: FC = () => {
   const { onMouseMoveHandler, isBreakpoint } = useLogic();
-
   return (
     <Wrapper onMouseMove={ onMouseMoveHandler }>
       <Header />

@@ -41,6 +41,7 @@
     "./sentry.client.config.ts",
     "./sentry.edge.config.ts",
     "./sentry.server.config.ts",
+    "./commitlint.config.ts",
     ".next/types/**/*.ts"
   ],
   "exclude": ["node_modules"]
