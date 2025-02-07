@@ -8,28 +8,29 @@
     "build:storybook": "storybook build",
     "dev": "next dev",
     "dev:storybook": "storybook dev -p 6006 --debug-webpack",
+    "lint:commitlint": "npx commitlint --from HEAD~1 --to HEAD --verbose",
     "lint:css": "stylelint \"./src/**/*.styled.ts\"",
     "lint:css:fix": "stylelint --fix \"./src/**/*.styled.ts\"",
     "lint:eslint": "eslint ./src --color",
     "lint:eslint:fix": "eslint ./src --fix --color",
     "lint:prettier:fix": "prettier --config .prettierrc --write ./src",
     "lint:scripts": "scriptlint",
-    "lint:commitlint": "npx commitlint --from HEAD~1 --to HEAD --verbose",
     "lint:scripts:fix": "scriptlint --fix",
     "lint:types": "tsc --noEmit",
-    "setup:husky": "husky",
     "report:boundle": "knip",
+    "setup:commit": "npx commitlint --edit $1",
+    "setup:husky": "husky",
     "start": "next start",
     "test": "jest",
-    "test:e2e": "pnpx playwright test",
-    "setup:commit": "npx commitlint --edit $1"
+    "test:e2e": "pnpx playwright test"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
       "pnpm lint:prettier:fix",
-      "pnpm lint:eslint:fix",
-      "pnpm lint:css:fix",
-      "pnpm lint:scripts:fix"
+      "pnpm lint:eslint:fix"
+    ],
+    "*.styled.ts": [
+      "pnpm lint:css:fix"
     ]
   },
   "eslintConfig": {
