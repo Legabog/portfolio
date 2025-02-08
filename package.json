@@ -27,7 +27,7 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
-      "format"
+      "pnpm format"
     ],
     "*.styled.ts": [
       "pnpm lint:css:fix"
