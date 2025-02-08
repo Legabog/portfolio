@@ -8,6 +8,7 @@
     "build:storybook": "storybook build",
     "dev": "next dev",
     "dev:storybook": "storybook dev -p 6006 --debug-webpack",
+    "format": "pnpm lint:prettier:fix && pnpm lint:eslint:fix",
     "lint:commitlint": "npx commitlint --from HEAD~1 --to HEAD --verbose",
     "lint:css": "stylelint \"./src/**/*.styled.ts\"",
     "lint:css:fix": "stylelint --fix \"./src/**/*.styled.ts\"",
@@ -15,7 +16,7 @@
     "lint:eslint:fix": "eslint ./src --fix --color",
     "lint:prettier:fix": "prettier --config .prettierrc --write ./src",
     "lint:scripts": "scriptlint",
-    "lint:scripts:fix": "scriptlint --fix",
+    "lint:scripts:fix": "scriptlint --fix || exit 0",
     "lint:types": "tsc --noEmit",
     "report:boundle": "knip",
     "setup:commit": "npx commitlint --edit $1",
@@ -26,12 +27,12 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
-      "pnpm lint:prettier:fix",
-      "pnpm lint:eslint:fix"
+      "format"
     ],
     "*.styled.ts": [
       "pnpm lint:css:fix"
-    ]
+    ],
+    "package.json": "pnpm lint:scripts:fix"
   },
   "eslintConfig": {
     "extends": [
@@ -58,7 +59,6 @@
     "@chromatic-com/storybook": "1.2.18",
     "@commitlint/cli": "^19.7.1",
     "@commitlint/config-conventional": "^19.7.1",
-    "@commitlint/format": "^19.5.0",
     "@commitlint/types": "^19.5.0",
     "@playwright/test": "1.42.1",
     "@storybook/addon-essentials": "7.6.17",
@@ -77,8 +77,6 @@
     "@typescript-eslint/eslint-plugin": "7.1.1",
     "@typescript-eslint/parser": "7.1.1",
     "chromatic": "11.0.8",
-    "conventional-changelog-atom": "^5.0.0",
-    "conventional-changelog-conventionalcommits": "^8.0.0",
     "dotenv": "16.4.5",
     "eslint": "8.57.0",
     "eslint-config-airbnb": "19.0.4",

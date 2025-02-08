@@ -4,5 +4,4 @@
 exec >/dev/tty 2>&1
 
 pnpx lint-staged
-pnpm lint:scripts:fix
 pnpm test
