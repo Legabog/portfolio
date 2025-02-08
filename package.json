@@ -18,6 +18,7 @@
     "lint:scripts": "scriptlint",
     "lint:scripts:fix": "scriptlint --fix || exit 0",
     "lint:types": "tsc --noEmit",
+    "other:commit": "git-cz",
     "report:boundle": "knip",
     "setup:commit": "npx commitlint --edit $1",
     "setup:husky": "husky",
@@ -40,6 +41,11 @@
       "react-app/jest"
     ]
   },
+  "config": {
+    "commitizen": {
+      "path": "@commitlint/cz-commitlint"
+    }
+  },
   "packageManager": "pnpm@10.0.0+sha256.43abf6e720fb7bc53c591b0862605c7d323d0a9d2dd33bcac07b062e13cf4948",
   "dependencies": {
     "@sentry/nextjs": "7.105.0",
@@ -59,6 +65,7 @@
     "@chromatic-com/storybook": "1.2.18",
     "@commitlint/cli": "^19.7.1",
     "@commitlint/config-conventional": "^19.7.1",
+    "@commitlint/cz-commitlint": "^19.6.1",
     "@commitlint/types": "^19.5.0",
     "@playwright/test": "1.42.1",
     "@storybook/addon-essentials": "7.6.17",
@@ -77,6 +84,8 @@
     "@typescript-eslint/eslint-plugin": "7.1.1",
     "@typescript-eslint/parser": "7.1.1",
     "chromatic": "11.0.8",
+    "commitizen": "^4.3.1",
+    "conventional-changelog-conventionalcommits": "^8.0.0",
     "dotenv": "16.4.5",
     "eslint": "8.57.0",
     "eslint-config-airbnb": "19.0.4",
@@ -92,6 +101,7 @@
     "eslint-plugin-storybook": "0.8.0",
     "eslint-plugin-typescript-sort-keys": "3.2.0",
     "husky": "9.0.11",
+    "inquirer": "9",
     "jest": "29.7.0",
     "jest-environment-jsdom": "29.7.0",
     "knip": "^5.43.6",
