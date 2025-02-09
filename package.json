@@ -19,7 +19,7 @@
     "lint:scripts:fix": "scriptlint --fix || exit 0",
     "lint:types": "tsc --noEmit",
     "other:commit": "git-cz",
-    "report:boundle": "knip",
+    "report:knip": "knip",
     "setup:commit": "npx commitlint --edit $1",
     "setup:husky": "husky",
     "start": "next start",

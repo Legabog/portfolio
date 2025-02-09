@@ -17,7 +17,7 @@ export const useHoverRandomLettersAnimation = (initalString: string) => {
 
   const clear = () => {
     setCurrentText(initalString);
-    cancelAnimationFrame(ref.current as number);
+    if (ref.current) cancelAnimationFrame(ref.current as number);
   };
 
   const animate = () => {
@@ -36,6 +36,12 @@ export const useHoverRandomLettersAnimation = (initalString: string) => {
   };
 
   useLayoutEffect(() => setCurrentText(initalString), [initalString]);
+  useLayoutEffect(
+    () => () => {
+      if (ref.current) cancelAnimationFrame(ref.current);
+    },
+    [],
+  );
 
   return { generatedString: currentText, animate, clear };
 };

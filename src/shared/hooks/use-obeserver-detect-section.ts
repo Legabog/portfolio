@@ -21,9 +21,7 @@ export const useObserverDetectSection = (
     if (sectionRef && !cond) observer.observe(sectionRef);
     else observer.disconnect();
 
-    return () => {
-      if (sectionRef) observer.unobserve(sectionRef);
-    };
+    return () => sectionRef && observer.unobserve(sectionRef);
   }, [cond, setIsVisible, threshold]);
 
   return ref;
