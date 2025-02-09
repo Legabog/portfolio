@@ -10,7 +10,7 @@ export const COLORS = {
   darkGrey: 'rgb(43, 43, 55)',
 };
 const { white, black, orange, grey, greySecondary, greyBorder } = COLORS;
-export const THEME = {
+export const THEME: Record<'dark' | 'light', Theme> = {
   dark: {
     color: white,
     colorSecondary: white,

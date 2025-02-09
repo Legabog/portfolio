@@ -1,13 +1,11 @@
 import { useEffect, useRef } from 'react';
 
-export const useResizeObserver = (callback: any) => {
+export const useResizeObserver = (callback: () => void) => {
   const ref = useRef<HTMLDivElement | HTMLImageElement | null>(null);
 
   useEffect(() => {
     const refValue = ref.current;
-    const observer = new ResizeObserver((entries) =>
-      entries.forEach((entry) => callback(entry.contentRect)),
-    );
+    const observer = new ResizeObserver((entries) => entries.forEach(() => callback()));
 
     if (refValue) observer.observe(refValue);
 
