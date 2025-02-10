@@ -14,7 +14,7 @@ export const Theme: FC = () => {
 
   const t = useTranslations('Header.theme');
   const isLightMode = themeType === 'light';
-  const tooltip = t(`${themeType}`);
+  const tooltip = t(themeType);
 
   const handleChange = () => {
     play(`switch-${isLightMode ? 'off' : 'on'}.mp3`);

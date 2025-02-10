@@ -10,7 +10,7 @@ import { useSecondSectionStore } from '@widgets/second-section';
 import { useThirdSectionStore } from '@widgets/third-section';
 import { useFourthSectionStore } from '@widgets/fourth-section';
 import { Wrapper } from './fifth-section.styled';
-import { Carusel, Cards } from './ui';
+import { Carusel, TechnicalCards } from './ui';
 import { TECHNOLOGIES, TOP_NUMBER } from './constants';
 
 export const FifthSection: FC = () => {
@@ -30,7 +30,7 @@ export const FifthSection: FC = () => {
   return (
     <Wrapper ref={ ref } $isVisible={ isVisible } data-testid='fifth-section' id='fifth-section'>
       <SectionTitle title={ title } topNumber={ TOP_NUMBER } />
-      <Cards />
+      <TechnicalCards />
       <Carusel caruselType='left' technologies={ TECHNOLOGIES } />
     </Wrapper>
   );

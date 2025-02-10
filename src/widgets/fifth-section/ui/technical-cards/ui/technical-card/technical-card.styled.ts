@@ -12,11 +12,9 @@ export const Wrapper = styled.div`
   width: 50%;
   padding: 32px;
   user-select: none;
-  background-color: ${({ theme }) => theme.backgroundColor};
-  border: 1px solid ${orange};
 
   @media only screen and (width <= 900px) {
-    width: calc(100% - 40px);
+    width: calc(100% - 32px);
     padding: 16px;
   }
 `;
@@ -38,6 +36,21 @@ export const TitleWrapper = styled.div`
 
   & span:last-child {
     padding-left: 16px;
+  }
+`;
+export const Description = styled.span`
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  color: ${({ theme }) => theme.description};
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  margin-top: 8px;
+
+  &:hover {
+    color: ${orange};
   }
 `;
 export const TopNumber = styled.span`
