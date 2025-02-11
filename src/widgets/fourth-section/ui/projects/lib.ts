@@ -1,6 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 
+import { useMediaQuery } from '@shared/hooks';
+
 export const useLogic = () => {
+  const isBreakpoint = useMediaQuery(900);
+
   const absoluteRef = useRef<HTMLDivElement | null>(null);
   const vtbRef = useRef<HTMLDivElement | null>(null);
   const linkifyRef = useRef<HTMLDivElement | null>(null);
@@ -44,5 +48,5 @@ export const useLogic = () => {
     };
   }, []);
 
-  return { overlappingType, absoluteRef, vtbRef, linkifyRef, musiconRef };
+  return { overlappingType, absoluteRef, vtbRef, linkifyRef, musiconRef, isBreakpoint };
 };

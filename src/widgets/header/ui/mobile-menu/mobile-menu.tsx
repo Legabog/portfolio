@@ -10,8 +10,8 @@ import { IconSection } from '../icon-section';
 import { SwitcherSection } from '../switcher-section';
 import { InfoSection } from '../info-section';
 import { Backdrop, Button, Span, Wrapper, BackdropWrapper } from './mobile-menu.styled';
-import { useMobileMenuStore } from './model';
 import { Footer } from './ui';
+import { useMobileMenuStore } from './model';
 
 const Background = dynamic(() => import('@widgets/background'), {
   loading: () => <Loader />,
@@ -19,12 +19,14 @@ const Background = dynamic(() => import('@widgets/background'), {
 });
 
 export const MobileMenu: FC = () => {
-  const [isUsedBefore, setIsUsedBefore] = useState<boolean>(false);
-  const { state, toggleState } = useMobileMenuStore();
   const t = useTranslations('Header.MobileMenu');
+  const { state, toggleState } = useMobileMenuStore();
+  const { play } = useSoundEffectsStore();
+
+  const [isUsedBefore, setIsUsedBefore] = useState<boolean>(false);
+
   const isActive = state === 1;
   const text = t(`tooltip-${isActive ? 'active' : 'inactive'}`);
-  const { play } = useSoundEffectsStore();
 
   const onClick = () => {
     play(`${isActive ? 'wooshing' : 'click'}-1.wav`);

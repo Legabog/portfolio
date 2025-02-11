@@ -1,5 +1,3 @@
-import { MutableRefObject } from 'react';
-
 import {
   BemIcon,
   DockerIcon,
@@ -25,14 +23,11 @@ import {
   WebpackIcon,
 } from '@shared/ui';
 import { MusicOnWrapper } from './right-part.styled';
-import { Props } from './ui';
+import { Props } from './types';
+import { Props as ProjectProps } from './ui';
 
-export const useAdditionalLogic = (
-  linkifyRef: MutableRefObject<HTMLDivElement | null>,
-  musiconRef: MutableRefObject<HTMLDivElement | null>,
-  vtbRef: MutableRefObject<HTMLDivElement | null>,
-) => {
-  const projectsMap: Props[] = [
+export const useLogic = ({ linkifyRef, musiconRef, vtbRef }: Props) => {
+  const projectsMap: ProjectProps[] = [
     {
       id: 'project-1',
       overlappingType: 'linkify',

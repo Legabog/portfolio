@@ -2,21 +2,12 @@
 
 import { FC } from 'react';
 
-import { useMediaQuery } from '@shared/hooks';
-import { IconSection, InfoSection, MobileMenu, SwitcherSection } from './ui';
+import { IconSection } from './ui';
 import { Wrapper } from './header.styled';
+import { useLogic } from './lib';
 
 export const Header: FC = () => {
-  const isBreakpoint = useMediaQuery(900);
-
-  const conditionalPanel = isBreakpoint ? (
-    <MobileMenu />
-  ) : (
-    <>
-      <SwitcherSection />
-      <InfoSection />
-    </>
-  );
+  const { conditionalPanel } = useLogic();
 
   return (
     <Wrapper data-testid='header'>

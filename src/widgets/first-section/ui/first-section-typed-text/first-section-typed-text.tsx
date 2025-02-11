@@ -1,26 +1,25 @@
 'use client';
 
 import { FC } from 'react';
-import { useTranslations } from 'next-intl';
 import { TypeAnimation } from 'react-type-animation';
 
-import { useHoverRandomLettersAnimation } from '@shared/hooks';
 import { Wrapper, InnerTextWrapper, Title, Description } from './first-section-typed-text.styled';
 import { Navigator } from './ui';
+import { useLogic } from './lib';
 
 export const FirstSectionTypedText: FC = () => {
-  const t = useTranslations(`FirstSection.FirstSectionTypedText`);
-  const { animate, clear, generatedString } = useHoverRandomLettersAnimation(t('first'));
   const {
-    animate: animateDescription,
-    clear: clearDescription,
-    generatedString: generatedStringDescription,
-  } = useHoverRandomLettersAnimation(t('description'));
-  const {
-    animate: animateSecond,
-    clear: clearSecond,
-    generatedString: generatedStringSecond,
-  } = useHoverRandomLettersAnimation(t('second'));
+    t,
+    animate,
+    clear,
+    generatedString,
+    animateDescription,
+    clearDescription,
+    generatedStringDescription,
+    animateSecond,
+    clearSecond,
+    generatedStringSecond,
+  } = useLogic();
 
   return (
     <Wrapper data-testid='first-section-typed-text' id='first-section-typed-text'>

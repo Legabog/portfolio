@@ -1,14 +1,10 @@
 import { FC } from 'react';
-import { useTranslations } from 'next-intl';
 
-import { useMediaQuery } from '@shared/hooks';
 import { Wrapper, Text, MobileTextWrapper } from './rights.styled';
+import { useLogic } from './lib';
 
 export const Rights: FC = () => {
-  const isBreakpoint = useMediaQuery(600);
-  const t = useTranslations('Footer');
-  const rights = isBreakpoint ? t('rights') : ` ${t('rights')}`;
-  const text = `@ 2025${isBreakpoint ? '' : rights}`;
+  const { isBreakpoint, text, rights } = useLogic();
 
   return (
     <Wrapper data-testid='footer-rights'>

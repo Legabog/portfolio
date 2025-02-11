@@ -2,14 +2,10 @@
 
 import { FC } from 'react';
 import dynamic from 'next/dynamic';
-import { useLocale } from 'next-intl';
 
-import { useMediaQuery } from '@shared/hooks';
 import { Loader } from '@shared/ui';
-import { useThemeStore } from '@widgets/header';
-import { Locale } from '@locales';
 import { Wrapper } from './technology-planet.styled';
-import { PLANETS_VARIANTS } from './constants';
+import { useLogic } from './lib';
 
 const SplineTool = dynamic(() => import('@splinetool/react-spline'), {
   ssr: false,
@@ -17,17 +13,7 @@ const SplineTool = dynamic(() => import('@splinetool/react-spline'), {
 });
 
 export const TechnologyPlanet: FC = () => {
-  const locale = useLocale() as Locale;
-  const { themeType } = useThemeStore();
-  const isBreakpoint = useMediaQuery(900);
-
-  const conditionSplineScene = `https://prod.spline.design/${PLANETS_VARIANTS[themeType][locale]}/scene.splinecode`;
-  const calculatedHeight = `${
-    isBreakpoint
-      ? window.innerHeight -
-        (document.getElementById('first-section-typed-text')?.scrollHeight as number)
-      : 0
-  }px`;
+  const { calculatedHeight, conditionSplineScene } = useLogic();
 
   return (
     <Wrapper $calculatedHeight={ calculatedHeight } data-testid='technology-planet'>

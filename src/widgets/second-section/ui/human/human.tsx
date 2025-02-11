@@ -4,9 +4,8 @@ import { FC } from 'react';
 import dynamic from 'next/dynamic';
 
 import { Loader } from '@shared/ui';
-import { useThemeStore } from '@widgets/header';
 import { Wrapper } from './human.styled';
-import { HUMAN_VARIANTS } from './constants';
+import { useLogic } from './lib';
 
 const SplineTool = dynamic(() => import('@splinetool/react-spline'), {
   ssr: false,
@@ -14,9 +13,7 @@ const SplineTool = dynamic(() => import('@splinetool/react-spline'), {
 });
 
 export const Human: FC = () => {
-  const { themeType } = useThemeStore();
-
-  const conditionSplineScene = `https://prod.spline.design/${HUMAN_VARIANTS[themeType]}/scene.splinecode`;
+  const { conditionSplineScene } = useLogic();
 
   return (
     <Wrapper data-testid='human' id='human'>

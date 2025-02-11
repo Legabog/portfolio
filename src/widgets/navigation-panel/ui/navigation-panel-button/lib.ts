@@ -72,5 +72,5 @@ export const useLogic = ({ type, activeSectionId }: Props) => {
   };
   const throttledOnClick = useThrottle(onClick, 1000);
 
-  return { throttledOnClick, isBottomAndLastSection, title };
+  return { throttledOnClick, isBottomAndLastSection, title, type };
 };
