@@ -1,15 +1,13 @@
 'use client';
 
-import { FC, useEffect, useState } from 'react';
+import { FC } from 'react';
 import dynamic from 'next/dynamic';
-import { useTranslations } from 'next-intl';
 
-import { useObserverDetectSection } from '@shared/hooks';
 import { Loader, ScrollDown, SectionTitle } from '@shared/ui';
 import { CUSTOM_STYLES_SCROLL_DOWN, SECTION_NUMBER_SCROLL_DOWN, TOP_NUMBER } from './constants';
 import { Wrapper, SecondaryWrapper } from './second-section.styled';
 import { SecondSectionCards } from './ui';
-import { useSecondSectionStore } from './model';
+import { useLogic } from './lib';
 
 const Human = dynamic(() => import('./ui/human'), {
   loading: () => <Loader />,
@@ -17,22 +15,7 @@ const Human = dynamic(() => import('./ui/human'), {
 });
 
 export const SecondSection: FC = () => {
-  const { isVisible, setIsVisible, isIgnore } = useSecondSectionStore();
-  const ref = useObserverDetectSection(setIsVisible, isIgnore);
-  const t = useTranslations('SecondSection.ScrollDown');
-  const f = useTranslations(`SecondSection.SecondSectionTitle`);
-
-  const [isFullHeight, setIsFullHeight] = useState<boolean>(false);
-
-  const sectionText = t('text');
-  const title = f('text');
-  const titleWithoutLastWord = title.split(' ')[0];
-
-  useEffect(() => {
-    setIsFullHeight(
-      (document.getElementById('second-section')?.scrollHeight as number) <= window.innerHeight,
-    );
-  }, []);
+  const { ref, isFullHeight, isVisible, titleWithoutLastWord, title, sectionText } = useLogic();
 
   return (
     <Wrapper

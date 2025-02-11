@@ -1,13 +1,11 @@
 import { FC } from 'react';
 
-import { useMediaQuery } from '@shared/hooks';
 import { Wrapper } from './projects.styled';
 import { useLogic } from './lib';
 import { LeftPart, RightPart } from './ui';
 
 export const Projects: FC = () => {
-  const isBreakpoint = useMediaQuery(900);
-  const { overlappingType, absoluteRef, linkifyRef, musiconRef, vtbRef } = useLogic();
+  const { overlappingType, absoluteRef, linkifyRef, musiconRef, vtbRef, isBreakpoint } = useLogic();
 
   return (
     <Wrapper data-testid='projects'>

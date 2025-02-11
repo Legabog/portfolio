@@ -1,28 +1,12 @@
-import { FC, useState } from 'react';
+import { FC } from 'react';
 
-import { useResizeObserver } from '@shared/hooks';
 import { Wrapper, Span, Li } from './carusel.styled';
 import { Props } from './types';
+import { useLogic } from './lib';
 
 export const Carusel: FC<Props> = ({ caruselType, customStyles = '', words }) => {
-  const [caruselStyles, setCaruselStyles] = useState<string>(
-    `width: ${window.innerWidth / 2.5}px; height: calc(12vh);`,
-  );
-  const [wordStyles, setWordStyles] = useState<string>(
-    `font-size: 10vh; line-height: 10vh; letter-spacing: -0.4vh;`,
-  );
-  const [isPaused, setIsPaused] = useState<boolean>(false);
-
-  const onHover = () => setIsPaused(true);
-  const onLeave = () => setIsPaused(false);
-
-  const resizeHandler = () => {
-    setCaruselStyles(`width: ${window.innerWidth / 2.5}px; height: calc(12vh);`);
-    setWordStyles(`font-size: 10vh; line-height: 10vh; letter-spacing: -0.4vh;`);
-  };
-  const resizeRef = useResizeObserver(resizeHandler);
-
-  const customCaruselStyles = `${caruselStyles} ${customStyles}`;
+  const { customCaruselStyles, wordStyles, isPaused, onHover, onLeave, resizeRef } =
+    useLogic(customStyles);
 
   return (
     <Wrapper

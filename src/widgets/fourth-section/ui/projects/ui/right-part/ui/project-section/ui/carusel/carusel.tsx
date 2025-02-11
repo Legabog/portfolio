@@ -1,22 +1,11 @@
-import { FC, useState } from 'react';
+import { FC } from 'react';
 
-import { useMediaQuery, useResizeObserver } from '@shared/hooks';
 import { Wrapper, Span, Li } from './carusel.styled';
 import { Props } from './types';
+import { useLogic } from './lib';
 
 export const Carusel: FC<Props> = ({ caruselType, technologies }) => {
-  const isBreakpoint = useMediaQuery(900);
-  const [caruselStyles, setCaruselStyles] = useState<string>(
-    `width: ${window.innerWidth / (!isBreakpoint ? 2.5 : 1)}px;`,
-  );
-  const [isPaused, setIsPaused] = useState<boolean>(false);
-
-  const onHover = () => setIsPaused(true);
-  const onLeave = () => setIsPaused(false);
-
-  const resizeHandler = () =>
-    setCaruselStyles(`width: ${window.innerWidth / (!isBreakpoint ? 2.5 : 1)}px;`);
-  const resizeRef = useResizeObserver(resizeHandler);
+  const { caruselStyles, isPaused, onHover, onLeave, resizeRef } = useLogic();
 
   return (
     <Wrapper

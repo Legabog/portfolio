@@ -12,8 +12,8 @@ import {
 import { Props } from './types';
 import { useLogic } from './lib';
 
-export const NavigationPanelButton: FC<Props> = ({ type, activeSectionId }) => {
-  const { throttledOnClick, isBottomAndLastSection, title } = useLogic({ type, activeSectionId });
+export const NavigationPanelButton: FC<Props> = (props) => {
+  const { throttledOnClick, isBottomAndLastSection, title, type } = useLogic(props);
 
   return (
     <Wrapper

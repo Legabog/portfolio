@@ -1,7 +1,5 @@
-import { FC, useState } from 'react';
-import { useTranslations } from 'next-intl';
+import { FC } from 'react';
 
-import { useSoundEffectsStore } from '@widgets/header';
 import {
   Wrapper,
   Card,
@@ -25,6 +23,7 @@ import {
 } from './project-section.styled';
 import { Props } from './types';
 import { Carusel } from './ui';
+import { useLogic } from './lib';
 
 export const ProjectSection: FC<Props> = ({
   sectionRef,
@@ -35,24 +34,16 @@ export const ProjectSection: FC<Props> = ({
   backTechnologyIcons,
   secondaryTitleNumber,
 }) => {
-  const [isFliped, setFliped] = useState<boolean>(false);
-  const { play } = useSoundEffectsStore();
-  const t = useTranslations(`FourthSection.FourthSectionProjects.FourthSectionRightPart.Section`);
-  const conditionTranslate = (
-    type: 'Title' | 'Description' | 'SecondaryTitle' | 'DescriptionFull' | 'BadgeStatus',
-  ) => t(`${type}.${overlappingType}`);
-
-  const title = conditionTranslate('Title');
-  const secondaryTitle = conditionTranslate('SecondaryTitle');
-  const description = conditionTranslate('Description');
-  const descriptionFull = conditionTranslate('DescriptionFull');
-  const badgeStatus = conditionTranslate('BadgeStatus');
-  const isActive = overlappingType === 'vtb';
-
-  const onClick = () => {
-    play('wooshing-1.wav');
-    setFliped((prev) => !prev);
-  };
+  const {
+    isFliped,
+    title,
+    description,
+    isActive,
+    badgeStatus,
+    onClick,
+    secondaryTitle,
+    descriptionFull,
+  } = useLogic(overlappingType);
 
   return (
     <Wrapper ref={ sectionRef } data-testid='project-section'>

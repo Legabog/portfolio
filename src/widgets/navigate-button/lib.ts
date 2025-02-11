@@ -11,6 +11,7 @@ export const useLogic = () => {
   const [isVisible, setIsVisible] = useState<boolean>(false);
   const [isInitalized, setIsInitialized] = useState<boolean>(false);
   const t = useTranslations('NavigateButton');
+
   const text = t('text');
   const firstSection = document.getElementById('first-section');
 

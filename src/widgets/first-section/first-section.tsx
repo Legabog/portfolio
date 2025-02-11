@@ -2,14 +2,12 @@
 
 import { FC } from 'react';
 import dynamic from 'next/dynamic';
-import { useTranslations } from 'next-intl';
 
-import { useObserverDetectSection } from '@shared/hooks';
 import { Loader, ScrollDown } from '@shared/ui';
 import { Wrapper, SecondaryWrapper } from './first-section.styled';
 import { FirstSectionTypedText } from './ui';
 import { CUSTOM_STYLES_SCROLL_DOWN, SECTION_NUMBER_SCROLL_DOWN } from './constants';
-import { useFirstSectionStore } from './model';
+import { useLogic } from './lib';
 
 const TechnologyPlanet = dynamic(() => import('./ui/technology-planet'), {
   loading: () => <Loader />,
@@ -17,11 +15,7 @@ const TechnologyPlanet = dynamic(() => import('./ui/technology-planet'), {
 });
 
 export const FirstSection: FC = () => {
-  const { isVisible, setIsVisible } = useFirstSectionStore();
-  const ref = useObserverDetectSection(setIsVisible);
-  const t = useTranslations('FirstSection.ScrollDown');
-
-  const sectionText = t('text');
+  const { ref, isVisible, sectionText } = useLogic();
 
   return (
     <Wrapper ref={ ref } $isVisible={ isVisible } data-testid='first-section' id='first-section'>

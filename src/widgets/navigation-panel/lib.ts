@@ -1,6 +1,7 @@
 import { useEffect, useLayoutEffect } from 'react';
 
 import { useNavigationPanelStore } from './model';
+import { SectionIds } from './types';
 
 export const useLogic = () => {
   const {
@@ -32,39 +33,28 @@ export const useLogic = () => {
   useEffect(() => {
     const checkOverlap = () => {
       const navigationPanel = document.getElementById('navigation-panel');
-      const secondSection = document.getElementById('second-section');
-      const thirdSection = document.getElementById('third-section');
-      const fourthSection = document.getElementById('fourth-section');
-      const fifthSection = document.getElementById('fifth-section');
+      const sections = ['second', 'third', 'fourth', 'fifth'].map((type) =>
+        document.getElementById(`${type}-section`),
+      );
 
-      if (secondSection && thirdSection && fourthSection && fifthSection && navigationPanel) {
-        const navigationPanelRect = navigationPanel.getBoundingClientRect();
-        const secondSectionRect = secondSection.getBoundingClientRect();
-        const thirdSectionRect = thirdSection.getBoundingClientRect();
-        const fourthSectionRect = fourthSection.getBoundingClientRect();
-        const fifthSectionRect = fifthSection.getBoundingClientRect();
+      if (!navigationPanel || sections.some((s) => !s)) return;
 
-        const overlappingTypeSetter = (type: typeof activeSectionId) => {
-          const targetRef = {
-            'second-section': secondSectionRect,
-            'third-section': thirdSectionRect,
-            'fourth-section': fourthSectionRect,
-            'fifth-section': fifthSectionRect,
-          }[type];
+      const navigationRect = navigationPanel.getBoundingClientRect();
 
-          return (
-            !(
-              navigationPanelRect.right < targetRef.left ||
-              navigationPanelRect.left > targetRef.right ||
-              navigationPanelRect.bottom < targetRef.top ||
-              navigationPanelRect.top > targetRef.bottom
-            ) && setActiveSectionId(type)
-          );
-        };
-        ['second-section', 'third-section', 'fourth-section', 'fifth-section'].forEach((type) =>
-          overlappingTypeSetter(type as typeof activeSectionId),
-        );
-      }
+      sections.forEach((section) => {
+        const rect = section?.getBoundingClientRect() as DOMRect;
+        const type = section?.id as SectionIds;
+
+        if (
+          !(
+            navigationRect.right < rect.left ||
+            navigationRect.left > rect.right ||
+            navigationRect.bottom < rect.top ||
+            navigationRect.top > rect.bottom
+          )
+        )
+          setActiveSectionId(type);
+      });
     };
     window.addEventListener('scroll', checkOverlap);
 

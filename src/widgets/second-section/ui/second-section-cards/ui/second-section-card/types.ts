@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-export interface CardProps {
+export interface Props {
   Icon: FC;
   id: string;
 }

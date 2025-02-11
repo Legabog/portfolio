@@ -1,13 +1,10 @@
 import { FC } from 'react';
-import { useTranslations } from 'next-intl';
 
-import { useHoverRandomLettersAnimation } from '@shared/hooks';
 import { Wrapper, Text } from './footer.styled';
+import { useLogic } from './lib';
 
 export const Footer: FC = () => {
-  const t = useTranslations('Header.MobileMenu.Footer');
-  const text = `@ 2025 ${t('text')}`;
-  const { animate, clear, generatedString } = useHoverRandomLettersAnimation(text);
+  const { text, generatedString, animate, clear } = useLogic();
 
   return (
     <Wrapper data-testid='footer'>

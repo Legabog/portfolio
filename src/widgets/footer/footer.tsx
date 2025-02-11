@@ -2,28 +2,11 @@
 
 import { FC } from 'react';
 
-import { useMediaQuery } from '@shared/hooks';
-import { IconSection, Rights, Socials } from './ui';
-import { Wrapper, MobileWrapper } from './footer.styled';
+import { Wrapper } from './footer.styled';
+import { useLogic } from './lib';
 
 export const Footer: FC = () => {
-  const isBreakpoint = useMediaQuery(600);
-
-  const conditionalPanel = isBreakpoint ? (
-    <>
-      <MobileWrapper>
-        <IconSection />
-        <Rights />
-      </MobileWrapper>
-      <Socials />
-    </>
-  ) : (
-    <>
-      <IconSection />
-      <Socials />
-      <Rights />
-    </>
-  );
+  const { conditionalPanel } = useLogic();
 
   return (
     <Wrapper data-testid='footer' id='footer'>

@@ -1,7 +1,6 @@
 'use client';
 
 import { FC } from 'react';
-import { useTranslations } from 'next-intl';
 
 import { PROJECTS_SVG } from '../../constants';
 import {
@@ -19,19 +18,10 @@ import {
 import { Carusel, NavigationSections } from './ui';
 import { WORDS } from './constants';
 import { Props } from './types';
+import { useLogic } from './lib';
 
 export const Card: FC<Props> = ({ overlappingType, linkifyRef, musiconRef, vtbRef }) => {
-  const t = useTranslations(`FourthSection.FourthSectionProjects.FourthSectionLeftPart.Card`);
-  const conditionTranslate = (
-    type: 'Title' | 'SecondaryTitle' | 'Badge' | 'Description' | 'Number' | 'BadgeStatus',
-  ) => t(`${type}.${overlappingType}`);
-
-  const title = conditionTranslate('Title');
-  const secondaryTitle = conditionTranslate('SecondaryTitle');
-  const badge = conditionTranslate('Badge');
-  const badgeStatus = conditionTranslate('BadgeStatus');
-  const number = conditionTranslate('Number');
-  const isActive = overlappingType === 'vtb';
+  const { badge, isActive, badgeStatus, title, number, secondaryTitle } = useLogic(overlappingType);
 
   return (
     <Wrapper data-testid='left-part-card'>

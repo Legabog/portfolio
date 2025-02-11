@@ -1,21 +1,13 @@
-import { FC, useEffect, useState } from 'react';
+import { FC } from 'react';
 
 import { COLORS } from '@shared/constants';
 import { SVG } from './figure.styled';
+import { useLogic } from './lib';
 
 const { orange, orangeSecondary } = COLORS;
 
 export const Figure: FC = () => {
-  const [bodyState, setBodyState] = useState<0 | 1 | 2 | 3>(0);
-
-  useEffect(() => {
-    const bodyTimerId = setInterval(
-      () => setBodyState((prev) => (prev === 3 ? 0 : (++prev as 1 | 2 | 3))),
-      500,
-    );
-
-    return () => [bodyTimerId].forEach(clearInterval);
-  }, []);
+  const { bodyState } = useLogic();
 
   return (
     <SVG

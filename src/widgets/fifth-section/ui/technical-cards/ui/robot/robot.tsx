@@ -1,26 +1,13 @@
-import { FC, useEffect, useState } from 'react';
+import { FC } from 'react';
 
-import { COLORS, THEME } from '@shared/constants';
-import { useThemeStore } from '@widgets/header';
+import { COLORS } from '@shared/constants';
 import { SVG } from './robot.styled';
+import { useLogic } from './lib';
 
 const { orange, orangeSecondary } = COLORS;
 
 export const Robot: FC = () => {
-  const { themeType } = useThemeStore();
-  const { backgroundColor } = THEME[themeType];
-  const [bodyState, setBodyState] = useState<0 | 1 | 2>(0);
-  const [heartState, setHeartState] = useState<0 | 1>(0);
-
-  useEffect(() => {
-    const bodyTimerId = setInterval(
-      () => setBodyState((prev) => (prev === 2 ? 0 : (++prev as 1 | 2))),
-      1000,
-    );
-    const heartTimerId = setInterval(() => setHeartState((prev) => (prev === 0 ? 1 : 0)), 500);
-
-    return () => [bodyTimerId, heartTimerId].forEach(clearInterval);
-  }, []);
+  const { bodyState, backgroundColor, heartState } = useLogic();
 
   return (
     <SVG

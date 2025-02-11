@@ -1,17 +1,12 @@
 import { FC } from 'react';
-import { useTranslations } from 'next-intl';
 import { TypeAnimation } from 'react-type-animation';
 
 import { Wrapper, TitleWrapper, Description, TopNumber } from './technical-card.styled';
 import { Props } from './types';
+import { useLogic } from './lib';
 
 export const TechnicalCard: FC<Props> = ({ Icon, topNumber, id }) => {
-  const t = useTranslations(`FifthSection.FifthSectionCards.FifthSectionCard.${id}`);
-  const conditionTranslate = (type: 'title' | 'description') => t(type);
-
-  const title = conditionTranslate('title');
-  const description = conditionTranslate('description');
-  const splicedTitle = title.split(' ').slice(0, 1).join(' ');
+  const { title, description, splicedTitle } = useLogic(id);
 
   return (
     <Wrapper data-testid={ id }>

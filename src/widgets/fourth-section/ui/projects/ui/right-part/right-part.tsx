@@ -5,17 +5,18 @@ import { FC } from 'react';
 import { Props } from './types';
 import { Wrapper } from './right-part.styled';
 import { ProjectSection, CommonScrollSection } from './ui';
-import { useAdditionalLogic } from './lib';
+import { useLogic } from './lib';
 
-export const RightPart: FC<Props> = ({ linkifyRef, musiconRef, vtbRef }) => {
-  const { projectsMap } = useAdditionalLogic(linkifyRef, musiconRef, vtbRef);
+export const RightPart: FC<Props> = (props) => {
+  const { projectsMap } = useLogic(props);
 
   return (
     <Wrapper data-testid='right-part'>
       <CommonScrollSection />
-      {projectsMap.map((props) => (
-        <ProjectSection key={ props.id } { ...props } />
-      ))}
+      {projectsMap.map((props) => {
+        const { id } = props;
+        return <ProjectSection key={ id } { ...props } />;
+      })}
     </Wrapper>
   );
 };
