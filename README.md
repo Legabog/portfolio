@@ -15,8 +15,11 @@
 </div>
 
 ## 🧬 Basic concepts
-* **🪐 first concept** The first concept is to create a high quality application that will combine the modernity of the technology stack, with the beauty of modern 3d models.
-* **Practise** The side goal of the project is to improve skills and experiment with the technology stack.
+* **🪐 First concept** The first concept is to create a high quality application that will combine the modernity of the technology stack, with the beauty of modern 3d models.
+* **🌌 Second concept** The second cocept is to create a web app which is a pwa, also do integration to telegram mini-apps.
+* **🌈 Third concept** The third concept is to create an app as close to a real app as possible, all sorts of linter, sentry, ci cd integration using husky, lint-staged, github hooks, tests, adding storybook and deploy it all using vercel and chromatic.
+* **🌌 Fourth concept** The fourth concept is responsible for the fact that the app should be designed according to FSD and next's app route.
+* **⚡ Fifth concept** The fifth concept is AI-generated, bilingual audio and 3d models, these will be created using Spline.
 
 ## What’s In This Document
 
