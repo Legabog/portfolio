@@ -14,16 +14,8 @@
 <a href="https://github.com/Legabog/portfolio/blob/main/LICENSE"><img alt="license" src="https://img.shields.io/npm/l/next.svg?style=for-the-badge&labelColor=000000"></a>
 </div>
 
-## ⚓ Oxc
-
-The Oxidation Compiler is creating a collection of high-performance tools for JavaScript and TypeScript.
-
-Oxc is building a parser, linter, formatter, transformer, minifier, resolver ... all written in Rust.
-
-See more at [oxc.rs](https://oxc.rs)!
-
-* **The main concept** The main concept of this project is to try to create a social network as similar to [Facebook](https://www.facebook.com/) as possible.
-
+## 🧬 Basic concepts
+* **🪐 first concept** The first concept is to create a high quality application that will combine the modernity of the technology stack, with the beauty of modern 3d models.
 * **Practise** The side goal of the project is to improve skills and experiment with the technology stack.
 
 ## What’s In This Document
