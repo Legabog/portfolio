@@ -22,7 +22,6 @@
 - 🛠️ [Stack of technologies](#%EF%B8%8F-stack-of-technologies)
 - 📧 [Contact](#-contact)
 - :memo: [License](#memo-license)
-- 💜 [Powered by](#-powered-by)
 
 ## 🧬 Basic concepts
 * **🪐 First concept** The first concept is creating a high quality application that will combine the modernity of the technology stack, with the beauty of modern 3d models.
