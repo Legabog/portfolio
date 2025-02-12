@@ -15,7 +15,7 @@
 </div>
 
 ## Navigation
-- [🧬 Basic concepts](#-basic-concepts)
+- 🧬 [Basic concepts](#-basic-concepts)
 - [Getting started](#-getting-started)
   - [Environment File](#environment-file)
   - [Basic Scripts](#basic-scripts)
