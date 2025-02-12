@@ -14,7 +14,13 @@
 <a href="https://github.com/Legabog/portfolio/blob/main/LICENSE"><img alt="license" src="https://img.shields.io/npm/l/next.svg?style=for-the-badge&labelColor=000000"></a>
 </div>
 
-The first versions of this social network were built by using the UI and style features of [Facebook](https://www.facebook.com/).
+## ⚓ Oxc
+
+The Oxidation Compiler is creating a collection of high-performance tools for JavaScript and TypeScript.
+
+Oxc is building a parser, linter, formatter, transformer, minifier, resolver ... all written in Rust.
+
+See more at [oxc.rs](https://oxc.rs)!
 
 * **The main concept** The main concept of this project is to try to create a social network as similar to [Facebook](https://www.facebook.com/) as possible.
 
