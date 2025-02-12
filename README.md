@@ -14,8 +14,8 @@
 <a href="https://github.com/Legabog/portfolio/blob/main/LICENSE"><img alt="license" src="https://img.shields.io/npm/l/next.svg?style=for-the-badge&labelColor=000000"></a>
 </div>
 
-## What’s In This Document
-- [Basic concepts](#-basic-concepts)
+## Navigation
+- [🧬 Basic concepts](#-basic-concepts)
 - [Getting started](#-getting-started)
   - [Environment File](#environment-file)
   - [Basic Scripts](#basic-scripts)
@@ -25,9 +25,9 @@
 - [Powered by](#-powered-by)
 
 ## 🧬 Basic concepts
-* **🪐 First concept** The first concept is to create a high quality application that will combine the modernity of the technology stack, with the beauty of modern 3d models.
-* **🌌 Second concept** The second cocept is to create a web app which is a pwa, also do integration to telegram mini-apps.
-* **🌈 Third concept** The third concept is to create an app as close to a real app as possible, all sorts of linter, sentry, ci cd integration using husky, lint-staged, github hooks, tests, adding storybook and deploy it all using vercel and chromatic.
+* **🪐 First concept** The first concept is creating a high quality application that will combine the modernity of the technology stack, with the beauty of modern 3d models.
+* **🌌 Second concept** The second cocept is creating a web app which is a pwa, also do integration to telegram mini-apps.
+* **🌈 Third concept** The third concept is creating an app as close to a real app as possible, all sorts of linter, sentry, ci cd integration using husky, lint-staged, github hooks, tests, adding storybook and deploy it all using vercel and chromatic.
 * **🌌 Fourth concept** The fourth concept is responsible for the fact that the app should be designed according to FSD and next's app route.
 * **⚡ Fifth concept** The fifth concept is AI-generated, bilingual audio and 3d models, these will be created using Spline.
 
