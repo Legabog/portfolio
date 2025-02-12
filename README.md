@@ -6,10 +6,11 @@
   </a>
   <h1>Portfolio</h1>
 
-<a href="https://github.com/Legabog/portfolio/blob/main/pnpm-lock.yaml"><img alt="pnpm" src="https://img.shields.io/badge/pnpm-%234a4a4a.svg?style=for-the-badge&logo=pnpm&logoColor=f69220"></a>
-<a href="https://github.com/vercel/next.js"><img alt="next.js" src="https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white"></a>
+<a href="https://pnpm.io/"><img alt="pnpm" src="https://img.shields.io/badge/pnpm-%234a4a4a.svg?style=for-the-badge&logo=pnpm&logoColor=f69220"></a>
+<a href="https://nextjs.org/"><img alt="next.js" src="https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white"></a>
+<a href="https://threejs.org/"><img alt="three.js" src="https://img.shields.io/badge/threejs-black?style=for-the-badge&logo=three.js&logoColor=white"></a>
 <a href="https://github.com/Legabog/portfolio/blob/main/LICENSE"><img alt="License" src="https://img.shields.io/npm/l/next.svg?style=for-the-badge&labelColor=000000"></a>
-<a href="https://vercel.com/olegs-projects-1ad7c413"><img alt="Vercel" src="https://img.shields.io/badge/Vercel-000000.svg?style=for-the-badge&logo=Vercel&labelColor=000"></a>
+<a href="https://vercel.com/"><img alt="Vercel" src="https://img.shields.io/badge/Vercel-000000.svg?style=for-the-badge&logo=Vercel&labelColor=000"></a>
 
 </div>
 
