@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="[https://social-network-legabog.web.app/](https://lega-portfolio.vercel.app/)">
+  <a href="https://lega-portfolio.vercel.app/">
     <img alt="portfolio-logo" src="https://github.com/user-attachments/assets/d5f270d7-1193-4875-bbcb-73284c8eedf8" width="128" />
   </a>
 </p>
