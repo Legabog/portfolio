@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { COLORS } from '@shared/constants';
 
 export const Wrapper = styled.div`
   position: relative;
@@ -63,10 +62,6 @@ export const TopNumber = styled.span`
   text-transform: uppercase;
   letter-spacing: 0;
   white-space: break-spaces;
-
-  &:hover {
-    color: ${COLORS.orange};
-  }
 
   @media only screen and (width <= 1300px) {
     top: 10px;

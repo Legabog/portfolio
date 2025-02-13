@@ -48,13 +48,7 @@ export const Description = styled.span`
   font-weight: 500;
   line-height: 20px;
   margin-top: 8px;
-
-  &:hover {
-    color: ${orange};
-  }
 `;
 export const TopNumber = styled.span`
-  &:hover {
-    color: ${orange};
-  }
+  color: ${orange};
 `;

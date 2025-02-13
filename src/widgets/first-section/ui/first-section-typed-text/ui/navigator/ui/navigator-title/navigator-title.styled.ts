@@ -1,9 +1,5 @@
 import styled from 'styled-components';
 
-import { COLORS } from '@shared/constants';
-
-const { orange } = COLORS;
-
 export const Wrapper = styled.div`
   display: flex;
   align-items: center;
@@ -20,8 +16,4 @@ export const Text = styled.span<{ $isFirstTitle?: boolean }>`
   letter-spacing: 0;
   white-space: break-spaces;
   user-select: none;
-
-  &:hover {
-    color: ${orange};
-  }
 `;

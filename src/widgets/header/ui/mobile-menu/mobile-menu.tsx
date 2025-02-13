@@ -10,8 +10,8 @@ import { IconSection } from '../icon-section';
 import { SwitcherSection } from '../switcher-section';
 import { InfoSection } from '../info-section';
 import { Backdrop, Button, Span, Wrapper, BackdropWrapper } from './mobile-menu.styled';
-import { Footer } from './ui';
 import { useMobileMenuStore } from './model';
+import { Footer } from './ui';
 
 const Background = dynamic(() => import('@widgets/background'), {
   loading: () => <Loader />,
@@ -35,7 +35,7 @@ export const MobileMenu: FC = () => {
   };
 
   return (
-    <Wrapper key={ state } data-testid='mobile-menu'>
+    <Wrapper data-testid='mobile-menu'>
       <Button title={ text } onClick={ onClick }>
         <Span $spanType='first' $state={ state } />
         <Span $spanType='second' $state={ state } />

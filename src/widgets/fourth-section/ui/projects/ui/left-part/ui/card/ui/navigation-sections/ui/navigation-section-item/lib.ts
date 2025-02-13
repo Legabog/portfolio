@@ -18,8 +18,8 @@ export const useLogic = (
   const { play } = useSoundEffectsStore();
   const { animate, clear, generatedString } = useHoverRandomLettersAnimation(title);
 
-  const tooltip = t(`tooltip.${overlappingType}`);
   const isActive = overlappingType === activeOverlappingType;
+  const tooltip = isActive ? '' : t(`tooltip.${overlappingType}`);
 
   const onMouseEnter = () => !isActive && animate();
   const onMouseLeave = () => clear();

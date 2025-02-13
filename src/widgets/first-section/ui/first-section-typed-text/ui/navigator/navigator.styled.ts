@@ -11,6 +11,7 @@ export const WrapperTitles = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  gap: 5px;
 `;
 export const WrapperItems = styled.div`
   display: flex;

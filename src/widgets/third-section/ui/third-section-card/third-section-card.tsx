@@ -1,5 +1,4 @@
 import { FC } from 'react';
-import { useTranslations } from 'next-intl';
 
 import { AlertIcon } from '@shared/ui';
 import {
@@ -11,13 +10,10 @@ import {
   Card,
   CardAnimatedSection,
 } from './third-section-card.styled';
+import { useLogic } from './lib';
 
 export const ThirdSectionCard: FC = () => {
-  const t = useTranslations(`ThirdSection.ThirdSectionCard`);
-
-  const firstDescription = t('first-part');
-  const secondDescription = t('second-part');
-  const animatedText = t('animated-text');
+  const { firstDescription, secondDescription, animatedText } = useLogic();
 
   return (
     <Wrapper data-testid='third-section-card' id='third-section-card'>

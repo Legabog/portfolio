@@ -5,7 +5,7 @@ import { Wrapper, Text } from './common-scroll-section.styled';
 import { useLogic } from './lib';
 
 export const CommonScrollSection: FC = () => {
-  const { isVisible, isPlayingAnimation, text, animate, clear, generatedString } = useLogic();
+  const { isVisible, isPlayingAnimation, text } = useLogic();
 
   return (
     <Wrapper
@@ -14,9 +14,7 @@ export const CommonScrollSection: FC = () => {
       data-testid='common-scroll-section'
       id='common-scroll-section'
     >
-      <Text title={ text } onMouseEnter={ animate } onMouseLeave={ clear }>
-        {generatedString}
-      </Text>
+      <Text title={ text }>{text}</Text>
       <ChevronDownIcon />
     </Wrapper>
   );

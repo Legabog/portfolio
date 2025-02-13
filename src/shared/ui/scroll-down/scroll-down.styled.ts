@@ -86,8 +86,4 @@ export const Text = styled.p`
   text-transform: uppercase;
   letter-spacing: 0;
   white-space: break-spaces;
-
-  &:hover {
-    color: ${orange};
-  }
 `;

@@ -1,17 +1,16 @@
+import { useState, useEffect } from 'react';
+
 import { useMediaQuery } from '@shared/hooks';
-import { InfoSection, MobileMenu, SwitcherSection } from './ui';
 
 export const useLogic = () => {
   const isBreakpoint = useMediaQuery(900);
 
-  const conditionalPanel = isBreakpoint ? (
-    <MobileMenu />
-  ) : (
-    <>
-      <SwitcherSection />
-      <InfoSection />
-    </>
-  );
+  const [isScrolled, setIsScrolled] = useState(false);
 
-  return { conditionalPanel };
+  useEffect(() => {
+    window.addEventListener('scroll', () => setIsScrolled(window.scrollY !== 0));
+    return () => window.removeEventListener('scroll', () => setIsScrolled(window.scrollY !== 0));
+  }, []);
+
+  return { isScrolled, isBreakpoint };
 };

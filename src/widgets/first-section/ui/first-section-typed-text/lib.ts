@@ -1,31 +1,24 @@
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 
-import { useHoverRandomLettersAnimation } from '@shared/hooks';
+import { Locale } from '@locales';
 
 export const useLogic = () => {
+  const locale = useLocale() as Locale;
   const t = useTranslations(`FirstSection.FirstSectionTypedText`);
-  const { animate, clear, generatedString } = useHoverRandomLettersAnimation(t('first'));
-  const {
-    animate: animateDescription,
-    clear: clearDescription,
-    generatedString: generatedStringDescription,
-  } = useHoverRandomLettersAnimation(t('description'));
-  const {
-    animate: animateSecond,
-    clear: clearSecond,
-    generatedString: generatedStringSecond,
-  } = useHoverRandomLettersAnimation(t('second'));
+
+  const title = t('first');
+  const description = t('description');
+  const secondTitle = t('second');
+  const animatedFirstPart = t('main-1');
+  const animatedSecondPart = t('main-2');
+  const isRuLanguage = locale === 'ru';
 
   return {
-    t,
-    animate,
-    clear,
-    generatedString,
-    animateDescription,
-    clearDescription,
-    generatedStringDescription,
-    animateSecond,
-    clearSecond,
-    generatedStringSecond,
+    title,
+    description,
+    secondTitle,
+    animatedFirstPart,
+    animatedSecondPart,
+    isRuLanguage,
   };
 };

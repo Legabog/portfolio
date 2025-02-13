@@ -10,7 +10,7 @@ export const SectionTitle: FC<Props> = ({ title, topNumber, animatedSlicedTitle 
     <TypeAnimation
       repeat={ Infinity }
       sequence={ [title, 1000, animatedSlicedTitle, 1000] }
-      speed={ 50 }
+      speed={ 30 }
     />
   </Wrapper>
 );
