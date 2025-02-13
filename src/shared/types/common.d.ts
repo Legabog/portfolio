@@ -7,6 +7,7 @@ declare interface Theme {
   color: string;
   colorSecondary: string;
   description: string;
+  header: string;
   icon: {
     path: {
       fill: string;

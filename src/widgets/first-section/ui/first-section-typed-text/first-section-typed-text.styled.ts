@@ -1,6 +1,8 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { COLORS } from '@shared/constants';
+
+const { orange } = COLORS;
 
 export const Wrapper = styled.div`
   z-index: 1;
@@ -8,13 +10,21 @@ export const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   width: 50%;
+  text-transform: uppercase;
 
   @media only screen and (width <= 900px) {
     width: 100%;
   }
 `;
-export const Title = styled.div`
+export const Title = styled.div<{ $isRuLanguage?: boolean; $isSecondTitle?: boolean }>`
   color: ${({ theme }) => theme.color};
+
+  ${({ $isRuLanguage, $isSecondTitle }) =>
+    $isRuLanguage &&
+    $isSecondTitle &&
+    css`
+      margin-top: 10px;
+    `}
 `;
 export const InnerTextWrapper = styled.div`
   display: flex;
@@ -32,8 +42,13 @@ export const InnerTextWrapper = styled.div`
   letter-spacing: -4.8px;
   user-select: none;
 
-  & > span:nth-child(2) {
-    color: ${COLORS.orange};
+  &&& > span:nth-child(2) {
+    color: ${orange};
+
+    &::after {
+      opacity: 0;
+      animation: none;
+    }
   }
 
   @media only screen and (width <= 1500px) {
@@ -75,7 +90,7 @@ export const InnerTextWrapper = styled.div`
   }
 `;
 export const Description = styled.div`
-  color: ${COLORS.orange};
+  color: ${orange};
   font-size: 18px;
   margin-left: 6px;
   letter-spacing: 0;

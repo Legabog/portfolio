@@ -12,7 +12,7 @@ export const TechnicalCard: FC<Props> = ({ Icon, topNumber, id }) => {
     <Wrapper data-testid={ id }>
       <TitleWrapper>
         <TopNumber title={ title }>{topNumber}</TopNumber>
-        <TypeAnimation repeat={ Infinity } sequence={ [title, 1000, splicedTitle, 1000] } speed={ 50 } />
+        <TypeAnimation repeat={ Infinity } sequence={ [title, 1000, splicedTitle, 1000] } speed={ 30 } />
       </TitleWrapper>
       <Description>{description}</Description>
       <Icon />

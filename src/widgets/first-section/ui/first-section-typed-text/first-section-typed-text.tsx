@@ -8,36 +8,21 @@ import { Navigator } from './ui';
 import { useLogic } from './lib';
 
 export const FirstSectionTypedText: FC = () => {
-  const {
-    t,
-    animate,
-    clear,
-    generatedString,
-    animateDescription,
-    clearDescription,
-    generatedStringDescription,
-    animateSecond,
-    clearSecond,
-    generatedStringSecond,
-  } = useLogic();
+  const { title, description, secondTitle, animatedFirstPart, animatedSecondPart, isRuLanguage } =
+    useLogic();
 
   return (
     <Wrapper data-testid='first-section-typed-text' id='first-section-typed-text'>
       <InnerTextWrapper>
-        <Title onMouseEnter={ animate } onMouseLeave={ clear }>
-          {generatedString}
-        </Title>
+        <Title title={ title }>{title}</Title>
         <TypeAnimation
           repeat={ Infinity }
-          sequence={ [t('main'), 1000, t('main-2'), 1000] }
-          speed={ 50 }
-          omitDeletionAnimation
+          sequence={ [animatedFirstPart, 1000, animatedSecondPart, 1000] }
+          speed={ 30 }
         />
-        <Description onMouseEnter={ animateDescription } onMouseLeave={ clearDescription }>
-          {generatedStringDescription}
-        </Description>
-        <Title onMouseEnter={ animateSecond } onMouseLeave={ clearSecond }>
-          {generatedStringSecond}
+        <Description title={ description }>{description}</Description>
+        <Title $isRuLanguage={ isRuLanguage } title={ secondTitle } $isSecondTitle>
+          {secondTitle}
         </Title>
         <Navigator />
       </InnerTextWrapper>

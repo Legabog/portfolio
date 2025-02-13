@@ -63,7 +63,7 @@ export const CardAnimatedSection = styled.div`
     height: 11px;
 
     path {
-      animation: ${({ theme }) => blink('icon', theme)} 0.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      animation: ${({ theme }) => blink('icon', theme)} 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
     }
   }
 
@@ -116,7 +116,7 @@ export const AnimatedTitle = styled.span`
   font-weight: 400;
   line-height: 16px;
   text-transform: uppercase;
-  animation: ${({ theme }) => blink('title', theme)} 0.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  animation: ${({ theme }) => blink('title', theme)} 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 
   @media only screen and (width <= 400px) {
     margin-left: 2px;

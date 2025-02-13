@@ -47,7 +47,7 @@ export const SecondSectionCard: FC<Props> = ({ id, Icon }) => {
           key={ themeType }
           repeat={ Infinity }
           sequence={ [firstTyped, 1000, secondTyped, 1000, thirdTyped, 1000] }
-          speed={ 50 }
+          speed={ 30 }
         />
         <Description>{backDescription}</Description>
       </BackWrapper>

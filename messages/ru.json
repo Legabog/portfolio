@@ -35,13 +35,13 @@
 	},
 	"FirstSection": {
 		"FirstSectionTypedText": {
-			"first": "СТРОЙ",
-			"main": "ПОРТФОЛИО",
-			"main-2": "ЧАСТЬ МЕНЯ",
-			"description": "ОТ FRONTEND РАЗРАБОТЧИКА ОЛЕГ ДОСОВ",
-			"second": "СОЗДАВАЙ",
+			"first": "Строй",
+			"main-1": "Портфолио",
+			"main-2": "Часть меня",
+			"description": "От frontend разработчика Олега Досова",
+			"second": "Создавай",
 			"Navigator": {
-				"title-1": "Портфолио.",
+				"title-1": "/// Портфолио.",
 				"title-2": "Показать умения.",
 				"item-01": "Обо мне",
 				"item-02": "Умения",
@@ -90,7 +90,7 @@
 					"title": "Детали",
 					"typed-1": "Растущий",
 					"typed-2": "Развивающийся",
-					"typed-3": "Модернизирующийся",
+					"typed-3": "Прогрессивный",
 					"description": "Постоянно пытаюсь изучать что-то новое и поддерживать свои знания в фронтенд разработке. Открыт ко всему новому."
 				}
 			}
@@ -150,9 +150,9 @@
 					"NavigationSections": {
 						"NavigationSectionItem": {
 							"tooltip": {
-								"linkify": "перход на Linkify",
-								"vtb": "перход на VTB",
-								"musicon": "перход на MusicOn"
+								"linkify": "Прокрутить до Linkify",
+								"vtb": "Прокрутить до VTB",
+								"musicon": "Прокрутить до MusicOn"
 							}
 						}
 					}
@@ -160,7 +160,7 @@
 			},
 			"FourthSectionRightPart": {
 				"CommonScrollSection": {
-					"text": "прокрутите вниз"
+					"text": "Прокрутите вниз"
 				},
 				"Section": {
 					"Title": {
@@ -221,28 +221,28 @@
 		}
 	},
 	"ScrollDown": {
-		"text": "прокрутите для изучения"
+		"text": "Прокрутите для изучения"
 	},
 	"NavigateButton": {
-		"text": "главный раздел"
+		"text": "Главный раздел"
 	},
 	"NavigationPanelButton": {
 		"top": {
-			"second-section": "главный раздел",
-			"third-section": "раздел обо мне",
-			"fourth-section": "раздел умений",
-			"fifth-section": "раздел проектов"
+			"second-section": "Главный раздел",
+			"third-section": "Раздел обо мне",
+			"fourth-section": "Раздел умений",
+			"fifth-section": "Раздел проектов"
 		},
 		"bottom": {
-			"second-section": "раздел умений",
-			"third-section": "раздел проектов",
-			"fourth-section": "раздел технологий"
+			"second-section": "Раздел умений",
+			"third-section": "Раздел проектов",
+			"fourth-section": "Раздел технологий"
 		}
 	},
 	"NavigationPanelItem": {
-		"second-section": "раздел обо мне",
-		"third-section": "раздел умений",
-		"fourth-section": "раздел проектов",
-		"fifth-section": "раздел технологий"
+		"second-section": "Раздел обо мне",
+		"third-section": "Раздел умений",
+		"fourth-section": "Раздел проектов",
+		"fifth-section": "Раздел технологий"
 	}
 }

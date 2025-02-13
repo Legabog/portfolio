@@ -29,7 +29,7 @@ const moveDown = keyframes`
 
 export const Wrapper = styled.div<{ $isPlayingAnimation: boolean; $isVisible: boolean }>`
   position: sticky;
-  top: 60px;
+  top: 70px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -66,8 +66,4 @@ export const Text = styled.p`
   text-transform: uppercase;
   letter-spacing: 0;
   white-space: break-spaces;
-
-  &:hover {
-    color: ${orange};
-  }
 `;

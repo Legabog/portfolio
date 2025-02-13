@@ -8,12 +8,16 @@ export const COLORS = {
   greySecondary: 'rgb(140, 140, 140)',
   lightGrey: 'rgb(240, 242, 244)',
   darkGrey: 'rgb(43, 43, 55)',
+  blackSecondary: 'rgb(33 33 33 / 80% )',
+  whiteSecondary: 'rgb(240 240 240 / 80% )',
 };
-const { white, black, orange, grey, greySecondary, greyBorder } = COLORS;
+const { white, black, orange, grey, greySecondary, greyBorder, blackSecondary, whiteSecondary } =
+  COLORS;
 export const THEME: Record<'dark' | 'light', Theme> = {
   dark: {
     color: white,
     colorSecondary: white,
+    header: blackSecondary,
     backgroundColor: black,
     icon: {
       path: {
@@ -26,6 +30,7 @@ export const THEME: Record<'dark' | 'light', Theme> = {
   light: {
     color: black,
     colorSecondary: black,
+    header: whiteSecondary,
     backgroundColor: white,
     icon: {
       path: {

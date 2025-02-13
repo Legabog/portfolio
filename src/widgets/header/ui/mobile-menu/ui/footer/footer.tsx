@@ -4,13 +4,11 @@ import { Wrapper, Text } from './footer.styled';
 import { useLogic } from './lib';
 
 export const Footer: FC = () => {
-  const { text, generatedString, animate, clear } = useLogic();
+  const { text } = useLogic();
 
   return (
     <Wrapper data-testid='footer'>
-      <Text title={ text } onMouseEnter={ animate } onMouseLeave={ clear }>
-        {generatedString}
-      </Text>
+      <Text title={ text }>{text}</Text>
     </Wrapper>
   );
 };

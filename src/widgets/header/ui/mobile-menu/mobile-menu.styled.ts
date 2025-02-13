@@ -3,6 +3,8 @@ import styled, { css, keyframes } from 'styled-components';
 import { COLORS } from '@shared/constants';
 import { State } from './types';
 
+const { orange } = COLORS;
+
 const fadeIn = keyframes`
   from {
     opacity: 0;
@@ -31,6 +33,9 @@ const moveOut = keyframes`
 `;
 
 export const Wrapper = styled.div`
+  position: fixed;
+  top: 19px;
+  right: 20px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -94,7 +99,7 @@ export const Span = styled.span<{ $spanType: 'first' | 'second'; $state: State['
       : css`
           transform: translate(-50%, calc(-50% ${$spanType === 'first' ? '-' : '+'} 0.4rem));
         `}
-  background-color: ${COLORS.orange};
+  background-color: ${orange};
   opacity: 1;
   transition:
     transform 0.25s ease-out,

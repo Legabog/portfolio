@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 
-import { useHoverRandomLettersAnimation } from '@shared/hooks';
 import { useCommonScrollStore } from './model';
 
 export const useLogic = () => {
@@ -11,7 +10,6 @@ export const useLogic = () => {
     `FourthSection.FourthSectionProjects.FourthSectionRightPart.CommonScrollSection`,
   );
   const text = t('text');
-  const { animate, clear, generatedString } = useHoverRandomLettersAnimation(text);
 
   useEffect(() => {
     const checkOverlap = () => {
@@ -60,5 +58,5 @@ export const useLogic = () => {
     };
   }, [setIsVisible, setIsPlayingAnimation]);
 
-  return { isVisible, isPlayingAnimation, animate, clear, generatedString, text };
+  return { isVisible, isPlayingAnimation, text };
 };

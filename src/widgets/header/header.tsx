@@ -2,17 +2,24 @@
 
 import { FC } from 'react';
 
-import { IconSection } from './ui';
-import { Wrapper } from './header.styled';
+import { InfoSection, MobileMenu, SwitcherSection, IconSection } from './ui';
+import { Wrapper, SecondWrapper } from './header.styled';
 import { useLogic } from './lib';
 
 export const Header: FC = () => {
-  const { conditionalPanel } = useLogic();
-
+  const { isScrolled, isBreakpoint } = useLogic();
   return (
     <Wrapper data-testid='header'>
-      <IconSection />
-      {conditionalPanel}
+      <SecondWrapper $isScrolled={ isScrolled }>
+        <IconSection />
+        {!isBreakpoint && (
+          <>
+            <SwitcherSection />
+            <InfoSection />
+          </>
+        )}
+      </SecondWrapper>
+      {isBreakpoint && <MobileMenu />}
     </Wrapper>
   );
 };
