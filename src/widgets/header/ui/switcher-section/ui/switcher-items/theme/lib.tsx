@@ -20,8 +20,14 @@ export const useLogic = () => {
 
   useEffect(() => {
     const metaThemeColor = document.querySelector('meta[name=theme-color]');
+    const appleStatusBar = document.querySelector(
+      'meta[name=apple-mobile-web-app-status-bar-style]',
+    );
+    const color = THEME[themeType].header;
+    const conditionColor = window.scrollY !== 0 ? color : 'transparent';
 
-    if (metaThemeColor) metaThemeColor.setAttribute('content', THEME[themeType].header);
+    if (metaThemeColor) metaThemeColor.setAttribute('content', conditionColor);
+    if (appleStatusBar) appleStatusBar.setAttribute('content', conditionColor);
   }, [themeType]);
 
   return { handleChange, tooltip, isLightMode };
