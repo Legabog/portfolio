@@ -10,9 +10,7 @@ const nextConfig = {
     styledComponents: true,
   },
   webpack: (config, { isServer }) => {
-    if (!isServer) {
-      config.optimization.innerGraph = false;
-    }
+    if (!isServer) config.optimization.innerGraph = false;
     return config;
   },
   async headers() {

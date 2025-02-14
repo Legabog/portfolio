@@ -48,7 +48,7 @@
   },
   "packageManager": "pnpm@10.0.0+sha256.43abf6e720fb7bc53c591b0862605c7d323d0a9d2dd33bcac07b062e13cf4948",
   "dependencies": {
-    "@sentry/nextjs": "7.105.0",
+    "@sentry/nextjs": "^9.1.0",
     "@splinetool/react-spline": "2.2.6",
     "@vercel/analytics": "^1.4.1",
     "@vercel/speed-insights": "^1.1.0",

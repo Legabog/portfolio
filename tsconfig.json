@@ -35,12 +35,10 @@
     "mocks",
     "./jest.setup.ts",
     "./next.config.mjs",
-    "./public/sw.js",
     "./jest.config.ts",
     "./playwright.config.ts",
     "./sentry.client.config.ts",
-    "./sentry.edge.config.ts",
-    "./sentry.server.config.ts",
+    "./instrumentation.ts",
     "./commitlint.config.ts",
     ".next/types/**/*.ts"
   ],
