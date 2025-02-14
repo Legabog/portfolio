@@ -19,15 +19,20 @@ export const useLogic = () => {
   };
 
   useEffect(() => {
-    const metaThemeColor = document.querySelector('meta[name=theme-color]');
-    const appleStatusBar = document.querySelector(
-      'meta[name=apple-mobile-web-app-status-bar-style]',
-    );
-    const color = THEME[themeType].header;
-    const conditionColor = window.scrollY !== 0 ? color : 'red';
+    const handleScroll = () => {
+      const metaThemeColor = document.querySelector('meta[name=theme-color]');
+      const appleStatusBar = document.querySelector(
+        'meta[name=apple-mobile-web-app-status-bar-style]',
+      );
+      const color = THEME[themeType].header;
+      const conditionColor = window.scrollY !== 0 ? color : 'red';
 
-    if (metaThemeColor) metaThemeColor.setAttribute('content', conditionColor);
-    if (appleStatusBar) appleStatusBar.setAttribute('content', conditionColor);
+      if (metaThemeColor) metaThemeColor.setAttribute('content', conditionColor);
+      if (appleStatusBar) appleStatusBar.setAttribute('content', conditionColor);
+    };
+    window.addEventListener('scroll', handleScroll);
+
+    return () => window.removeEventListener('scroll', handleScroll);
   }, [themeType]);
 
   return { handleChange, tooltip, isLightMode };
