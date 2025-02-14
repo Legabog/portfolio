@@ -1,11 +1,13 @@
 import { useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 
+import { useMediaQuery } from '@shared/hooks';
 import { THEME } from '@shared/constants';
 import { useSoundEffectsStore } from '@widgets/header';
 import { useThemeStore } from './model';
 
 export const useLogic = () => {
+  const isBreakPoint = useMediaQuery(900);
   const { play } = useSoundEffectsStore();
   const { themeType, setTheme } = useThemeStore();
 
@@ -19,21 +21,41 @@ export const useLogic = () => {
   };
 
   useEffect(() => {
-    const handleScroll = () => {
-      const metaThemeColor = document.querySelector('meta[name=theme-color]');
-      const appleStatusBar = document.querySelector(
-        'meta[name=apple-mobile-web-app-status-bar-style]',
-      );
-      const color = THEME[themeType].header;
-      const conditionColor = window.scrollY !== 0 ? color : 'red';
+    if (isBreakPoint) {
+      const setColors = () => {
+        let metaThemeColor = document.querySelector('meta[name=theme-color]');
+        let appleStatusBar = document.querySelector(
+          'meta[name=apple-mobile-web-app-status-bar-style]',
+        );
 
-      if (metaThemeColor) metaThemeColor.setAttribute('content', conditionColor);
-      if (appleStatusBar) appleStatusBar.setAttribute('content', conditionColor);
-    };
-    window.addEventListener('scroll', handleScroll);
+        // Если необходимых мета-тегов нет, создаём их динамически
+        if (!metaThemeColor) {
+          metaThemeColor = document.createElement('meta');
+          metaThemeColor.setAttribute('name', 'theme-color');
+          document.head.appendChild(metaThemeColor);
+        }
+        if (!appleStatusBar) {
+          appleStatusBar = document.createElement('meta');
+          appleStatusBar.setAttribute('name', 'apple-mobile-web-app-status-bar-style');
+          document.head.appendChild(appleStatusBar);
+        }
 
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [themeType]);
+        const color = THEME[themeType].header;
+        const conditionColor = window.scrollY !== 0 ? color : 'transparent';
+
+        console.log('metaThemeColor---', metaThemeColor);
+        console.log('appleStatusBar---', appleStatusBar);
+
+        metaThemeColor?.setAttribute('content', conditionColor);
+        appleStatusBar?.setAttribute('content', conditionColor);
+      };
+
+      setColors();
+      window.addEventListener('scroll', setColors);
+
+      return () => window.removeEventListener('scroll', setColors);
+    }
+  }, [themeType, isBreakPoint]);
 
   return { handleChange, tooltip, isLightMode };
 };
