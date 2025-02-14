@@ -28,7 +28,6 @@ export const useLogic = () => {
           'meta[name=apple-mobile-web-app-status-bar-style]',
         );
 
-        // Если необходимых мета-тегов нет, создаём их динамически
         if (!metaThemeColor) {
           metaThemeColor = document.createElement('meta');
           metaThemeColor.setAttribute('name', 'theme-color');
@@ -40,14 +39,11 @@ export const useLogic = () => {
           document.head.appendChild(appleStatusBar);
         }
 
-        const color = THEME[themeType].header;
-        const conditionColor = window.scrollY !== 0 ? color : 'transparent';
+        const { header, backgroundColor } = THEME[themeType];
+        const conditionColor = window.scrollY !== 0 ? header : backgroundColor;
 
-        console.log('metaThemeColor---', metaThemeColor);
-        console.log('appleStatusBar---', appleStatusBar);
-
-        metaThemeColor?.setAttribute('content', conditionColor);
-        appleStatusBar?.setAttribute('content', conditionColor);
+        metaThemeColor.setAttribute('content', conditionColor);
+        appleStatusBar.setAttribute('content', conditionColor);
       };
 
       setColors();
