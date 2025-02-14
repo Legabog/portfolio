@@ -40,7 +40,7 @@ export const useLogic = () => {
         }
 
         const { header, backgroundColor } = THEME[themeType];
-        const conditionColor = window.scrollY <= 0 ? header : backgroundColor;
+        const conditionColor = window.scrollY > 0 ? header : backgroundColor;
 
         metaThemeColor.setAttribute('content', conditionColor);
         appleStatusBar.setAttribute('content', conditionColor);

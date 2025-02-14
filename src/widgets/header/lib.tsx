@@ -8,8 +8,8 @@ export const useLogic = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    window.addEventListener('scroll', () => setIsScrolled(window.scrollY <= 0));
-    return () => window.removeEventListener('scroll', () => setIsScrolled(window.scrollY <= 0));
+    window.addEventListener('scroll', () => setIsScrolled(window.scrollY > 0));
+    return () => window.removeEventListener('scroll', () => setIsScrolled(window.scrollY > 0));
   }, []);
 
   return { isScrolled, isBreakpoint };
