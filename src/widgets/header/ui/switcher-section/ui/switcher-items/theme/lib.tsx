@@ -24,7 +24,7 @@ export const useLogic = () => {
       'meta[name=apple-mobile-web-app-status-bar-style]',
     );
     const color = THEME[themeType].header;
-    const conditionColor = window.scrollY !== 0 ? color : 'transparent';
+    const conditionColor = window.scrollY !== 0 ? color : 'red';
 
     if (metaThemeColor) metaThemeColor.setAttribute('content', conditionColor);
     if (appleStatusBar) appleStatusBar.setAttribute('content', conditionColor);
