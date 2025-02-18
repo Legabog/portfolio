@@ -53,13 +53,26 @@ The app has been configured and integrated into Telegram Mini Apps using Telegra
 📱[Telegram Mini-App bot](https://t.me/Legab_bot)
 
 ## 🛠️ Stack of technologies
-
 - Next.js
+- TypeScript
+- Styled-Components
 - Zustand
-- S
-- Customized Jest and Playwright tests
-- Storybook hosting via Chromatic
-- Vercel deployment with analytics
+- Immer
+- Spline
+- Husky
+- Lint-staged
+- Prettier
+- ESlint
+- Stylelint
+- Scriptlint
+- Commitlint
+- Knip
+- Storybook
+- Chromatic
+- Vercel
+- Jest
+- Playwright
+- Sentry
 
 ## 📧 Contact
 
