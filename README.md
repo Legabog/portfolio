@@ -24,15 +24,26 @@
 - :memo: [License](#memo-license)
 
 ## 🧬 Basic concepts
-* **🪐 First concept** Creating a high quality application that will combine the modernity of the technology stack, with the beauty of modern 3d models.
-* **🌌 Second concept** Creating a web app which is a pwa, also do integration to telegram mini-apps.
-* **🌈 Third concept** Creating an app as close to a real app as possible, all sorts of linter, sentry, ci cd integration using husky, lint-staged, github hooks, tests, adding storybook and deploy it all using vercel and chromatic.
-* **🌌 Fourth concept** Responsible for the fact that the app should be designed according to FSD and next's app route.
-* **⚡ Fifth concept** AI-generated, bilingual audio and 3d models, these will be created using Spline.
+* **🪐 First concept** Creating a high-quality application that will combine the modernity of the technology stack with the beauty of modern 3D models.
+* **🌌 Second concept** Creating a web app which is a PWA, with integration with Telegram Mini-Apps.
+* **🌈 Third concept** Creating an app as close to a real app as possible, implementing all sorts of linters, Sentry, CI/CD integration using Husky, lint-staged, GitHub hooks, tests, adding Storybook, and deploying it all using Vercel and Chromatic.
+* **🌌 Fourth concept** Ensuring the app is designed according to FSD architecture and Next.js App Router standards.
+* **⚡ Fifth concept** AI-generated bilingual audio and 3D models created using Spline 3D design software.
 
 ## 🎭 Versions
-The web application is created in a flexible way, it is designed for desktop and mobile. The application has several types, the first type is rwa web application, the second type is telegram mini-app.
+The web application is created in a flexible way and is designed for both desktop and mobile devices. The application has two types: a PWA a Telegram Mini-App. This allows you to develop an application that supports multiple platforms.
 ## 🌐 **Web**
+For this application, the following modern development methods and technologies were implemented:
+- CI/CD tools including Husky with lint-staged
+- GitHub hooks
+- Sentry integration
+- Customized Jest and Playwright tests
+- Storybook hosting via Chromatic
+- Vercel deployment with analytics
+
+[Deployed web application]([#%EF%B8%8F-stack-of-technologies](https://lega-portfolio.vercel.app/))
+[Stack of technologies](#%EF%B8%8F-stack-of-technologies)
+
 ## 📱 **Mini-app**
 ## 🛠️ Stack of technologies
 
