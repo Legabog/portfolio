@@ -17,7 +17,7 @@
 ## Navigation
 - 🧬 [Basic concepts](#-basic-concepts)
 - 🎭 [Versions](#-versions)
-  - 🌐 [Web](#-web)
+  - ☄️ [Web](#-web)
   - 📱 [Mini-app](#-mini-app)
 - 🛠️ [Stack of technologies](#%EF%B8%8F-stack-of-technologies)
 - 📧 [Contact](#-contact)
@@ -32,7 +32,7 @@
 
 ## 🎭 Versions
 The web application is created in a flexible way and is designed for both desktop and mobile devices. The application has two types: a PWA a Telegram Mini-App. This allows you to develop an application that supports multiple platforms.
-## 🌐 **Web**
+## ☄️ **Web**
 For this application, the following modern development methods and technologies were implemented:
 - CI/CD tools including Husky with lint-staged
 - GitHub hooks
@@ -41,15 +41,14 @@ For this application, the following modern development methods and technologies 
 - Storybook hosting via Chromatic
 - Vercel deployment with analytics
 
-[Deployed web application]([#%EF%B8%8F-stack-of-technologies](https://lega-portfolio.vercel.app/))
-[Stack of technologies](#%EF%B8%8F-stack-of-technologies)
+☄️[Deployed app](https://lega-portfolio.vercel.app/)
+
+📖[Deployed storybook + chromatic](https://main--65f1cf3d6f9c7814a1377593.chromatic.com/)
 
 ## 📱 **Mini-app**
+The app has been configured and integrated into Telegram Mini Apps using Telegram's official 🤖[BotFather bot](https://t.me/BotFather).
+
 ## 🛠️ Stack of technologies
-
-## Frontend
-
-## Backend
 
 ## 📧 Contact
 
