@@ -19,7 +19,7 @@
 - 🎭 [Versions](#-versions)
   - ☄️ [Web-app](#-web-app)
   - 📱 [Mini-app](#-mini-app)
-- 🛠️ [Stack of technologies](#%EF%B8%8F-stack-of-technologies)
+- 🛠️ [Stack of technologies](#-stack-of-technologies)
 - 📧 [Contact](#-contact)
 - :memo: [License](#memo-license)
 
