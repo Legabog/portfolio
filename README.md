@@ -34,7 +34,7 @@
 The web application is created in a flexible way and is designed for both desktop and mobile devices. The application has two types: a PWA a Telegram Mini-App. This allows you to develop an application that supports multiple platforms.
 
 ## ☄️ Web-app
-
+Two-voiced voiceovers were generated using AI, and 3D models were created using 🌈[Spline](https://spline.design/) in this app.
 For this application, the following modern development methods and technologies were implemented:
 - CI/CD tools including Husky with lint-staged
 - GitHub hooks
