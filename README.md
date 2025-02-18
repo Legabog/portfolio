@@ -58,6 +58,7 @@ The app has been configured and integrated into Telegram Mini Apps using Telegra
 - Styled-Components
 - Zustand
 - Immer
+- Pnpm
 - Spline
 - Husky
 - Lint-staged
