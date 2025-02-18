@@ -17,9 +17,9 @@
 ## Navigation
 - 🧬 [Basic concepts](#-basic-concepts)
 - 🎭 [Versions](#-versions)
-  - ☄️ [Web-app](%EF%B8%8F-web-app)
+  - ☄️ [Web-app](#%EF%B8%8F-web-app)
   - 📱 [Mini-app](#-mini-app)
-- 🛠️ [Stack of technologies](%EF%B8%8F-stack-of-technologies)
+- 🛠️ [Stack of technologies](#%EF%B8%8F-stack-of-technologies)
 - 📧 [Contact](#-contact)
 - 📝 [License](#memo-license)
 
