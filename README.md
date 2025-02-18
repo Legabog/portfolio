@@ -24,11 +24,11 @@
 - :memo: [License](#memo-license)
 
 ## 🧬 Basic concepts
-* **🪐 First concept** The first concept is creating a high quality application that will combine the modernity of the technology stack, with the beauty of modern 3d models.
-* **🌌 Second concept** The second cocept is creating a web app which is a pwa, also do integration to telegram mini-apps.
-* **🌈 Third concept** The third concept is creating an app as close to a real app as possible, all sorts of linter, sentry, ci cd integration using husky, lint-staged, github hooks, tests, adding storybook and deploy it all using vercel and chromatic.
-* **🌌 Fourth concept** The fourth concept is responsible for the fact that the app should be designed according to FSD and next's app route.
-* **⚡ Fifth concept** The fifth concept is AI-generated, bilingual audio and 3d models, these will be created using Spline.
+* **🪐 First concept** Creating a high quality application that will combine the modernity of the technology stack, with the beauty of modern 3d models.
+* **🌌 Second concept** Creating a web app which is a pwa, also do integration to telegram mini-apps.
+* **🌈 Third concept** Creating an app as close to a real app as possible, all sorts of linter, sentry, ci cd integration using husky, lint-staged, github hooks, tests, adding storybook and deploy it all using vercel and chromatic.
+* **🌌 Fourth concept** Responsible for the fact that the app should be designed according to FSD and next's app route.
+* **⚡ Fifth concept** AI-generated, bilingual audio and 3d models, these will be created using Spline.
 
 ## 🎭 Versions
 The web application is created in a flexible way, it is designed for desktop and mobile. The application has several types, the first type is rwa web application, the second type is telegram mini-app.
