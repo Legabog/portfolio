@@ -48,9 +48,23 @@ For this application, the following modern development methods and technologies 
 ## 📱 **Mini-app**
 The app has been configured and integrated into Telegram Mini Apps using Telegram's official 🤖[BotFather bot](https://t.me/BotFather).
 
+📱[Telegram Mini-App bot](https://t.me/Legab_bot)
+
 ## 🛠️ Stack of technologies
+- Next.js
+- Zustand
+- S
+- Customized Jest and Playwright tests
+- Storybook hosting via Chromatic
+- Vercel deployment with analytics
 
 ## 📧 Contact
+
+[Telegram](https://t.me/legabog)
+
+[Linkedin](https://www.linkedin.com/in/oleg-dosov/)
+
+probringer@gmail.com
 
 ## :memo: License
 
