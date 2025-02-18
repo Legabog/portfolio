@@ -17,11 +17,11 @@
 ## Navigation
 - 🧬 [Basic concepts](#-basic-concepts)
 - 🎭 [Versions](#-versions)
-  - ☄️ [Web-app](#-web-app)
+  - ☄️ [Web-app](%EF%B8%8F-web-app)
   - 📱 [Mini-app](#-mini-app)
-- 🛠️ [Stack of technologies](#-stack-of-technologies)
+- 🛠️ [Stack of technologies](%EF%B8%8F-stack-of-technologies)
 - 📧 [Contact](#-contact)
-- :memo: [License](#memo-license)
+- 📝 [License](#memo-license)
 
 ## 🧬 Basic concepts
 * **🪐 First concept** Creating a high-quality application that will combine the modernity of the technology stack with the beauty of modern 3D models.
@@ -33,7 +33,8 @@
 ## 🎭 Versions
 The web application is created in a flexible way and is designed for both desktop and mobile devices. The application has two types: a PWA a Telegram Mini-App. This allows you to develop an application that supports multiple platforms.
 
-## ☄️ **Web-app**
+## ☄️ Web-app
+
 For this application, the following modern development methods and technologies were implemented:
 - CI/CD tools including Husky with lint-staged
 - GitHub hooks
@@ -52,6 +53,7 @@ The app has been configured and integrated into Telegram Mini Apps using Telegra
 📱[Telegram Mini-App bot](https://t.me/Legab_bot)
 
 ## 🛠️ Stack of technologies
+
 - Next.js
 - Zustand
 - S
@@ -67,6 +69,6 @@ The app has been configured and integrated into Telegram Mini Apps using Telegra
 
 probringer@gmail.com
 
-## :memo: License
+## 📝 License
 
 Licensed under the [MIT License](./LICENSE).
