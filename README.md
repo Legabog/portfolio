@@ -32,6 +32,7 @@
 
 ## 🎭 Versions
 The web application is created in a flexible way and is designed for both desktop and mobile devices. The application has two types: a PWA a Telegram Mini-App. This allows you to develop an application that supports multiple platforms.
+
 ## ☄️ **Web-app**
 For this application, the following modern development methods and technologies were implemented:
 - CI/CD tools including Husky with lint-staged
