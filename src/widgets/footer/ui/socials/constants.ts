@@ -10,7 +10,6 @@ export const SOCIALS_ITEMS: Props[] = [
   },
   {
     id: '3',
-    url: 'https://www.linkedin.com/in/oleg-dosov/',
     Icon: ResumeIcon,
   },
 ];

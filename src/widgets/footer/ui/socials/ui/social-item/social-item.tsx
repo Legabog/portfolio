@@ -5,12 +5,12 @@ import { Wrapper, StyledLink } from './social-item.styled';
 import { useLogic } from './lib';
 
 export const SocialItem: FC<Props> = ({ url, id, Icon }) => {
-  const { text, onClick } = useLogic(id);
+  const { text, conditionalUrl, onClick } = useLogic(id, url);
 
   return (
     <StyledLink
       data-testid={ `social-${id}` }
-      href={ url }
+      href={ conditionalUrl as string }
       target='_blank'
       title={ text }
       onClick={ onClick }
