@@ -11,7 +11,8 @@ export const useLogic = (id: Props['id'], url: Props['url']) => {
   const { play } = useSoundEffectsStore();
 
   const text = t(`section-${id}`);
-  const conditionalUrl = id === '3' ? `https://drive.google.com/file/d/${PDF_PART[locale]}/view?usp=sharing` : url;
+  const conditionalUrl =
+    id === '3' ? `https://drive.google.com/file/d/${PDF_PART[locale]}/view?usp=sharing` : url;
 
   const onClick = () => play('navigation-1.wav');
 
