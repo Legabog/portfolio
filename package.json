@@ -47,6 +47,9 @@
     }
   },
   "packageManager": "pnpm@10.0.0+sha256.43abf6e720fb7bc53c591b0862605c7d323d0a9d2dd33bcac07b062e13cf4948",
+  "engines": {
+    "node": "24.x"
+  },
   "dependencies": {
     "@sentry/nextjs": "^9.1.0",
     "@splinetool/react-spline": "2.2.6",
