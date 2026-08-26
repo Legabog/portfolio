@@ -1,5 +1,5 @@
 declare module FourthSection {
-  type OverlappingType = 'vtb' | 'musicon' | 'linkify';
+  type OverlappingType = 'pooling' | 'musicon' | 'linkify' | 'kod';
 }
 declare interface Theme {
   backgroundColor: string;

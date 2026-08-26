@@ -6,24 +6,27 @@ export const useLogic = () => {
   const isBreakpoint = useMediaQuery(900);
 
   const absoluteRef = useRef<HTMLDivElement | null>(null);
-  const vtbRef = useRef<HTMLDivElement | null>(null);
+  const poolingRef = useRef<HTMLDivElement | null>(null);
   const linkifyRef = useRef<HTMLDivElement | null>(null);
   const musiconRef = useRef<HTMLDivElement | null>(null);
+  const kodRef = useRef<HTMLDivElement | null>(null);
   const [overlappingType, setOverlappingType] = useState<FourthSection.OverlappingType>('linkify');
 
   useEffect(() => {
     const checkOverlap = () => {
-      if (absoluteRef.current && vtbRef.current && linkifyRef.current && musiconRef.current) {
+      if (absoluteRef.current && poolingRef.current && linkifyRef.current && musiconRef.current && kodRef.current ) {
         const absoluteRect = absoluteRef.current.getBoundingClientRect();
-        const targetVtbRef = vtbRef.current.getBoundingClientRect();
+        const targetPoolingRef = poolingRef.current.getBoundingClientRect();
         const targetLinkifyRef = linkifyRef.current.getBoundingClientRect();
         const targetMusiconRef = musiconRef.current.getBoundingClientRect();
+        const targetKodRef = kodRef.current.getBoundingClientRect();
 
         const overlappingTypeSetter = (type: typeof overlappingType) => {
           const targetRef = {
-            vtb: targetVtbRef,
+            kod: targetKodRef,
             linkify: targetLinkifyRef,
             musicon: targetMusiconRef,
+            pooling: targetPoolingRef
           }[type];
 
           return (
@@ -35,7 +38,7 @@ export const useLogic = () => {
             ) && setOverlappingType(type)
           );
         };
-        ['vtb', 'musicon', 'linkify'].forEach((type) =>
+        ['kod', 'musicon', 'linkify', 'pooling'].forEach((type) =>
           overlappingTypeSetter(type as typeof overlappingType),
         );
       }
@@ -48,5 +51,5 @@ export const useLogic = () => {
     };
   }, []);
 
-  return { overlappingType, absoluteRef, vtbRef, linkifyRef, musiconRef, isBreakpoint };
+  return { overlappingType, absoluteRef, poolingRef, linkifyRef, musiconRef, kodRef, isBreakpoint };
 };

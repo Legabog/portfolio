@@ -4,7 +4,8 @@ import { MusicOnProjectIcon, LinkifyIcon, VTBIcon } from '@shared/ui';
 import { Props } from './types';
 
 export const PROJECTS_SVG: { [key in Props['overlappingType']]: ReactElement } = {
-  vtb: <VTBIcon />,
+  pooling: <VTBIcon />,
   musicon: <MusicOnProjectIcon />,
   linkify: <LinkifyIcon />,
+  kod: <VTBIcon />,
 };

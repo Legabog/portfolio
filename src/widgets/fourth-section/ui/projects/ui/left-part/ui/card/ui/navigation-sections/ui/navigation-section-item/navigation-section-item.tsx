@@ -11,10 +11,19 @@ export const NavigationSectionItem: FC<Props> = ({
   activeOverlappingType,
   linkifyRef,
   musiconRef,
-  vtbRef,
+  poolingRef,
+  kodRef,
 }) => {
   const { isActive, throttledOnClick, onMouseEnter, onMouseLeave, generatedString, tooltip } =
-    useLogic(overlappingType, activeOverlappingType, title, linkifyRef, musiconRef, vtbRef);
+    useLogic(
+      overlappingType,
+      activeOverlappingType,
+      title,
+      linkifyRef,
+      musiconRef,
+      poolingRef,
+      kodRef,
+    );
   return (
     <Wrapper
       $isActive={ isActive }

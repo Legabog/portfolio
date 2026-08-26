@@ -26,7 +26,7 @@ import { MusicOnWrapper } from './right-part.styled';
 import { Props } from './types';
 import { Props as ProjectProps } from './ui';
 
-export const useLogic = ({ linkifyRef, musiconRef, vtbRef }: Props) => {
+export const useLogic = ({ linkifyRef, musiconRef, poolingRef, kodRef }: Props) => {
   const projectsMap: ProjectProps[] = [
     {
       id: 'project-1',
@@ -101,7 +101,7 @@ export const useLogic = ({ linkifyRef, musiconRef, vtbRef }: Props) => {
     },
     {
       id: 'project-3',
-      overlappingType: 'vtb',
+      overlappingType: 'pooling',
       icon: <VTBIcon />,
       topNumber: '/ 03',
       secondaryTitleNumber: '03',
@@ -139,7 +139,41 @@ export const useLogic = ({ linkifyRef, musiconRef, vtbRef }: Props) => {
         { id: 'back-technology-icon-18', icon: <DockerIcon />, title: 'Docker' },
         { id: 'back-technology-icon-19', icon: <SonarIcon />, title: 'SonarQube' },
       ],
-      sectionRef: vtbRef,
+      sectionRef: poolingRef,
+    },
+    {
+      id: 'project-4',
+      overlappingType: 'kod',
+      icon: <VTBIcon />,
+      topNumber: '/ 04',
+      secondaryTitleNumber: '04',
+      frontTechnologyIcons: [
+        {
+          id: 'front-technology-icon-9',
+          icon: <TsIcon />,
+          title: 'TypeScript',
+        },
+        { id: 'front-technology-icon-10', icon: <ReactIcon />, title: 'React' },
+        { id: 'front-technology-icon-11', icon: <ReduxIcon />, title: 'RTK' },
+        { id: 'front-technology-icon-12', icon: <ScssIcon />, title: 'Scss' },
+      ],
+      backTechnologyIcons: [
+        {
+          id: 'back-technology-icon-20',
+          icon: <TsIcon />,
+          title: 'TypeScript',
+        },
+        { id: 'back-technology-icon-21', icon: <ReactIcon />, title: 'React' },
+        { id: 'back-technology-icon-22', icon: <ReduxIcon />, title: 'RTK' },
+        { id: 'back-technology-icon-23', icon: <ScssIcon />, title: 'Scss' },
+        { id: 'back-technology-icon-14', icon: <StorybookIcon />, title: 'Storybook' },
+        { id: 'back-technology-icon-15', icon: <WebpackIcon />, title: 'Webpack' },
+        { id: 'back-technology-icon-16', icon: <PrettierIcon />, title: 'Prettier' },
+        { id: 'back-technology-icon-17', icon: <PostgresqlIcon />, title: 'Posgresql' },
+        { id: 'back-technology-icon-18', icon: <DockerIcon />, title: 'Docker' },
+        { id: 'back-technology-icon-19', icon: <SonarIcon />, title: 'SonarQube' },
+      ],
+      sectionRef: kodRef,
     },
   ];
 

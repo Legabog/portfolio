@@ -1,6 +1,6 @@
 import { Locale } from '@locales';
 
 export const PDF_PART: { [key in Locale]: string } = {
-  ru: '1sGahwXKhUJkuqXg8P8JVjLcRLYqSoAA_',
-  en: '1iTumWa-0xfzEPy1_omJIu8e3r1qyorJ4',
+  ru: '1jhk1ixMMvYMHCs1QW6vKr6cmEICjpeta',
+  en: '1UnQMF9L9uI-sVlR5pX2bEV7NZmNMtCBO',
 };

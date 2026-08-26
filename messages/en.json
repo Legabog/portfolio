@@ -124,34 +124,40 @@
 				"Card": {
 					"Title": {
 						"linkify": "Linkify",
-						"vtb": "VTB",
+						"pooling": "Pooling",
+						"kod": "KOD",
 						"musicon": "MusicOn"
 					},
 					"SecondaryTitle": {
 						"linkify": "Social network",
-						"vtb": "Cash management",
-						"musicon": "Music player"
+						"pooling": "Cash management",
+						"musicon": "Music player",
+						"kod": "Editor"
 					},
 					"Badge": {
 						"linkify": "Social app",
-						"vtb": "Cash app",
-						"musicon": "Music app"
+						"pooling": "Cash app",
+						"musicon": "Music app",
+						"kod": "Editor app"
 					},
 					"BadgeStatus": {
 						"linkify": "Inactive",
-						"vtb": "Active",
-						"musicon": "Inactive"
+						"kod": "Active",
+						"musicon": "Inactive",
+						"pooling": "Inactive"
 					},
 					"Number": {
 						"linkify": "01",
 						"musicon": "02",
-						"vtb": "03"
+						"pooling": "03",
+						"kod": "04"
 					},
 					"NavigationSections": {
 						"NavigationSectionItem": {
 							"tooltip": {
 								"linkify": "Scroll to Linkify",
-								"vtb": "Scroll to VTB",
+								"pooling": "Scroll to Pooling Engine",
+								"kod": "Scroll to KOD",
 								"musicon": "Scroll to MusicOn"
 							}
 						}
@@ -165,28 +171,33 @@
 				"Section": {
 					"Title": {
 						"linkify": "Linkify",
-						"vtb": "VTB",
-						"musicon": "MusicOn"
+						"pooling": "Pooling",
+						"musicon": "MusicOn",
+						"kod": "KOD"
 					},
 					"BadgeStatus": {
 						"linkify": "Inactive",
-						"vtb": "Active",
-						"musicon": "Inactive"
+						"kod": "Active",
+						"musicon": "Inactive",
+						"pooling": "Inactive"
 					},
 					"SecondaryTitle": {
 						"linkify": "Social network with facebook style",
-						"vtb": "Automated cash pooling system",
-						"musicon": "A media streaming service"
+						"pooling": "Automated cash pooling system",
+						"musicon": "A media streaming service",
+						"kod": "Text editor for documents"
 					},
 					"Description": {
 						"linkify": "Social network were built using the style features and user interface of facebook.",
-						"vtb": "The system is designed to automate the execution of services for cash pooling.",
-						"musicon": "A media streaming and downloading service where users can search for music by artist."
+						"pooling": "The system is designed to automate the execution of services for cash pooling.",
+						"musicon": "A media streaming and downloading service where users can search for music by artist.",
+						"kod": "An editor for working with documents relating to various business entities."
 					},
 					"DescriptionFull": {
 						"linkify": "The main goal of the project is to create a social network with standard features such as: publishing posts, messaging, user interaction by viewing each other's profiles, commenting, browsing the news feed and much more. The first versions of this social network were built using the style features and user interface of Facebook.",
-						"vtb": "The system is designed to automate the execution of services for material pooling products and allows managing several bank accounts for a corporate client. The system is designed to automate the execution of services for material pooling products and allows managing several bank accounts for a corporate client.",
-						"musicon": "A media streaming and downloading service where users can search for music by artist, album or genre, and create, edit and share playlists. The platform offers two usage options: basic features are free with ads or restrictions, while advanced features such as offline or ad-free listening are offered through a paid subscription. A media streaming and downloading service where users can search for music by artist, album or genre, and create, edit and share playlists."
+						"pooling": "The system is designed to automate the execution of services for material pooling products and allows managing several bank accounts for a corporate client. The system is designed to automate the execution of services for material pooling products and allows managing several bank accounts for a corporate client.",
+						"musicon": "A media streaming and downloading service where users can search for music by artist, album or genre, and create, edit and share playlists. The platform offers two usage options: basic features are free with ads or restrictions, while advanced features such as offline or ad-free listening are offered through a paid subscription. A media streaming and downloading service where users can search for music by artist, album or genre, and create, edit and share playlists.",
+						"kod": "A text editor for working with documents relating to various business entities within VTB’s internal platform. The application supports the full document lifecycle: creation, editing, validation, approval and export to DOCX/PDF."
 					}
 				}
 			}

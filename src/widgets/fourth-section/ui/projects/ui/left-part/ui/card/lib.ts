@@ -13,7 +13,7 @@ export const useLogic = (overlappingType: Props['overlappingType']) => {
   const badge = conditionTranslate('Badge');
   const badgeStatus = conditionTranslate('BadgeStatus');
   const number = conditionTranslate('Number');
-  const isActive = overlappingType === 'vtb';
+  const isActive = overlappingType === 'kod';
 
   return { badge, isActive, badgeStatus, title, number, secondaryTitle };
 };

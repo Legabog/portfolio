@@ -9,7 +9,8 @@ export const NavigationSections: FC<Props> = ({
   overlappingType,
   linkifyRef,
   musiconRef,
-  vtbRef,
+  poolingRef,
+  kodRef,
 }) => (
   <Wrapper data-testid='navigation-sections'>
     <SecondaryWrapper>
@@ -18,9 +19,10 @@ export const NavigationSections: FC<Props> = ({
           key={ props.id }
           { ...props }
           activeOverlappingType={ overlappingType }
+          kodRef={ kodRef }
           linkifyRef={ linkifyRef }
           musiconRef={ musiconRef }
-          vtbRef={ vtbRef }
+          poolingRef={ poolingRef }
         />
       ))}
     </SecondaryWrapper>

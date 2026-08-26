@@ -18,7 +18,7 @@ export const useLogic = (overlappingType: Props['overlappingType']) => {
   const description = conditionTranslate('Description');
   const descriptionFull = conditionTranslate('DescriptionFull');
   const badgeStatus = conditionTranslate('BadgeStatus');
-  const isActive = overlappingType === 'vtb';
+  const isActive = overlappingType === 'kod';
 
   const onClick = () => {
     play('wooshing-1.wav');

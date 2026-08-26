@@ -20,16 +20,17 @@ import { WORDS } from './constants';
 import { Props } from './types';
 import { useLogic } from './lib';
 
-export const Card: FC<Props> = ({ overlappingType, linkifyRef, musiconRef, vtbRef }) => {
+export const Card: FC<Props> = ({ overlappingType, linkifyRef, musiconRef, poolingRef, kodRef }) => {
   const { badge, isActive, badgeStatus, title, number, secondaryTitle } = useLogic(overlappingType);
 
   return (
     <Wrapper data-testid='left-part-card'>
       <NavigationSections
+        kodRef={ kodRef }
         linkifyRef={ linkifyRef }
         musiconRef={ musiconRef }
         overlappingType={ overlappingType }
-        vtbRef={ vtbRef }
+        poolingRef={ poolingRef }
       />
       <CardBody>
         <InfoSection>

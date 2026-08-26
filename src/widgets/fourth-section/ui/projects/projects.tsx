@@ -5,20 +5,27 @@ import { useLogic } from './lib';
 import { LeftPart, RightPart } from './ui';
 
 export const Projects: FC = () => {
-  const { overlappingType, absoluteRef, linkifyRef, musiconRef, vtbRef, isBreakpoint } = useLogic();
+  const { overlappingType, absoluteRef, poolingRef, linkifyRef, musiconRef, kodRef, isBreakpoint } =
+    useLogic();
 
   return (
     <Wrapper data-testid='projects'>
       {!isBreakpoint && (
         <LeftPart
           absoluteRef={ absoluteRef }
+          kodRef={ kodRef }
           linkifyRef={ linkifyRef }
           musiconRef={ musiconRef }
           overlappingType={ overlappingType }
-          vtbRef={ vtbRef }
+          poolingRef={ poolingRef }
         />
       )}
-      <RightPart linkifyRef={ linkifyRef } musiconRef={ musiconRef } vtbRef={ vtbRef } />
+      <RightPart
+        kodRef={ kodRef }
+        linkifyRef={ linkifyRef }
+        musiconRef={ musiconRef }
+        poolingRef={ poolingRef }
+      />
     </Wrapper>
   );
 };

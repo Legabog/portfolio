@@ -6,18 +6,32 @@ export const WORDS: {
     [key in CaruselProps['caruselType']]: CaruselProps['words'];
   };
 } = {
-  vtb: {
+  pooling: {
     left: [
-      { id: 'vtb-left-1', text: 'VTB' },
-      { id: 'vtb-left-2', text: 'Cash' },
-      { id: 'vtb-left-3', text: 'Managment' },
-      { id: 'vtb-left-4', text: 'Projects' },
+      { id: 'pooling-left-1', text: 'VTB' },
+      { id: 'pooling-left-2', text: 'Cash' },
+      { id: 'pooling-left-3', text: 'Managment' },
+      { id: 'pooling-left-4', text: 'Projects' },
     ],
     right: [
-      { id: 'vtb-right-1', text: 'Cash' },
-      { id: 'vtb-right-2', text: 'Managment' },
-      { id: 'vtb-right-3', text: 'Projects' },
-      { id: 'vtb-right-4', text: 'VTB' },
+      { id: 'pooling-right-1', text: 'Cash' },
+      { id: 'pooling-right-2', text: 'Managment' },
+      { id: 'pooling-right-3', text: 'Projects' },
+      { id: 'pooling-right-4', text: 'VTB' },
+    ],
+  },
+  kod: {
+    left: [
+      { id: 'kod-left-1', text: 'VTB' },
+      { id: 'kod-left-2', text: 'KOD' },
+      { id: 'kod-left-3', text: 'Editor' },
+      { id: 'kod-left-4', text: 'Projects' },
+    ],
+    right: [
+      { id: 'kod-right-1', text: 'KOD' },
+      { id: 'kod-right-2', text: 'Editor' },
+      { id: 'kod-right-3', text: 'Projects' },
+      { id: 'kod-right-4', text: 'VTB' },
     ],
   },
   musicon: {
