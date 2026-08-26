@@ -14,7 +14,13 @@ export const useLogic = () => {
 
   useEffect(() => {
     const checkOverlap = () => {
-      if (absoluteRef.current && poolingRef.current && linkifyRef.current && musiconRef.current && kodRef.current ) {
+      if (
+        absoluteRef.current &&
+        poolingRef.current &&
+        linkifyRef.current &&
+        musiconRef.current &&
+        kodRef.current
+      ) {
         const absoluteRect = absoluteRef.current.getBoundingClientRect();
         const targetPoolingRef = poolingRef.current.getBoundingClientRect();
         const targetLinkifyRef = linkifyRef.current.getBoundingClientRect();
@@ -26,7 +32,7 @@ export const useLogic = () => {
             kod: targetKodRef,
             linkify: targetLinkifyRef,
             musicon: targetMusiconRef,
-            pooling: targetPoolingRef
+            pooling: targetPoolingRef,
           }[type];
 
           return (

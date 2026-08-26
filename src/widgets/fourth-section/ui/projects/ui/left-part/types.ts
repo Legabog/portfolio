@@ -6,5 +6,5 @@ export interface Props {
   linkifyRef: MutableRefObject<HTMLDivElement | null>;
   musiconRef: MutableRefObject<HTMLDivElement | null>;
   overlappingType: FourthSection.OverlappingType;
-  poolingRef: MutableRefObject<HTMLDivElement | null>; 
+  poolingRef: MutableRefObject<HTMLDivElement | null>;
 }

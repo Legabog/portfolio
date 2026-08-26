@@ -7,6 +7,6 @@ export const INFO_ITEMS: Item[] = [
     url: 'https://www.linkedin.com/in/oleg-dosov/',
   },
   {
-    id: '3'
+    id: '3',
   },
 ];

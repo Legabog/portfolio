@@ -16,7 +16,7 @@ export const SECTIONS: Pick<Props, 'id' | 'title' | 'overlappingType'>[] = [
     title: 'Pooling Engine',
     overlappingType: 'pooling',
   },
-    {
+  {
     id: 'navigation-section-item-4',
     title: 'KOD',
     overlappingType: 'kod',
