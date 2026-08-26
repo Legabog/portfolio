@@ -13,7 +13,12 @@ export const SECTIONS: Pick<Props, 'id' | 'title' | 'overlappingType'>[] = [
   },
   {
     id: 'navigation-section-item-3',
-    title: 'VTB',
-    overlappingType: 'vtb',
+    title: 'Pooling Engine',
+    overlappingType: 'pooling',
+  },
+    {
+    id: 'navigation-section-item-4',
+    title: 'KOD',
+    overlappingType: 'kod',
   },
 ];

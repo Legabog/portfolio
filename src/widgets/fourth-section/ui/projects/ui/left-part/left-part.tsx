@@ -10,15 +10,17 @@ export const LeftPart: FC<Props> = ({
   absoluteRef,
   linkifyRef,
   musiconRef,
-  vtbRef,
+  poolingRef,
+  kodRef,
   overlappingType,
 }) => (
   <Wrapper data-testid='left-part'>
     <Card
+      kodRef={ kodRef }
       linkifyRef={ linkifyRef }
       musiconRef={ musiconRef }
       overlappingType={ overlappingType }
-      vtbRef={ vtbRef }
+      poolingRef={ poolingRef }
     />
     <Seperator absoluteRef={ absoluteRef } overlappingType={ overlappingType } />
     <Background />

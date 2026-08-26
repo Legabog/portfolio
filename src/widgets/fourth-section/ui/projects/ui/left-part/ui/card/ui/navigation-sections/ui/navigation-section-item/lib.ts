@@ -10,7 +10,8 @@ export const useLogic = (
   title: string,
   linkifyRef?: MutableRefObject<HTMLDivElement | null>,
   musiconRef?: MutableRefObject<HTMLDivElement | null>,
-  vtbRef?: MutableRefObject<HTMLDivElement | null>,
+  poolingRef?: MutableRefObject<HTMLDivElement | null>,
+  kodRef?: MutableRefObject<HTMLDivElement | null>,
 ) => {
   const t = useTranslations(
     `FourthSection.FourthSectionProjects.FourthSectionLeftPart.Card.NavigationSections.NavigationSectionItem`,
@@ -29,7 +30,8 @@ export const useLogic = (
         {
           linkify: linkifyRef,
           musicon: musiconRef,
-          vtb: vtbRef,
+          pooling: poolingRef,
+          kod: kodRef,
         } as { [key in FourthSection.OverlappingType]: MutableRefObject<HTMLDivElement | null> }
       )[overlappingType];
       mapRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
